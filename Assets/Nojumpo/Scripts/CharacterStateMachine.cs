@@ -3,7 +3,7 @@ namespace Nojumpo
     public class CharacterStateMachine
     {
         // -------------------------------- FIELDS --------------------------------
-        public CharacterState CurrentCharacterState { get; set; }
+        public CharacterState CurrentCharacterState { get; private set; }
 
         
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------

@@ -1,6 +1,6 @@
 namespace Nojumpo
 {
-    public class IdleState : CharacterState
+    public abstract class IdleState : CharacterState
     {
         // -------------------------------- FIELDS --------------------------------
         const string ANIMATOR_STATE_PARAMETER = "Idle";

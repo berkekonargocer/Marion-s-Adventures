@@ -1,9 +1,10 @@
+using System;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
 {
-    public class Character : MonoBehaviour
+    public abstract class Character : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected bool canMove;
@@ -14,28 +15,23 @@ namespace Nojumpo
         Rigidbody2D _rigidbody2D;
 
         CharacterStateMachine _characterStateMachine;
-        IdleState _characterIdleState;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void OnEnable() {
+        protected virtual void OnEnable() {
             SetComponents();
         }
-
-        void OnDisable() {
-
-        }
-
-        void Awake() {
+        
+        protected virtual void Awake() {
             _characterStateMachine = new CharacterStateMachine();
-            _characterIdleState = new IdleState(this, _characterStateMachine);
         }
 
-        void Start() {
-            _characterStateMachine.Initialize(_characterIdleState);
+        protected virtual void Update() {
+            _characterStateMachine.CurrentCharacterState.Update();
         }
 
-        void FixedUpdate() {
-            HandleMovement();
+        protected virtual void FixedUpdate() {
+            _characterStateMachine.CurrentCharacterState.FixedUpdate();
         }
 
 
