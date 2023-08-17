@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
+  m_Name: Player Walk State
+  m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  idleState: {fileID: 11400000, guid: 8a715d1ae07730e4ebc67f493e6280ae, type: 2}
+  animatorStateParameter: Run
+  AccelerationSpeed: 50
+  DecelerationSpeed: 50
+  MaxSpeed: 6
+  agent2DMovementData: {fileID: 11400000, guid: 93f995dc62eb1b74a8c35897f5f29111, type: 2}

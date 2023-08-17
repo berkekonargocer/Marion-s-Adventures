@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-    public class Agent2DWalkingState : Agent2DStateBase
+    [CreateAssetMenu(fileName = "NewAgent2DWalkState", menuName = "Nojumpo/Scriptable Objects/Agent2D/State/New Walk State")]
+    public class Agent2DWalkState : Agent2DStateBase
     {
         // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected Agent2DMovementData agent2DMovementData;
-
         [SerializeField] Agent2DStateBase idleState;
 
         [SerializeField] string animatorStateParameter = "Run";
@@ -16,11 +15,10 @@ namespace Nojumpo
         [SerializeField] float DecelerationSpeed;
         [SerializeField] float MaxSpeed;
 
+        [SerializeField] protected Agent2DMovementData agent2DMovementData;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        protected virtual void Awake() {
-            agent2DMovementData = ScriptableObject.CreateInstance<Agent2DMovementData>();
-        }
 
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
@@ -52,17 +50,17 @@ namespace Nojumpo
             CalculateSpeed(InputReader.Instance.MovementVector, agent2DMovementData);
             CalculateHorizontalDirection(agent2DMovementData);
             agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
-            agent2DMovementData.CurrentVelocity.y = _agent2D.AgentRigidbody2D.velocity.y;
+            agent2DMovementData.CurrentVelocity.y = _agent2D.RigidBody2D.velocity.y;
         }
 
         void SetVelocity() {
-            _agent2D.AgentRigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
 
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
-            _agent2D.agentAnimator.PlayAnimation(animatorStateParameter);
+            _agent2D.Animator.PlayAnimation(animatorStateParameter);
 
             agent2DMovementData.HorizontalMovementDirection = 0;
             agent2DMovementData.CurrentSpeed = 0;
@@ -74,7 +72,7 @@ namespace Nojumpo
             CalculateVelocity();
             SetVelocity();
 
-            if (Mathf.Abs(_agent2D.AgentRigidbody2D.velocity.x) < 0.01f)
+            if (Mathf.Abs(_agent2D.RigidBody2D.velocity.x) < 0.01f)
             {
                 _agent2D.ChangeState(idleState);
             }

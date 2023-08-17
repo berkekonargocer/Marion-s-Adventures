@@ -1,19 +1,21 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Nojumpo
 {
     public abstract class Agent2DBase : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public AgentAnimator agentAnimator { get; set; }
+        [field: SerializeField] public AgentAnimator Animator { get; set; }
 
         [SerializeField] Agent2DIdleState idleState;
+        [SerializeField] Agent2DStateBase[] States;
         
-        public Rigidbody2D AgentRigidbody2D { get; protected set; }
+        public Rigidbody2D RigidBody2D { get; protected set; }
 
         [Header("State Debug")]
-        public Agent2DStateBase currentState = null;
-        public Agent2DStateBase previousState = null;
+        public Agent2DStateBase currentState;
+        public Agent2DStateBase previousState;
         [Space]
         [SerializeField] string stateName = "";
 
@@ -21,9 +23,8 @@ namespace Nojumpo
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             SetComponents();
-            Agent2DStateBase[] agent2DStates = GetComponentsInChildren<Agent2DStateBase>();
 
-            foreach (var agent2DState in agent2DStates)
+            foreach (Agent2DStateBase agent2DState in States)
             {
                 agent2DState.Initialize(this);
             }
@@ -44,7 +45,7 @@ namespace Nojumpo
         
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            AgentRigidbody2D = GetComponent<Rigidbody2D>();
+            RigidBody2D = GetComponent<Rigidbody2D>();
         }
 
         protected void DisplayState() {
