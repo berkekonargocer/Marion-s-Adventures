@@ -40,9 +40,9 @@ namespace Nojumpo
         protected virtual void FixedUpdate() {
             currentState.StateFixedUpdate();
         }
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        
+        
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
             AgentRigidbody2D = GetComponent<Rigidbody2D>();
         }
@@ -51,7 +51,7 @@ namespace Nojumpo
             stateName = currentState.GetType().ToString();
         }
 
-
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void ChangeState(Agent2DStateBase newState) {
             if (currentState != null)

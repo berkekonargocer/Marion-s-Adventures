@@ -10,15 +10,7 @@ namespace Nojumpo
         [SerializeField] string animatorStateParameter = "Idle";
 
         
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
-
-        
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void Enter() {
-            _agent2D.agentAnimator.PlayAnimation(animatorStateParameter);
-        }
-
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
             Vector2 moveInput = InputReader.Instance.MovementVector;
 
@@ -26,6 +18,12 @@ namespace Nojumpo
             {
                 _agent2D.ChangeState(walkingState);
             }
+        }
+        
+
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public override void Enter() {
+            _agent2D.agentAnimator.PlayAnimation(animatorStateParameter);
         }
 
         public override void StateUpdate() {

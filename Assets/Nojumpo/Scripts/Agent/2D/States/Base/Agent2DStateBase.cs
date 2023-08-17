@@ -11,27 +11,7 @@ namespace Nojumpo
         public UnityEvent OnEnter, OnExit;
 
 
-        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public virtual void Initialize(Agent2DBase agent2D) {
-            _agent2D = agent2D;
-        }
-        
-        public virtual void Enter() {
-            OnEnter?.Invoke();
-        }
-        
-        public virtual void StateUpdate() {
-            
-        }
-
-        public virtual void StateFixedUpdate(){
-            
-        }
-        
-        public virtual void Exit() {
-            OnExit?.Invoke();
-        }
-
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void HandleMovement() {
             
         }
@@ -47,5 +27,28 @@ namespace Nojumpo
         protected virtual void HandleAttack() {
             
         }
+
+        
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public virtual void Initialize(Agent2DBase agent2D) {
+            _agent2D = agent2D;
+        }
+
+        public virtual void Enter() {
+            OnEnter?.Invoke();
+        }
+
+        public virtual void StateUpdate() {
+            
+        }
+
+        public virtual void StateFixedUpdate(){
+            
+        }
+
+        public virtual void Exit() {
+        OnExit?.Invoke();
+        }
+
     }
 }

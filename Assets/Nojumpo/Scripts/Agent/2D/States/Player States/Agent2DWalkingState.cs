@@ -9,14 +9,15 @@ namespace Nojumpo
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
         [SerializeField] Agent2DStateBase idleState;
-        
+
         [SerializeField] string animatorStateParameter = "Run";
-        
+
         [SerializeField] float AccelerationSpeed;
         [SerializeField] float DecelerationSpeed;
         [SerializeField] float MaxSpeed;
 
 
+        // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             agent2DMovementData = ScriptableObject.CreateInstance<Agent2DMovementData>();
         }
@@ -46,7 +47,7 @@ namespace Nojumpo
                 movementData.HorizontalMovementDirection = -1;
             }
         }
-        
+
         void CalculateVelocity() {
             CalculateSpeed(InputReader.Instance.MovementVector, agent2DMovementData);
             CalculateHorizontalDirection(agent2DMovementData);
@@ -57,12 +58,12 @@ namespace Nojumpo
         void SetVelocity() {
             _agent2D.AgentRigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
-        
+
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             _agent2D.agentAnimator.PlayAnimation(animatorStateParameter);
-            
+
             agent2DMovementData.HorizontalMovementDirection = 0;
             agent2DMovementData.CurrentSpeed = 0;
             agent2DMovementData.CurrentVelocity = Vector2.zero;
@@ -75,7 +76,7 @@ namespace Nojumpo
 
             if (Mathf.Abs(_agent2D.AgentRigidbody2D.velocity.x) < 0.01f)
             {
-                 _agent2D.ChangeState(idleState);
+                _agent2D.ChangeState(idleState);
             }
         }
     }

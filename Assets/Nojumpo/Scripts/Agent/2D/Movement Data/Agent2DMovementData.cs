@@ -8,12 +8,5 @@ namespace Nojumpo
         internal float HorizontalMovementDirection;
         internal float CurrentSpeed;
         internal Vector2 CurrentVelocity;
-
-        
-        // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-
-
-        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        
     }
 }
