@@ -1,3 +1,4 @@
+using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
@@ -11,34 +12,71 @@ namespace Nojumpo
         
         [SerializeField] string animatorStateParameter = "Run";
         
+        [SerializeField] float AccelerationSpeed;
+        [SerializeField] float DecelerationSpeed;
+        [SerializeField] float MaxSpeed;
+
 
         protected virtual void Awake() {
-            this.agent2DMovementData = GetComponentInParent<Agent2DMovementData>();
+            agent2DMovementData = ScriptableObject.CreateInstance<Agent2DMovementData>();
         }
 
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-
-
-        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public override void EnterState() {
-            _agent2D.agentAnimator.PlayAnimation(this.animatorStateParameter);
-        }
-
-        public override void Update() {
-            HandleMovement();
-        }
-
-        protected override void HandleMovement() {
-            Vector2 moveInput = this.agent2DMovementData.iMovementControlType.MovementInput();
-
-            if (Mathf.Abs(moveInput.x) <= 0 && _agent2D.AgentRigidbody2D.velocity == Vector2.zero)
+        void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
+            if (Mathf.Abs(movementVector.x) > 0)
             {
-                //change state
-                return;
+                movementData.CurrentSpeed += AccelerationSpeed * Time.deltaTime;
+            }
+            else
+            {
+                movementData.CurrentSpeed -= DecelerationSpeed * Time.deltaTime;
             }
 
-            _agent2D.AgentRigidbody2D.velocity = new Vector2(moveInput.x * this.agent2DMovementData.MovementSpeed, _agent2D.AgentRigidbody2D.velocity.y);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, MaxSpeed);
+        }
+
+        void CalculateHorizontalDirection(Agent2DMovementData movementData) {
+            if (InputReader.Instance.MovementVector.x > 0)
+            {
+                movementData.HorizontalMovementDirection = 1;
+            }
+            else if (InputReader.Instance.MovementVector.x < 0)
+            {
+                movementData.HorizontalMovementDirection = -1;
+            }
+        }
+        
+        void CalculateVelocity() {
+            CalculateSpeed(InputReader.Instance.MovementVector, agent2DMovementData);
+            CalculateHorizontalDirection(agent2DMovementData);
+            agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
+            agent2DMovementData.CurrentVelocity.y = _agent2D.AgentRigidbody2D.velocity.y;
+        }
+
+        void SetVelocity() {
+            _agent2D.AgentRigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+        }
+        
+
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public override void Enter() {
+            _agent2D.agentAnimator.PlayAnimation(animatorStateParameter);
+            
+            agent2DMovementData.HorizontalMovementDirection = 0;
+            agent2DMovementData.CurrentSpeed = 0;
+            agent2DMovementData.CurrentVelocity = Vector2.zero;
+        }
+
+        public override void StateUpdate() {
+            base.StateUpdate();
+            CalculateVelocity();
+            SetVelocity();
+
+            if (Mathf.Abs(_agent2D.AgentRigidbody2D.velocity.x) < 0.01f)
+            {
+                 _agent2D.ChangeState(idleState);
+            }
         }
     }
 }

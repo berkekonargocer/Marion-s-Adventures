@@ -13,13 +13,13 @@ namespace Nojumpo
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void Initialize(Agent2DStateBase initial2DState) {
             currentAgent2DState = initial2DState;
-            currentAgent2DState.EnterState();
+            currentAgent2DState.Enter();
         }
 
         public void ChangeState(Agent2DStateBase newState) {
-            currentAgent2DState.ExitState();
+            currentAgent2DState.Exit();
             currentAgent2DState = newState;
-            currentAgent2DState.EnterState();
+            currentAgent2DState.Enter();
         }
 
         public bool IsCurrentState(Agent2DStateBase agent2DState) {

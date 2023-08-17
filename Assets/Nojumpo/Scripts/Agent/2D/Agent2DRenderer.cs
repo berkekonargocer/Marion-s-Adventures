@@ -2,27 +2,39 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-	public class AgentAnimator : MonoBehaviour
+    public class Agent2DRenderer : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        Animator _agentAnimator;
-		
-        
+	
+	
+	
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
-			SetComponents();
+	
+        }
+
+        void OnDisable() {
+	
+        }
+
+        void Awake() {
+	
+        }
+
+        void Start() {
+	
+        }
+
+        void Update() {
+	
         }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void SetComponents() {
-	        _agentAnimator = GetComponent<Animator>();
-        }
-        
-        
+	
+	
+	
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void PlayAnimation(string stateName) {
-	        _agentAnimator.Play(stateName, -1, 0);
-        }
+	
     }
 }

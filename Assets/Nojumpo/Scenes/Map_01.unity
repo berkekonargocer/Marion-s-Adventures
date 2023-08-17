@@ -637,7 +637,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1074001072}
-  - component: {fileID: 1074001073}
+  - component: {fileID: 1074001075}
+  - component: {fileID: 1074001074}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -660,7 +661,31 @@ Transform:
   m_Father: {fileID: 1598364174}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1074001073
+--- !u!114 &1074001074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074001071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  agent2DMovementData: {fileID: 0}
+  idleState: {fileID: 1074001075}
+  animatorStateParameter: Run
+  AccelerationSpeed: 50
+  DecelerationSpeed: 50
+  MaxSpeed: 6
+--- !u!114 &1074001075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,7 +703,8 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  walkingState: {fileID: 0}
+  walkingState: {fileID: 1074001074}
+  animatorStateParameter: Idle
 --- !u!1 &1195931290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,8 +2542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc7a84e22d169d418fd68dff1fe375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  <agentAnimator>k__BackingField: {fileID: 0}
+  <agentAnimator>k__BackingField: {fileID: 1542889415}
+  idleState: {fileID: 1074001075}
+  currentState: {fileID: 0}
+  previousState: {fileID: 0}
+  stateName: 
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0

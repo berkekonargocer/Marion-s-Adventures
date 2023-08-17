@@ -30,7 +30,7 @@ namespace Nojumpo.ScriptableObjects
 
         GameInput _gameInputScheme;
         
-        public Vector2 MoveInput { get; private set; }
+        public Vector2 MovementVector { get; private set; }
 
         public bool InteractionInputPressedThisFrame { get; private set; }
         public bool InteractionInputReleasedThisFrame { get; private set; }
@@ -61,7 +61,7 @@ namespace Nojumpo.ScriptableObjects
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void OnMove(InputAction.CallbackContext context) {
             Debug.Log("OnMove");
-            MoveInput = context.ReadValue<Vector2>();
+            MovementVector = context.ReadValue<Vector2>();
         }
 
         public async void OnInteractButton(InputAction.CallbackContext context) {

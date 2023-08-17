@@ -13,23 +13,23 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(Agent2DBase agent2D) {
-            this._agent2D = agent2D;
+            _agent2D = agent2D;
         }
         
-        public virtual void EnterState() {
-            this.OnEnter?.Invoke();
+        public virtual void Enter() {
+            OnEnter?.Invoke();
         }
         
-        public virtual void Update() {
+        public virtual void StateUpdate() {
             
         }
 
-        public virtual void FixedUpdate(){
+        public virtual void StateFixedUpdate(){
             
         }
         
-        public virtual void ExitState() {
-            this.OnExit?.Invoke();
+        public virtual void Exit() {
+            OnExit?.Invoke();
         }
 
         protected virtual void HandleMovement() {
