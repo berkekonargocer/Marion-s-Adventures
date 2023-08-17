@@ -1,6 +1,6 @@
 namespace Nojumpo
 {
-    public class Marion : Agent2D
+    public class Marion : Agent2DBase
     {
         // -------------------------------- FIELDS ---------------------------------
         

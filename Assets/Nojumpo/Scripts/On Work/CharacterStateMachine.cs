@@ -3,7 +3,7 @@ namespace Nojumpo
     public class CharacterStateMachine
     {
         // -------------------------------- FIELDS --------------------------------
-        public Agent2DState currentAgent2DState { get; private set; }
+        public Agent2DStateBase currentAgent2DState { get; private set; }
 
         
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
@@ -11,18 +11,18 @@ namespace Nojumpo
         
         
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public void Initialize(Agent2DState initial2DState) {
+        public void Initialize(Agent2DStateBase initial2DState) {
             currentAgent2DState = initial2DState;
             currentAgent2DState.EnterState();
         }
 
-        public void ChangeState(Agent2DState newState) {
+        public void ChangeState(Agent2DStateBase newState) {
             currentAgent2DState.ExitState();
             currentAgent2DState = newState;
             currentAgent2DState.EnterState();
         }
 
-        public bool IsCurrentState(Agent2DState agent2DState) {
+        public bool IsCurrentState(Agent2DStateBase agent2DState) {
             return currentAgent2DState == agent2DState;
         }
     }

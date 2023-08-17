@@ -3,16 +3,16 @@ using UnityEngine.Events;
 
 namespace Nojumpo
 {
-    public abstract class Agent2DState : MonoBehaviour
+    public abstract class Agent2DStateBase : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
-        protected Agent2D _agent2D;
+        protected Agent2DBase _agent2D;
         
         public UnityEvent OnEnter, OnExit;
 
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public virtual void Initialize(Agent2D agent2D) {
+        public virtual void Initialize(Agent2DBase agent2D) {
             this._agent2D = agent2D;
         }
         

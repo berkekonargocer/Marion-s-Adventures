@@ -1,12 +1,12 @@
-using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
 {
-    public class PlayerIdleState : Agent2DState
+    public class PlayerIdleState : Agent2DStateBase
     {
 	    // -------------------------------- FIELDS ---------------------------------
-	    [SerializeField] Agent2DState walkingState;
+	    [SerializeField] Agent2DStateBase walkingState;
+	    [SerializeField] Agent2DMovementData playerMovementData;
 	    
 		
 	    // ------------------------- CUSTOM PRIVATE METHODS ------------------------
@@ -19,13 +19,12 @@ namespace Nojumpo
 	    }
 
 	    protected override void HandleMovement() {
-		    Vector2 moveInput = InputReader.Instance.MoveInput;
+		    Vector2 moveInput = this.playerMovementData.iMovementControlType.MovementInput();
 
-		    
 		    if (Mathf.Abs(moveInput.x) > 0)
 		    {
 			    
-			    _agent2D.ChangeState(walkingState,this);
+			    _agent2D.ChangeState(this.walkingState,this);
 			    
 			    
 			    // if (moveInput.x > 0)
