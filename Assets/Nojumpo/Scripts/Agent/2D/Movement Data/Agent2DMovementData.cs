@@ -6,8 +6,8 @@ namespace Nojumpo
     public class Agent2DMovementData : ScriptableObject
     {
         // -------------------------------- FIELDS --------------------------------
-        internal float HorizontalMovementDirection;
-        internal float CurrentSpeed;
-        internal Vector2 CurrentVelocity;
+        public float HorizontalMovementDirection;
+        public float CurrentSpeed;
+        public Vector2 CurrentVelocity;
     }
 }
