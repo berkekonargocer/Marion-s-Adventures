@@ -10,9 +10,8 @@ namespace Nojumpo
 
         [SerializeField] Agent2DIdleState idleState;
         [SerializeField] Agent2DStateBase[] States;
-        
         public Rigidbody2D RigidBody2D { get; protected set; }
-
+        
         [Header("State Debug")]
         public Agent2DStateBase currentState;
         public Agent2DStateBase previousState;

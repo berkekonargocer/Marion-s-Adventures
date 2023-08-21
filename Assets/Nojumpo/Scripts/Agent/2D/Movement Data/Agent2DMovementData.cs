@@ -6,7 +6,7 @@ namespace Nojumpo
     public class Agent2DMovementData : ScriptableObject
     {
         // -------------------------------- FIELDS --------------------------------
-        public float HorizontalMovementDirection;
+        public int HorizontalMovementDirection;
         public float CurrentSpeed;
         public Vector2 CurrentVelocity;
     }

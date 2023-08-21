@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-    [CreateAssetMenu(fileName = "NewAgent2DWalkState", menuName = "Nojumpo/Scriptable Objects/Agent2D/State/New Walk State")]
     public class Agent2DWalkState : Agent2DStateBase
     {
         // -------------------------------- FIELDS --------------------------------

@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,9 +13,10 @@ namespace Nojumpo.ScriptableObjects
         [SerializeField] string _developerDescription = "ONLY CREATE 1 AND PUT TO RESOURCES FOLDER";
 
 #endif
+
         // -------------------------------- FIELDS ---------------------------------
         static InputReader _inputReader;
-        
+
         public static InputReader Instance {
             get
             {
@@ -24,27 +24,41 @@ namespace Nojumpo.ScriptableObjects
                 {
                     _inputReader = Resources.Load<InputReader>("Input Reader");
                 }
+
                 return _inputReader;
             }
         }
 
         GameInput _gameInputScheme;
-        
+
         public Vector2 MovementVector { get; private set; }
 
-        public bool InteractionInputPressedThisFrame { get; private set; }
-        public bool InteractionInputReleasedThisFrame { get; private set; }
+        public delegate void OnMovementInputPressed(Vector2 movementVector);
+        public OnMovementInputPressed onMovementInputPressed;
 
-        public bool JumpInputPressedThisFrame { get; private set; }
-        public bool JumpInputReleasedThisFrame { get; private set; }
+        public delegate void OnInteractionInputPressed();
+        public event OnInteractionInputPressed onInteractionInputPressed;
+
+        public delegate void OnInteractionInputReleased();
+        public event OnInteractionInputReleased onInteractionInputReleased;
+
+        public delegate void OnJumpInputPressed();
+        public event OnJumpInputPressed onJumpInputPressed;
+
+        public delegate void OnJumpInputReleased();
+        public event OnJumpInputReleased onJumpInputReleased;
+
+        public delegate void OnAttackInputPressed();
+        public event OnAttackInputPressed onAttackInputPressed;
+
+        public delegate void OnChangeWeaponInputPressed();
+        public event OnChangeWeaponInputPressed onChangeWeaponInputPressed;
         
-        public bool AttackButtonPressedThisFrame { get; private set; }
-        public bool ChangeWeaponButtonPressedThisFrame { get; private set; }
-        
-        
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             Debug.Log("Input Reader Init");
+
             if (_gameInputScheme == null)
             {
                 Debug.Log("Input Reader Is Null Setting New GameInput");
@@ -57,79 +71,58 @@ namespace Nojumpo.ScriptableObjects
             }
         }
 
-        
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void OnMove(InputAction.CallbackContext context) {
-            Debug.Log("OnMove");
             MovementVector = context.ReadValue<Vector2>();
+            onMovementInputPressed?.Invoke(MovementVector);
         }
 
-        public async void OnInteractButton(InputAction.CallbackContext context) {
+        public void OnInteractButton(InputAction.CallbackContext context) {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                onInteractionInputPressed?.Invoke();
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                onInteractionInputReleased?.Invoke();
+            }
+        }
+
+        public void OnJumpButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                InteractionInputPressedThisFrame = true;
-                await Task.Yield();
-                InteractionInputPressedThisFrame = false;
+                onJumpInputPressed?.Invoke();
             }
-            
+
             if (context.phase == InputActionPhase.Canceled)
             {
-                InteractionInputReleasedThisFrame = true;
-                await Task.Yield();
-                InteractionInputReleasedThisFrame = false;
+                onJumpInputReleased?.Invoke();
             }
         }
 
-        public async void OnJumpButton(InputAction.CallbackContext context) {
+        public void OnAttackButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                Debug.Log("OnJumpStart");
-
-                JumpInputPressedThisFrame = true;
-                await Task.Yield();
-                JumpInputPressedThisFrame = false;
-            }
-            
-            if (context.phase == InputActionPhase.Canceled)
-            {
-                Debug.Log("OnJumpCanceled");
-
-                JumpInputReleasedThisFrame = true;
-                await Task.Yield();
-                JumpInputReleasedThisFrame = false;
+                onAttackInputPressed?.Invoke();
             }
         }
 
-        public async void OnAttackButton(InputAction.CallbackContext context) {
+        public void OnChangeWeaponButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                Debug.Log("Attack");
-                AttackButtonPressedThisFrame = true;
-                await Task.Yield();
-                AttackButtonPressedThisFrame = false;
+                onAttackInputPressed?.Invoke();
             }
         }
 
-        public async void OnChangeWeaponButton(InputAction.CallbackContext context) {
-            if (context.phase == InputActionPhase.Started)
-            {
-                ChangeWeaponButtonPressedThisFrame = true;
-                Debug.Log("Change Weapon");
-                await Task.Yield();
-                ChangeWeaponButtonPressedThisFrame = false;
-            }
-        }
 
-        
         #region UI Input
-
         public void OnResumeGame(InputAction.CallbackContext context) {
             // throw new System.NotImplementedException();
         }
-        
         #endregion
 
-        
+
         public void SetPlayerInput() {
             _gameInputScheme.UI.Disable();
             _gameInputScheme.Player.Enable();
@@ -138,7 +131,7 @@ namespace Nojumpo.ScriptableObjects
         public void SetUIInput() {
             _gameInputScheme.Player.Disable();
             _gameInputScheme.UI.Enable();
-            
+
         }
     }
 }
