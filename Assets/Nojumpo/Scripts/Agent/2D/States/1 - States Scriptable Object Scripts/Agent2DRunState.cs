@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-    public class Agent2DWalkState : Agent2DStateBase
+    public class Agent2DRunState : Agent2DStateBase
     {
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] Agent2DStateBase idleState;

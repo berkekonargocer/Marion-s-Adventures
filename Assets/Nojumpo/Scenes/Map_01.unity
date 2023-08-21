@@ -487,7 +487,7 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  walkState: {fileID: 709260482}
+  runState: {fileID: 709260482}
   animatorStateParameter: Idle
 --- !u!1 &711278511
 GameObject:
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 711278512}
   - component: {fileID: 711278513}
   m_Layer: 15
-  m_Name: Ground Collider
+  m_Name: Agent Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2478,6 +2478,7 @@ GameObject:
   - component: {fileID: 1598364174}
   - component: {fileID: 1598364173}
   - component: {fileID: 1598364175}
+  - component: {fileID: 1598364176}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -2550,6 +2551,18 @@ MonoBehaviour:
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
+--- !u!114 &1598364176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4954bb7bd160af41a7a75a55522694d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0

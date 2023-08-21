@@ -1,12 +1,13 @@
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Nojumpo
 {
     public class Agent2DIdleState : Agent2DStateBase
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] Agent2DStateBase walkState;
+        [SerializeField] Agent2DStateBase runState;
         [SerializeField] string animatorStateParameter = "Idle";
 
         
@@ -16,7 +17,7 @@ namespace Nojumpo
 
             if (Mathf.Abs(moveInput.x) > 0)
             {
-                _agent2D.ChangeState(walkState);
+                _agent2D.ChangeState(runState);
             }
         }
         
