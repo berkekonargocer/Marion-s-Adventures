@@ -499,6 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711278512}
   - component: {fileID: 711278513}
+  - component: {fileID: 711278514}
   m_Layer: 15
   m_Name: Agent Collider
   m_TagString: Untagged
@@ -553,9 +554,31 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044, y: -0.025}
-  m_Size: {x: 1.519, y: 1.85}
+  m_Offset: {x: 0.044, y: 0.0075}
+  m_Size: {x: 1.519, y: 1.8}
   m_Direction: 0
+--- !u!114 &711278514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711278511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2270164acf5c74299b0ae46a1b8d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent2dCollider: {fileID: 711278513}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  boxCastYOffset: -0.7
+  boxCastXOffset: 0.05
+  boxCastWidth: 1
+  boxCastHeight: 0.5
+  groundedColor: {r: 0, g: 1, b: 0, a: 1}
+  notGroundedGizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &749836129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,10 +2567,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Animator>k__BackingField: {fileID: 1542889415}
-  idleState: {fileID: 11400000, guid: 8a715d1ae07730e4ebc67f493e6280ae, type: 2}
+  idleState: {fileID: 709260483}
   States:
-  - {fileID: 11400000, guid: 8a715d1ae07730e4ebc67f493e6280ae, type: 2}
-  - {fileID: 11400000, guid: 4b6466cdd1d978645ba4a8da1f8dfde0, type: 2}
+  - {fileID: 709260483}
+  - {fileID: 709260482}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
