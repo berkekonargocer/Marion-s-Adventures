@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 709260481}
   - component: {fileID: 709260483}
   - component: {fileID: 709260482}
+  - component: {fileID: 709260484}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -458,6 +459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  jumpState: {fileID: 709260484}
+  animatorStateParameter: Move
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -465,11 +468,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   idleState: {fileID: 709260483}
-  animatorStateParameter: Run
+  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
   AccelerationSpeed: 50
   DecelerationSpeed: 50
   MaxSpeed: 6
-  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &709260483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,14 +485,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  jumpState: {fileID: 709260484}
+  animatorStateParameter: Idle
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  runState: {fileID: 709260482}
-  animatorStateParameter: Idle
+  moveState: {fileID: 709260482}
+--- !u!114 &709260484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709260480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703427368269b2549bb58a99b8588baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  jumpState: {fileID: 709260484}
+  animatorStateParameter: Jump
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  idleState: {fileID: 709260483}
+  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
+  AccelerationSpeed: 50
+  DecelerationSpeed: 50
+  MaxSpeed: 6
+  jumpForce: 12
+  lowJumpMultiplier: 2
+  fallState: {fileID: 709260483}
 --- !u!1 &711278511
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,8 +588,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044, y: 0.0075}
-  m_Size: {x: 1.519, y: 1.8}
+  m_Offset: {x: 0.04400003, y: -0.0011178851}
+  m_Size: {x: 1.519, y: 1.8631984}
   m_Direction: 0
 --- !u!114 &711278514
 MonoBehaviour:
@@ -809,8 +841,8 @@ GameObject:
   - component: {fileID: 1262610298}
   - component: {fileID: 1262610297}
   - component: {fileID: 1262610296}
-  m_Layer: 11
-  m_Name: Platforms
+  m_Layer: 6
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,9 +2556,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 9d0b697093e21104e8dc0b539e911115, type: 2}
   m_IncludeLayers:
     serializedVersion: 2

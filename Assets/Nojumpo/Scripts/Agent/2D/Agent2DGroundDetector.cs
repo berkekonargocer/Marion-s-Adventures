@@ -15,8 +15,8 @@ namespace Nojumpo
         [SerializeField] Color groundedColor = Color.green, notGroundedGizmoColor = Color.red;
 
         RaycastHit2D[] _groundedHits = new RaycastHit2D[1];
-        bool _isGrounded;
         
+        public bool IsGrounded { get; private set; }
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -46,7 +46,7 @@ namespace Nojumpo
 
             Gizmos.color = notGroundedGizmoColor;
 
-            if (_isGrounded)
+            if (IsGrounded)
                 Gizmos.color = groundedColor;
 
             Gizmos.DrawWireCube(agent2dCollider.bounds.center + new Vector3(boxCastXOffset, boxCastYOffset, 0),
@@ -68,11 +68,11 @@ namespace Nojumpo
 
             if (groundedHits == 1)
             {
-                _isGrounded = true;
+                IsGrounded = true;
             }
             else
             {
-                _isGrounded = false;
+                IsGrounded = false;
             }
         }
     }

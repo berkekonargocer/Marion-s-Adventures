@@ -33,6 +33,7 @@ namespace Nojumpo
         }
 
         protected void Update() {
+            GroundDetector.CheckIsGrounded();
             currentState.StateUpdate();
         }
 
