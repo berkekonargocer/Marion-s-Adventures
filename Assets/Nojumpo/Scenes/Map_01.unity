@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -468,7 +469,7 @@ MonoBehaviour:
   AccelerationSpeed: 50
   DecelerationSpeed: 50
   MaxSpeed: 6
-  agent2DMovementData: {fileID: 11400000, guid: 93f995dc62eb1b74a8c35897f5f29111, type: 2}
+  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &709260483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -2566,12 +2568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc7a84e22d169d418fd68dff1fe375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Animator>k__BackingField: {fileID: 1542889415}
-  <GroundDetector>k__BackingField: {fileID: 711278514}
   idleState: {fileID: 709260483}
-  States:
-  - {fileID: 709260483}
-  - {fileID: 709260482}
+  <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
@@ -2587,6 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4954bb7bd160af41a7a75a55522694d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0

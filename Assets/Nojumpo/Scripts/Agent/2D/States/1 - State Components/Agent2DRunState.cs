@@ -1,4 +1,3 @@
-using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
@@ -19,6 +18,7 @@ namespace Nojumpo
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
+        
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
         void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
@@ -35,18 +35,18 @@ namespace Nojumpo
         }
 
         void CalculateHorizontalDirection(Agent2DMovementData movementData) {
-            if (InputReader.Instance.MovementVector.x > 0)
+            if (inputReader.MovementVector.x > 0)
             {
                 movementData.HorizontalMovementDirection = 1;
             }
-            else if (InputReader.Instance.MovementVector.x < 0)
+            else if (inputReader.MovementVector.x < 0)
             {
                 movementData.HorizontalMovementDirection = -1;
             }
         }
 
         void CalculateVelocity() {
-            CalculateSpeed(InputReader.Instance.MovementVector, agent2DMovementData);
+            CalculateSpeed(inputReader.MovementVector, agent2DMovementData);
             CalculateHorizontalDirection(agent2DMovementData);
             agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
             agent2DMovementData.CurrentVelocity.y = _agent2D.RigidBody2D.velocity.y;

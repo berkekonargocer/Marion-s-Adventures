@@ -1,3 +1,4 @@
+using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
@@ -6,6 +7,8 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] Agent2DIdleState idleState;
+        
+        [field: SerializeField] public InputReader GameInputReader { get; protected set; }
         
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }

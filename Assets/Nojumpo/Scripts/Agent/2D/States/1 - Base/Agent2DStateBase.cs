@@ -1,3 +1,4 @@
+using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,10 +7,16 @@ namespace Nojumpo
     public abstract class Agent2DStateBase : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
+        [SerializeField] protected InputReader inputReader;
+        
         protected Agent2DBase _agent2D;
         
         public UnityEvent OnEnter, OnExit;
 
+        
+        // ------------------------- UNITY BUILT-IN METHODS ------------------------
+        
+        
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void HandleMovement() {

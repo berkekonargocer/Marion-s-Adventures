@@ -6,8 +6,10 @@ namespace Nojumpo
     public class Agent2DRenderer : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
+        [SerializeField] InputReader inputReader;
+        
         Transform _agent2DTransform;
-
+        
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
@@ -15,11 +17,11 @@ namespace Nojumpo
         }
 
         void OnEnable() {
-            InputReader.Instance.onMovementInputPressed += FaceDirection;
+            inputReader.onMovementInputPressed += FaceDirection;
         }
 
         void OnDisable() {
-            InputReader.Instance.onMovementInputPressed -= FaceDirection;
+            inputReader.onMovementInputPressed -= FaceDirection;
         }
         
 

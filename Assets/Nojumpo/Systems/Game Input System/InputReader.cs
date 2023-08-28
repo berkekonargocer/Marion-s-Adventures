@@ -15,20 +15,6 @@ namespace Nojumpo.ScriptableObjects
 #endif
 
         // -------------------------------- FIELDS ---------------------------------
-        static InputReader _inputReader;
-
-        public static InputReader Instance {
-            get
-            {
-                if (_inputReader == null)
-                {
-                    _inputReader = Resources.Load<InputReader>("Input Reader");
-                }
-
-                return _inputReader;
-            }
-        }
-
         GameInput _gameInputScheme;
 
         public Vector2 MovementVector { get; private set; }
@@ -57,11 +43,8 @@ namespace Nojumpo.ScriptableObjects
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
-            Debug.Log("Input Reader Init");
-
             if (_gameInputScheme == null)
             {
-                Debug.Log("Input Reader Is Null Setting New GameInput");
                 _gameInputScheme = new GameInput();
 
                 _gameInputScheme.Player.SetCallbacks(this);
