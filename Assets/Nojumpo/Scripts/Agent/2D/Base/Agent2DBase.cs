@@ -5,10 +5,10 @@ namespace Nojumpo
     public abstract class Agent2DBase : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public AgentAnimator Animator { get; set; }
-
         [SerializeField] Agent2DIdleState idleState;
-        [SerializeField] Agent2DStateBase[] States;
+        
+        public AgentAnimator Animator { get; protected set; }
+        public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Rigidbody2D RigidBody2D { get; protected set; }
         
         [Header("State Debug")]
@@ -21,11 +21,8 @@ namespace Nojumpo
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             SetComponents();
+            SetStates();
 
-            foreach (Agent2DStateBase agent2DState in States)
-            {
-                agent2DState.Initialize(this);
-            }
         }
 
         protected void Start() {
@@ -44,6 +41,17 @@ namespace Nojumpo
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
             RigidBody2D = GetComponent<Rigidbody2D>();
+            Animator = GetComponentInChildren<AgentAnimator>();
+            GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
+        }
+
+        protected virtual void SetStates() {
+            Agent2DStateBase[] agent2DStates = GetComponentsInChildren<Agent2DStateBase>();
+            
+            foreach (Agent2DStateBase agent2DState in agent2DStates)
+            {
+                agent2DState.Initialize(this);
+            }
         }
 
         protected void DisplayState() {

@@ -16,7 +16,9 @@ namespace Nojumpo
 
         [SerializeField] Color groundedColor = Color.green, notGroundedGizmoColor = Color.red;
 
+        RaycastHit2D[] _groundedHits = new RaycastHit2D[1];
         bool _isGrounded;
+        
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -62,6 +64,18 @@ namespace Nojumpo
         }
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public void CheckIsGrounded() {
+            int groundedHits = Physics2D.BoxCastNonAlloc(agent2dCollider.bounds.center + new Vector3(boxCastXOffset, boxCastYOffset, 0),
+                new Vector2(boxCastWidth, boxCastHeight), 0, Vector2.down, _groundedHits, 0, groundLayerMask);
 
+            if (groundedHits == 1)
+            {
+                _isGrounded = true;
+            }
+            else
+            {
+                _isGrounded = false;
+            }
+        }
     }
 }
