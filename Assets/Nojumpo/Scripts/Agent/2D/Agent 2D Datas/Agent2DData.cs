@@ -29,9 +29,12 @@ namespace Nojumpo.ScriptableObjects
         [Space]
         [SerializeField] float jumpForce = 12.0f;
         [SerializeField] float lowJumpMultiplier = 2.0f;
+        [SerializeField] float maxFallSpeed = 25.0f;
 
         public float JumpForce { get { return jumpForce; } private set { jumpForce = value; } }
         public float LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
+
+        public float MaxFallSpeed { get { return maxFallSpeed; } }
         
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------

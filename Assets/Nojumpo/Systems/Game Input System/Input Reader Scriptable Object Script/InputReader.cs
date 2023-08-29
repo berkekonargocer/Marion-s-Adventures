@@ -10,7 +10,7 @@ namespace Nojumpo.ScriptableObjects
 #if UNITY_EDITOR
 
         [TextArea]
-        [SerializeField] string _developerDescription = "ONLY CREATE 1 AND PUT TO RESOURCES FOLDER";
+        [SerializeField] string _developerDescription = "CREATE ONE FOR EACH PLAYER";
 
 #endif
 

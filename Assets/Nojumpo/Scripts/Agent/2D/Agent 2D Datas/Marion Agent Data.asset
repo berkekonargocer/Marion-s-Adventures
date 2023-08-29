@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Marion Agent Data
   m_EditorClassIdentifier: 
   _developerDescription: 
+  maxSpeed: 6
   accelerationSpeed: 50
   decelerationSpeed: 50
-  maxSpeed: 6
   jumpForce: 12
   lowJumpMultiplier: 2
+  maxFallSpeed: 25

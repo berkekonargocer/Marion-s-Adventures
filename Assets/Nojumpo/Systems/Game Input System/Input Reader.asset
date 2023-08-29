@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2109ff0a8b8e9894894d5ce545a38458, type: 3}
   m_Name: Input Reader
   m_EditorClassIdentifier: 
-  _developerDescription: ONLY CREATE 1 AND PUT TO RESOURCES FOLDER
+  _developerDescription: CREATE ONE FOR EACH PLAYER

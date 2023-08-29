@@ -7,14 +7,12 @@ namespace Nojumpo
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
-        
-        
+
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
 
-        
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
@@ -46,6 +44,13 @@ namespace Nojumpo
             CalculateSpeed(inputReader.MovementVector, agent2DMovementData);
             CalculateHorizontalDirection(agent2DMovementData);
             agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
+
+            if (_agent2D.RigidBody2D.velocity.y <= -_agent2DData.MaxFallSpeed)
+            {
+                agent2DMovementData.CurrentVelocity.y = -_agent2DData.MaxFallSpeed;
+                return;
+            }
+
             agent2DMovementData.CurrentVelocity.y = _agent2D.RigidBody2D.velocity.y;
         }
 
