@@ -8,13 +8,14 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected InputReader inputReader;
-
+        
         [SerializeField] protected Agent2DStateBase jumpState;
         [SerializeField] protected Agent2DStateBase fallState;
         
         [SerializeField] protected string animatorStateParameter = "";
 
         protected Agent2DBase _agent2D;
+        protected Agent2DData _agent2DData;
 
         public UnityEvent OnEnter, OnExit;
 
@@ -62,8 +63,9 @@ namespace Nojumpo
         }
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public virtual void Initialize(Agent2DBase agent2D) {
+        public virtual void Initialize(Agent2DBase agent2D, Agent2DData agent2DData) {
             _agent2D = agent2D;
+            _agent2DData = agent2DData;
         }
 
         public virtual void Enter() {

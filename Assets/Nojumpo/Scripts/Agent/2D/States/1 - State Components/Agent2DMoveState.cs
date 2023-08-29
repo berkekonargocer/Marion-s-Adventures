@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Nojumpo
@@ -22,14 +21,14 @@ namespace Nojumpo
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementVector.x) > 0)
             {
-                movementData.CurrentSpeed += _agent2D.AgentData.AccelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed += _agent2DData.AccelerationSpeed * Time.deltaTime;
             }
             else
             {
-                movementData.CurrentSpeed -= _agent2D.AgentData.DecelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed -= _agent2DData.DecelerationSpeed * Time.deltaTime;
             }
 
-            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2D.AgentData.MaxSpeed);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.MaxSpeed);
         }
 
         protected void CalculateHorizontalDirection(Agent2DMovementData movementData) {

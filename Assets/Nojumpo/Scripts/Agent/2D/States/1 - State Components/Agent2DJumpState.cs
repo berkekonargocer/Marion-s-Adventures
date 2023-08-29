@@ -18,14 +18,14 @@ namespace Nojumpo
             if (!_jumpInputPressed)
             {
                 agent2DMovementData.CurrentVelocity = _agent2D.RigidBody2D.velocity;
-                agent2DMovementData.CurrentVelocity.y += _agent2D.AgentData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime ;
+                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime ;
                 _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
             }
         }
 
         void ApplyJump() {
             agent2DMovementData.CurrentVelocity = _agent2D.RigidBody2D.velocity;
-            agent2DMovementData.CurrentVelocity.y = _agent2D.AgentData.JumpForce;
+            agent2DMovementData.CurrentVelocity.y = _agent2DData.JumpForce;
             _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }

@@ -461,7 +461,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
-  moveState: {fileID: 709260482}
   fallState: {fileID: 709260485}
   animatorStateParameter: Move
   OnEnter:
@@ -472,9 +471,6 @@ MonoBehaviour:
       m_Calls: []
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
-  AccelerationSpeed: 50
-  DecelerationSpeed: 50
-  MaxSpeed: 6
 --- !u!114 &709260483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
-  moveState: {fileID: 709260482}
   fallState: {fileID: 709260485}
   animatorStateParameter: Idle
   OnEnter:
@@ -498,6 +493,7 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+  moveState: {fileID: 709260482}
 --- !u!114 &709260484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
-  moveState: {fileID: 709260482}
   fallState: {fileID: 709260485}
   animatorStateParameter: Jump
   OnEnter:
@@ -523,12 +518,6 @@ MonoBehaviour:
       m_Calls: []
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
-  AccelerationSpeed: 50
-  DecelerationSpeed: 50
-  MaxSpeed: 6
-  jumpForce: 12
-  lowJumpMultiplier: 2
-  fallState: {fileID: 709260485}
 --- !u!114 &709260485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
-  moveState: {fileID: 709260482}
   fallState: {fileID: 709260485}
   animatorStateParameter: Fall
   OnEnter:
@@ -554,9 +542,7 @@ MonoBehaviour:
       m_Calls: []
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
-  AccelerationSpeed: 50
-  DecelerationSpeed: 50
-  MaxSpeed: 6
+  gravityModifier: 0.5
 --- !u!1 &711278511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,8 +2620,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc7a84e22d169d418fd68dff1fe375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleState: {fileID: 709260483}
+  <AgentData>k__BackingField: {fileID: 11400000, guid: 90f428f271254b8438826642c9b0214f, type: 2}
   <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  idleState: {fileID: 709260483}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 

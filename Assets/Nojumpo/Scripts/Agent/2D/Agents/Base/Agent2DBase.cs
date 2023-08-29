@@ -55,7 +55,7 @@ namespace Nojumpo
             
             foreach (Agent2DStateBase agent2DState in agent2DStates)
             {
-                agent2DState.Initialize(this);
+                agent2DState.Initialize(this, AgentData);
             }
         }
 
