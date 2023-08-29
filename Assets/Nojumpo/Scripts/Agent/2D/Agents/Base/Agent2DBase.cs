@@ -6,7 +6,7 @@ namespace Nojumpo
     public abstract class Agent2DBase : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public Agent2DData AgentData { get; protected set; }
+        [SerializeField] protected Agent2DData agent2DData;
         
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
         
@@ -55,7 +55,7 @@ namespace Nojumpo
             
             foreach (Agent2DStateBase agent2DState in agent2DStates)
             {
-                agent2DState.Initialize(this, AgentData);
+                agent2DState.Initialize(this, agent2DData);
             }
         }
 

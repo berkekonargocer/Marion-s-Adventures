@@ -16,13 +16,13 @@ namespace Nojumpo.ScriptableObjects
         // -------------------------------- FIELDS ---------------------------------
         [Header("MOVEMENT DATA")]
         [Space]
+        [SerializeField] float maxSpeed = 6.0f;
         [SerializeField] float accelerationSpeed = 50.0f;
         [SerializeField] float decelerationSpeed = 50.0f;
-        [SerializeField] float maxSpeed = 6.0f;
 
+        public float MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
         public float AccelerationSpeed { get { return accelerationSpeed; } private set { accelerationSpeed = value; } }
         public float DecelerationSpeed { get { return decelerationSpeed; } private set { decelerationSpeed = value; } }
-        public float MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
 
         
         [Header("JUMP DATA")]
