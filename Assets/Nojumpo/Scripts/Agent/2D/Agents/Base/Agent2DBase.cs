@@ -6,9 +6,11 @@ namespace Nojumpo
     public abstract class Agent2DBase : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] Agent2DIdleState idleState;
+        [field: SerializeField] public Agent2DData AgentData { get; protected set; }
         
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
+        
+        [SerializeField] Agent2DIdleState idleState;
         
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
@@ -25,7 +27,6 @@ namespace Nojumpo
         protected virtual void Awake() {
             SetComponents();
             SetStates();
-
         }
 
         protected void Start() {

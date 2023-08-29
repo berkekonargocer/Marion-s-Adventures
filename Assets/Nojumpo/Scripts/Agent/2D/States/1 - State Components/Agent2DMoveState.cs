@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Nojumpo
@@ -8,31 +9,27 @@ namespace Nojumpo
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
         
-        [SerializeField] float AccelerationSpeed;
-        [SerializeField] float DecelerationSpeed;
-        [SerializeField] float MaxSpeed;
-
-
+        
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
 
-
+        
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-        
-        
-        
+
+
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementVector.x) > 0)
             {
-                movementData.CurrentSpeed += AccelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed += _agent2D.AgentData.AccelerationSpeed * Time.deltaTime;
             }
             else
             {
-                movementData.CurrentSpeed -= DecelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed -= _agent2D.AgentData.DecelerationSpeed * Time.deltaTime;
             }
 
-            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, MaxSpeed);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2D.AgentData.MaxSpeed);
         }
 
         protected void CalculateHorizontalDirection(Agent2DMovementData movementData) {
@@ -60,9 +57,9 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
-            if(CheckToChangeIntoFallState())
+            if (CheckToChangeIntoFallState())
                 return;
-            
+
             CalculateVelocity();
             SetVelocity();
 
