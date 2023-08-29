@@ -10,6 +10,9 @@ namespace Nojumpo
         [SerializeField] protected InputReader inputReader;
 
         [SerializeField] protected Agent2DStateBase jumpState;
+        [SerializeField] protected Agent2DStateBase moveState;
+        [SerializeField] protected Agent2DStateBase fallState;
+        
 
         [SerializeField] protected string animatorStateParameter = "";
 
@@ -22,18 +25,16 @@ namespace Nojumpo
         void OnEnable() {
             inputReader.onJumpInputPressed += HandleJumpPressed;
             inputReader.onJumpInputReleased += HandleJumpReleased;
-            inputReader.onMovementInputPressed += HandleMovement;
         }
 
         void OnDisable() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;
-            inputReader.onMovementInputPressed -= HandleMovement;
         }
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected virtual void HandleMovement(Vector2 movementVector) {
+        protected virtual void HandleMovement() {
 
         }
 

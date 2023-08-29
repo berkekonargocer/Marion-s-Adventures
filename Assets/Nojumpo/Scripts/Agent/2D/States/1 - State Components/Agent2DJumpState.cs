@@ -47,7 +47,7 @@ namespace Nojumpo
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
-            _agent2D.Animator.PlayAnimation(animatorStateParameter);
+            base.Enter();
             ApplyJump();
         }
 

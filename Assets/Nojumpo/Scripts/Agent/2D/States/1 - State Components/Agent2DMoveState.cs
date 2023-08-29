@@ -6,9 +6,8 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected Agent2DStateBase idleState;
-
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
-
+        
         [SerializeField] float AccelerationSpeed;
         [SerializeField] float DecelerationSpeed;
         [SerializeField] float MaxSpeed;
@@ -67,6 +66,11 @@ namespace Nojumpo
             if (Mathf.Abs(_agent2D.RigidBody2D.velocity.x) < 0.01f)
             {
                 _agent2D.ChangeState(idleState);
+            }
+
+            if (_agent2D.RigidBody2D.velocity.y < 0)
+            {
+                _agent2D.ChangeState(fallState);
             }
         }
     }
