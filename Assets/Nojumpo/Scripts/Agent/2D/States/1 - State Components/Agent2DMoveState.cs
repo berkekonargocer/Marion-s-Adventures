@@ -60,7 +60,9 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
-            base.StateUpdate();
+            if(CheckToChangeIntoFallState())
+                return;
+            
             CalculateVelocity();
             SetVelocity();
 

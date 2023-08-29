@@ -51,6 +51,15 @@ namespace Nojumpo
 
         }
 
+        protected bool CheckToChangeIntoFallState() {
+            if (!_agent2D.GroundDetector.IsGrounded)
+            {
+                _agent2D.ChangeState(fallState);
+                return true;
+            }
+
+            return false;
+        }
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(Agent2DBase agent2D) {
@@ -63,10 +72,7 @@ namespace Nojumpo
         }
 
         public virtual void StateUpdate() {
-            if (!_agent2D.GroundDetector.IsGrounded)
-            {
-                _agent2D.ChangeState(fallState);
-            }
+            CheckToChangeIntoFallState();
         }
 
         public virtual void StateFixedUpdate() {
