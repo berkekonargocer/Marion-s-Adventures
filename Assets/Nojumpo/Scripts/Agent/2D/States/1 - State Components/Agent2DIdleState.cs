@@ -5,7 +5,7 @@ namespace Nojumpo
     public class Agent2DIdleState : Agent2DStateBase
     {
         // -------------------------------- FIELDS ---------------------------------
-        
+        [SerializeField] protected Agent2DStateBase moveState;
         
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -28,12 +28,8 @@ namespace Nojumpo
         }
 
         public override void StateUpdate() {
+            base.StateUpdate();
             HandleMovement();
-            
-            if (_agent2D.RigidBody2D.velocity.y < 0)
-            {
-                _agent2D.ChangeState(fallState);
-            }
         }
     }
 }

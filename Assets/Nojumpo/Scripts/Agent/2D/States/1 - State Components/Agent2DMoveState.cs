@@ -60,17 +60,13 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
+            base.StateUpdate();
             CalculateVelocity();
             SetVelocity();
 
             if (Mathf.Abs(_agent2D.RigidBody2D.velocity.x) < 0.01f)
             {
                 _agent2D.ChangeState(idleState);
-            }
-
-            if (_agent2D.RigidBody2D.velocity.y < 0)
-            {
-                _agent2D.ChangeState(fallState);
             }
         }
     }

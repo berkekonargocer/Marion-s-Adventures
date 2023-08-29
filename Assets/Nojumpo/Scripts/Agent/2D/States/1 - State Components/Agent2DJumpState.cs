@@ -8,8 +8,6 @@ namespace Nojumpo
         [SerializeField] float jumpForce = 12.0f;
         [SerializeField] float lowJumpMultiplier = 2.0f;
 
-        [SerializeField] Agent2DStateBase fallState;
-        
         bool _jumpInputPressed;
 
         

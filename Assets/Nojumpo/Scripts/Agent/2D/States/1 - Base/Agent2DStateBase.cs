@@ -10,10 +10,8 @@ namespace Nojumpo
         [SerializeField] protected InputReader inputReader;
 
         [SerializeField] protected Agent2DStateBase jumpState;
-        [SerializeField] protected Agent2DStateBase moveState;
         [SerializeField] protected Agent2DStateBase fallState;
         
-
         [SerializeField] protected string animatorStateParameter = "";
 
         protected Agent2DBase _agent2D;
@@ -65,7 +63,10 @@ namespace Nojumpo
         }
 
         public virtual void StateUpdate() {
-
+            if (!_agent2D.GroundDetector.IsGrounded)
+            {
+                _agent2D.ChangeState(fallState);
+            }
         }
 
         public virtual void StateFixedUpdate() {
