@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
@@ -20,7 +20,7 @@ TagManager:
   - Spawn Point
   - Pickable
   - Enemy
-  - Player
+  - Agent Collider
   - 
   - 
   - 
@@ -47,10 +47,7 @@ TagManager:
   - name: Background Environment
     uniqueID: 4094789505
     locked: 0
-  - name: Platform
-    uniqueID: 450348755
-    locked: 0
-  - name: Enemy
+  - name: Agents
     uniqueID: 2657220691
     locked: 0
   - name: Player
@@ -59,11 +56,11 @@ TagManager:
   - name: Weapon
     uniqueID: 1330106821
     locked: 0
-  - name: Pickable
-    uniqueID: 1825673617
-    locked: 0
   - name: Foreground Environment
     uniqueID: 1807959735
+    locked: 0
+  - name: Pickable
+    uniqueID: 1825673617
     locked: 0
   - name: UI
     uniqueID: 3717370623
