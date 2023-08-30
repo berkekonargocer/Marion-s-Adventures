@@ -55,7 +55,8 @@ namespace Nojumpo
         /// <summary>
         /// Use this with a bool (optional) if you need a infinite background in y position
         /// </summary>
-        void RepeatYPosition() {
+        void RepeatYPosition() { 
+            
             if (Mathf.Abs(_cameraTransform.position.y - transform.position.y) >= _textureUnitSizeY)
             {
                 Vector3 cameraPosition = _cameraTransform.position;
