@@ -7450,6 +7450,7 @@ GameObject:
   - component: {fileID: 711278512}
   - component: {fileID: 711278513}
   - component: {fileID: 711278514}
+  - component: {fileID: 711278515}
   m_Layer: 15
   m_Name: Agent Collider
   m_TagString: Untagged
@@ -7529,6 +7530,22 @@ MonoBehaviour:
   boxCastHeight: 0.5
   groundedColor: {r: 0, g: 1, b: 0, a: 1}
   notGroundedGizmoColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &711278515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711278511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980d1e884c5d9d3438907cdb1d6c8233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbableLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  <CanClimb>k__BackingField: 0
 --- !u!1 &768859887
 GameObject:
   m_ObjectHideFlags: 0
