@@ -12,28 +12,9 @@ namespace Nojumpo
 
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-
-        }
-
-        void OnEnable() {
-
-        }
-
-        void OnDisable() {
-
-        }
-
-        void Start() {
-
-        }
-
-        void Update() {
-
-        }
-
         void OnTriggerEnter2D(Collider2D other) {
             LayerMask collisionLayerMask = 1 << other.gameObject.layer;
+            
             if ((collisionLayerMask & climbableLayerMask) != 0)
             {
                 CanClimb = true;
@@ -42,6 +23,7 @@ namespace Nojumpo
 
         void OnTriggerExit2D(Collider2D other) {
             LayerMask collisionLayerMask = 1 << other.gameObject.layer;
+            
             if ((collisionLayerMask & climbableLayerMask) != 0)
             {
                 CanClimb = false;
