@@ -15,7 +15,7 @@ namespace Nojumpo
         [SerializeField] Color groundedColor = Color.green, notGroundedGizmoColor = Color.red;
 
         RaycastHit2D[] _groundedHits = new RaycastHit2D[1];
-        
+
         public bool IsGrounded { get; private set; }
 
 
@@ -68,7 +68,8 @@ namespace Nojumpo
 
             if (groundedHits == 1)
             {
-                IsGrounded = true;
+                if (_groundedHits[0].collider.IsTouching(agent2dCollider))
+                    IsGrounded = true;
             }
             else
             {
