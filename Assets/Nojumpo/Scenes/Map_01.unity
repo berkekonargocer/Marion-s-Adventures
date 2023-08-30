@@ -2315,7 +2315,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000bfd53c9e818711f4b746c36b2f33ef2753f8619eff9292ddc5d1474f9191d16c
+  m_ApplyToSortingLayers: 00000000bfd53c9e818711f4b746c36b2f33ef2753f8619eff9292ddc5d1474f9191d16c5309fb5c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2842,7 +2842,7 @@ CompositeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644542853}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   agent2dCollider: {fileID: 711278513}
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 2112
   boxCastYOffset: -0.7
   boxCastXOffset: 0.05
   boxCastWidth: 1
@@ -20828,7 +20828,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1807959735
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
