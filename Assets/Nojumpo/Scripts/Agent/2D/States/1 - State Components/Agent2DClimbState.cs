@@ -11,25 +11,7 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-
-        }
-
-        void OnEnable() {
-
-        }
-
-        void OnDisable() {
-
-        }
-
-        void Start() {
-
-        }
-
-        void Update() {
-
-        }
+        
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
@@ -39,6 +21,25 @@ namespace Nojumpo
 
         void SetAgentGravityScale(float gravityScale) {
             _agent2D.RigidBody2D.gravityScale = gravityScale;
+        }
+
+        void Climb() {
+            _agent2D.Animator.StartAnimation();
+
+            if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
+            {
+                _agent2D.ChangeState(idleState);
+                return;
+            }
+                
+            _agent2D.RigidBody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
+                inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
+        }
+        
+        void Wait() {
+
+            _agent2D.Animator.StopAnimation();
+            _agent2D.RigidBody2D.velocity = Vector2.zero;
         }
 
 
@@ -63,21 +64,11 @@ namespace Nojumpo
         public override void StateUpdate() {
             if (inputReader.MovementVector.magnitude > 0)
             {
-                _agent2D.Animator.StartAnimation();
-
-                if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
-                {
-                    _agent2D.ChangeState(idleState);
-                    return;
-                }
-                
-                _agent2D.RigidBody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
-                    inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
+                Climb();
             }
             else
             {
-                _agent2D.Animator.StopAnimation();
-                _agent2D.RigidBody2D.velocity = Vector2.zero;
+                Wait();
             }
 
             if (!_agent2D.ClimbableDetector.CanClimb)
