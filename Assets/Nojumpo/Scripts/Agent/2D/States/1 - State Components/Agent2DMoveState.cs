@@ -69,15 +69,18 @@ namespace Nojumpo
 
             if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
             {
+                if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
+                    return;
+
                 _agent2D.ChangeState(climbState);
                 return;
             }
-            
+
             if (Mathf.Abs(_agent2D.RigidBody2D.velocity.x) < 0.01f)
             {
                 _agent2D.ChangeState(idleState);
             }
-            
+
         }
     }
 }

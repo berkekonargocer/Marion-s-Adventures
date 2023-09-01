@@ -64,6 +64,13 @@ namespace Nojumpo
             if (inputReader.MovementVector.magnitude > 0)
             {
                 _agent2D.Animator.StartAnimation();
+
+                if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
+                {
+                    _agent2D.ChangeState(idleState);
+                    return;
+                }
+                
                 _agent2D.RigidBody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
                     inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
             }
