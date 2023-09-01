@@ -24,5 +24,14 @@ namespace Nojumpo
         public void PlayAnimation(string stateName) {
             _agentAnimator.Play(stateName, -1, 0);
         }
+
+        public void StartAnimation() {
+            _agentAnimator.enabled = true;
+        }
+
+        public void StopAnimation() {
+            _agentAnimator.enabled = false;
+        }
+
     }
 }

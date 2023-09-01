@@ -18,6 +18,10 @@ namespace Nojumpo
             {
                 _agent2D.ChangeState(moveState);
             }
+            else if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
+            {
+                _agent2D.ChangeState(climbState);
+            }
         }
 
 

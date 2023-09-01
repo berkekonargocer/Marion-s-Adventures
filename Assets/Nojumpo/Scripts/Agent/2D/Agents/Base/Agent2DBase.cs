@@ -12,10 +12,11 @@ namespace Nojumpo
         
         [SerializeField] Agent2DIdleState idleState;
         
+        public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
-        public Rigidbody2D RigidBody2D { get; protected set; }
-        
+        public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
+
         [Header("State Debug")]
         public Agent2DStateBase currentState;
         public Agent2DStateBase previousState;
@@ -48,6 +49,7 @@ namespace Nojumpo
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
+            ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
         }
 
         protected virtual void SetStates() {

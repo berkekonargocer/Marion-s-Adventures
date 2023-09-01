@@ -19,12 +19,13 @@ namespace Nojumpo.ScriptableObjects
         [SerializeField] float maxSpeed = 6.0f;
         [SerializeField] float accelerationSpeed = 50.0f;
         [SerializeField] float decelerationSpeed = 50.0f;
+        [SerializeField] float climbingSpeed = 2.5f;
 
         public float MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
         public float AccelerationSpeed { get { return accelerationSpeed; } private set { accelerationSpeed = value; } }
         public float DecelerationSpeed { get { return decelerationSpeed; } private set { decelerationSpeed = value; } }
+        public float ClimbingSpeed { get { return climbingSpeed; } set { climbingSpeed = value; } }
 
-        
         [Header("JUMP DATA")]
         [Space]
         [SerializeField] float jumpForce = 12.0f;
@@ -35,7 +36,7 @@ namespace Nojumpo.ScriptableObjects
         public float LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
 
         public float MaxFallSpeed { get { return maxFallSpeed; } }
-        
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 

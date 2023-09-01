@@ -710,6 +710,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947d42ff8253a184c94d826f767a759b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 0}
+  _lastCameraPosition: {x: 0, y: 0, z: 0}
+  _textureUnitSizeX: 0
+  _textureUnitSizeY: 0
   parallaxEffectMultiplier: {x: 0.1, y: 0.03}
 --- !u!1 &245019162
 GameObject:
@@ -6574,7 +6578,11 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -6591,9 +6599,13 @@ MonoBehaviour:
   m_ShadowIntensity: 0.75
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
+  m_Mesh: {fileID: 0}
+  m_PreviousLightCookieSprite: 0
+  m_CachedPosition: {x: 1.2873648, y: 0.65354204, z: 0}
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  forceUpdate: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6608,6 +6620,12 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+  m_PreviousShapeLightFalloffSize: -1
+  m_PreviousShapeLightParametricSides: -1
+  m_PreviousShapeLightParametricAngleOffset: -1
+  m_PreviousShapeLightParametricRadius: -1
+  m_PreviousShapePathHash: -1
+  m_PreviousLightType: 0
 --- !u!4 &531193591
 Transform:
   m_ObjectHideFlags: 0
@@ -6654,8 +6672,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
+  m_EventSystem: {fileID: 0}
+  m_InputOverride: {fileID: 0}
+  m_DefaultInput: {fileID: 0}
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_TrackedDeviceDragThresholdMultiplier: 2
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -6683,9 +6705,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SystemInputModules: []
+  m_CurrentInputModule: {fileID: 0}
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+  m_CurrentSelected: {fileID: 0}
+  m_HasFocus: 1
+  m_SelectionGuard: 0
+  m_Started: 0
+  m_IsTrackingUIToolkitPanels: 0
 --- !u!4 &537597835
 Transform:
   m_ObjectHideFlags: 0
@@ -6735,9 +6764,27 @@ MonoBehaviour:
   m_ExcludedPropertiesInInspector:
   - m_Script
   m_LockStageInInspector: 
+  m_ValidatingStreamVersion: 20170927
+  m_OnValidateCalled: 1
   m_StreamingVersion: 20170927
   m_Priority: 10
+  m_ActivationId: 3
   m_StandbyUpdate: 2
+  <mExtensions>k__BackingField:
+  - {fileID: 594764969}
+  - {fileID: 594764970}
+  <PreviousStateIsValid>k__BackingField: 1
+  m_WasStarted: 1
+  mSlaveStatusUpdated: 1
+  m_parentVcam: {fileID: 0}
+  m_QueuePriority: 10
+  m_blendStartPosition: 0
+  m_CachedFollowTarget: {fileID: 1598364174}
+  m_CachedFollowTargetVcam: {fileID: 0}
+  m_CachedLookAtTarget: {fileID: 0}
+  m_CachedLookAtTargetVcam: {fileID: 0}
+  <FollowTargetChanged>k__BackingField: 0
+  <LookAtTargetChanged>k__BackingField: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1598364174}
   m_Lens:
@@ -6751,14 +6798,21 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    m_OrthoFromCamera: 1
+    m_PhysicalFromCamera: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   m_LegacyBlendHint: 0
+  m_ComponentPipeline:
+  - {fileID: 1426517094}
   m_ComponentOwner: {fileID: 1426517091}
+  mCachedLookAtTarget: {fileID: 0}
+  mCachedLookAtTargetVcam: {fileID: 0}
 --- !u!4 &594764968
 Transform:
   m_ObjectHideFlags: 0
@@ -6787,6 +6841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_vcamOwner: {fileID: 594764967}
 --- !u!114 &594764970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6799,9 +6854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_vcamOwner: {fileID: 594764967}
   m_BoundingShape2D: {fileID: 779703039}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+  m_MaxComputationTimePerFrameInSeconds: 0.008333334
 --- !u!1 &644542853
 GameObject:
   m_ObjectHideFlags: 0
@@ -7321,6 +7378,7 @@ GameObject:
   - component: {fileID: 709260482}
   - component: {fileID: 709260484}
   - component: {fileID: 709260485}
+  - component: {fileID: 709260486}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -7358,13 +7416,18 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
   fallState: {fileID: 709260485}
+  climbState: {fileID: 709260486}
   animatorStateParameter: Move
+  _agent2D: {fileID: 0}
+  _agent2DData: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &709260483
@@ -7382,13 +7445,18 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
   fallState: {fileID: 709260485}
+  climbState: {fileID: 709260486}
   animatorStateParameter: Idle
+  _agent2D: {fileID: 0}
+  _agent2DData: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   moveState: {fileID: 709260482}
 --- !u!114 &709260484
 MonoBehaviour:
@@ -7405,15 +7473,21 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
   fallState: {fileID: 709260485}
+  climbState: {fileID: 709260486}
   animatorStateParameter: Jump
+  _agent2D: {fileID: 0}
+  _agent2DData: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
+  _jumpInputPressed: 0
 --- !u!114 &709260485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7429,16 +7503,50 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   jumpState: {fileID: 709260484}
   fallState: {fileID: 709260485}
+  climbState: {fileID: 709260486}
   animatorStateParameter: Fall
+  _agent2D: {fileID: 0}
+  _agent2DData: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
   gravityModifier: 0.5
+--- !u!114 &709260486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709260480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d33d8c3e23403741b03257398d74c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  jumpState: {fileID: 709260484}
+  fallState: {fileID: 709260485}
+  climbState: {fileID: 709260486}
+  animatorStateParameter: Climb
+  _agent2D: {fileID: 0}
+  _agent2DData: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_CallsDirty: 1
+  idleState: {fileID: 709260483}
+  _baseGravityScale: 0
 --- !u!1 &711278511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7522,14 +7630,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent2dCollider: {fileID: 711278513}
   groundLayerMask:
-    serializedVersion: 2
     m_Bits: 2112
   boxCastYOffset: -0.7
   boxCastXOffset: 0.05
   boxCastWidth: 1
   boxCastHeight: 0.5
-  groundedColor: {r: 0, g: 1, b: 0, a: 1}
-  notGroundedGizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  groundedColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  notGroundedGizmoColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+  <IsGrounded>k__BackingField: 0
 --- !u!114 &711278515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,7 +7659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbableLayerMask:
-    serializedVersion: 2
     m_Bits: 256
   <CanClimb>k__BackingField: 0
 --- !u!1 &768859887
@@ -7756,6 +7871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947d42ff8253a184c94d826f767a759b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 0}
+  _lastCameraPosition: {x: 0, y: 0, z: 0}
+  _textureUnitSizeX: 0
+  _textureUnitSizeY: 0
   parallaxEffectMultiplier: {x: 0.125, y: 0.04}
 --- !u!1 &812878856
 GameObject:
@@ -33711,6 +33830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_vcamOwner: {fileID: 594764967}
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
@@ -33742,6 +33862,31 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+  m_PreviousCameraPosition: {x: 0, y: 0, z: -10}
+  <TrackedPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  m_InheritingPosition: 0
+  m_prevFOV: 8
+  m_prevRotation: {x: -0, y: -0, z: -0, w: 1}
+  <LastBounds>k__BackingField:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  <LastBoundsMatrix>k__BackingField:
+    e00: 0
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 0
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 0
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 0
 --- !u!1 &1528307498
 GameObject:
   m_ObjectHideFlags: 0
@@ -33894,6 +34039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3460a52776fe87f41ad95040832fbd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agentAnimator: {fileID: 0}
 --- !u!1 &1585112383
 GameObject:
   m_ObjectHideFlags: 0
@@ -34437,6 +34583,10 @@ MonoBehaviour:
   agent2DData: {fileID: 11400000, guid: 90f428f271254b8438826642c9b0214f, type: 2}
   <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   idleState: {fileID: 709260483}
+  <RigidBody2D>k__BackingField: {fileID: 0}
+  <Animator>k__BackingField: {fileID: 0}
+  <GroundDetector>k__BackingField: {fileID: 0}
+  <ClimbableDetector>k__BackingField: {fileID: 0}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
@@ -34453,6 +34603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  _agent2DTransform: {fileID: 0}
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0
@@ -34566,7 +34717,6 @@ MonoBehaviour:
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
@@ -34613,18 +34763,24 @@ MonoBehaviour:
     m_Style: 1
     m_Time: 2
     m_CustomCurve:
-      serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
+  m_OutputCamera: {fileID: 1615123594}
+  m_TargetOverride: {fileID: 0}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_LastFrameUpdated: 36
+  mNextFrameId: 1
+  mActiveCameraPreviousFrameGameObject: {fileID: 594764966}
 --- !u!1 &2029032432
 GameObject:
   m_ObjectHideFlags: 0
@@ -34722,6 +34878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947d42ff8253a184c94d826f767a759b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 0}
+  _lastCameraPosition: {x: 0, y: 0, z: 0}
+  _textureUnitSizeX: 0
+  _textureUnitSizeY: 0
   parallaxEffectMultiplier: {x: 0.1, y: 0.03}
 --- !u!1 &2103946361
 GameObject:
@@ -34768,6 +34928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947d42ff8253a184c94d826f767a759b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 0}
+  _lastCameraPosition: {x: 0, y: 0, z: 0}
+  _textureUnitSizeX: 0
+  _textureUnitSizeY: 0
   parallaxEffectMultiplier: {x: 0.03, y: 0.02}
 --- !u!212 &2103946364
 SpriteRenderer:

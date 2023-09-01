@@ -11,6 +11,8 @@ namespace Nojumpo
         
         [SerializeField] protected Agent2DStateBase jumpState;
         [SerializeField] protected Agent2DStateBase fallState;
+        [SerializeField] protected Agent2DStateBase climbState;
+        
         
         [SerializeField] protected string animatorStateParameter = "";
 
