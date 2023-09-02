@@ -9,7 +9,14 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
+        protected override void OnEnable() {
+            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
+        }
 
+        protected override void OnDisable() {
+            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
+        }
+        
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
 
