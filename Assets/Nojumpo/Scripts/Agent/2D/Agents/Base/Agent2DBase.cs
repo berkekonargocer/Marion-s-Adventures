@@ -7,11 +7,15 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
-        
+
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
-        
+
         [SerializeField] Agent2DIdleState idleState;
-        
+
+        [SerializeField] [Range(1.0f, 100.0f)] float maxHealth;
+
+
+        public Health AgentHealth { get; protected set; }
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
@@ -42,10 +46,11 @@ namespace Nojumpo
         protected virtual void FixedUpdate() {
             currentState.StateFixedUpdate();
         }
-        
-        
+
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
+            AgentHealth = new Health(maxHealth);
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
@@ -54,7 +59,7 @@ namespace Nojumpo
 
         protected virtual void SetStates() {
             Agent2DStateBase[] agent2DStates = GetComponentsInChildren<Agent2DStateBase>();
-            
+
             foreach (Agent2DStateBase agent2DState in agent2DStates)
             {
                 agent2DState.Initialize(this, agent2DData);
@@ -65,12 +70,12 @@ namespace Nojumpo
             stateName = currentState.GetType().ToString();
         }
 
-        
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void ChangeState(Agent2DStateBase newState) {
             if (currentState != null)
                 currentState.Exit();
-            
+
             previousState = currentState;
             currentState = newState;
             currentState.Enter();
