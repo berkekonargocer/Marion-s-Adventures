@@ -12,9 +12,6 @@ namespace Nojumpo
 
         [SerializeField] Agent2DIdleState idleState;
 
-        [SerializeField] [Range(1.0f, 100.0f)] float maxHealth;
-
-
         public Health AgentHealth { get; protected set; }
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
@@ -50,7 +47,7 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            AgentHealth = new Health(maxHealth);
+            AgentHealth = GetComponent<Health>();
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();

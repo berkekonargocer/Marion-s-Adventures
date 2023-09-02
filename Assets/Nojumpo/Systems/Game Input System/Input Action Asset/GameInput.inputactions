@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "HealButton",
+                    "type": "Button",
+                    "id": "d68f0ce7-4eff-4849-a49e-7300d5961c5f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -148,6 +157,17 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "ChangeWeaponButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5ab47a4-be1b-4273-967e-f569e363f00c",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "HealButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

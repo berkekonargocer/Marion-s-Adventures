@@ -8483,6 +8483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089081843}
+  - component: {fileID: 1089081844}
   m_Layer: 0
   m_Name: Health Bar Panel
   m_TagString: Untagged
@@ -8514,6 +8515,22 @@ RectTransform:
   m_AnchoredPosition: {x: 275, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1089081844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089081842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4a899fed158114e90a89f7a48dc549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthToDisplay: {fileID: 1598364177}
+  healthBarForeground: {fileID: 999412175}
+  healthBarBackground: {fileID: 516587142}
+  healthBarChangeIndicator: {fileID: 1092187874}
 --- !u!1 &1092187872
 GameObject:
   m_ObjectHideFlags: 0
@@ -8526,7 +8543,7 @@ GameObject:
   - component: {fileID: 1092187875}
   - component: {fileID: 1092187874}
   m_Layer: 0
-  m_Name: Health Bar Damage Amount Indicator
+  m_Name: Health Bar Change Amount Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35234,6 +35251,7 @@ GameObject:
   - component: {fileID: 1598364173}
   - component: {fileID: 1598364175}
   - component: {fileID: 1598364176}
+  - component: {fileID: 1598364177}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -35317,6 +35335,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+--- !u!114 &1598364177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598364171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c5cd38cbc6da54897dc0fdf13374c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0
