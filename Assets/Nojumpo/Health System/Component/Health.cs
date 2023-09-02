@@ -2,7 +2,7 @@ using Nojumpo.Interfaces;
 
 namespace Nojumpo
 {
-    public class Health : IDamageable
+    public class Health : IDamageable, IHealable
     {
         // -------------------------------- FIELDS --------------------------------
         public delegate void OnTakeDamage();
@@ -16,7 +16,8 @@ namespace Nojumpo
 
         public float CurrentHealth { get { return _currentHealth; } }
         public float MaxHealth { get { return _maxHealth; } }
-        public float HealthPercentage { get { return CurrentHealth / MaxHealth; } }
+        public float HealthPercentage { get { return CurrentHealth / MaxHealth * 100; } }
+        public float HealthDecimal { get { return CurrentHealth / MaxHealth; } }
 
         float _currentHealth;
         readonly float _maxHealth;
