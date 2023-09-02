@@ -7,6 +7,7 @@ namespace Nojumpo.Interfaces
         public float MaxHealth { get; }
         public float HealthPercentage { get; }
 
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void Heal(float healAmount);
     }

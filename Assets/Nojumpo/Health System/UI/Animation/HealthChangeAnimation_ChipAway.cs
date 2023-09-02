@@ -19,9 +19,7 @@ namespace Nojumpo
             _animationSpeed = animationSpeed;
             _animationWaitTime = animationWaitTime;
         }
-
-        // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-
+        
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void OnTakeDamageAnimation(HealthBar healthBar) {

@@ -8531,7 +8531,7 @@ MonoBehaviour:
   <HealthBarForeground>k__BackingField: {fileID: 999412175}
   <HealthBarBackground>k__BackingField: {fileID: 516587142}
   <HealthBarChangeIndicator>k__BackingField: {fileID: 1092187874}
-  healthChangeAnimationType: 1
+  healthChangeAnimationType: 0
   animationSpeed: 0.0075
   animationWaitTime: 1
 --- !u!1 &1092187872

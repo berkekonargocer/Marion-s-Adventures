@@ -36,10 +36,7 @@ namespace Nojumpo
         void SetComponents() {
             _currentHealth = maxHealth;
         }
-        
-        // a attack that deals 100 damage
-        // armor component that lessens the damage 30 armor lessens the %10 damage
-        
+
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void TakeDamage(float damageAmount) {
