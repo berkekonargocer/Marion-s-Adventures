@@ -23,12 +23,12 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void OnEnable() {
+        protected virtual void OnEnable() {
             inputReader.onJumpInputPressed += HandleJumpPressed;
             inputReader.onJumpInputReleased += HandleJumpReleased;
         }
 
-        void OnDisable() {
+        protected virtual void OnDisable() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;
         }

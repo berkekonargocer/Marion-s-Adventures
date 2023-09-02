@@ -11,7 +11,13 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        
+        protected override void OnEnable() {
+            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
+        }
+
+        protected override void OnDisable() {
+            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
+        }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
@@ -31,13 +37,12 @@ namespace Nojumpo
                 _agent2D.ChangeState(idleState);
                 return;
             }
-                
+
             _agent2D.RigidBody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
                 inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
         }
-        
-        void Wait() {
 
+        void Wait() {
             _agent2D.Animator.StopAnimation();
             _agent2D.RigidBody2D.velocity = Vector2.zero;
         }
