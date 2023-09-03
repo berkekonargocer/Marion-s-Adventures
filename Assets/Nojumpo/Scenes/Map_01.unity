@@ -34858,7 +34858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aafef2370512fe43a32aa4ddacc3b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableLayerMask:
+  pointLayerMask:
     serializedVersion: 2
     m_Bits: 8192
 --- !u!1 &1615123592
@@ -35492,6 +35492,22 @@ PrefabInstance:
       propertyPath: <PointsToDisplay>k__BackingField
       value: 
       objectReference: {fileID: 1598364178}
+    - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4379045103438730988, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
       propertyPath: m_Name
       value: Player Points Canvas
@@ -35578,6 +35594,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814176881590138617, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565379433350267237, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565379433350267237, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565379433350267237, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565379433350267237, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -26,13 +26,13 @@ namespace Nojumpo
         }
 
         void OnEnable() {
-            HealthToDisplay.onTakeDamage += HealthBar_OnTakeDamage;
-            HealthToDisplay.onHeal += HealthBar_OnHeal;
+            HealthToDisplay.onTakeDamage += Health_OnTakeDamage;
+            HealthToDisplay.onHeal += Health_OnHeal;
         }
 
         void OnDisable() {
-            HealthToDisplay.onTakeDamage -= HealthBar_OnTakeDamage;
-            HealthToDisplay.onHeal -= HealthBar_OnHeal;
+            HealthToDisplay.onTakeDamage -= Health_OnTakeDamage;
+            HealthToDisplay.onHeal -= Health_OnHeal;
         }
 
 
@@ -49,11 +49,11 @@ namespace Nojumpo
             }
         }
 
-        void HealthBar_OnTakeDamage() {
+        void Health_OnTakeDamage() {
             _healthChangeAnimation.OnTakeDamageAnimation(this);
         }
 
-        void HealthBar_OnHeal() {
+        void Health_OnHeal() {
             _healthChangeAnimation.OnHealAnimation(this);
         }
     }
