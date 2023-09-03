@@ -22,16 +22,16 @@ namespace Nojumpo
         public float HealthPercentage { get { return CurrentHealth / MaxHealth * 100; } }
         public float HealthDecimal { get { return CurrentHealth / MaxHealth; } }
 
-        [SerializeField] [Range(1.0f, 1000.0f)] float maxHealth;
+        [SerializeField] [Min(1)] float maxHealth = 100.0f;
         float _currentHealth;
 
-        
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
             SetComponents();
         }
 
-        
+
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
             _currentHealth = maxHealth;

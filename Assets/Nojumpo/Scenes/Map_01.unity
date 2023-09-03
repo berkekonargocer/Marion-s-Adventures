@@ -7782,7 +7782,6 @@ MonoBehaviour:
       m_Calls: []
   idleState: {fileID: 709260483}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
-  gravityModifier: 0.5
 --- !u!114 &709260486
 MonoBehaviour:
   m_ObjectHideFlags: 0
