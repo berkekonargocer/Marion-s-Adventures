@@ -24,7 +24,7 @@ namespace Nojumpo
             {
                 if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
                     return;
-                
+
                 _agent2D.ChangeState(climbState);
             }
         }

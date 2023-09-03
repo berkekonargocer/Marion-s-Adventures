@@ -8,12 +8,12 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected InputReader inputReader;
-        
+
         [SerializeField] protected Agent2DStateBase jumpState;
         [SerializeField] protected Agent2DStateBase fallState;
         [SerializeField] protected Agent2DStateBase climbState;
-        
-        
+
+
         [SerializeField] protected string animatorStateParameter = "";
 
         protected Agent2DBase _agent2D;
@@ -23,20 +23,10 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        protected virtual void OnEnable() {
-            inputReader.onJumpInputPressed += HandleJumpPressed;
-            inputReader.onJumpInputReleased += HandleJumpReleased;
-        }
-
-        protected virtual void OnDisable() {
-            inputReader.onJumpInputPressed -= HandleJumpPressed;
-            inputReader.onJumpInputReleased -= HandleJumpReleased;
-        }
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void HandleMovement() {
-
         }
 
         protected virtual void HandleJumpPressed() {
@@ -47,11 +37,9 @@ namespace Nojumpo
         }
 
         protected virtual void HandleJumpReleased() {
-
         }
 
         protected virtual void HandleAttack() {
-
         }
 
         protected bool CheckToChangeIntoFallState() {
@@ -71,6 +59,9 @@ namespace Nojumpo
         }
 
         public virtual void Enter() {
+            inputReader.onJumpInputPressed += HandleJumpPressed;
+            inputReader.onJumpInputReleased += HandleJumpReleased;
+            // inputReader.onAttackInputPressed += HandleAttack;
             _agent2D.Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
         }
@@ -80,12 +71,13 @@ namespace Nojumpo
         }
 
         public virtual void StateFixedUpdate() {
-
         }
 
         public virtual void Exit() {
+            inputReader.onJumpInputPressed -= HandleJumpPressed;
+            inputReader.onJumpInputReleased -= HandleJumpReleased;
+            // inputReader.onAttackInputPressed -= HandleAttack;
             OnExit?.Invoke();
         }
-
     }
 }

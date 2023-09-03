@@ -11,13 +11,6 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        protected override void OnEnable() {
-            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
-        }
-
-        protected override void OnDisable() {
-            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
-        }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
@@ -51,7 +44,6 @@ namespace Nojumpo
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleJumpPressed() {
             _agent2D.ChangeState(jumpState);
-            Debug.Log("HANDLE JUMP PRESSED", gameObject);
         }
 
 
@@ -62,8 +54,6 @@ namespace Nojumpo
             CacheAgentBaseGravityScale();
             SetAgentGravityScale(0);
             _agent2D.RigidBody2D.velocity = Vector2.zero;
-            inputReader.onJumpInputPressed -= base.HandleJumpPressed;
-            inputReader.onJumpInputPressed += HandleJumpPressed;
         }
 
         public override void StateUpdate() {
@@ -83,10 +73,9 @@ namespace Nojumpo
         }
 
         public override void Exit() {
+            base.Exit();
             SetAgentGravityScale(_baseGravityScale);
             _agent2D.Animator.StartAnimation();
-            inputReader.onJumpInputPressed += base.HandleJumpPressed;
-            inputReader.onJumpInputPressed -= HandleJumpPressed;
         }
     }
 }

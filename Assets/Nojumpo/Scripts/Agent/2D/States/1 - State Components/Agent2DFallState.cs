@@ -5,18 +5,10 @@ namespace Nojumpo
     public class Agent2DFallState : Agent2DMoveState
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] float gravityModifier = 0.5f;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        protected override void OnEnable() {
-            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
-        }
 
-        protected override void OnDisable() {
-            // TO DON'T SUBSCRIBE TO onJumpInputPressed AND onJumpInputReleased EVENT
-        }
-        
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
 
@@ -29,9 +21,10 @@ namespace Nojumpo
             if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
             {
                 _agent2D.ChangeState(climbState);
+
                 return;
             }
-            
+
             if (_agent2D.GroundDetector.IsGrounded)
             {
                 _agent2D.ChangeState(idleState);
