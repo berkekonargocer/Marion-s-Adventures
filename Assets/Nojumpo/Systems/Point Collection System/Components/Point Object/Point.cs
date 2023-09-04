@@ -26,8 +26,8 @@ namespace Nojumpo
         }
 
 
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect() {
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void PointTypeResponse() {
             switch (pointType)
             {
                 case PointType.ADD:
@@ -40,8 +40,21 @@ namespace Nojumpo
                     _pointCollectorToAddThePointsTo.MultiplyPoint(amount);
                     break;
             }
+        }
+
+        void CollectAnimation() {
+            // Play animation and destroy it 
+            Destroy(gameObject);
+        }
+
+
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public void Collect() {
+            PointTypeResponse();
 
             _pointCollectorToAddThePointsTo.onPointCollected?.Invoke();
+
+            CollectAnimation();
         }
     }
 }
