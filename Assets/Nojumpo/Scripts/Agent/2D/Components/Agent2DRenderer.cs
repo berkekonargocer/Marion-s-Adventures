@@ -30,9 +30,7 @@ namespace Nojumpo
             _agent2DTransform = GetComponent<Transform>();
         }
 
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void FaceDirection(Vector2 movementVector) {
+        void FaceDirection(Vector2 movementVector) {
             if (movementVector.x > 0)
             {
                 _agent2DTransform.localScale = Vector3.one;

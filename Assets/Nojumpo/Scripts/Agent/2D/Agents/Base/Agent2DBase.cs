@@ -7,9 +7,8 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
-
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
-
+        
         [SerializeField] Agent2DIdleState idleState;
 
         public Health AgentHealth { get; protected set; }
@@ -17,7 +16,6 @@ namespace Nojumpo
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
-        // public SpawnPointChecker AgentSpawnPointChecker { get; protected set; }
 
         [Header("State Debug")]
         public Agent2DStateBase currentState;

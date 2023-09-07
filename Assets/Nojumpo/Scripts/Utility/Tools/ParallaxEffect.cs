@@ -1,3 +1,4 @@
+using Nojumpo.Utils;
 using UnityEngine;
 
 namespace Nojumpo
@@ -27,7 +28,7 @@ namespace Nojumpo
         
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
-            _cameraTransform = Camera.main.transform;
+            _cameraTransform = NJUtils.MainCam.transform;
             _lastCameraPosition = _cameraTransform.position;
             
             Sprite objectSprite = GetComponent<SpriteRenderer>().sprite;

@@ -7,7 +7,7 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] LayerMask climbableLayerMask;
 
-        [field: SerializeField] public bool CanClimb { get; private set; }
+        public bool CanClimb { get; private set; }
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -28,12 +28,5 @@ namespace Nojumpo
                 CanClimb = false;
             }
         }
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }
