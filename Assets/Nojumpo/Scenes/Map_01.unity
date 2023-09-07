@@ -6916,11 +6916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6876988925620679140, guid: 2169f244015fa3a43b18e9e73a342361, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: -32.07
       objectReference: {fileID: 0}
     - target: {fileID: 6876988925620679140, guid: 2169f244015fa3a43b18e9e73a342361, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 6876988925620679140, guid: 2169f244015fa3a43b18e9e73a342361, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7500,11 +7500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8381348976630697602, guid: 55b9d074b8d8b7044981b446c5a29b29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.35
+      value: -38.62
       objectReference: {fileID: 0}
     - target: {fileID: 8381348976630697602, guid: 55b9d074b8d8b7044981b446c5a29b29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.13
       objectReference: {fileID: 0}
     - target: {fileID: 8381348976630697602, guid: 55b9d074b8d8b7044981b446c5a29b29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7788,7 +7788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2270164acf5c74299b0ae46a1b8d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent2dCollider: {fileID: 711278513}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 2112
@@ -7813,7 +7812,6 @@ MonoBehaviour:
   climbableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  <CanClimb>k__BackingField: 0
 --- !u!1 &768859887
 GameObject:
   m_ObjectHideFlags: 0
@@ -8424,7 +8422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245199601}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
