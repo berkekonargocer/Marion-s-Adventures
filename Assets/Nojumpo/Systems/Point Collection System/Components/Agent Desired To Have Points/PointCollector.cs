@@ -23,7 +23,7 @@ namespace Nojumpo
 
             if ((collisionLayerMask & pointLayerMask) != 0)
             {
-                other.GetComponent<Point>().Collect();
+                other.GetComponent<Point>().Collect(this);
             }
         }
 

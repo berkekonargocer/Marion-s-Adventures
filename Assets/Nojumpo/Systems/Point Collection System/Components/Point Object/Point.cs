@@ -13,31 +13,25 @@ namespace Nojumpo
     public class Point : MonoBehaviour, IPoint
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] PointsPanel pointsPanel;
         [SerializeField] PointType pointType;
         [SerializeField] int amount;
 
-        PointCollector _pointCollectorToAddThePointsTo;
-
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-            _pointCollectorToAddThePointsTo = pointsPanel.PointsToDisplay;
-        }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void PointTypeResponse() {
+        void PointTypeResponse(PointCollector pointCollector) {
             switch (pointType)
             {
                 case PointType.ADD:
-                    _pointCollectorToAddThePointsTo.AddPoint(amount);
+                    pointCollector.AddPoint(amount);
                     break;
                 case PointType.SUBTRACT:
-                    _pointCollectorToAddThePointsTo.SubtractPoint(amount);
+                    pointCollector.SubtractPoint(amount);
                     break;
                 case PointType.MULTIPLY:
-                    _pointCollectorToAddThePointsTo.MultiplyPoint(amount);
+                    pointCollector.MultiplyPoint(amount);
                     break;
             }
         }
@@ -49,10 +43,10 @@ namespace Nojumpo
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect() {
-            PointTypeResponse();
+        public void Collect(PointCollector pointCollector) {
+            PointTypeResponse(pointCollector);
 
-            _pointCollectorToAddThePointsTo.onPointCollected?.Invoke();
+            pointCollector.onPointCollected?.Invoke();
 
             CollectAnimation();
         }
