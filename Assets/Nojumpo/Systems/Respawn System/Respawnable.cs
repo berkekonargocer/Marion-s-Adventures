@@ -1,24 +1,23 @@
-using System;
 using UnityEngine;
 
 namespace Nojumpo
 {
-    public class SpawnPointChecker : MonoBehaviour
+    public class Respawnable : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] LayerMask spawnPointLayerMask;
-        [SerializeField] LayerMask spawnTriggerLayerMask;
-        [SerializeField] SpawnPoint initialSpawnPoint;
+        [SerializeField] LayerMask respawnTriggerLayerMask;
+        [SerializeField] RespawnPoint initialRespawnPoint;
 
-        Vector3 _currentSpawnPoint;
+        Vector3 _currentRespawnPoint;
 
-        public delegate void OnSpawn();
-        public OnSpawn onSpawn;
+        public delegate void OnRespawn();
+        public OnRespawn onRespawn;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
-            _currentSpawnPoint = initialSpawnPoint.transform.position;
+            SetComponents();
         }
 
         void OnTriggerEnter2D(Collider2D other) {
@@ -26,19 +25,23 @@ namespace Nojumpo
 
             if ((collisionLayerMask & spawnPointLayerMask) != 0)
             {
-                other.GetComponent<SpawnPoint>().SetSpawnPoint(out _currentSpawnPoint);
+                other.GetComponent<RespawnPoint>().SetRespawnPoint(out _currentRespawnPoint);
             }
-            else if ((collisionLayerMask & spawnTriggerLayerMask) != 0)
+            else if ((collisionLayerMask & respawnTriggerLayerMask) != 0)
             {
                 Respawn();
-                onSpawn?.Invoke();
+                onRespawn?.Invoke();
             }
         }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void SetComponents() {
+            _currentRespawnPoint = initialRespawnPoint.transform.position;
+        }
+
         void Respawn() {
-            transform.position = _currentSpawnPoint;
+            transform.position = _currentRespawnPoint;
         }
     }
 }

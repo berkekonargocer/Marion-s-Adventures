@@ -6644,7 +6644,7 @@ GameObject:
   - component: {fileID: 523447388}
   - component: {fileID: 523447389}
   m_Layer: 16
-  m_Name: Spawn Trigger 0 (1)
+  m_Name: Respawn Trigger 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8162,7 +8162,7 @@ GameObject:
   - component: {fileID: 877133784}
   - component: {fileID: 877133785}
   m_Layer: 16
-  m_Name: Spawn Trigger 0
+  m_Name: Respawn Trigger 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8240,7 +8240,7 @@ GameObject:
   - component: {fileID: 962369327}
   - component: {fileID: 962369328}
   m_Layer: 12
-  m_Name: Spawn Point
+  m_Name: Spawn Point 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35079,10 +35079,10 @@ MonoBehaviour:
   spawnPointLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  spawnTriggerLayerMask:
+  respawnTriggerLayerMask:
     serializedVersion: 2
     m_Bits: 65536
-  initialSpawnPoint: {fileID: 962369328}
+  initialRespawnPoint: {fileID: 962369328}
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0
@@ -35267,7 +35267,7 @@ GameObject:
   - component: {fileID: 1677856265}
   - component: {fileID: 1677856266}
   m_Layer: 12
-  m_Name: Spawn Point (1)
+  m_Name: Spawn Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35487,7 +35487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2078576416}
   m_Layer: 0
-  m_Name: Spawn Triggers
+  m_Name: Respawn Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

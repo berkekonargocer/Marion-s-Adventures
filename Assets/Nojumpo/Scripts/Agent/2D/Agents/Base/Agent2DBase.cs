@@ -17,6 +17,7 @@ namespace Nojumpo
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
+        // public SpawnPointChecker AgentSpawnPointChecker { get; protected set; }
 
         [Header("State Debug")]
         public Agent2DStateBase currentState;
