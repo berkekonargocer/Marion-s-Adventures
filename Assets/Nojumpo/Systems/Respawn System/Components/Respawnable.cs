@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Nojumpo
 {
     public class Respawnable : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] LayerMask spawnPointLayerMask;
+        [SerializeField] LayerMask respawnPointLayerMask;
         [SerializeField] LayerMask respawnTriggerLayerMask;
         [SerializeField] RespawnPoint initialRespawnPoint;
 
@@ -23,7 +24,7 @@ namespace Nojumpo
         void OnTriggerEnter2D(Collider2D other) {
             LayerMask collisionLayerMask = 1 << other.gameObject.layer;
 
-            if ((collisionLayerMask & spawnPointLayerMask) != 0)
+            if ((collisionLayerMask & respawnPointLayerMask) != 0)
             {
                 other.GetComponent<RespawnPoint>().SetRespawnPoint(out _currentRespawnPoint);
             }
