@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Nojumpo/Scenes/Map_01.unity
+    path: Assets/NOJUMPO/Scenes/Map_01.unity
     guid: e835d6763f2e0a3459463cd466d082b1
   m_configObjects: {}
