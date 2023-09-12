@@ -369,6 +369,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3520277634687541234, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
   m_PrefabInstance: {fileID: 8490114260537051764}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6668577875051117979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2979550965599401967, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7875644875188916637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
@@ -388,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent2DData: {fileID: 11400000, guid: 90f428f271254b8438826642c9b0214f, type: 2}
   <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  idleState: {fileID: 0}
+  idleState: {fileID: 6668577875051117979}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
