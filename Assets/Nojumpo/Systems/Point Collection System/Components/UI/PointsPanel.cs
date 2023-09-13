@@ -6,7 +6,7 @@ namespace Nojumpo
     public class PointsPanel : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public PointCollector PointsToDisplay { get; private set; }
+        [field: SerializeField] public PointCollectorBase PointsToDisplay { get; private set; }
         [SerializeField] TextMeshProUGUI pointsText;
 
 

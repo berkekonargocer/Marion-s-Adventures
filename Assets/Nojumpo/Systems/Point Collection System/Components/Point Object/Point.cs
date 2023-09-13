@@ -16,12 +16,9 @@ namespace Nojumpo
         [SerializeField] PointType pointType;
         [SerializeField] int amount;
 
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
+        
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void PointTypeResponse(PointCollector pointCollector) {
+        void PointTypeResponse(PointCollectorBase pointCollector) {
             switch (pointType)
             {
                 case PointType.ADD:
@@ -43,7 +40,7 @@ namespace Nojumpo
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect(PointCollector pointCollector) {
+        public void Collect(PointCollectorBase pointCollector) {
             PointTypeResponse(pointCollector);
 
             pointCollector.onPointCollected?.Invoke();

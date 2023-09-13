@@ -3,6 +3,6 @@ namespace Nojumpo.Interfaces
     public interface IPoint
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect(PointCollector pointCollector);
+        public void Collect(PointCollectorBase pointCollector);
     }
 }

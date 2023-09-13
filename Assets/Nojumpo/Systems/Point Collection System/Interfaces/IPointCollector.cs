@@ -4,7 +4,7 @@ namespace Nojumpo.Interfaces
     {
         // -------------------------------- FIELDS ---------------------------------
         public int CurrentPoint { get; }
-
+        public delegate void OnPointCollected();
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void AddPoint(int addAmount);
