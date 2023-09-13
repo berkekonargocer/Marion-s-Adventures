@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.PointCollectionSystem
 {
     public class PointsPanel : MonoBehaviour
     {

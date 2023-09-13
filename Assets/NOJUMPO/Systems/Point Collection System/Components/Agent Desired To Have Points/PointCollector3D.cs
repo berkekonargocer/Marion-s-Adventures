@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.PointCollectionSystem
 {
     public class PointCollector3D : PointCollectorBase
     {

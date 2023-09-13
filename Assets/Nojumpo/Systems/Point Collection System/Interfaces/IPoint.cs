@@ -1,4 +1,4 @@
-namespace Nojumpo.Interfaces
+namespace Nojumpo.PointCollectionSystem
 {
     public interface IPoint
     {

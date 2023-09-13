@@ -1,10 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using DG.Tweening;
-using Nojumpo.Interfaces;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.HealthSystem
 {
     [Serializable]
     public class HealthChangeAnimation_ChipAway : IHealthChangeAnimation
@@ -23,7 +22,7 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void OnTakeDamageAnimation(HealthBar healthBar) {
-            healthBar.HealthBarForeground.fillAmount = healthBar.HealthToDisplay.HealthDecimal;
+            healthBar.HealthBarForeground.fillAmount = healthBar.healthToDisplay.HealthDecimal;
 
             if (_isAnimationInProgress)
                 return;
@@ -32,8 +31,8 @@ namespace Nojumpo
         }
 
         public void OnHealAnimation(HealthBar healthBar) {
-            healthBar.HealthBarForeground.DOFillAmount(healthBar.HealthToDisplay.HealthDecimal, 0.45f);
-            healthBar.HealthBarChangeIndicator.DOFillAmount(healthBar.HealthToDisplay.HealthDecimal, 0.45f);
+            healthBar.HealthBarForeground.DOFillAmount(healthBar.healthToDisplay.HealthDecimal, 0.45f);
+            healthBar.HealthBarChangeIndicator.DOFillAmount(healthBar.healthToDisplay.HealthDecimal, 0.45f);
         }
 
         async void TakeDamageAnimation(HealthBar healthBar) {

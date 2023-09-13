@@ -1,9 +1,6 @@
-using System;
-using Nojumpo.Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Nojumpo
+namespace Nojumpo.HealthSystem
 {
     public class Health : MonoBehaviour, IDamageable, IHealable
     {

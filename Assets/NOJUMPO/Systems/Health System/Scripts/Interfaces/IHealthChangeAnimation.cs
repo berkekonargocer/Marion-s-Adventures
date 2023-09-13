@@ -1,7 +1,4 @@
-using System.Collections;
-using UnityEngine.UI;
-
-namespace Nojumpo.Interfaces
+namespace Nojumpo.HealthSystem
 {
     public interface IHealthChangeAnimation
     {

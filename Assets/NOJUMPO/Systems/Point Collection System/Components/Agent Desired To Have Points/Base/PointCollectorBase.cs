@@ -1,7 +1,6 @@
-using Nojumpo.Interfaces;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.PointCollectionSystem
 {
     public abstract class PointCollectorBase : MonoBehaviour, IPointCollector
     {

@@ -1,6 +1,6 @@
-namespace Nojumpo.Interfaces
+namespace Nojumpo.HealthSystem
 {
-    public interface IHealable
+    public interface IDamageable
     {
         // -------------------------------- FIELDS ---------------------------------
         public float CurrentHealth { get; }
@@ -9,6 +9,6 @@ namespace Nojumpo.Interfaces
 
         
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Heal(float healAmount);
+        public void TakeDamage(float damageAmount);
     }
 }

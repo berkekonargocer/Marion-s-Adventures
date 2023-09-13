@@ -45,7 +45,7 @@ PrefabInstance:
     - target: {fileID: 1507736751314454176, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
       propertyPath: <PointsToDisplay>k__BackingField
       value: 
-      objectReference: {fileID: 5093596383975901498}
+      objectReference: {fileID: 4755851029187129462}
     - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -276,6 +276,14 @@ PrefabInstance:
       propertyPath: <HealthToDisplay>k__BackingField
       value: 
       objectReference: {fileID: 2311998739839639216}
+    - target: {fileID: 4530677654247292932, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
+      propertyPath: <healthToDisplay>k__BackingField
+      value: 
+      objectReference: {fileID: 2311998739839639216}
+    - target: {fileID: 5273525830850890305, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
+      propertyPath: healthChangeAnimationType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -351,7 +359,7 @@ PrefabInstance:
       addedObject: {fileID: 41192178073086916}
     - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5093596383975901498}
+      addedObject: {fileID: 4755851029187129462}
   m_SourcePrefab: {fileID: 100100000, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
 --- !u!114 &2311998739839639216 stripped
 MonoBehaviour:
@@ -422,7 +430,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65536
   initialRespawnPoint: {fileID: 0}
---- !u!114 &5093596383975901498
+--- !u!114 &4755851029187129462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,7 +439,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7875644875188916637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aafef2370512fe43a32aa4ddacc3b88, type: 3}
+  m_Script: {fileID: 11500000, guid: 530707974a1ce124e97ad228dd470157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointLayerMask:
