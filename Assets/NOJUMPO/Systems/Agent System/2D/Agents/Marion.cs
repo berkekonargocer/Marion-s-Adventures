@@ -1,5 +1,4 @@
-using System;
-using Nojumpo.HealthSystem;
+using Nojumpo.DamageableSystem;
 using UnityEngine;
 
 namespace Nojumpo
@@ -28,11 +27,11 @@ namespace Nojumpo
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         void DealDamage() {
-            AgentHealth.TakeDamage(damageAmount, damageType);
+            AgentDamageable.TakeDamage(damageAmount, damageType);
         }
 
         void Heal() {
-            AgentHealth.Heal(healAmount);
+            AgentDamageable.Heal(healAmount);
         }
     }
 }

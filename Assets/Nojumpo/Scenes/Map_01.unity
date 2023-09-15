@@ -35124,34 +35124,6 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 962369328}
-    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711682200397339085, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: damageType
-      value: 
-      objectReference: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
-    - target: {fileID: 6711682200397339085, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: healAmount
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711682200397339085, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: damageAmount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Player
@@ -35194,22 +35166,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

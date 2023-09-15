@@ -1,6 +1,6 @@
 using System;
 
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     [Serializable]
     public enum HealthChangeAnimationType

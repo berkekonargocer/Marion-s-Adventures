@@ -1,14 +1,11 @@
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
-    public interface IHealable
+    public interface IHealth
     {
         // -------------------------------- FIELDS ---------------------------------
         public float CurrentHealth { get; }
         public float MaxHealth { get; }
         public float HealthPercentage { get; }
 
-        
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Heal(float healAmount);
     }
 }

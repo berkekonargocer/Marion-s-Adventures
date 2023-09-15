@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     [RequireComponent(typeof(HealthBarAnimator))]
     public class HealthBar : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public Health healthToDisplay { get; private set; }
+        [field: SerializeField] public Damageable DamageableObject { get; private set; }
         [field: SerializeField] public Image HealthBarForeground { get; private set; }
         [field: SerializeField] public Image HealthBarBackground { get; private set; }
         [field: SerializeField] public Image HealthBarChangeIndicator { get; private set; }
@@ -21,13 +21,13 @@ namespace Nojumpo.HealthSystem
         }
 
         void OnEnable() {
-            healthToDisplay.onTakeDamage += Health_OnTakeDamage;
-            healthToDisplay.onHeal += Health_OnHeal;
+            DamageableObject.onTakeDamage += Damageable_OnTakeDamage;
+            DamageableObject.onHeal += Damageable_OnHeal;
         }
 
         void OnDisable() {
-            healthToDisplay.onTakeDamage -= Health_OnTakeDamage;
-            healthToDisplay.onHeal -= Health_OnHeal;
+            DamageableObject.onTakeDamage -= Damageable_OnTakeDamage;
+            DamageableObject.onHeal -= Damageable_OnHeal;
         }
 
 
@@ -36,11 +36,11 @@ namespace Nojumpo.HealthSystem
             _healthBarAnimator = GetComponent<HealthBarAnimator>();
         }
 
-        void Health_OnTakeDamage() {
+        void Damageable_OnTakeDamage() {
             _healthBarAnimator.TakeDamageAnimation(this);
         }
 
-        void Health_OnHeal() {
+        void Damageable_OnHeal() {
             _healthBarAnimator.HealAnimation(this);
         }
     }

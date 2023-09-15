@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     [Serializable]
     public class HealthChangeAnimation_ChipAway : IHealthChangeAnimation
@@ -22,7 +22,7 @@ namespace Nojumpo.HealthSystem
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void OnTakeDamageAnimation(HealthBar healthBar) {
-            healthBar.HealthBarForeground.fillAmount = healthBar.healthToDisplay.HealthDecimal;
+            healthBar.HealthBarForeground.fillAmount = healthBar.DamageableObject.DamageableHealth.HealthDecimal;
 
             if (_isAnimationInProgress)
                 return;
@@ -31,8 +31,9 @@ namespace Nojumpo.HealthSystem
         }
 
         public void OnHealAnimation(HealthBar healthBar) {
-            healthBar.HealthBarForeground.DOFillAmount(healthBar.healthToDisplay.HealthDecimal, 0.45f);
-            healthBar.HealthBarChangeIndicator.DOFillAmount(healthBar.healthToDisplay.HealthDecimal, 0.45f);
+            float endValue = healthBar.DamageableObject.DamageableHealth.HealthDecimal;
+            healthBar.HealthBarForeground.DOFillAmount(endValue, 0.45f);
+            healthBar.HealthBarChangeIndicator.DOFillAmount(endValue, 0.45f);
         }
 
         async void TakeDamageAnimation(HealthBar healthBar) {

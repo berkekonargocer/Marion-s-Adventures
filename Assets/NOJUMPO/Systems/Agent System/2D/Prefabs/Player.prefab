@@ -273,14 +273,14 @@ PrefabInstance:
       value: Player Health Bar Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4530677654247292932, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
-      propertyPath: <HealthToDisplay>k__BackingField
+      propertyPath: <DamageableObject>k__BackingField
       value: 
-      objectReference: {fileID: 2311998739839639216}
-    - target: {fileID: 4530677654247292932, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
-      propertyPath: <healthToDisplay>k__BackingField
-      value: 
-      objectReference: {fileID: 2311998739839639216}
+      objectReference: {fileID: 8757604682999882583}
     - target: {fileID: 5273525830850890305, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
+      propertyPath: healthChangeAnimationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117780692751284191, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
       propertyPath: healthChangeAnimationType
       value: 1
       objectReference: {fileID: 0}
@@ -348,6 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4953552460675015482, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+    - {fileID: 6180961194229159108, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -360,18 +361,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4755851029187129462}
+    - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8757604682999882583}
   m_SourcePrefab: {fileID: 100100000, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
---- !u!114 &2311998739839639216 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6180961194229159108, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
-  m_PrefabInstance: {fileID: 8490114260537051764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875644875188916637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c5cd38cbc6da54897dc0fdf13374c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4974357955303937414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3520277634687541234, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
@@ -411,6 +404,9 @@ MonoBehaviour:
   currentState: {fileID: 0}
   previousState: {fileID: 0}
   stateName: 
+  damageAmount: 10
+  healAmount: 75
+  damageType: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
 --- !u!114 &41192178073086916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,3 +441,17 @@ MonoBehaviour:
   pointLayerMask:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &8757604682999882583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875644875188916637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e53ffdf81e33947a76bc5ecb555407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  <VulnerableDamageTypes>k__BackingField: []

@@ -1,4 +1,4 @@
-using Nojumpo.HealthSystem;
+using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
@@ -12,6 +12,7 @@ namespace Nojumpo
         
         [SerializeField] Agent2DIdleState idleState;
 
+        public Damageable AgentDamageable { get; protected set; }
         public Health AgentHealth { get; protected set; }
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
@@ -47,7 +48,8 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            AgentHealth = GetComponent<Health>();
+            AgentDamageable = GetComponent<Damageable>();
+            AgentHealth = AgentDamageable.DamageableHealth;
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();

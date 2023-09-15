@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     [CreateAssetMenu(fileName = "NewDamageTypeSO", menuName = "Nojumpo/Scriptable Objects/Health System/New Damage Type")]
     public class DamageTypeSO : ScriptableObject

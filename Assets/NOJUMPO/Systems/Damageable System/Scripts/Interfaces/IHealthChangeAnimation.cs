@@ -1,4 +1,4 @@
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     public interface IHealthChangeAnimation
     {

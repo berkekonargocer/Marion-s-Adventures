@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.HealthSystem
+namespace Nojumpo.DamageableSystem
 {
     public class HealthBarAnimator : MonoBehaviour
     {
