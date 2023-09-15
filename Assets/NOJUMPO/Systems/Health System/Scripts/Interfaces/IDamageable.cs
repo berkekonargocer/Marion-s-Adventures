@@ -9,6 +9,6 @@ namespace Nojumpo.HealthSystem
 
         
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void TakeDamage(float damageAmount);
+        public void TakeDamage(float damageAmount, DamageTypeSO damageType);
     }
 }

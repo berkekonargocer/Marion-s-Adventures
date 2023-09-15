@@ -22,6 +22,8 @@ namespace Nojumpo.HealthSystem
         [SerializeField] [Min(1)] float maxHealth = 100.0f;
         float _currentHealth;
 
+        [SerializeField] DamageTypeSO[] vulnerableDamageTypes;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
@@ -36,7 +38,15 @@ namespace Nojumpo.HealthSystem
 
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public void TakeDamage(float damageAmount) {
+        public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
+            for (int i = 0; i < vulnerableDamageTypes.Length; i++)
+            {
+                if (damageType == vulnerableDamageTypes[i])
+                {
+                    damageAmount *= 2;
+                }
+            }
+
             _currentHealth -= damageAmount;
             onTakeDamage?.Invoke();
 

@@ -34,10 +34,10 @@ namespace Nojumpo.ScriptableObjects
         public delegate void OnJumpInputReleased();
         public event OnJumpInputReleased onJumpInputReleased;
 
-        public delegate void OnAttackInputPressed(float damageAmount);
+        public delegate void OnAttackInputPressed();
         public event OnAttackInputPressed onAttackInputPressed;
 
-        public delegate void OnHealInputPressed(float healAmount);
+        public delegate void OnHealInputPressed();
         public event OnHealInputPressed onHealInputPressed;
         
         public delegate void OnChangeWeaponInputPressed();
@@ -90,14 +90,14 @@ namespace Nojumpo.ScriptableObjects
         public void OnAttackButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                onAttackInputPressed?.Invoke(10);
+                onAttackInputPressed?.Invoke();
             }
         }
         
         public void OnHealButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                onHealInputPressed?.Invoke(75);
+                onHealInputPressed?.Invoke();
             }
         }
         
