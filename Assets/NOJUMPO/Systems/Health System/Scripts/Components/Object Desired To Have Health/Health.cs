@@ -36,10 +36,8 @@ namespace Nojumpo.HealthSystem
             _currentHealth = maxHealth;
         }
 
-
-        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
-            for (int i = 0; i < vulnerableDamageTypes.Length; i++)
+        float CalculateDamage(float damageAmount, DamageTypeSO damageType) {
+            for (int i = vulnerableDamageTypes.Length - 1; i >= 0; i--)
             {
                 if (damageType == vulnerableDamageTypes[i])
                 {
@@ -47,14 +45,20 @@ namespace Nojumpo.HealthSystem
                 }
             }
 
-            _currentHealth -= damageAmount;
+            return damageAmount;
+        }
+
+
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
+            _currentHealth -= CalculateDamage(damageAmount, damageType);
             onTakeDamage?.Invoke();
 
-            if (_currentHealth <= 0)
-            {
-                _currentHealth = 0;
-                onDie?.Invoke();
-            }
+            if (!(_currentHealth <= 0))
+                return;
+
+            _currentHealth = 0;
+            onDie?.Invoke();
         }
 
         public void Heal(float healAmount) {
