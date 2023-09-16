@@ -24,11 +24,7 @@ namespace Nojumpo.DamageableSystem
             DamageableHealth = new Health(maxHealth);
         }
 
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
-
-
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
             DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
