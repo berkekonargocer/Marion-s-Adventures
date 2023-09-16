@@ -9,9 +9,13 @@ namespace Nojumpo
         [SerializeField] float damageAmount;
         [SerializeField] float healAmount;
         [SerializeField] DamageTypeSO damageType;
-
+        Damageable _agentDamageable;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
+        protected override void Awake() {
+            base.Awake();
+            _agentDamageable = GetComponent<Damageable>();
+        }
         void OnEnable() {
             GameInputReader.onAttackInputPressed += DealDamage;
             GameInputReader.onHealInputPressed += Heal;
@@ -27,11 +31,11 @@ namespace Nojumpo
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         void DealDamage() {
-            AgentDamageable.TakeDamage(damageAmount, damageType);
+            _agentDamageable.TakeDamage(damageAmount, damageType);
         }
 
         void Heal() {
-            AgentDamageable.Heal(healAmount);
+            _agentDamageable.Heal(healAmount);
         }
     }
 }

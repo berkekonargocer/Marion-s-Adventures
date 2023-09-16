@@ -454,4 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  <VulnerableDamageTypes>k__BackingField: []
+  <Resistances>k__BackingField:
+    resistances:
+    - <DamageType>k__BackingField: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
+      <PercentageToTake>k__BackingField: 100

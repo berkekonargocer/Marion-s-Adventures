@@ -16,7 +16,7 @@ namespace Nojumpo.DamageableSystem
         public Health DamageableHealth { get; private set; }
 
         [SerializeField] float maxHealth;
-        [field: SerializeField] public DamageTypeSO[] VulnerableDamageTypes { get; private set; }
+        [field: SerializeField] public DamageResistances Resistances { get; private set; }
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -26,22 +26,12 @@ namespace Nojumpo.DamageableSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        float CalculateDamage(float damageAmount, DamageTypeSO damageType) {
-            for (int i = VulnerableDamageTypes.Length - 1; i >= 0; i--)
-            {
-                if (damageType == VulnerableDamageTypes[i])
-                {
-                    damageAmount *= 2;
-                }
-            }
 
-            return damageAmount;
-        }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
-            DamageableHealth.DecreaseHealth(CalculateDamage(damageAmount, damageType));
+            DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
             onTakeDamage?.Invoke();
 
             if (!(DamageableHealth.CurrentHealth <= 0))

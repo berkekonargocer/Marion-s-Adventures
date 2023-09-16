@@ -4,7 +4,7 @@ namespace Nojumpo.DamageableSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         public Health DamageableHealth { get; }
-        public DamageTypeSO[] VulnerableDamageTypes { get; }
+        public DamageResistances Resistances { get; }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------

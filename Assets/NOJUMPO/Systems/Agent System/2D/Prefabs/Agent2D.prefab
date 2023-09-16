@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8620842858644754926}
   - component: {fileID: 4953552460675015482}
   - component: {fileID: 2743559545558455635}
-  - component: {fileID: 6180961194229159108}
   m_Layer: 3
   m_Name: Agent2D
   m_TagString: Player
@@ -132,19 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
---- !u!114 &6180961194229159108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772475031789034473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c5cd38cbc6da54897dc0fdf13374c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!1 &3165638210400657501
 GameObject:
   m_ObjectHideFlags: 0

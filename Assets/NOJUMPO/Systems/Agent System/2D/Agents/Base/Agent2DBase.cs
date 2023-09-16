@@ -11,8 +11,7 @@ namespace Nojumpo
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
         
         [SerializeField] Agent2DIdleState idleState;
-
-        public Damageable AgentDamageable { get; protected set; }
+        
         public Health AgentHealth { get; protected set; }
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
@@ -48,8 +47,7 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            AgentDamageable = GetComponent<Damageable>();
-            AgentHealth = AgentDamageable.DamageableHealth;
+            AgentHealth = GetComponent<Damageable>().DamageableHealth;
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
