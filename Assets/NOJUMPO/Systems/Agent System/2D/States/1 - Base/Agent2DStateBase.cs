@@ -20,7 +20,8 @@ namespace Nojumpo
         protected Agent2DData _agent2DData;
 
         public UnityEvent OnEnter, OnExit;
-
+        public UnityEvent OnAnimationEvent;
+        public UnityEvent OnAnimationEndEvent;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 

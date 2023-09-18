@@ -35207,6 +35207,10 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 962369328}
+    - target: {fileID: 2816204940083374268, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1673184532673914702, guid: e8bd2ee5c950d4a4892e3261080ce8e1, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Player

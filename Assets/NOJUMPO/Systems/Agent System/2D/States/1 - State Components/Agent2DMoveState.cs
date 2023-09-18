@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Nojumpo
 {
@@ -9,7 +8,6 @@ namespace Nojumpo
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
-        public UnityEvent OnStepEvent;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
@@ -61,7 +59,7 @@ namespace Nojumpo
         }
 
         protected void InvokeOnStepEvent() {
-            OnStepEvent?.Invoke();
+            OnAnimationEvent?.Invoke();
         }
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
