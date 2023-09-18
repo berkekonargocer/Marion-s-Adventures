@@ -16,8 +16,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 6cae71312d9a9e2458775b96eb7ab482, type: 3}
   _volume:
-    MinValue: 1
-    MaxValue: 1
+    MinValue: 0.8992126
+    MaxValue: 0.8992126
   _audioPitch:
     MinValue: 1.0047244
     MaxValue: 1.496063

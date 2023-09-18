@@ -1,3 +1,4 @@
+using Nojumpo.AudioEventSystem;
 using UnityEngine;
 
 namespace Nojumpo
@@ -5,12 +6,7 @@ namespace Nojumpo
     public class Agent2DFallState : Agent2DMoveState
     {
         // -------------------------------- FIELDS ---------------------------------
-
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        [SerializeField] AudioEventBaseSO landAudioEvent;
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
@@ -32,7 +28,13 @@ namespace Nojumpo
         }
 
         public override void Agent2DState_OnAnimationEvent() {
-            
+        }
+
+        public void CheckIfPlayLandSound(AudioSource audioSource) {
+            if (_agent2D.GroundDetector.IsGrounded)
+            {
+                landAudioEvent.Play(audioSource);
+            }
         }
     }
 }
