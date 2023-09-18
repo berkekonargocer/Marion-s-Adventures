@@ -1,3 +1,4 @@
+using Nojumpo.AudioEventSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,17 +14,22 @@ namespace Nojumpo
         [SerializeField] protected Agent2DStateBase fallState;
         [SerializeField] protected Agent2DStateBase climbState;
 
-
         [SerializeField] protected string animatorStateParameter = "";
+
+        [SerializeField] protected AudioEventBaseSO animationEventAudioEvent;
+
+        public UnityEvent OnEnter, OnExit;
 
         protected Agent2DBase _agent2D;
         protected Agent2DData _agent2DData;
 
-        public UnityEvent OnEnter, OnExit;
-        public UnityEvent OnAnimationEvent;
-        public UnityEvent OnAnimationEndEvent;
+        protected AudioSource animationEventAudioSource;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
+        protected virtual void Awake() {
+            animationEventAudioSource = GetComponent<AudioSource>();
+        }
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
@@ -53,6 +59,7 @@ namespace Nojumpo
             return false;
         }
 
+
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(Agent2DBase agent2D, Agent2DData agent2DData) {
             _agent2D = agent2D;
@@ -62,6 +69,9 @@ namespace Nojumpo
         public virtual void Enter() {
             inputReader.onJumpInputPressed += HandleJumpPressed;
             inputReader.onJumpInputReleased += HandleJumpReleased;
+            _agent2D.Animator.onAnimationEvent += Agent2DState_OnAnimationEvent;
+            _agent2D.Animator.onAnimationEndEvent += Agent2DState_OnAnimationEndEvent;
+
             // inputReader.onAttackInputPressed += HandleAttack;
             _agent2D.Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
@@ -77,8 +87,19 @@ namespace Nojumpo
         public virtual void Exit() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;
+            _agent2D.Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
+            _agent2D.Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
+
             // inputReader.onAttackInputPressed -= HandleAttack;
             OnExit?.Invoke();
+        }
+
+        public virtual void Agent2DState_OnAnimationEvent() {
+            animationEventAudioEvent.Play(animationEventAudioSource);
+        }
+
+        public virtual void Agent2DState_OnAnimationEndEvent() {
+            
         }
     }
 }

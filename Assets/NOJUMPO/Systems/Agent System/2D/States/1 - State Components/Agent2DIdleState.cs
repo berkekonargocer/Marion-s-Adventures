@@ -40,5 +40,9 @@ namespace Nojumpo
             base.StateUpdate();
             HandleMovement();
         }
+
+        public override void Agent2DState_OnAnimationEvent() {
+            
+        }
     }
 }

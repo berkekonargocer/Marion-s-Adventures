@@ -30,5 +30,9 @@ namespace Nojumpo
                 _agent2D.ChangeState(idleState);
             }
         }
+
+        public override void Agent2DState_OnAnimationEvent() {
+            
+        }
     }
 }

@@ -7,13 +7,7 @@ namespace Nojumpo
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
-
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-
+        
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
@@ -57,17 +51,9 @@ namespace Nojumpo
         protected void SetVelocity() {
             _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
-
-        protected void InvokeOnStepEvent() {
-            OnAnimationEvent?.Invoke();
-        }
+        
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public override void Enter() {
-            base.Enter();
-            _agent2D.Animator.onAnimationEvent += InvokeOnStepEvent;
-        }
-
         public override void StateUpdate() {
             if (CheckToChangeIntoFallState())
                 return;
@@ -88,11 +74,6 @@ namespace Nojumpo
             {
                 _agent2D.ChangeState(idleState);
             }
-        }
-
-        public override void Exit() {
-            base.Exit();
-            _agent2D.Animator.onAnimationEvent -= InvokeOnStepEvent;
         }
     }
 }

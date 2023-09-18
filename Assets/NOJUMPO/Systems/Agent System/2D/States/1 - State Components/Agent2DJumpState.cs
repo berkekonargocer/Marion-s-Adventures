@@ -6,19 +6,14 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         bool _jumpInputPressed;
-        
-        
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
         void ControlJumpHeight() {
             if (!_jumpInputPressed)
             {
                 agent2DMovementData.CurrentVelocity = _agent2D.RigidBody2D.velocity;
-                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime ;
+                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
                 _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
             }
         }
@@ -30,12 +25,12 @@ namespace Nojumpo
             _jumpInputPressed = true;
         }
 
-        
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleJumpPressed() {
             _jumpInputPressed = true;
         }
-        
+
         protected override void HandleJumpReleased() {
             _jumpInputPressed = false;
         }
@@ -57,11 +52,15 @@ namespace Nojumpo
                 _agent2D.ChangeState(climbState);
                 return;
             }
-            
+
             if (_agent2D.RigidBody2D.velocity.y <= 0)
             {
                 _agent2D.ChangeState(fallState);
             }
+        }
+
+        public override void Agent2DState_OnAnimationEvent() {
+            
         }
     }
 }

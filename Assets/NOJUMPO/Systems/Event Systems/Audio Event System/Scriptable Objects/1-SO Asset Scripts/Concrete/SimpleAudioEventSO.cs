@@ -1,6 +1,6 @@
-using Nojumpo.Variables;
-using Nojumpo.EditorAttributes;
 using System;
+using Nojumpo.EditorAttributes;
+using Nojumpo.Variables;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +9,7 @@ namespace Nojumpo.AudioEventSystem
     [CreateAssetMenu(fileName = "NewSimpleAudioEvent", menuName = "Nojumpo/Scriptable Objects/Audio Event/New Simple Audio Event")]
     public class SimpleAudioEventSO : AudioEventBaseSO
     {
+        // -------------------------------- FIELDS --------------------------------
         [SerializeField] AudioClip[] _audioClips;
 
         [SerializeField] RangedFloat _volume;
@@ -17,6 +18,7 @@ namespace Nojumpo.AudioEventSystem
         [SerializeField] RangedFloat _audioPitch;
 
 
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void Play(AudioSource source) {
             if (_audioClips.Length == 0) { return; }
 

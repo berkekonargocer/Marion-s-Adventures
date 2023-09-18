@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _developerDescription: 
   _audioClips:
-  - {fileID: 8300000, guid: 6cae71312d9a9e2458775b96eb7ab482, type: 3}
+  - {fileID: 8300000, guid: 2dc4d8496ea0f4a4486761a6b717e009, type: 3}
   _volume:
     MinValue: 1
     MaxValue: 1
