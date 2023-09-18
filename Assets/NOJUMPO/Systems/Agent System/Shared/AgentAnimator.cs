@@ -7,6 +7,12 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         Animator _agentAnimator;
 
+        public delegate void OnAnimationEvent();
+        public OnAnimationEvent onAnimationEvent;
+
+        public delegate void OnAnimationEndEvent();
+        public OnAnimationEndEvent onAnimationEndEvent;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
@@ -33,5 +39,12 @@ namespace Nojumpo
             _agentAnimator.enabled = false;
         }
 
+        public void InvokeAnimationEvent() {
+            onAnimationEvent?.Invoke();
+        }
+
+        public void InvokeAnimationEndEvent() {
+            onAnimationEndEvent?.Invoke();
+        }
     }
 }

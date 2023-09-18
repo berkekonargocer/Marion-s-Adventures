@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Nojumpo
 {
@@ -8,6 +9,7 @@ namespace Nojumpo
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
+        public UnityEvent OnStepEvent;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
@@ -58,8 +60,16 @@ namespace Nojumpo
             _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
 
+        protected void InvokeOnStepEvent() {
+            OnStepEvent?.Invoke();
+        }
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public override void Enter() {
+            base.Enter();
+            _agent2D.Animator.onAnimationEvent += InvokeOnStepEvent;
+        }
+
         public override void StateUpdate() {
             if (CheckToChangeIntoFallState())
                 return;
@@ -80,7 +90,11 @@ namespace Nojumpo
             {
                 _agent2D.ChangeState(idleState);
             }
+        }
 
+        public override void Exit() {
+            base.Exit();
+            _agent2D.Animator.onAnimationEvent -= InvokeOnStepEvent;
         }
     }
 }
