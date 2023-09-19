@@ -19,5 +19,5 @@ MonoBehaviour:
     MinValue: 1
     MaxValue: 1
   _audioPitch:
-    MinValue: 1.0047244
-    MaxValue: 1.496063
+    MinValue: 0.8031496
+    MaxValue: 1.0047244
