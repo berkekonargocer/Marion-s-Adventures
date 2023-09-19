@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Nojumpo.WeaponSystem
 {
     [Serializable]
-    public class WeaponData
+    public struct WeaponData
     {
         [field: SerializeField] public int Damage { get; set; }
     }
