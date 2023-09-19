@@ -1,3 +1,4 @@
+using System;
 using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
@@ -9,10 +10,9 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
         [field: SerializeField] public InputReader GameInputReader { get; protected set; }
-        
+
         [SerializeField] Agent2DIdleState idleState;
-        
-        public Health AgentHealth { get; protected set; }
+
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
@@ -47,7 +47,6 @@ namespace Nojumpo
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            AgentHealth = GetComponent<Damageable>().DamageableHealth;
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();

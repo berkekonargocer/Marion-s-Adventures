@@ -1,3 +1,4 @@
+using Nojumpo.DamageableSystem;
 using UnityEngine;
 
 namespace Nojumpo
@@ -8,10 +9,13 @@ namespace Nojumpo
         [SerializeField] LayerMask respawnPointLayerMask;
         [SerializeField] LayerMask respawnTriggerLayerMask;
         [SerializeField] RespawnPoint initialRespawnPoint;
+        [SerializeField] int respawnDamage = 25;
 
         Vector3 _currentRespawnPoint;
 
-        public delegate void OnRespawn();
+        DamageTypeSO _respawnDamageType;
+
+        public delegate void OnRespawn(float respawnDamage, DamageTypeSO respawnDamageType);
         public OnRespawn onRespawn;
 
 
@@ -30,7 +34,6 @@ namespace Nojumpo
             else if ((collisionLayerMask & respawnTriggerLayerMask) != 0)
             {
                 Respawn();
-                onRespawn?.Invoke();
             }
         }
 
@@ -42,6 +45,7 @@ namespace Nojumpo
 
         void Respawn() {
             transform.position = _currentRespawnPoint;
+            onRespawn?.Invoke(respawnDamage, _respawnDamageType);
         }
     }
 }

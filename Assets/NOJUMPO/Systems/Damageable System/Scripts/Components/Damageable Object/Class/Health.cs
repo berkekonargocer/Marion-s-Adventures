@@ -52,5 +52,6 @@ namespace Nojumpo.DamageableSystem
             CurrentHealth += healAmount;
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
         }
+
     }
 }

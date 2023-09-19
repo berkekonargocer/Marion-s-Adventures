@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cd3a9620ee36ad45a8371af82b82165, type: 3}
-  m_Name: Fire
+  m_Name: DamageType_Fire
   m_EditorClassIdentifier: 
   developerDescription: 
   onHitEffectPrefab: {fileID: 0}

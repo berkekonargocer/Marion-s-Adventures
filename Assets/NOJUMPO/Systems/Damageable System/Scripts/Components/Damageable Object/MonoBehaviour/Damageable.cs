@@ -18,16 +18,20 @@ namespace Nojumpo.DamageableSystem
         [SerializeField] float maxHealth;
         [field: SerializeField] public DamageResistances Resistances { get; private set; }
 
+        [SerializeField] AudioSource TakeDamageAudioSource;
+        [SerializeField] AudioClip TakeDamageAudio;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
             DamageableHealth = new Health(maxHealth);
         }
 
-        
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
             DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
+            TakeDamageAudioSource.PlayOneShot(TakeDamageAudio);
             onTakeDamage?.Invoke();
 
             if (!(DamageableHealth.CurrentHealth <= 0))
