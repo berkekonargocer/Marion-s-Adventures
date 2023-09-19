@@ -6,8 +6,11 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DStateBase moveState;
+        [SerializeField] PhysicsMaterial2D normalFrictionMaterial2D;
+        [SerializeField] PhysicsMaterial2D noFrictionMaterial2D;
+        
 
-
+        
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
 
@@ -33,6 +36,7 @@ namespace Nojumpo
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             base.Enter();
+            _agent2D.RigidBody2D.sharedMaterial = normalFrictionMaterial2D;
             _agent2D.RigidBody2D.velocity = Vector2.zero; // Find a better way to solve sliding problem
         }
 
@@ -43,6 +47,11 @@ namespace Nojumpo
 
         public override void Agent2DState_OnAnimationEvent() {
             
+        }
+
+        public override void Exit() {
+            base.Exit();
+            _agent2D.RigidBody2D.sharedMaterial = noFrictionMaterial2D;
         }
     }
 }

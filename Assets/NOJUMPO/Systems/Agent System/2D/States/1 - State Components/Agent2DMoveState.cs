@@ -7,7 +7,7 @@ namespace Nojumpo
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected Agent2DStateBase idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
-        
+
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
@@ -51,7 +51,7 @@ namespace Nojumpo
         protected void SetVelocity() {
             _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
-        
+
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
