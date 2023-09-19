@@ -37,10 +37,22 @@ namespace Nojumpo
             }
         }
 
+        void OnDisable() {
+            if (TryGetComponent(out Damageable damageable))
+            {
+                onRespawn -= damageable.TakeDamage;
+            }
+        }
+
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
             _currentRespawnPoint = initialRespawnPoint.transform.position;
+
+            if (TryGetComponent(out Damageable damageable))
+            {
+                onRespawn += damageable.TakeDamage;
+            }
         }
 
         void Respawn() {
