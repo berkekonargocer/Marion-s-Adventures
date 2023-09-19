@@ -1,3 +1,4 @@
+using Nojumpo.AudioEventSystem;
 using UnityEngine;
 
 namespace Nojumpo.DamageableSystem
@@ -18,8 +19,8 @@ namespace Nojumpo.DamageableSystem
         [SerializeField] float maxHealth;
         [field: SerializeField] public DamageResistances Resistances { get; private set; }
 
+        [SerializeField] AudioEventBaseSO TakeDamageAudioEvent;
         [SerializeField] AudioSource TakeDamageAudioSource;
-        [SerializeField] AudioClip TakeDamageAudio;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -31,7 +32,7 @@ namespace Nojumpo.DamageableSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
             DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
-            TakeDamageAudioSource.PlayOneShot(TakeDamageAudio);
+            TakeDamageAudioEvent.Play(TakeDamageAudioSource);
             onTakeDamage?.Invoke();
 
             if (!(DamageableHealth.CurrentHealth <= 0))
