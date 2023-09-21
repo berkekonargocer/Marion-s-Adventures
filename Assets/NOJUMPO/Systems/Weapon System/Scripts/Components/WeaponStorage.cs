@@ -2,6 +2,9 @@ using System;
 
 namespace Nojumpo.WeaponSystem
 {
+    /// <summary>
+    /// Add a list of weapons?
+    /// </summary>
     public class WeaponStorage
     {
         // -------------------------------- FIELDS --------------------------------
