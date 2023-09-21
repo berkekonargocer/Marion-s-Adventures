@@ -14,7 +14,8 @@ namespace Nojumpo.WeaponSystem
 
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public WeaponData WeaponData { get; private set; }
-
+        [field: SerializeField] public Sprite WeaponSprite { get; private set; }
+        
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
