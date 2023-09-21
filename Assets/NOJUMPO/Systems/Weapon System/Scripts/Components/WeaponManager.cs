@@ -74,8 +74,9 @@ namespace Nojumpo.WeaponSystem
             SwapWeaponSprite(weaponSO.WeaponSprite);
         }
 
-        public void PickUpWeapon() {
-            
+        public void PickUpWeapon(WeaponSO weaponSO) {
+            AddWeapon(weaponSO);
+            OnWeaponPickUp?.Invoke();
         }
     }
 }
