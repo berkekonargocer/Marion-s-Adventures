@@ -60,7 +60,18 @@ namespace Nojumpo.WeaponSystem
             if (_weaponStorage.WeaponCount <= 0)
                 return;
             
-            SwapWeaponSprite(_weaponStorage.);
+            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponSprite);
+        }
+
+        public void AddWeapon(WeaponSO weaponSO) {
+            _weaponStorage.AddWeapon(weaponSO);
+
+            if (_weaponStorage.WeaponCount == 2)
+            {
+                OnMultipleWeapons?.Invoke();
+            }
+            
+            SwapWeaponSprite(weaponSO.WeaponSprite);
         }
     }
 }
