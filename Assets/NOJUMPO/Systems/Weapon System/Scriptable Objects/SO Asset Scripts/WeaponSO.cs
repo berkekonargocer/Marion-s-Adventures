@@ -1,9 +1,11 @@
+using System;
+using Nojumpo.AgentSystem;
 using UnityEngine;
 
 namespace Nojumpo.WeaponSystem
 {
     [CreateAssetMenu(fileName = "NewWeaponSO", menuName = "Nojumpo/Scriptable Objects/Weapon System/New Weapon")]
-    public class WeaponSO : ScriptableObject
+    public abstract class WeaponSO : ScriptableObject, IEquatable<WeaponSO>
     {
 #if UNITY_EDITOR
 
@@ -14,18 +16,22 @@ namespace Nojumpo.WeaponSystem
 
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public WeaponData WeaponData { get; private set; }
-        [field: SerializeField] public Sprite WeaponSprite { get; private set; }
-        
-        
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public bool CanBeUsed(bool isGrounded) {
-            throw new System.NotImplementedException();
+        public bool Equals(WeaponSO weapon) {
+            if (weapon != null)
+            {
+                return WeaponData.WeaponName == weapon.WeaponData.WeaponName;
+            }
+
+            Debug.Log("Weapon Equals Check Parameter Is Null! Returning False");
+            return false;
+        }
+
+        public abstract bool CanBeUsed(bool isGrounded);
+        public abstract void PerformAttack(Agent2DBase agent2D, LayerMask hittableLayerMask, Vector3 direction);
+        public virtual void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
         }
     }
 }

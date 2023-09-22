@@ -29,9 +29,9 @@ namespace Nojumpo.WeaponSystem
             return _weaponList[_currentWeaponIndex];
         }
 
-        public void AddWeapon(WeaponSO weaponSO) {
+        public bool AddWeapon(WeaponSO weaponSO) {
             if (_weaponList.Contains(weaponSO))
-                return;
+                return false;
 
             _weaponList.Add(weaponSO);
 
@@ -39,6 +39,8 @@ namespace Nojumpo.WeaponSystem
             {
                 _currentWeaponIndex = _weaponList.Count - 1;
             }
+
+            return true;
         }
 
         public List<string> GetPlayerWeaponNames() {

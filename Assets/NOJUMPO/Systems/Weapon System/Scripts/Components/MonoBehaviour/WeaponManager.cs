@@ -23,13 +23,13 @@ namespace Nojumpo.WeaponSystem
             _spriteRenderer = GetComponent<SpriteRenderer>();
             ToggleWeaponVisibility(false);
         }
-        
+
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void ToggleWeaponVisibility(bool isVisible) {
             if (isVisible)
             {
-                SwapWeaponSprite(GetCurrentWeapon().WeaponSprite);
+                SwapWeaponSprite(GetCurrentWeapon().WeaponData.WeaponSprite);
             }
 
             _spriteRenderer.enabled = isVisible;
@@ -49,19 +49,20 @@ namespace Nojumpo.WeaponSystem
         public void SwapWeapon() {
             if (_weaponStorage.WeaponCount <= 0)
                 return;
-            
-            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponSprite);
+
+            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.WeaponSprite);
         }
 
         public void AddWeapon(WeaponSO weaponSO) {
-            _weaponStorage.AddWeapon(weaponSO);
+            if (_weaponStorage.AddWeapon(weaponSO) == false)
+                return;
 
             if (_weaponStorage.WeaponCount == 2)
             {
                 OnMultipleWeapons?.Invoke();
             }
-            
-            SwapWeaponSprite(weaponSO.WeaponSprite);
+
+            SwapWeaponSprite(weaponSO.WeaponData.WeaponSprite);
         }
 
         public void PickUpWeapon(WeaponSO weaponSO) {
@@ -70,12 +71,10 @@ namespace Nojumpo.WeaponSystem
         }
 
         public bool CanUseWeapone(bool isGrounded) {
-            // if (_weaponStorage.WeaponCount <= 0)
-            //     return;
+            if (_weaponStorage.WeaponCount <= 0)
+                return false;
 
-            throw new NotImplementedException();
-
-            // return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
+            return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
         }
 
         public List<string> GetPlayerWeaponNames() {
