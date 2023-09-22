@@ -192,6 +192,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   moveState: {fileID: 6805245412640157078}
+  normalFrictionMaterial2D: {fileID: 0}
+  noFrictionMaterial2D: {fileID: 0}
 --- !u!114 &6805245412640157078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +416,7 @@ GameObject:
   - component: {fileID: 6372577920553081555}
   - component: {fileID: 5683559340281822819}
   m_Layer: 0
-  m_Name: Body
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,19 +23,7 @@ namespace Nojumpo.WeaponSystem
             _spriteRenderer = GetComponent<SpriteRenderer>();
             ToggleWeaponVisibility(false);
         }
-
-        void OnEnable() {
-        }
-
-        void OnDisable() {
-        }
-
-        void Start() {
-        }
-
-        void Update() {
-        }
-
+        
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void ToggleWeaponVisibility(bool isVisible) {
@@ -81,10 +70,12 @@ namespace Nojumpo.WeaponSystem
         }
 
         public bool CanUseWeapone(bool isGrounded) {
-            if (_weaponStorage.WeaponCount <= 0)
-                return;
+            // if (_weaponStorage.WeaponCount <= 0)
+            //     return;
 
-            return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
+            throw new NotImplementedException();
+
+            // return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
         }
 
         public List<string> GetPlayerWeaponNames() {

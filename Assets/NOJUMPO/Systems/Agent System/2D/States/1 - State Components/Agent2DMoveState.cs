@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class Agent2DMoveState : Agent2DStateBase
     {

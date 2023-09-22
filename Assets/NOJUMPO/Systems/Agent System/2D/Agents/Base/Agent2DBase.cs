@@ -1,9 +1,7 @@
-using System;
-using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class Agent2DBase : MonoBehaviour
     {

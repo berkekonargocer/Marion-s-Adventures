@@ -1,7 +1,8 @@
 using Nojumpo.DamageableSystem;
+using Nojumpo.WeaponSystem;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class Marion : Agent2DBase
     {
@@ -11,11 +12,10 @@ namespace Nojumpo
         [SerializeField] DamageTypeSO damageType;
         Damageable _agentDamageable;
 
+        public WeaponManager MarionWeaponManager { get; private set; }
+
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        protected override void Awake() {
-            base.Awake();
-            _agentDamageable = GetComponent<Damageable>();
-        }
         void OnEnable() {
             GameInputReader.onAttackInputPressed += DealDamage;
             GameInputReader.onHealInputPressed += Heal;
@@ -27,6 +27,11 @@ namespace Nojumpo
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        protected override void SetComponents() {
+            base.SetComponents();
+            _agentDamageable = GetComponent<Damageable>();
+            MarionWeaponManager = GetComponent<WeaponManager>();
+        }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------

@@ -3,7 +3,7 @@ using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public abstract class Agent2DStateBase : MonoBehaviour
     {

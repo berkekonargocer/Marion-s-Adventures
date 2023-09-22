@@ -1,7 +1,7 @@
 using Nojumpo.AudioEventSystem;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class Agent2DFallState : Agent2DMoveState
     {
