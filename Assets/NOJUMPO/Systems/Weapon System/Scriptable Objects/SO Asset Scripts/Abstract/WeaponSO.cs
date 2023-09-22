@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Nojumpo.WeaponSystem
 {
-    [CreateAssetMenu(fileName = "NewWeaponSO", menuName = "Nojumpo/Scriptable Objects/Weapon System/New Weapon")]
     public abstract class WeaponSO : ScriptableObject, IEquatable<WeaponSO>
     {
 #if UNITY_EDITOR
@@ -22,7 +21,7 @@ namespace Nojumpo.WeaponSystem
         public bool Equals(WeaponSO weapon) {
             if (weapon != null)
             {
-                return WeaponData.WeaponName == weapon.WeaponData.WeaponName;
+                return WeaponData.Name == weapon.WeaponData.Name;
             }
 
             Debug.Log("Weapon Equals Check Parameter Is Null! Returning False");

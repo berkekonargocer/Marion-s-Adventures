@@ -29,7 +29,7 @@ namespace Nojumpo.WeaponSystem
         void ToggleWeaponVisibility(bool isVisible) {
             if (isVisible)
             {
-                SwapWeaponSprite(GetCurrentWeapon().WeaponData.WeaponSprite);
+                SwapWeaponSprite(GetCurrentWeapon().WeaponData.Sprite);
             }
 
             _spriteRenderer.enabled = isVisible;
@@ -50,7 +50,7 @@ namespace Nojumpo.WeaponSystem
             if (_weaponStorage.WeaponCount <= 0)
                 return;
 
-            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.WeaponSprite);
+            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.Sprite);
         }
 
         public void AddWeapon(WeaponSO weaponSO) {
@@ -62,7 +62,7 @@ namespace Nojumpo.WeaponSystem
                 OnMultipleWeapons?.Invoke();
             }
 
-            SwapWeaponSprite(weaponSO.WeaponData.WeaponSprite);
+            SwapWeaponSprite(weaponSO.WeaponData.Sprite);
         }
 
         public void PickUpWeapon(WeaponSO weaponSO) {

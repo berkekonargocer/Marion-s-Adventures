@@ -1,4 +1,6 @@
+using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
+using Nojumpo.WeaponSystem;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -15,6 +17,9 @@ namespace Nojumpo.AgentSystem
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
+        public WeaponManager AgentWeaponManager { get; private set; }
+
+        Damageable _agentDamageable;
 
         [Header("State Debug")]
         public Agent2DStateBase currentState;
@@ -49,6 +54,8 @@ namespace Nojumpo.AgentSystem
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
             ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
+            AgentWeaponManager = GetComponentInChildren<WeaponManager>();
+            _agentDamageable = GetComponent<Damageable>();
         }
 
         protected virtual void SetStates() {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Nojumpo.WeaponSystem
 {
@@ -40,13 +41,14 @@ namespace Nojumpo.WeaponSystem
                 _currentWeaponIndex = _weaponList.Count - 1;
             }
 
+            Debug.Log($"Weapon {weaponSO} added to weapons");
             return true;
         }
 
         public List<string> GetPlayerWeaponNames() {
             List<string> weaponNames = new List<string>();
 
-            for (int i = 0; i < _weaponList.Count - 1; i++)
+            for (int i = 0; i < _weaponList.Count; i++)
             {
                 weaponNames.Add(_weaponList[i].name);
             }
