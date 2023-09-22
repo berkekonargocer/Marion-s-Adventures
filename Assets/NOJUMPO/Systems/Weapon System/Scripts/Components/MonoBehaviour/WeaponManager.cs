@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -77,6 +78,17 @@ namespace Nojumpo.WeaponSystem
         public void PickUpWeapon(WeaponSO weaponSO) {
             AddWeapon(weaponSO);
             OnWeaponPickUp?.Invoke();
+        }
+
+        public bool CanUseWeapone(bool isGrounded) {
+            if (_weaponStorage.WeaponCount <= 0)
+                return;
+
+            return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
+        }
+
+        public List<string> GetPlayerWeaponNames() {
+            return _weaponStorage.GetPlayerWeaponNames();
         }
     }
 }

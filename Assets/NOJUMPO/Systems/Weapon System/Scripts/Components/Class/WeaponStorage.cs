@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Nojumpo.WeaponSystem
 {
@@ -26,6 +27,9 @@ namespace Nojumpo.WeaponSystem
         }
         
         public void AddWeapon(WeaponSO weaponSO) {
+            throw new NotImplementedException();
+        }
+        public List<string> GetPlayerWeaponNames() {
             throw new NotImplementedException();
         }
     }

@@ -24,5 +24,8 @@ namespace Nojumpo.WeaponSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public bool CanBeUsed(bool isGrounded) {
+            throw new System.NotImplementedException();
+        }
     }
 }
