@@ -29,7 +29,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public abstract bool CanBeUsed(bool isGrounded);
-        public abstract void PerformAttack(Agent2DBase agent2D, LayerMask hittableLayerMask, Vector3 direction);
+        public abstract void PerformAttack(Agent2DBase agent2D, LayerMask damageableLayerMask, Vector3 direction);
         public virtual void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
         }
     }

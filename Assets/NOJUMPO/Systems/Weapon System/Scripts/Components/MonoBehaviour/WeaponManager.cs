@@ -70,7 +70,7 @@ namespace Nojumpo.WeaponSystem
             OnWeaponPickUp?.Invoke();
         }
 
-        public bool CanUseWeapone(bool isGrounded) {
+        public bool CanAttack(bool isGrounded) {
             if (_weaponStorage.WeaponCount <= 0)
                 return false;
 

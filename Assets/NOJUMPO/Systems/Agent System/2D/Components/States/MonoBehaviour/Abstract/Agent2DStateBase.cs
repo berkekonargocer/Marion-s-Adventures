@@ -13,8 +13,11 @@ namespace Nojumpo.AgentSystem
         [SerializeField] protected Agent2DStateBase jumpState;
         [SerializeField] protected Agent2DStateBase fallState;
         [SerializeField] protected Agent2DStateBase climbState;
+        [SerializeField] protected Agent2DStateBase attackState;
 
         [SerializeField] protected string animatorStateParameter = "";
+        [SerializeField] LayerMask damageableLayerMask;
+
 
         [SerializeField] protected AudioEventBaseSO animationEventAudioEvent;
 
@@ -47,6 +50,11 @@ namespace Nojumpo.AgentSystem
         }
 
         protected virtual void HandleAttack() {
+            if (_agent2D.AgentWeaponManager.CanAttack(_agent2D.GroundDetector.IsGrounded))
+            {
+                // _agent2D.ChangeState(attackState);
+                _agent2D.AgentWeaponManager.GetCurrentWeapon().PerformAttack(_agent2D, damageableLayerMask, _agent2D.transform.forward);
+            }
         }
 
         protected bool CheckToChangeIntoFallState() {
@@ -69,10 +77,9 @@ namespace Nojumpo.AgentSystem
         public virtual void Enter() {
             inputReader.onJumpInputPressed += HandleJumpPressed;
             inputReader.onJumpInputReleased += HandleJumpReleased;
+            inputReader.onAttackInputPressed += HandleAttack;
             _agent2D.Animator.onAnimationEvent += Agent2DState_OnAnimationEvent;
             _agent2D.Animator.onAnimationEndEvent += Agent2DState_OnAnimationEndEvent;
-
-            // inputReader.onAttackInputPressed += HandleAttack;
             _agent2D.Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
         }
@@ -87,10 +94,9 @@ namespace Nojumpo.AgentSystem
         public virtual void Exit() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;
+            inputReader.onAttackInputPressed -= HandleAttack;
             _agent2D.Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
             _agent2D.Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
-
-            // inputReader.onAttackInputPressed -= HandleAttack;
             OnExit?.Invoke();
         }
 
@@ -99,7 +105,6 @@ namespace Nojumpo.AgentSystem
         }
 
         public virtual void Agent2DState_OnAnimationEndEvent() {
-            
         }
     }
 }
