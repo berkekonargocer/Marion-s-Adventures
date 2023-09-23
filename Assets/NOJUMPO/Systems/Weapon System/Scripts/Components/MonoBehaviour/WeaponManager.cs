@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -71,10 +70,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public bool CanAttack(bool isGrounded) {
-            if (_weaponStorage.WeaponCount <= 0)
-                return false;
-
-            return _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
+            return _weaponStorage.WeaponCount > 0 && _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
         }
 
         public List<string> GetPlayerWeaponNames() {
