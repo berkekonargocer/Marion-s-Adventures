@@ -47,7 +47,7 @@ TagManager:
   - name: Background Environment
     uniqueID: 4094789505
     locked: 0
-  - name: Agents
+  - name: Agent
     uniqueID: 2657220691
     locked: 0
   - name: Player
