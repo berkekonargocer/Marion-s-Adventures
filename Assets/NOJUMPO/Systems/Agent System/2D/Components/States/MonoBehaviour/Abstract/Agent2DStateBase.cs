@@ -50,10 +50,9 @@ namespace Nojumpo.AgentSystem
         }
 
         protected virtual void HandleAttack() {
-            if (_agent2D.AgentWeaponManager.CanAttack(_agent2D.GroundDetector.IsGrounded))
+            if (_agent2D.AgentWeapon.CanAttack(_agent2D.GroundDetector.IsGrounded))
             {
-                // _agent2D.ChangeState(attackState);
-                _agent2D.AgentWeaponManager.GetCurrentWeapon().PerformAttack(_agent2D, damageableLayerMask, _agent2D.transform.forward);
+                _agent2D.ChangeState(attackState);
             }
         }
 

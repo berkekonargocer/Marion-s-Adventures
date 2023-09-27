@@ -18,9 +18,9 @@ namespace Nojumpo.WeaponSystem
             return isGrounded;
         }
 
-        public override void PerformAttack(Agent2DBase agent2D, LayerMask damageableLayerMask, Vector3 direction) {
+        public override void DealDamage(Agent2DBase agent2D, LayerMask damageableLayerMask, Vector3 direction) {
             Debug.Log($"Attacked with{WeaponData.Name}");
-            int hits = Physics2D.RaycastNonAlloc(agent2D.AgentWeaponManager.transform.position, direction, weaponHitResult, AttackRange, damageableLayerMask);
+            int hits = Physics2D.RaycastNonAlloc(agent2D.AgentWeapon.transform.position, direction, weaponHitResult, AttackRange, damageableLayerMask);
 
             for (int i = 0; i < hits; i++)
             {

@@ -17,7 +17,7 @@ namespace Nojumpo.AgentSystem
         public AgentAnimator Animator { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
-        public WeaponManager AgentWeaponManager { get; private set; }
+        public WeaponManager AgentWeapon { get; private set; }
 
         Damageable _agentDamageable;
 
@@ -54,7 +54,7 @@ namespace Nojumpo.AgentSystem
             Animator = GetComponentInChildren<AgentAnimator>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
             ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
-            AgentWeaponManager = GetComponentInChildren<WeaponManager>();
+            AgentWeapon = GetComponentInChildren<WeaponManager>();
             _agentDamageable = GetComponent<Damageable>();
         }
 

@@ -25,31 +25,23 @@ namespace Nojumpo.WeaponSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void ToggleWeaponVisibility(bool isVisible) {
-            if (isVisible)
-            {
-                SwapWeaponSprite(GetCurrentWeapon().WeaponData.Sprite);
-            }
-
-            _spriteRenderer.enabled = isVisible;
-        }
 
         void SwapWeaponSprite(Sprite weaponSprite) {
             _spriteRenderer.sprite = weaponSprite;
             OnWeaponSwap?.Invoke(weaponSprite);
         }
 
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public WeaponSO GetCurrentWeapon() {
             return _weaponStorage.GetCurrentWeapon();
         }
 
-        public void SwapWeapon() {
-            if (_weaponStorage.WeaponCount <= 0)
-                return;
-
-            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.Sprite);
+        public List<string> GetPlayerWeaponNames() {
+            return _weaponStorage.GetPlayerWeaponNames();
+        }
+        
+        public bool CanAttack(bool isGrounded) {
+            return _weaponStorage.WeaponCount > 0 && GetCurrentWeapon().CanBeUsed(isGrounded);
         }
 
         public void AddWeapon(WeaponSO weaponSO) {
@@ -68,13 +60,21 @@ namespace Nojumpo.WeaponSystem
             AddWeapon(weaponSO);
             OnWeaponPickUp?.Invoke();
         }
+        
+        public void SwapWeapon() {
+            if (_weaponStorage.WeaponCount <= 0)
+                return;
 
-        public bool CanAttack(bool isGrounded) {
-            return _weaponStorage.WeaponCount > 0 && _weaponStorage.GetCurrentWeapon().CanBeUsed(isGrounded);
+            SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.Sprite);
         }
+        
+        public void ToggleWeaponVisibility(bool isVisible) {
+            if (isVisible)
+            {
+                SwapWeaponSprite(GetCurrentWeapon().WeaponData.Sprite);
+            }
 
-        public List<string> GetPlayerWeaponNames() {
-            return _weaponStorage.GetPlayerWeaponNames();
+            _spriteRenderer.enabled = isVisible;
         }
     }
 }
