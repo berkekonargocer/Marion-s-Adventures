@@ -17,7 +17,7 @@ namespace Nojumpo.PointCollectionSystem
 
         
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void PointTypeResponse(PointCollectorBase pointCollector) {
+        void PointTypeResponse(PointCollector pointCollector) {
             switch (pointType)
             {
                 case PointType.ADD:
@@ -39,7 +39,7 @@ namespace Nojumpo.PointCollectionSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect(PointCollectorBase pointCollector) {
+        public void Collect(PointCollector pointCollector) {
             PointTypeResponse(pointCollector);
 
             pointCollector.onPointCollected?.Invoke();

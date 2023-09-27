@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Nojumpo.PointCollectionSystem
 {
-    public class PointCollector2D : PointCollectorBase
+    public class PointCollector2D : PointCollector
     {
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnTriggerEnter2D(Collider2D other) {

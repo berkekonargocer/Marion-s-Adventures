@@ -5,19 +5,17 @@ using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
-    public abstract class Agent2DStateBase : MonoBehaviour
+    public abstract class Agent2DState : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
         [SerializeField] protected InputReader inputReader;
 
-        [SerializeField] protected Agent2DStateBase jumpState;
-        [SerializeField] protected Agent2DStateBase fallState;
-        [SerializeField] protected Agent2DStateBase climbState;
-        [SerializeField] protected Agent2DStateBase attackState;
+        [SerializeField] protected Agent2DState jumpState;
+        [SerializeField] protected Agent2DState fallState;
+        [SerializeField] protected Agent2DState climbState;
+        [SerializeField] protected Agent2DState attackState;
 
         [SerializeField] protected string animatorStateParameter = "";
-        [SerializeField] LayerMask damageableLayerMask;
-
 
         [SerializeField] protected AudioEventBaseSO animationEventAudioEvent;
 

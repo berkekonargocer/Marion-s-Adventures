@@ -22,8 +22,8 @@ namespace Nojumpo.AgentSystem
         Damageable _agentDamageable;
 
         [Header("State Debug")]
-        public Agent2DStateBase currentState;
-        public Agent2DStateBase previousState;
+        public Agent2DState currentState;
+        public Agent2DState previousState;
         [Space]
         [SerializeField] string stateName = "";
 
@@ -59,9 +59,9 @@ namespace Nojumpo.AgentSystem
         }
 
         protected virtual void SetStates() {
-            Agent2DStateBase[] agent2DStates = GetComponentsInChildren<Agent2DStateBase>();
+            Agent2DState[] agent2DStates = GetComponentsInChildren<Agent2DState>();
 
-            foreach (Agent2DStateBase agent2DState in agent2DStates)
+            foreach (Agent2DState agent2DState in agent2DStates)
             {
                 agent2DState.Initialize(this, agent2DData);
             }
@@ -73,7 +73,7 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void ChangeState(Agent2DStateBase newState) {
+        public void ChangeState(Agent2DState newState) {
             if (currentState != null)
                 currentState.Exit();
 

@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DClimbState : Agent2DStateBase
+    public class Agent2DClimbState : Agent2DState
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] Agent2DStateBase idleState;
+        [SerializeField] Agent2DState idleState;
 
         float _baseGravityScale;
 

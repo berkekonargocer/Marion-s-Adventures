@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Nojumpo.PointCollectionSystem
 {
-    public abstract class PointCollectorBase : MonoBehaviour, IPointCollector
+    public abstract class PointCollector : MonoBehaviour, IPointCollector
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected LayerMask pointLayerMask;

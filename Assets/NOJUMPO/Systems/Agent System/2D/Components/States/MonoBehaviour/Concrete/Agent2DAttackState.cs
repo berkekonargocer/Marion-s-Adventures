@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DAttackState : Agent2DStateBase
+    public class Agent2DAttackState : Agent2DState
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DIdleState idleState;
@@ -48,6 +48,22 @@ namespace Nojumpo.AgentSystem
             }
         }
 
+        protected override void HandleAttack() {
+            // Prevent Attacking Again
+        }
+
+        protected override void HandleJumpPressed() {
+            // Prevent Jumping While Attacking
+        }
+
+        protected override void HandleJumpReleased() {
+            // Prevent This Method Call
+        }
+
+        protected override void HandleMovement() {
+            // Prevent Moving While Attacking
+        }
+
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
@@ -61,6 +77,14 @@ namespace Nojumpo.AgentSystem
 
             if (_agent2D.GroundDetector.IsGrounded)
                 _agent2D.RigidBody2D.velocity = Vector2.zero;
+        }
+
+        public override void StateUpdate() {
+            // Prevent Update Method While Attacking
+        }
+
+        public override void StateFixedUpdate() {
+            // Prevent Fixed Update Method While Attacking
         }
 
         public override void Exit() {

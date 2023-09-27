@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DIdleState : Agent2DStateBase
+    public class Agent2DIdleState : Agent2DState
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] protected Agent2DStateBase moveState;
+        [SerializeField] protected Agent2DState moveState;
         [SerializeField] PhysicsMaterial2D normalFrictionMaterial2D;
         [SerializeField] PhysicsMaterial2D noFrictionMaterial2D;
         

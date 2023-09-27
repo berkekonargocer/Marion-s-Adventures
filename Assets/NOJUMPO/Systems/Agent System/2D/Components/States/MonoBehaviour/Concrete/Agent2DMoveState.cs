@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DMoveState : Agent2DStateBase
+    public class Agent2DMoveState : Agent2DState
     {
         // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected Agent2DStateBase idleState;
+        [SerializeField] protected Agent2DState idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
 

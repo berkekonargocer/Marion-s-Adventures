@@ -14,7 +14,7 @@ TagManager:
   - Ground
   - Camera Confiner
   - Climbable
-  - Hittable
+  - Damageable
   - Weapon
   - Platform
   - Respawn Point
