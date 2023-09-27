@@ -30,10 +30,10 @@ namespace Nojumpo.AgentSystem
         public override void Agent2DState_OnAnimationEvent() {
         }
 
-        public void CheckIfPlayLandSound(AudioSource audioSource) {
+        public void CheckIfPlayLandSound() {
             if (_agent2D.GroundDetector.IsGrounded)
             {
-                landAudioEvent.Play(audioSource);
+                landAudioEvent.Play();
             }
         }
     }

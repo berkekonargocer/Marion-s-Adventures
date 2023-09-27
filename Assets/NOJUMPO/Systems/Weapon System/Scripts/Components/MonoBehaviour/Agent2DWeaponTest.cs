@@ -12,14 +12,14 @@ namespace Nojumpo.WeaponSystem
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Start() {
-            Agent2DBase agent2DBase = GetComponent<Agent2DBase>();
+            Agent2D agent2D = GetComponent<Agent2D>();
 
-            if (agent2DBase == null)
+            if (agent2D == null)
                 return;
 
             for (int i = 0; i < Weapons.Count; i++)
             {
-                agent2DBase.AgentWeapon.AddWeapon(Weapons[i]);
+                agent2D.AgentWeapon.AddWeapon(Weapons[i]);
             }
         }
     }

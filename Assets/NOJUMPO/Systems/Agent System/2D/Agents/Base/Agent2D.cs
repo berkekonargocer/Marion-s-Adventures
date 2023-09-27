@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DBase : MonoBehaviour
+    public class Agent2D : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;

@@ -1,4 +1,5 @@
 using System;
+using Nojumpo.AudioEventSystem;
 using Nojumpo.DamageableSystem;
 using UnityEngine;
 
@@ -11,6 +12,6 @@ namespace Nojumpo.WeaponSystem
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public int Damage { get; private set; }
         [field: SerializeField] public DamageTypeSO DamageType { get; private set; }
-        [field: SerializeField] public AudioClip AttackSFX { get; private set; }
+        [field: SerializeField] public SimpleAudioEventSO AttackAudioEvent { get; private set; }
     }
 }

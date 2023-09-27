@@ -7,7 +7,6 @@ namespace Nojumpo.WeaponSystem
     public abstract class WeaponSO : ScriptableObject, IEquatable<WeaponSO>
     {
 #if UNITY_EDITOR
-
         [TextArea]
         [SerializeField] string developerDescription;
 
@@ -15,6 +14,7 @@ namespace Nojumpo.WeaponSystem
 
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public WeaponData WeaponData { get; private set; }
+        [SerializeField] protected LayerMask damageableLayerMask;
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
@@ -29,7 +29,10 @@ namespace Nojumpo.WeaponSystem
         }
 
         public abstract bool CanBeUsed(bool isGrounded);
-        public abstract void DealDamage(Agent2DBase agent2D, LayerMask damageableLayerMask, Vector3 direction);
+        public virtual void PerformAttack(Agent2D agent2D, Vector3 attackDirection) {
+            WeaponData.AttackAudioEvent.Play();
+        }
+        public abstract void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection);
         public virtual void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
         }
     }

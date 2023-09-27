@@ -6409,11 +6409,6 @@ Transform:
   - {fileID: 1585112384}
   m_Father: {fileID: 1195931291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &433421132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7875644875188916637, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-  m_PrefabInstance: {fileID: 5579152300149100716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484985533
 GameObject:
   m_ObjectHideFlags: 0
@@ -37953,20 +37948,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4974357955303937414, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
   m_PrefabInstance: {fileID: 5579152300149100716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1598364183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433421132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c796e5038009b5a4d8f6c000a4648ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weapons:
-  - {fileID: 11400000, guid: 92ccb628f7fa033469335b8cb9d3c47e, type: 2}
 --- !u!1 &1615123592
 GameObject:
   m_ObjectHideFlags: 0
@@ -38403,11 +38384,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &2107941933 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1976531275263498991, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-  m_PrefabInstance: {fileID: 5579152300149100716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2120857811
 GameObject:
   m_ObjectHideFlags: 0
@@ -38549,22 +38525,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2139152200785959406, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnWeaponAttack.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+    - target: {fileID: 6366014683266551635, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3144611271392880610, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: animationEventAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: 6266489e43d39bf4ab87dd4d1254cf0b, type: 2}
-    - target: {fileID: 3567874705756562686, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 2107941933}
-    - target: {fileID: 3657568198729506940, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 2107941933}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Player
@@ -38609,10 +38573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8730902198171399852, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: animationEventAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: 637e9ae7609deff4eb9ca8678b85908f, type: 2}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38632,10 +38592,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7875644875188916637, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      insertIndex: 8
-      addedObject: {fileID: 1598364183}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
 --- !u!1001 &6145462733527084119
 PrefabInstance:

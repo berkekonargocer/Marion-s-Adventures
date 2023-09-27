@@ -46,6 +46,9 @@ namespace Nojumpo.AgentSystem
             _agent2D.ChangeState(jumpState);
         }
 
+        protected override void HandleAttack() {
+            // Prevent Attack While Climbing
+        }
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {

@@ -22,7 +22,7 @@ namespace Nojumpo.AgentSystem
 
         public UnityEvent OnEnter, OnExit;
 
-        protected Agent2DBase _agent2D;
+        protected Agent2D _agent2D;
         protected Agent2DData _agent2DData;
 
         protected AudioSource animationEventAudioSource;
@@ -67,7 +67,7 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public virtual void Initialize(Agent2DBase agent2D, Agent2DData agent2DData) {
+        public virtual void Initialize(Agent2D agent2D, Agent2DData agent2DData) {
             _agent2D = agent2D;
             _agent2DData = agent2DData;
         }
@@ -89,6 +89,13 @@ namespace Nojumpo.AgentSystem
         public virtual void StateFixedUpdate() {
         }
 
+        public virtual void Agent2DState_OnAnimationEvent() {
+            animationEventAudio.Play();
+        }
+
+        public virtual void Agent2DState_OnAnimationEndEvent() {
+        }
+        
         public virtual void Exit() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;
@@ -96,13 +103,6 @@ namespace Nojumpo.AgentSystem
             _agent2D.Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
             _agent2D.Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
             OnExit?.Invoke();
-        }
-
-        public virtual void Agent2DState_OnAnimationEvent() {
-            animationEventAudio.Play(animationEventAudioSource);
-        }
-
-        public virtual void Agent2DState_OnAnimationEndEvent() {
         }
     }
 }

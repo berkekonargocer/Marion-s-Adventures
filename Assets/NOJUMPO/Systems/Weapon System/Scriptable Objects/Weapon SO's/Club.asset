@@ -18,5 +18,8 @@ MonoBehaviour:
     <Sprite>k__BackingField: {fileID: 21300000, guid: 8872bba0733b13142afab1776e14a738, type: 3}
     <Damage>k__BackingField: 10
     <DamageType>k__BackingField: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
-    <AttackSFX>k__BackingField: {fileID: 8300000, guid: 68bba14d551cac14e97dcce160bfffcb, type: 3}
-  <AttackRange>k__BackingField: 2.5
+    <AttackAudioEvent>k__BackingField: {fileID: 11400000, guid: 59cb8821bf97c914ca78ec77d7176ea7, type: 2}
+  damageableLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  <AttackRange>k__BackingField: 1.2

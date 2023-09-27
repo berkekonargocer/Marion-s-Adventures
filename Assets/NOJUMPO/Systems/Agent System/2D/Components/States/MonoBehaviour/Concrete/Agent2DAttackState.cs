@@ -7,8 +7,8 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DIdleState idleState;
-        [SerializeField] LayerMask damageableLayerMask;
-        public UnityEvent<AudioClip> OnWeaponAttack;
+
+        public UnityEvent OnAttack;
 
         protected Vector2 _attackDirection;
         [SerializeField] bool showGizmos = true;
@@ -29,10 +29,10 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void PerformAttack() {
-            _agent2D.Animator.onAnimationEvent -= PerformAttack;
-            _agent2D.AgentWeapon.GetCurrentWeapon().DealDamage(_agent2D, damageableLayerMask, _attackDirection);
-            OnWeaponAttack?.Invoke(_agent2D.AgentWeapon.GetCurrentWeapon().WeaponData.AttackSFX);
+        void InvokeAttack() {
+            _agent2D.Animator.onAnimationEvent -= InvokeAttack;
+            _agent2D.AgentWeapon.GetCurrentWeapon().PerformAttack(_agent2D,_attackDirection);
+            OnAttack?.Invoke();
         }
 
         void ChangeStateToIdle() {
@@ -68,8 +68,6 @@ namespace Nojumpo.AgentSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             base.Enter();
-            _agent2D.Animator.onAnimationEvent += PerformAttack;
-            _agent2D.Animator.onAnimationEndEvent += ChangeStateToIdle;
             _agent2D.AgentWeapon.ToggleWeaponVisibility(true);
 
             Transform agent2DTransform = _agent2D.transform;
@@ -87,10 +85,18 @@ namespace Nojumpo.AgentSystem
             // Prevent Fixed Update Method While Attacking
         }
 
+        public override void Agent2DState_OnAnimationEvent() {
+            InvokeAttack();
+        }
+
+        public override void Agent2DState_OnAnimationEndEvent() {
+            ChangeStateToIdle();
+        }
+
         public override void Exit() {
             base.Exit();
             _agent2D.AgentWeapon.ToggleWeaponVisibility(false);
-            _agent2D.Animator.onAnimationEvent -= PerformAttack;
+            _agent2D.Animator.onAnimationEvent -= InvokeAttack;
             _agent2D.Animator.onAnimationEndEvent -= ChangeStateToIdle;
         }
     }
