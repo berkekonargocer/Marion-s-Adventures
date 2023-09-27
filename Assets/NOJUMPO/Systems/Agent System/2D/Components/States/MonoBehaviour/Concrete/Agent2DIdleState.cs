@@ -8,9 +8,8 @@ namespace Nojumpo.AgentSystem
         [SerializeField] protected Agent2DState moveState;
         [SerializeField] PhysicsMaterial2D normalFrictionMaterial2D;
         [SerializeField] PhysicsMaterial2D noFrictionMaterial2D;
-        
 
-        
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
 
@@ -18,6 +17,7 @@ namespace Nojumpo.AgentSystem
         protected override void HandleMovement() {
             if (Mathf.Abs(inputReader.MovementVector.x) > 0)
             {
+                _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
                 _agent2D.ChangeState(moveState);
                 return;
             }
@@ -46,7 +46,6 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void Agent2DState_OnAnimationEvent() {
-            
         }
 
         public override void Exit() {

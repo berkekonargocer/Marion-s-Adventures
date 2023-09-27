@@ -2,7 +2,6 @@ using Nojumpo.AudioEventSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Nojumpo.AgentSystem
 {
@@ -95,7 +94,7 @@ namespace Nojumpo.AgentSystem
 
         public virtual void Agent2DState_OnAnimationEndEvent() {
         }
-        
+
         public virtual void Exit() {
             inputReader.onJumpInputPressed -= HandleJumpPressed;
             inputReader.onJumpInputReleased -= HandleJumpReleased;

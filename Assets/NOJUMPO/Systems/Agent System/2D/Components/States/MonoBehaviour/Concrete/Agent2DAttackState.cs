@@ -60,10 +60,6 @@ namespace Nojumpo.AgentSystem
             // Prevent This Method Call
         }
 
-        protected override void HandleMovement() {
-            // Prevent Moving While Attacking
-        }
-
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {

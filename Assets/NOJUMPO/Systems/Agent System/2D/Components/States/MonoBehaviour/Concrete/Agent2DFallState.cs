@@ -10,9 +10,14 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void StateUpdate() {
+        protected override void HandleMovement() {
+            _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
+        }
+
+        public override void StateUpdate() {
+            HandleMovement();
 
             if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
             {

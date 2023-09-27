@@ -52,15 +52,20 @@ namespace Nojumpo.AgentSystem
             _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
 
+        protected override void HandleMovement() {
+            _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
+            CalculateVelocity();
+            SetVelocity();
+        }
+
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
             if (CheckToChangeIntoFallState())
                 return;
 
-            CalculateVelocity();
-            SetVelocity();
-
+            HandleMovement();
+            
             if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
             {
                 if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)

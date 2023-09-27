@@ -15,6 +15,7 @@ namespace Nojumpo.AgentSystem
 
         public Rigidbody2D RigidBody2D { get; protected set; }
         public AgentAnimator Animator { get; protected set; }
+        public Agent2DRenderer AgentRenderer { get; protected set; }
         public Agent2DGroundDetector GroundDetector { get; protected set; }
         public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
         public WeaponManager AgentWeapon { get; private set; }
@@ -52,6 +53,7 @@ namespace Nojumpo.AgentSystem
         protected virtual void SetComponents() {
             RigidBody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponentInChildren<AgentAnimator>();
+            AgentRenderer = GetComponent<Agent2DRenderer>();
             GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
             ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
             AgentWeapon = GetComponentInChildren<WeaponManager>();
