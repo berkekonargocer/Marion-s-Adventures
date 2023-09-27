@@ -38403,6 +38403,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &2107941933 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1976531275263498991, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+  m_PrefabInstance: {fileID: 5579152300149100716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2120857811
 GameObject:
   m_ObjectHideFlags: 0
@@ -38545,17 +38550,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2139152200785959406, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: damageableLayerMask.m_Bits
-      value: 512
+      propertyPath: OnWeaponAttack.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3144611271392880610, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: animationEventAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 6266489e43d39bf4ab87dd4d1254cf0b, type: 2}
     - target: {fileID: 3567874705756562686, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2107941933}
     - target: {fileID: 3657568198729506940, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2107941933}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Player
@@ -38600,6 +38609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8730902198171399852, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: animationEventAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 637e9ae7609deff4eb9ca8678b85908f, type: 2}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

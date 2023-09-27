@@ -2,6 +2,7 @@ using Nojumpo.AudioEventSystem;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Nojumpo.AgentSystem
 {
@@ -17,7 +18,7 @@ namespace Nojumpo.AgentSystem
 
         [SerializeField] protected string animatorStateParameter = "";
 
-        [SerializeField] protected AudioEventBaseSO animationEventAudioEvent;
+        [SerializeField] protected AudioEventBaseSO animationEventAudio;
 
         public UnityEvent OnEnter, OnExit;
 
@@ -98,7 +99,7 @@ namespace Nojumpo.AgentSystem
         }
 
         public virtual void Agent2DState_OnAnimationEvent() {
-            animationEventAudioEvent.Play(animationEventAudioSource);
+            animationEventAudio.Play(animationEventAudioSource);
         }
 
         public virtual void Agent2DState_OnAnimationEndEvent() {

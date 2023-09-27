@@ -333,7 +333,7 @@ MonoBehaviour:
   idleState: {fileID: 2979550965599401967}
   damageableLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   OnWeaponAttack:
     m_PersistentCalls:
       m_Calls: []
