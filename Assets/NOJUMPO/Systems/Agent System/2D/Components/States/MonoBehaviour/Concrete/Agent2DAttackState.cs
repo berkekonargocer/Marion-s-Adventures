@@ -55,11 +55,7 @@ namespace Nojumpo.AgentSystem
         protected override void HandleJumpPressed() {
             // Prevent Jumping While Attacking
         }
-
-        protected override void HandleJumpReleased() {
-            // Prevent This Method Call
-        }
-
+        
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {

@@ -55,13 +55,11 @@ namespace Nojumpo.AgentSystem
         }
 
         protected bool CheckToChangeIntoFallState() {
-            if (!_agent2D.GroundDetector.IsGrounded)
-            {
-                _agent2D.ChangeState(fallState);
-                return true;
-            }
+            if (_agent2D.GroundDetector.IsGrounded)
+                return false;
 
-            return false;
+            _agent2D.ChangeState(fallState);
+            return true;
         }
 
 
