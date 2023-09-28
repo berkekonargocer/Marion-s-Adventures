@@ -38623,10 +38623,38 @@ PrefabInstance:
       propertyPath: <Attack>k__BackingField
       value: 
       objectReference: {fileID: 1515761717}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Fall>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761719}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Idle>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761722}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Jump>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761720}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Move>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761721}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Climb>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761718}
+    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_Attack>k__BackingField
+      value: 
+      objectReference: {fileID: 1515761717}
     - target: {fileID: 6366014683266551635, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6711682200397339085, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: <m_InputReader>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Player
