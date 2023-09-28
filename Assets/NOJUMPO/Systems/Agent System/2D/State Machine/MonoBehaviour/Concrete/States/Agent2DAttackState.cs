@@ -6,10 +6,10 @@ namespace Nojumpo.AgentSystem
     public class Agent2DAttackState : Agent2DState
     {
         // -------------------------------- FIELDS ---------------------------------
+        [SerializeField] bool showGizmos = true;
         public UnityEvent OnAttack;
 
         protected Vector2 _attackDirection;
-        [SerializeField] bool showGizmos = true;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -25,29 +25,7 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_AgentWeapon.GetCurrentWeapon().DrawWeaponGizmo(weaponPosition, _attackDirection);
         }
 
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void InvokeAttack() {
-            _agent2D.m_Animator.onAnimationEvent -= InvokeAttack;
-            _agent2D.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_agent2D,_attackDirection);
-            OnAttack?.Invoke();
-        }
-
-        void ChangeStateToIdle() {
-            _agent2D.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
-
-            _agent2D.ChangeState(_agent2D.m_GroundDetector.IsGrounded ? _agent2D.m_StateFactory.Idle : _agent2D.m_StateFactory.Fall);
-        }
-
-        protected override void HandleAttack() {
-            // Prevent Attacking Again
-        }
-
-        protected override void HandleJumpPressed() {
-            // Prevent Jumping While Attacking
-        }
         
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             base.Enter();
@@ -67,7 +45,24 @@ namespace Nojumpo.AgentSystem
         public override void StateFixedUpdate() {
             // Prevent Fixed Update Method While Attacking
         }
+        
+        public override void Exit() {
+            base.Exit();
+            _agent2D.m_AgentWeapon.ToggleWeaponVisibility(false);
+            _agent2D.m_Animator.onAnimationEvent -= InvokeAttack;
+            _agent2D.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+        }
 
+
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleAttack() {
+            // Prevent Attacking Again
+        }
+
+        protected override void HandleJumpPressed() {
+            // Prevent Jumping While Attacking
+        }
+        
         protected override void Agent2DState_OnAnimationEvent() {
             InvokeAttack();
         }
@@ -76,11 +71,18 @@ namespace Nojumpo.AgentSystem
             ChangeStateToIdle();
         }
 
-        public override void Exit() {
-            base.Exit();
-            _agent2D.m_AgentWeapon.ToggleWeaponVisibility(false);
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void InvokeAttack() {
             _agent2D.m_Animator.onAnimationEvent -= InvokeAttack;
+            _agent2D.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_agent2D,_attackDirection);
+            OnAttack?.Invoke();
+        }
+
+        void ChangeStateToIdle() {
             _agent2D.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+
+            _agent2D.ChangeState(_agent2D.m_GroundDetector.IsGrounded ? _agent2D.m_StateFactory.m_Idle : _agent2D.m_StateFactory.m_Fall);
         }
     }
 }

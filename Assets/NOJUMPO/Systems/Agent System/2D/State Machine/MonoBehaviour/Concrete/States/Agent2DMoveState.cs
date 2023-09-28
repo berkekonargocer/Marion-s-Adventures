@@ -8,6 +8,29 @@ namespace Nojumpo.AgentSystem
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
 
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public override void StateUpdate() {
+            if (CheckToChangeIntoFallState())
+                return;
+
+            HandleMovement();
+
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            {
+                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+                    return;
+
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
+                return;
+            }
+
+            if (Mathf.Abs(_agent2D.m_Rigidbody2D.velocity.x) < 0.01f)
+            {
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
+            }
+        }
+
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementVector.x) > 0)
@@ -59,29 +82,6 @@ namespace Nojumpo.AgentSystem
 
         protected override void Agent2DState_OnAnimationEvent() {
             animationEventAudio.Play();
-        }
-
-
-        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public override void StateUpdate() {
-            if (CheckToChangeIntoFallState())
-                return;
-
-            HandleMovement();
-
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
-            {
-                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
-                    return;
-
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
-                return;
-            }
-
-            if (Mathf.Abs(_agent2D.m_Rigidbody2D.velocity.x) < 0.01f)
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
-            }
         }
     }
 }

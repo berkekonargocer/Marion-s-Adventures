@@ -7,53 +7,8 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         float _baseGravityScale;
-
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void CacheAgentBaseGravityScale() {
-            _baseGravityScale = _agent2D.m_Rigidbody2D.gravityScale;
-        }
-
-        void SetAgentGravityScale(float gravityScale) {
-            _agent2D.m_Rigidbody2D.gravityScale = gravityScale;
-        }
-
-        void Climb() {
-            _agent2D.m_Animator.StartAnimation();
-
-            if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
-                return;
-            }
-
-            _agent2D.m_Rigidbody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
-                inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
-        }
-
-        void Wait() {
-            _agent2D.m_Animator.StopAnimation();
-            _agent2D.m_Rigidbody2D.velocity = Vector2.zero;
-        }
-
-
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected override void HandleJumpPressed() {
-            _agent2D.ChangeState(_agent2D.m_StateFactory.Jump);
-        }
-
-        protected override void HandleAttack() {
-            // Prevent Attack While Climbing
-        }
-
-        protected override void Agent2DState_OnAnimationEvent() {
-            animationEventAudio.Play();
-        }
-
-
+        
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             base.Enter();
@@ -75,7 +30,7 @@ namespace Nojumpo.AgentSystem
 
             if (!_agent2D.m_ClimbableDetector.CanClimb)
             {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
             }
         }
 
@@ -83,6 +38,48 @@ namespace Nojumpo.AgentSystem
             base.Exit();
             SetAgentGravityScale(_baseGravityScale);
             _agent2D.m_Animator.StartAnimation();
+        }
+
+
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleJumpPressed() {
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_Jump);
+        }
+
+        protected override void HandleAttack() {
+            // Prevent Attack While Climbing
+        }
+
+        protected override void Agent2DState_OnAnimationEvent() {
+            animationEventAudio.Play();
+        }
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void CacheAgentBaseGravityScale() {
+            _baseGravityScale = _agent2D.m_Rigidbody2D.gravityScale;
+        }
+
+        void SetAgentGravityScale(float gravityScale) {
+            _agent2D.m_Rigidbody2D.gravityScale = gravityScale;
+        }
+
+        void Climb() {
+            _agent2D.m_Animator.StartAnimation();
+
+            if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+            {
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
+                return;
+            }
+
+            _agent2D.m_Rigidbody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
+                inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
+        }
+
+        void Wait() {
+            _agent2D.m_Animator.StopAnimation();
+            _agent2D.m_Rigidbody2D.velocity = Vector2.zero;
         }
     }
 }

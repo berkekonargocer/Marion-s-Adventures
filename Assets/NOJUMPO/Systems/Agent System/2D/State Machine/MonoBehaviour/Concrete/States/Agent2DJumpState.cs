@@ -7,25 +7,30 @@ namespace Nojumpo.AgentSystem
         // -------------------------------- FIELDS ---------------------------------
         bool _jumpInputPressed;
 
+        
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public override void Enter() {
+            base.Enter();
+            ApplyJump();
+        }
 
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void ControlJumpHeight() {
-            if (!_jumpInputPressed)
+        public override void StateUpdate() {
+            ControlJumpHeight();
+            HandleMovement();
+
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
-                _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
+                return;
+            }
+
+            if (_agent2D.m_Rigidbody2D.velocity.y <= 0)
+            {
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Fall);
             }
         }
 
-        void ApplyJump() {
-            agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-            agent2DMovementData.CurrentVelocity.y = _agent2DData.JumpForce;
-            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
-            _jumpInputPressed = true;
-        }
-
-
+        
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
             _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
@@ -44,28 +49,23 @@ namespace Nojumpo.AgentSystem
         protected override void Agent2DState_OnAnimationEvent() {
             
         }
-
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void Enter() {
-            base.Enter();
-            ApplyJump();
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void ControlJumpHeight() {
+            if (!_jumpInputPressed)
+            {
+                agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
+                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
+                _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+            }
         }
 
-        public override void StateUpdate() {
-            ControlJumpHeight();
-            HandleMovement();
-
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
-                return;
-            }
-
-            if (_agent2D.m_Rigidbody2D.velocity.y <= 0)
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Fall);
-            }
+        void ApplyJump() {
+            agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
+            agent2DMovementData.CurrentVelocity.y = _agent2DData.JumpForce;
+            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _jumpInputPressed = true;
         }
     }
 }

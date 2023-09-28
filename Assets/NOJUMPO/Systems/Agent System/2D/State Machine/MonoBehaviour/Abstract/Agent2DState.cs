@@ -27,37 +27,7 @@ namespace Nojumpo.AgentSystem
             animationEventAudioSource = GetComponent<AudioSource>();
         }
 
-
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected virtual void HandleMovement() {
-        }
-
-        protected virtual void HandleJumpPressed() {
-            if (_agent2D.m_GroundDetector.IsGrounded)
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Jump);
-            }
-        }
-
-        protected virtual void HandleJumpReleased() {
-        }
-
-        protected virtual void HandleAttack() {
-            if (_agent2D.m_AgentWeapon.CanAttack(_agent2D.m_GroundDetector.IsGrounded))
-            {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Attack);
-            }
-        }
-
-        protected bool CheckToChangeIntoFallState() {
-            if (_agent2D.m_GroundDetector.IsGrounded)
-                return false;
-
-            _agent2D.ChangeState(_agent2D.m_StateFactory.Fall);
-            return true;
-        }
-
-
+        
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(Agent2D agent2D, Agent2DData agent2DData) {
             _agent2D = agent2D;
@@ -95,6 +65,36 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
             _agent2D.m_Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
             OnExit?.Invoke();
+        }
+        
+
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected virtual void HandleMovement() {
+        }
+
+        protected virtual void HandleJumpPressed() {
+            if (_agent2D.m_GroundDetector.IsGrounded)
+            {
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Jump);
+            }
+        }
+
+        protected virtual void HandleJumpReleased() {
+        }
+
+        protected virtual void HandleAttack() {
+            if (_agent2D.m_AgentWeapon.CanAttack(_agent2D.m_GroundDetector.IsGrounded))
+            {
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Attack);
+            }
+        }
+
+        protected bool CheckToChangeIntoFallState() {
+            if (_agent2D.m_GroundDetector.IsGrounded)
+                return false;
+
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_Fall);
+            return true;
         }
     }
 }

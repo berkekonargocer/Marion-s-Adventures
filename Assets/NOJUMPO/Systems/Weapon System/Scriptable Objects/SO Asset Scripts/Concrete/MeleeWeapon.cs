@@ -8,7 +8,7 @@ namespace Nojumpo.WeaponSystem
     public class MeleeWeapon : WeaponSO
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public float AttackRange { get; private set; } = 1.0f;
+        [field: SerializeField] public float m_AttackRange { get; private set; } = 1.0f;
 
         RaycastHit2D[] weaponHitResult = new RaycastHit2D[5];
 
@@ -24,7 +24,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public override void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection) {
-            int hits = Physics2D.RaycastNonAlloc(agent2D.m_AgentWeapon.transform.position, attackDirection, weaponHitResult, AttackRange, damageableLayerMask);
+            int hits = Physics2D.RaycastNonAlloc(agent2D.m_AgentWeapon.transform.position, attackDirection, weaponHitResult, m_AttackRange, damageableLayerMask);
 
             for (int i = 0; i < hits; i++)
             {
@@ -34,7 +34,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public override void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
-            Gizmos.DrawLine(origin, origin + direction * AttackRange);
+            Gizmos.DrawLine(origin, origin + direction * m_AttackRange);
         }
     }
 }

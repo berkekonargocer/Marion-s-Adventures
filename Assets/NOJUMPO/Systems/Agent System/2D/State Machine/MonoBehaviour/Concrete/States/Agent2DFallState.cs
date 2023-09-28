@@ -24,14 +24,14 @@ namespace Nojumpo.AgentSystem
 
             if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
 
                 return;
             }
 
             if (_agent2D.m_GroundDetector.IsGrounded)
             {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
             }
         }
 

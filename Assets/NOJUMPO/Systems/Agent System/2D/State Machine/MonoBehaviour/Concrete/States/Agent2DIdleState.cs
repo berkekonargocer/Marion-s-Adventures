@@ -9,29 +9,6 @@ namespace Nojumpo.AgentSystem
         [SerializeField] PhysicsMaterial2D noFrictionMaterial2D;
 
 
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected override void HandleMovement() {
-            if (Mathf.Abs(inputReader.MovementVector.x) > 0)
-            {
-                _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Move);
-                return;
-            }
-
-
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
-            {
-                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
-                    return;
-
-                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
-            }
-        }
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Enter() {
             base.Enter();
@@ -48,6 +25,26 @@ namespace Nojumpo.AgentSystem
         public override void Exit() {
             base.Exit();
             _agent2D.m_Rigidbody2D.sharedMaterial = noFrictionMaterial2D;
+        }
+
+
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleMovement() {
+            if (Mathf.Abs(inputReader.MovementVector.x) > 0)
+            {
+                _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Move);
+                return;
+            }
+
+
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            {
+                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+                    return;
+
+                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
+            }
         }
     }
 }
