@@ -38511,7 +38511,7 @@ PrefabInstance:
       objectReference: {fileID: 962369328}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Marion
       objectReference: {fileID: 0}
     - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_LocalPosition.x

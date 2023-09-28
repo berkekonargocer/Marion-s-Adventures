@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06797254, y: -0.025000017}
-  m_Size: {x: 0.84375226, y: 1.7000002}
+  m_Offset: {x: 0.048, y: -0.0285}
+  m_Size: {x: 1.41, y: 1.818}
   m_Direction: 0
 --- !u!114 &4953552460675015482
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent2DData: {fileID: 11400000, guid: 52e983e7303c79c4fad27fe34bde8278, type: 2}
-  <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  <m_InputReader>k__BackingField: {fileID: 0}
   idleState: {fileID: 2979550965599401967}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f941627b27d6f4d8660fa078fc2e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Idle: {fileID: 2979550965599401967}
-  Move: {fileID: 6805245412640157078}
-  Jump: {fileID: 5120798428259133960}
-  Fall: {fileID: 4922806902988123786}
-  Climb: {fileID: 934660361274326232}
-  Attack: {fileID: 7529238439936234394}
+  <m_Idle>k__BackingField: {fileID: 0}
+  <m_Move>k__BackingField: {fileID: 0}
+  <m_Jump>k__BackingField: {fileID: 0}
+  <m_Fall>k__BackingField: {fileID: 0}
+  <m_Climb>k__BackingField: {fileID: 0}
+  <m_Attack>k__BackingField: {fileID: 0}
 --- !u!114 &2979550965599401967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,10 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 0}
   animatorStateParameter: Idle
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -211,7 +207,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  moveState: {fileID: 6805245412640157078}
   normalFrictionMaterial2D: {fileID: 0}
   noFrictionMaterial2D: {fileID: 0}
 --- !u!114 &6805245412640157078
@@ -227,10 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 0}
   animatorStateParameter: Move
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -239,7 +230,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  idleState: {fileID: 2979550965599401967}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &5120798428259133960
 MonoBehaviour:
@@ -254,10 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 0}
   animatorStateParameter: Jump
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -266,7 +252,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  idleState: {fileID: 2979550965599401967}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &4922806902988123786
 MonoBehaviour:
@@ -281,10 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 0}
   animatorStateParameter: Fall
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -293,7 +274,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  idleState: {fileID: 2979550965599401967}
   agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
   landAudioEvent: {fileID: 0}
 --- !u!114 &934660361274326232
@@ -309,10 +289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 0}
   animatorStateParameter: Climb
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -321,7 +297,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  idleState: {fileID: 2979550965599401967}
 --- !u!114 &7529238439936234394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,10 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
-  jumpState: {fileID: 5120798428259133960}
-  fallState: {fileID: 4922806902988123786}
-  climbState: {fileID: 934660361274326232}
-  attackState: {fileID: 7529238439936234394}
   animatorStateParameter: Attack
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -347,11 +318,10 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  idleState: {fileID: 2979550965599401967}
+  showGizmos: 1
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
-  showGizmos: 1
 --- !u!1 &6241761154690006641
 GameObject:
   m_ObjectHideFlags: 0
