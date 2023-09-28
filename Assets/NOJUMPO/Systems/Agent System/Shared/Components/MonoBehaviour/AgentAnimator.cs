@@ -20,12 +20,6 @@ namespace Nojumpo
         }
 
 
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void SetComponents() {
-            _agentAnimator = GetComponent<Animator>();
-        }
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void PlayAnimation(string stateName) {
             _agentAnimator.Play(stateName, -1, 0);
@@ -45,6 +39,12 @@ namespace Nojumpo
 
         public void InvokeAnimationEndEvent() {
             onAnimationEndEvent?.Invoke();
+        }
+        
+
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void SetComponents() {
+            _agentAnimator = GetComponent<Animator>();
         }
     }
 }

@@ -36,15 +36,5 @@ namespace Nojumpo.ScriptableObjects
         public float LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
 
         public float MaxFallSpeed { get { return maxFallSpeed; } }
-
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }

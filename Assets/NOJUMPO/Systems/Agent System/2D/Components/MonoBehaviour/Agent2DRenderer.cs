@@ -14,13 +14,7 @@ namespace Nojumpo
             SetComponents();
         }
 
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void SetComponents() {
-            _agent2DTransform = GetComponent<Transform>();
-        }
-
-
+        
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void FaceDirection(Vector2 movementVector) {
             if (movementVector.x > 0)
@@ -32,6 +26,12 @@ namespace Nojumpo
             {
                 _agent2DTransform.localScale = new Vector3(-1, 1, 1);
             }
+        }
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void SetComponents() {
+            _agent2DTransform = GetComponent<Transform>();
         }
     }
 }

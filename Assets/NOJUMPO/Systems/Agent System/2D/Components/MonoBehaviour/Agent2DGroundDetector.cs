@@ -38,13 +38,7 @@ namespace Nojumpo
                 new Vector3(boxCastWidth, boxCastHeight));
         }
 
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void SetComponents() {
-            _agent2DCollider = GetComponent<Collider2D>();
-        }
-
-
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void CheckIsGrounded() {
             int groundedHits = Physics2D.BoxCastNonAlloc(_agent2DCollider.bounds.center + new Vector3(boxCastXOffset, boxCastYOffset, 0),
@@ -59,6 +53,12 @@ namespace Nojumpo
             {
                 IsGrounded = false;
             }
+        }
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void SetComponents() {
+            _agent2DCollider = GetComponent<Collider2D>();
         }
     }
 }
