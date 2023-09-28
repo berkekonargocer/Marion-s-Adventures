@@ -626,6 +626,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Fall>k__BackingField
+      value: 
+      objectReference: {fileID: 3567874705756562686}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Idle>k__BackingField
+      value: 
+      objectReference: {fileID: 6668577875051117979}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Jump>k__BackingField
+      value: 
+      objectReference: {fileID: 3657568198729506940}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Move>k__BackingField
+      value: 
+      objectReference: {fileID: 3144611271392880610}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Climb>k__BackingField
+      value: 
+      objectReference: {fileID: 8730902198171399852}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_Attack>k__BackingField
+      value: 
+      objectReference: {fileID: 2139152200785959406}
     - target: {fileID: 4922806902988123786, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: attackState
       value: 
@@ -783,6 +807,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5842977873282381177, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
   m_PrefabInstance: {fileID: 8490114260537051764}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3144611271392880610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6805245412640157078, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3567874705756562686 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4922806902988123786, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
@@ -792,6 +827,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3fbed31fbb699e47af1da016e5b6597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3657568198729506940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5120798428259133960, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703427368269b2549bb58a99b8588baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &4974357955303937414 stripped
@@ -828,7 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent2DData: {fileID: 11400000, guid: 90f428f271254b8438826642c9b0214f, type: 2}
-  <GameInputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  <m_InputReader>k__BackingField: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   idleState: {fileID: 6668577875051117979}
   currentState: {fileID: 0}
   previousState: {fileID: 0}
@@ -999,3 +1045,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8730902198171399852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934660361274326232, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d33d8c3e23403741b03257398d74c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
