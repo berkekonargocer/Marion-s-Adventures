@@ -24,7 +24,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public override void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection) {
-            int hits = Physics2D.RaycastNonAlloc(agent2D.AgentWeapon.transform.position, attackDirection, weaponHitResult, AttackRange, damageableLayerMask);
+            int hits = Physics2D.RaycastNonAlloc(agent2D.m_AgentWeapon.transform.position, attackDirection, weaponHitResult, AttackRange, damageableLayerMask);
 
             for (int i = 0; i < hits; i++)
             {

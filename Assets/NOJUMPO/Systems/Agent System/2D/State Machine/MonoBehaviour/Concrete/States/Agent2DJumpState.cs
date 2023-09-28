@@ -12,23 +12,23 @@ namespace Nojumpo.AgentSystem
         void ControlJumpHeight() {
             if (!_jumpInputPressed)
             {
-                agent2DMovementData.CurrentVelocity = _agent2D.RigidBody2D.velocity;
+                agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
                 agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
-                _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
+                _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
             }
         }
 
         void ApplyJump() {
-            agent2DMovementData.CurrentVelocity = _agent2D.RigidBody2D.velocity;
+            agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
             agent2DMovementData.CurrentVelocity.y = _agent2DData.JumpForce;
-            _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }
@@ -39,6 +39,10 @@ namespace Nojumpo.AgentSystem
 
         protected override void HandleJumpReleased() {
             _jumpInputPressed = false;
+        }
+
+        protected override void Agent2DState_OnAnimationEvent() {
+            
         }
 
 
@@ -52,19 +56,16 @@ namespace Nojumpo.AgentSystem
             ControlJumpHeight();
             HandleMovement();
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                _agent2D.ChangeState(climbState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
                 return;
             }
 
-            if (_agent2D.RigidBody2D.velocity.y <= 0)
+            if (_agent2D.m_Rigidbody2D.velocity.y <= 0)
             {
-                _agent2D.ChangeState(fallState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Fall);
             }
-        }
-
-        public override void Agent2DState_OnAnimationEvent() {
         }
     }
 }

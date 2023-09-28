@@ -9,34 +9,34 @@ namespace Nojumpo.AgentSystem
         [SerializeField] AudioEventBaseSO landAudioEvent;
 
 
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }
 
+
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+
         public override void StateUpdate() {
             HandleMovement();
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                _agent2D.ChangeState(climbState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
 
                 return;
             }
 
-            if (_agent2D.GroundDetector.IsGrounded)
+            if (_agent2D.m_GroundDetector.IsGrounded)
             {
-                _agent2D.ChangeState(idleState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
             }
         }
 
-        public override void Agent2DState_OnAnimationEvent() {
-        }
-
         public void CheckIfPlayLandSound() {
-            if (_agent2D.GroundDetector.IsGrounded)
+            if (_agent2D.m_GroundDetector.IsGrounded)
             {
                 landAudioEvent.Play();
             }

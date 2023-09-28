@@ -5,7 +5,6 @@ namespace Nojumpo.AgentSystem
     public class Agent2DMoveState : Agent2DState
     {
         // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected Agent2DState idleState;
         [SerializeField] protected Agent2DMovementData agent2DMovementData;
 
 
@@ -39,23 +38,27 @@ namespace Nojumpo.AgentSystem
             CalculateHorizontalDirection(agent2DMovementData);
             agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
 
-            if (_agent2D.RigidBody2D.velocity.y <= -_agent2DData.MaxFallSpeed)
+            if (_agent2D.m_Rigidbody2D.velocity.y <= -_agent2DData.MaxFallSpeed)
             {
                 agent2DMovementData.CurrentVelocity.y = -_agent2DData.MaxFallSpeed;
                 return;
             }
 
-            agent2DMovementData.CurrentVelocity.y = _agent2D.RigidBody2D.velocity.y;
+            agent2DMovementData.CurrentVelocity.y = _agent2D.m_Rigidbody2D.velocity.y;
         }
 
         protected void SetVelocity() {
-            _agent2D.RigidBody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
         }
 
         protected override void HandleMovement() {
-            _agent2D.AgentRenderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
+        }
+
+        protected override void Agent2DState_OnAnimationEvent() {
+            animationEventAudio.Play();
         }
 
 
@@ -65,19 +68,19 @@ namespace Nojumpo.AgentSystem
                 return;
 
             HandleMovement();
-            
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.ClimbableDetector.CanClimb)
+
+            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                if (inputReader.MovementVector.y < 0 && _agent2D.GroundDetector.IsGrounded)
+                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
                     return;
 
-                _agent2D.ChangeState(climbState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Climb);
                 return;
             }
 
-            if (Mathf.Abs(_agent2D.RigidBody2D.velocity.x) < 0.01f)
+            if (Mathf.Abs(_agent2D.m_Rigidbody2D.velocity.x) < 0.01f)
             {
-                _agent2D.ChangeState(idleState);
+                _agent2D.ChangeState(_agent2D.m_StateFactory.Idle);
             }
         }
     }

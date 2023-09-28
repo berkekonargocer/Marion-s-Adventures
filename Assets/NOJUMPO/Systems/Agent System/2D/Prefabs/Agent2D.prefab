@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4954bb7bd160af41a7a75a55522694d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
 --- !u!1 &3165638210400657501
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4512557314077736914}
+  - component: {fileID: 3710759756318538116}
   - component: {fileID: 2979550965599401967}
   - component: {fileID: 6805245412640157078}
   - component: {fileID: 5120798428259133960}
@@ -168,6 +168,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3520277634687541234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3710759756318538116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165638210400657501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f941627b27d6f4d8660fa078fc2e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Idle: {fileID: 2979550965599401967}
+  Move: {fileID: 6805245412640157078}
+  Jump: {fileID: 5120798428259133960}
+  Fall: {fileID: 4922806902988123786}
+  Climb: {fileID: 934660361274326232}
+  Attack: {fileID: 7529238439936234394}
 --- !u!114 &2979550965599401967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,10 +348,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   idleState: {fileID: 2979550965599401967}
-  damageableLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  OnWeaponAttack:
+  OnAttack:
     m_PersistentCalls:
       m_Calls: []
   showGizmos: 1

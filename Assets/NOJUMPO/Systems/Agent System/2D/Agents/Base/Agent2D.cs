@@ -9,16 +9,17 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
-        [field: SerializeField] public InputReader GameInputReader { get; protected set; }
+        [field: SerializeField] public InputReader m_InputReader { get; protected set; }
 
         [SerializeField] Agent2DIdleState idleState;
-
-        public Rigidbody2D RigidBody2D { get; protected set; }
-        public AgentAnimator Animator { get; protected set; }
-        public Agent2DRenderer AgentRenderer { get; protected set; }
-        public Agent2DGroundDetector GroundDetector { get; protected set; }
-        public Agent2DClimbableDetector ClimbableDetector { get; protected set; }
-        public WeaponManager AgentWeapon { get; private set; }
+        
+        public Rigidbody2D m_Rigidbody2D { get; protected set; }
+        public AgentAnimator m_Animator { get; protected set; }
+        public Agent2DRenderer m_Renderer { get; protected set; }
+        public Agent2DGroundDetector m_GroundDetector { get; protected set; }
+        public Agent2DClimbableDetector m_ClimbableDetector { get; protected set; }
+        public StateFactory m_StateFactory { get; protected set; }
+        public WeaponManager m_AgentWeapon { get; private set; }
 
         Damageable _agentDamageable;
 
@@ -32,7 +33,7 @@ namespace Nojumpo.AgentSystem
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             SetComponents();
-            SetStates();
+            m_StateFactory.InitializeStates(this, agent2DData);
         }
 
         protected void Start() {
@@ -40,7 +41,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected void Update() {
-            GroundDetector.CheckIsGrounded();
+            m_GroundDetector.CheckIsGrounded();
             currentState.StateUpdate();
         }
 
@@ -51,22 +52,14 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
-            RigidBody2D = GetComponent<Rigidbody2D>();
-            Animator = GetComponentInChildren<AgentAnimator>();
-            AgentRenderer = GetComponent<Agent2DRenderer>();
-            GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
-            ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
-            AgentWeapon = GetComponentInChildren<WeaponManager>();
+            m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            m_Animator = GetComponentInChildren<AgentAnimator>();
+            m_Renderer = GetComponent<Agent2DRenderer>();
+            m_GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
+            m_ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
+            m_StateFactory = GetComponentInChildren<StateFactory>();
+            m_AgentWeapon = GetComponentInChildren<WeaponManager>();
             _agentDamageable = GetComponent<Damageable>();
-        }
-
-        protected virtual void SetStates() {
-            Agent2DState[] agent2DStates = GetComponentsInChildren<Agent2DState>();
-
-            foreach (Agent2DState agent2DState in agent2DStates)
-            {
-                agent2DState.Initialize(this, agent2DData);
-            }
         }
 
         protected void DisplayState() {

@@ -19,7 +19,7 @@ namespace Nojumpo.WeaponSystem
 
             for (int i = 0; i < Weapons.Count; i++)
             {
-                agent2D.AgentWeapon.AddWeapon(Weapons[i]);
+                agent2D.m_AgentWeapon.AddWeapon(Weapons[i]);
             }
         }
     }
