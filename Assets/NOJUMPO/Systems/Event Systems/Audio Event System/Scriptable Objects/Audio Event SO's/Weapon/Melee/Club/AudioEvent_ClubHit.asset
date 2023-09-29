@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2172c44b303dc3e429aa95802320b3ae, type: 3}
-  m_Name: AudioEvent_PlayerTakeDamage
+  m_Name: AudioEvent_ClubHit
   m_EditorClassIdentifier: 
   _developerDescription: 
   _audioClips:
-  - {fileID: 8300000, guid: 83f33d8f08b20f8439c97cadb7aa4e90, type: 3}
+  - {fileID: 8300000, guid: 2720459382f2e75458da8493f83fdf72, type: 3}
   _volume:
-    MinValue: 0.7024586
-    MaxValue: 0.7024586
+    MinValue: 0.35118103
+    MaxValue: 0.35118103
   _audioPitch:
-    MinValue: 0.70065683
-    MaxValue: 1.0009383
+    MinValue: 0.7023622
+    MaxValue: 1.0047244

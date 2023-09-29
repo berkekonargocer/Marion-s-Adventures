@@ -26,6 +26,11 @@ namespace Nojumpo.WeaponSystem
         public override void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection) {
             int hits = Physics2D.RaycastNonAlloc(agent2D.m_AgentWeapon.transform.position, attackDirection, weaponHitResult, m_AttackRange, damageableLayerMask);
 
+            if (hits <= 0)
+                return;
+            
+            WeaponData.AttackHitAudioEvent.Play();
+            
             for (int i = 0; i < hits; i++)
             {
                 Damageable damageable = weaponHitResult[i].collider.GetComponent<Damageable>();

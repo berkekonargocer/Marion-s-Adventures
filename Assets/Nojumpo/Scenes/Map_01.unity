@@ -38661,7 +38661,7 @@ PrefabInstance:
       objectReference: {fileID: 1615123594}
     - target: {fileID: 3444757173467552242, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4656206327618296469, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: <m_InputReader>k__BackingField
@@ -38785,6 +38785,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4989949660468682817, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: TakeDamageAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e2ac69ad8fffd147923247672227192, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
