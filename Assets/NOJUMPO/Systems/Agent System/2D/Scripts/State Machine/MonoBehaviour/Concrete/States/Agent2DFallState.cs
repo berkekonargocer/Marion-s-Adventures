@@ -9,16 +9,7 @@ namespace Nojumpo.AgentSystem
         [SerializeField] AudioEventBaseSO landAudioEvent;
 
 
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected override void HandleMovement() {
-            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
-            CalculateVelocity();
-            SetVelocity();
-        }
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
         public override void StateUpdate() {
             HandleMovement();
 
@@ -40,6 +31,14 @@ namespace Nojumpo.AgentSystem
             {
                 landAudioEvent.Play();
             }
+        }
+
+
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleMovement() {
+            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+            CalculateVelocity();
+            SetVelocity();
         }
     }
 }
