@@ -46,7 +46,7 @@ namespace Nojumpo.AgentSystem
             _jumpInputPressed = false;
         }
 
-        protected override void Agent2DState_OnAnimationEvent() {
+        protected override void OnAnimationEvent() {
             
         }
         

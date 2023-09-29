@@ -76,7 +76,7 @@ namespace Nojumpo.AgentSystem
             SetVelocity();
         }
 
-        protected override void Agent2DState_OnAnimationEvent() {
+        protected override void OnAnimationEvent() {
             animationEventAudio.Play();
         }
     }

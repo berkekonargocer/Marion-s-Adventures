@@ -1,11 +1,12 @@
 using Nojumpo.AudioEventSystem;
+using Nojumpo.Interfaces;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
-    [RequireComponent(typeof(StateFactory))]
+    [RequireComponent(typeof(IStateFactory))]
     public abstract class Agent2DState : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
@@ -36,10 +37,10 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_InputReader.onJumpInputPressed += HandleJumpPressed;
             _agent2D.m_InputReader.onJumpInputReleased += HandleJumpReleased;
             _agent2D.m_InputReader.onAttackInputPressed += HandleAttack;
-            _agent2D.m_Animator.onAnimationEvent += Agent2DState_OnAnimationEvent;
-            _agent2D.m_Animator.onAnimationEndEvent += Agent2DState_OnAnimationEndEvent;
-            _agent2D.m_AgentDamageable.onTakeDamage += GetHit;
-            _agent2D.m_AgentDamageable.onDie += Die;
+            _agent2D.m_Animator.onAnimationEvent += OnAnimationEvent;
+            _agent2D.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
+            _agent2D.m_AgentDamageable.onTakeDamage += OnTakeDamage;
+            _agent2D.m_AgentDamageable.onDie += OnDie;
             _agent2D.m_Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
         }
@@ -51,20 +52,20 @@ namespace Nojumpo.AgentSystem
         public virtual void StateFixedUpdate() {
         }
 
-        protected virtual void Agent2DState_OnAnimationEvent() {
+        protected virtual void OnAnimationEvent() {
         }
 
-        protected virtual void Agent2DState_OnAnimationEndEvent() {
+        protected virtual void OnAnimationEndEvent() {
         }
 
         public virtual void Exit() {
             _agent2D.m_InputReader.onJumpInputPressed -= HandleJumpPressed;
             _agent2D.m_InputReader.onJumpInputReleased -= HandleJumpReleased;
             _agent2D.m_InputReader.onAttackInputPressed -= HandleAttack;
-            _agent2D.m_Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
-            _agent2D.m_Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
-            _agent2D.m_AgentDamageable.onTakeDamage -= GetHit;
-            _agent2D.m_AgentDamageable.onDie -= Die;
+            _agent2D.m_Animator.onAnimationEvent -= OnAnimationEvent;
+            _agent2D.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
+            _agent2D.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
+            _agent2D.m_AgentDamageable.onDie -= OnDie;
             OnExit?.Invoke();
         }
 
@@ -90,11 +91,11 @@ namespace Nojumpo.AgentSystem
             }
         }
 
-        protected virtual void GetHit() {
-            _agent2D.ChangeState(_agent2D.m_StateFactory.m_GetHit);
+        protected virtual void HandleTakeDamage() {
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_TakeDamage);
         }
 
-        protected virtual void Die() {
+        protected virtual void HandleDie() {
             _agent2D.ChangeState(_agent2D.m_StateFactory.m_Die);
         }
 
@@ -105,9 +106,19 @@ namespace Nojumpo.AgentSystem
             _agent2D.ChangeState(_agent2D.m_StateFactory.m_Fall);
             return true;
         }
-        
+
         protected void TransitionToIdle() {
             _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
+        }
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void OnTakeDamage() {
+            HandleTakeDamage();
+        }
+
+        void OnDie() {
+            HandleDie();
         }
     }
 }

@@ -63,11 +63,11 @@ namespace Nojumpo.AgentSystem
             // Prevent Jumping While Attacking
         }
         
-        protected override void Agent2DState_OnAnimationEvent() {
+        protected override void OnAnimationEvent() {
             InvokeAttack();
         }
 
-        protected override void Agent2DState_OnAnimationEndEvent() {
+        protected override void OnAnimationEndEvent() {
             ChangeStateToIdle();
         }
 

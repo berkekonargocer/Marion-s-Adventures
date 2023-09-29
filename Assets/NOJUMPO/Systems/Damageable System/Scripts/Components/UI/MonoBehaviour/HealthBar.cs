@@ -21,13 +21,13 @@ namespace Nojumpo.DamageableSystem
         }
 
         void OnEnable() {
-            DamageableObject.onTakeDamage += Damageable_OnTakeDamage;
-            DamageableObject.onHeal += Damageable_OnHeal;
+            DamageableObject.onTakeDamage += OnTakeDamage;
+            DamageableObject.onHeal += OnHeal;
         }
 
         void OnDisable() {
-            DamageableObject.onTakeDamage -= Damageable_OnTakeDamage;
-            DamageableObject.onHeal -= Damageable_OnHeal;
+            DamageableObject.onTakeDamage -= OnTakeDamage;
+            DamageableObject.onHeal -= OnHeal;
         }
 
 
@@ -36,11 +36,11 @@ namespace Nojumpo.DamageableSystem
             _healthBarAnimator = GetComponent<HealthBarAnimator>();
         }
 
-        void Damageable_OnTakeDamage() {
+        void OnTakeDamage() {
             _healthBarAnimator.TakeDamageAnimation(this);
         }
 
-        void Damageable_OnHeal() {
+        void OnHeal() {
             _healthBarAnimator.HealAnimation(this);
         }
     }

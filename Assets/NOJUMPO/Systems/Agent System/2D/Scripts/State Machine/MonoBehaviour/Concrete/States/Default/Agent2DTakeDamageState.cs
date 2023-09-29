@@ -1,6 +1,6 @@
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DGetHitState : Agent2DState
+    public class Agent2DTakeDamageState : Agent2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
@@ -17,11 +17,11 @@ namespace Nojumpo.AgentSystem
             // Prevent Jumping
         }
 
-        protected override void GetHit() {
+        protected override void HandleTakeDamage() {
             // Prevent Getting hit
         }
 
-        protected override void Agent2DState_OnAnimationEndEvent() {
+        protected override void OnAnimationEndEvent() {
             TransitionToIdle();
         }
     }

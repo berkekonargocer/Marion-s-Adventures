@@ -189,7 +189,7 @@ MonoBehaviour:
   <m_Fall>k__BackingField: {fileID: 0}
   <m_Climb>k__BackingField: {fileID: 0}
   <m_Attack>k__BackingField: {fileID: 0}
-  <m_GetHit>k__BackingField: {fileID: 0}
+  <m_TakeDamage>k__BackingField: {fileID: 0}
   <m_Die>k__BackingField: {fileID: 8908634783264639100}
 --- !u!114 &2979550965599401967
 MonoBehaviour:
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: GetHit
+  animatorStateParameter: TakeDamage
   animationEventAudio: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
