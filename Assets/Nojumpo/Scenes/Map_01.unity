@@ -8195,6 +8195,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8381348976630697602, guid: 55b9d074b8d8b7044981b446c5a29b29, type: 3}
   m_PrefabInstance: {fileID: 3887801936164746436}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &908751565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9187751611206414803, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+  m_PrefabInstance: {fileID: 1614624508634091000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ffa11f2e1c84343a859e4c9a7af267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908751566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8009303682703826745, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+  m_PrefabInstance: {fileID: 1614624508634091000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908751567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7808570174617627189, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+  m_PrefabInstance: {fileID: 1614624508634091000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdc996cda32fc5419bc44a7fc96d5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908751568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6508178573656020025, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+  m_PrefabInstance: {fileID: 1614624508634091000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908751569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3276890562790149696, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+  m_PrefabInstance: {fileID: 1614624508634091000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &962369326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6876988925620679140, guid: 2169f244015fa3a43b18e9e73a342361, type: 3}
@@ -38512,9 +38567,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1615123594}
     - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_Die>k__BackingField
+      value: 
+      objectReference: {fileID: 908751565}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_Idle>k__BackingField
+      value: 
+      objectReference: {fileID: 908751569}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_Move>k__BackingField
+      value: 
+      objectReference: {fileID: 908751568}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_Attack>k__BackingField
+      value: 
+      objectReference: {fileID: 908751567}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_TakeDamage>k__BackingField
+      value: 
+      objectReference: {fileID: 908751566}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: <m_AgentMovementData>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 65869df76f70e1f4bab5c2fe4bfad728, type: 2}
     - target: {fileID: 4871689617655396129, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannosaurus
@@ -38523,7 +38598,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6508178573656020025, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: animationEventAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 6266489e43d39bf4ab87dd4d1254cf0b, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3040138094384026203, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

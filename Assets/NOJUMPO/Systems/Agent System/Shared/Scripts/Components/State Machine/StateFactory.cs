@@ -10,7 +10,12 @@ namespace Nojumpo.AgentSystem
 
         [field: SerializeField] public Agent2DState m_Idle { get; private set; }
         [field: SerializeField] public Agent2DState m_Move { get; private set; }
-
+        [field: SerializeField] public Agent2DState m_Jump { get; private set; }
+        [field: SerializeField] public Agent2DState m_Fall { get; private set; }
+        [field: SerializeField] public Agent2DState m_Climb { get; private set; }
+        [field: SerializeField] public Agent2DState m_Attack { get; private set; }
+        [field: SerializeField] public Agent2DState m_TakeDamage { get; private set; }
+        [field: SerializeField] public Agent2DState m_Die { get; private set; }
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void InitializeStates(Agent2D agent2D, Agent2DData agent2DData) {
