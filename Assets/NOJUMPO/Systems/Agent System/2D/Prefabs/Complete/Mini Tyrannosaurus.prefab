@@ -123,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: TakeDamageAudioEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
+      objectReference: {fileID: 11400000, guid: a8e4940d6a93adf49a1d0160e9915a26, type: 2}
     - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: <Resistances>k__BackingField.resistances.Array.size
       value: 2
@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 0aee468671c8447449ac02abfb74f068, type: 2}
+    - target: {fileID: 6805245412640157078, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: animationEventAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
     - target: {fileID: 8166887757975910344, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Size.x
       value: 0.75
@@ -219,6 +223,38 @@ PrefabInstance:
     - target: {fileID: 8620842858644754926, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Offset.y
       value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: animationEventAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: debb07a00ae30d540aa6f74f64ec8ddd, type: 2}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 1631de1d47b4ace49be51e5552ff864d, type: 2}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Nojumpo.AudioEventSystem.SimpleAudioEventSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5120798428259133960, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
