@@ -2,6 +2,7 @@ using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using Nojumpo.WeaponSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Nojumpo.AgentSystem
 {
@@ -12,17 +13,17 @@ namespace Nojumpo.AgentSystem
         [field: SerializeField] public InputReader m_InputReader { get; protected set; }
 
         [SerializeField] Agent2DIdleState idleState;
-        
+
         public Rigidbody2D m_Rigidbody2D { get; protected set; }
         public AgentAnimator m_Animator { get; protected set; }
         public Agent2DRenderer m_Renderer { get; protected set; }
         public Agent2DGroundDetector m_GroundDetector { get; protected set; }
         public Agent2DClimbableDetector m_ClimbableDetector { get; protected set; }
         public StateFactory m_StateFactory { get; protected set; }
+        public Damageable m_AgentDamageable { get; private set; }
         public WeaponManager m_AgentWeapon { get; private set; }
 
-        Damageable _agentDamageable;
-
+        
         [Header("State Debug")]
         public Agent2DState currentState;
         public Agent2DState previousState;
@@ -58,9 +59,9 @@ namespace Nojumpo.AgentSystem
             m_ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
             m_StateFactory = GetComponentInChildren<StateFactory>();
             m_AgentWeapon = GetComponentInChildren<WeaponManager>();
-            _agentDamageable = GetComponent<Damageable>();
+            m_AgentDamageable = GetComponent<Damageable>();
         }
-        
+
         protected void InitializeAgent() {
             m_StateFactory.InitializeStates(this, agent2DData);
         }

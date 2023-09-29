@@ -4,10 +4,6 @@ namespace Nojumpo.AgentSystem
 {
     public class Agent2DMoveState : Agent2DState
     {
-        // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected Agent2DMovementData agent2DMovementData;
-
-
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
             if (CheckToChangeIntoFallState())
@@ -15,9 +11,9 @@ namespace Nojumpo.AgentSystem
 
             HandleMovement();
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+                if (_agent2D.m_InputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
                     return;
 
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
@@ -46,36 +42,36 @@ namespace Nojumpo.AgentSystem
         }
 
         protected void CalculateHorizontalDirection(Agent2DMovementData movementData) {
-            if (inputReader.MovementVector.x > 0)
+            if (_agent2D.m_InputReader.MovementVector.x > 0)
             {
                 movementData.HorizontalMovementDirection = 1;
             }
-            else if (inputReader.MovementVector.x < 0)
+            else if (_agent2D.m_InputReader.MovementVector.x < 0)
             {
                 movementData.HorizontalMovementDirection = -1;
             }
         }
 
         protected void CalculateVelocity() {
-            CalculateSpeed(inputReader.MovementVector, agent2DMovementData);
-            CalculateHorizontalDirection(agent2DMovementData);
-            agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
+            CalculateSpeed(_agent2D.m_InputReader.MovementVector, _agent2D.m_StateFactory.m_AgentMovementData);
+            CalculateHorizontalDirection(_agent2D.m_StateFactory.m_AgentMovementData);
+            _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity = Vector2.right * (_agent2D.m_StateFactory.m_AgentMovementData.HorizontalMovementDirection * _agent2D.m_StateFactory.m_AgentMovementData.CurrentSpeed);
 
             if (_agent2D.m_Rigidbody2D.velocity.y <= -_agent2DData.m_MaxFallSpeed)
             {
-                agent2DMovementData.CurrentVelocity.y = -_agent2DData.m_MaxFallSpeed;
+                _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = -_agent2DData.m_MaxFallSpeed;
                 return;
             }
 
-            agent2DMovementData.CurrentVelocity.y = _agent2D.m_Rigidbody2D.velocity.y;
+            _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = _agent2D.m_Rigidbody2D.velocity.y;
         }
 
         protected void SetVelocity() {
-            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _agent2D.m_Rigidbody2D.velocity = _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity;
         }
 
         protected override void HandleMovement() {
-            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(_agent2D.m_InputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }

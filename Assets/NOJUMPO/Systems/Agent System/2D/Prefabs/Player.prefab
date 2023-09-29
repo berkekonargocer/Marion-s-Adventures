@@ -650,6 +650,10 @@ PrefabInstance:
       propertyPath: <m_Attack>k__BackingField
       value: 
       objectReference: {fileID: 2139152200785959406}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_GetHit>k__BackingField
+      value: 
+      objectReference: {fileID: 2221565338327624930}
     - target: {fileID: 4922806902988123786, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: attackState
       value: 
@@ -800,6 +804,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbdc996cda32fc5419bc44a7fc96d5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2221565338327624930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7711961399011616406, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2649414575555657485 stripped

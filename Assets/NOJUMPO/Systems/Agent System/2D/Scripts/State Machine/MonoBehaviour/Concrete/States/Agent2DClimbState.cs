@@ -19,7 +19,7 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void StateUpdate() {
-            if (inputReader.MovementVector.magnitude > 0)
+            if (_agent2D.m_InputReader.MovementVector.magnitude > 0)
             {
                 Climb();
             }
@@ -67,14 +67,14 @@ namespace Nojumpo.AgentSystem
         void Climb() {
             _agent2D.m_Animator.StartAnimation();
 
-            if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+            if (_agent2D.m_InputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
             {
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
                 return;
             }
 
-            _agent2D.m_Rigidbody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.m_ClimbingSpeed,
-                inputReader.MovementVector.y * _agent2DData.m_ClimbingSpeed);
+            _agent2D.m_Rigidbody2D.velocity = new Vector2(_agent2D.m_InputReader.MovementVector.x * _agent2DData.m_ClimbingSpeed,
+                _agent2D.m_InputReader.MovementVector.y * _agent2DData.m_ClimbingSpeed);
         }
 
         void Wait() {

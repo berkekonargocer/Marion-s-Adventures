@@ -1,44 +1,24 @@
-using UnityEngine;
-
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
-    public class Agent2DGetHitState : MonoBehaviour
+    public class Agent2DGetHitState : Agent2DState
     {
-        // -------------------------------- FIELDS ---------------------------------
-        
-        
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-
-        }
-
-        void OnEnable() {
-
-        }
-
-        void OnDisable() {
-
-        }
-
-        void Start() {
-
-        }
-
-        void Update() {
-
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public override void StateUpdate() {
+            // Prevent State Update
         }
 
 
-	// ------------------------- CUSTOM PUBLIC METHODS -------------------------
-	
-	
-	
-	// ------------------------ CUSTOM PROTECTED METHODS -----------------------
-	
-	
-	
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleAttack() {
+            // Prevent Attacking
+        }
+
+        protected override void HandleJumpPressed() {
+            // Prevent Jumping
+        }
+
+        protected override void Agent2DState_OnAnimationEndEvent() {
+            TransitionToIdle();
+        }
     }
 }

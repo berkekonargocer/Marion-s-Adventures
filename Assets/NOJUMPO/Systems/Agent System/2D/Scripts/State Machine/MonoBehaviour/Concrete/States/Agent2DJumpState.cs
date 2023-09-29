@@ -18,7 +18,7 @@ namespace Nojumpo.AgentSystem
             ControlJumpHeight();
             HandleMovement();
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
                 return;
@@ -33,7 +33,7 @@ namespace Nojumpo.AgentSystem
         
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(_agent2D.m_InputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }
@@ -55,16 +55,16 @@ namespace Nojumpo.AgentSystem
         void ControlJumpHeight() {
             if (!_jumpInputPressed)
             {
-                agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-                agent2DMovementData.CurrentVelocity.y += _agent2DData.m_LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
-                _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+                _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
+                _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity.y += _agent2DData.m_LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
+                _agent2D.m_Rigidbody2D.velocity = _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity;
             }
         }
 
         void ApplyJump() {
-            agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-            agent2DMovementData.CurrentVelocity.y = _agent2DData.m_JumpForce;
-            _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
+            _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
+            _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = _agent2DData.m_JumpForce;
+            _agent2D.m_Rigidbody2D.velocity = _agent2D.m_StateFactory.m_AgentMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }
     }

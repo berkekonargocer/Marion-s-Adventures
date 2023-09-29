@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4922806902988123786}
   - component: {fileID: 934660361274326232}
   - component: {fileID: 7529238439936234394}
+  - component: {fileID: 7711961399011616406}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -186,6 +187,8 @@ MonoBehaviour:
   <m_Fall>k__BackingField: {fileID: 0}
   <m_Climb>k__BackingField: {fileID: 0}
   <m_Attack>k__BackingField: {fileID: 0}
+  <m_GetHit>k__BackingField: {fileID: 0}
+  <m_Die>k__BackingField: {fileID: 0}
 --- !u!114 &2979550965599401967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +323,27 @@ MonoBehaviour:
       m_Calls: []
   showGizmos: 1
   OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7711961399011616406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165638210400657501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+  animatorStateParameter: GetHit
+  animationEventAudio: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6241761154690006641

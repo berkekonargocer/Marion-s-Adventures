@@ -30,17 +30,17 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            if (Mathf.Abs(inputReader.MovementVector.x) > 0)
+            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.x) > 0)
             {
-                _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+                _agent2D.m_Renderer.FaceDirection(_agent2D.m_InputReader.MovementVector);
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Move);
                 return;
             }
 
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
-                if (inputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
+                if (_agent2D.m_InputReader.MovementVector.y < 0 && _agent2D.m_GroundDetector.IsGrounded)
                     return;
 
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);

@@ -13,7 +13,7 @@ namespace Nojumpo.AgentSystem
         public override void StateUpdate() {
             HandleMovement();
 
-            if (Mathf.Abs(inputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
             {
                 _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
 
@@ -36,7 +36,7 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            _agent2D.m_Renderer.FaceDirection(inputReader.MovementVector);
+            _agent2D.m_Renderer.FaceDirection(_agent2D.m_InputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }

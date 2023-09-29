@@ -9,8 +9,6 @@ namespace Nojumpo.AgentSystem
     public abstract class Agent2DState : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected InputReader inputReader;
-        
         [SerializeField] protected string animatorStateParameter = "";
         [SerializeField] protected AudioEventBaseSO animationEventAudio;
 
@@ -27,7 +25,7 @@ namespace Nojumpo.AgentSystem
             animationEventAudioSource = GetComponent<AudioSource>();
         }
 
-        
+
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(Agent2D agent2D, Agent2DData agent2DData) {
             _agent2D = agent2D;
@@ -35,11 +33,12 @@ namespace Nojumpo.AgentSystem
         }
 
         public virtual void Enter() {
-            inputReader.onJumpInputPressed += HandleJumpPressed;
-            inputReader.onJumpInputReleased += HandleJumpReleased;
-            inputReader.onAttackInputPressed += HandleAttack;
+            _agent2D.m_InputReader.onJumpInputPressed += HandleJumpPressed;
+            _agent2D.m_InputReader.onJumpInputReleased += HandleJumpReleased;
+            _agent2D.m_InputReader.onAttackInputPressed += HandleAttack;
             _agent2D.m_Animator.onAnimationEvent += Agent2DState_OnAnimationEvent;
             _agent2D.m_Animator.onAnimationEndEvent += Agent2DState_OnAnimationEndEvent;
+            _agent2D.m_AgentDamageable.onTakeDamage += GetHit;
             _agent2D.m_Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
         }
@@ -52,21 +51,21 @@ namespace Nojumpo.AgentSystem
         }
 
         protected virtual void Agent2DState_OnAnimationEvent() {
-            
         }
 
         protected virtual void Agent2DState_OnAnimationEndEvent() {
         }
 
         public virtual void Exit() {
-            inputReader.onJumpInputPressed -= HandleJumpPressed;
-            inputReader.onJumpInputReleased -= HandleJumpReleased;
-            inputReader.onAttackInputPressed -= HandleAttack;
+            _agent2D.m_InputReader.onJumpInputPressed -= HandleJumpPressed;
+            _agent2D.m_InputReader.onJumpInputReleased -= HandleJumpReleased;
+            _agent2D.m_InputReader.onAttackInputPressed -= HandleAttack;
             _agent2D.m_Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
             _agent2D.m_Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
+            _agent2D.m_AgentDamageable.onTakeDamage -= GetHit;
             OnExit?.Invoke();
         }
-        
+
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void HandleMovement() {
@@ -89,12 +88,20 @@ namespace Nojumpo.AgentSystem
             }
         }
 
+        protected virtual void GetHit() {
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_GetHit);
+        }
+
         protected bool CheckToChangeIntoFallState() {
             if (_agent2D.m_GroundDetector.IsGrounded)
                 return false;
 
             _agent2D.ChangeState(_agent2D.m_StateFactory.m_Fall);
             return true;
+        }
+        
+        protected void TransitionToIdle() {
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
         }
     }
 }
