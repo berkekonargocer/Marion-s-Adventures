@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.458, y: -1.434, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.65, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3817414832074466909}
@@ -117,10 +117,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: maxHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 446884de9dda84b45a9a8669ecf86d1d, type: 2}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: TakeDamageAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[0].<DamageType>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[1].<DamageType>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[0].<PercentageToTake>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[1].<PercentageToTake>k__BackingField
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3832614430499188442, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1705103512, guid: c80cb91d88cfe5943bbf41fcbfaca03b, type: 3}
+    - target: {fileID: 4953552460675015482, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: agent2DData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a0c52d665c2c5e4c9712106015e9a25, type: 2}
     - target: {fileID: 4953552460675015482, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: <m_InputReader>k__BackingField
       value: 

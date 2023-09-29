@@ -640,8 +640,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: maxHealth
-      value: 150
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: b8ffd4ac350a5b94fb18e9e7da57e445, type: 2}
     - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: TakeDamageAudioEvent
       value: 
