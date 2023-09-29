@@ -5,7 +5,6 @@ namespace Nojumpo.ScriptableObjects
     [CreateAssetMenu(fileName = "NewAgent2DData", menuName = "Nojumpo/Scriptable Objects/Agent2D/Data/New Agent Data")]
     public class Agent2DData : ScriptableObject
     {
-
 #if UNITY_EDITOR
 
         [TextArea]
@@ -14,6 +13,13 @@ namespace Nojumpo.ScriptableObjects
 #endif
 
         // -------------------------------- FIELDS ---------------------------------
+        [Header("HEALTH DATA")]
+        [Space]
+        [SerializeField] int maxHp = 100;
+
+        public int m_MaxHp { get { return maxHp; } }
+        
+        
         [Header("MOVEMENT DATA")]
         [Space]
         [SerializeField] float maxSpeed = 6.0f;
@@ -21,10 +27,10 @@ namespace Nojumpo.ScriptableObjects
         [SerializeField] float decelerationSpeed = 50.0f;
         [SerializeField] float climbingSpeed = 2.5f;
 
-        public float MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
-        public float AccelerationSpeed { get { return accelerationSpeed; } private set { accelerationSpeed = value; } }
-        public float DecelerationSpeed { get { return decelerationSpeed; } private set { decelerationSpeed = value; } }
-        public float ClimbingSpeed { get { return climbingSpeed; } set { climbingSpeed = value; } }
+        public float m_MaxSpeed { get { return maxSpeed; } private set { maxSpeed = value; } }
+        public float m_AccelerationSpeed { get { return accelerationSpeed; } private set { accelerationSpeed = value; } }
+        public float m_DecelerationSpeed { get { return decelerationSpeed; } private set { decelerationSpeed = value; } }
+        public float m_ClimbingSpeed { get { return climbingSpeed; } set { climbingSpeed = value; } }
 
         [Header("JUMP DATA")]
         [Space]
@@ -32,9 +38,9 @@ namespace Nojumpo.ScriptableObjects
         [SerializeField] float lowJumpMultiplier = 2.0f;
         [SerializeField] float maxFallSpeed = 25.0f;
 
-        public float JumpForce { get { return jumpForce; } private set { jumpForce = value; } }
-        public float LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
+        public float m_JumpForce { get { return jumpForce; } private set { jumpForce = value; } }
+        public float m_LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
 
-        public float MaxFallSpeed { get { return maxFallSpeed; } }
+        public float m_MaxFallSpeed { get { return maxFallSpeed; } }
     }
 }

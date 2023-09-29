@@ -73,8 +73,8 @@ namespace Nojumpo.AgentSystem
                 return;
             }
 
-            _agent2D.m_Rigidbody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.ClimbingSpeed,
-                inputReader.MovementVector.y * _agent2DData.ClimbingSpeed);
+            _agent2D.m_Rigidbody2D.velocity = new Vector2(inputReader.MovementVector.x * _agent2DData.m_ClimbingSpeed,
+                inputReader.MovementVector.y * _agent2DData.m_ClimbingSpeed);
         }
 
         void Wait() {

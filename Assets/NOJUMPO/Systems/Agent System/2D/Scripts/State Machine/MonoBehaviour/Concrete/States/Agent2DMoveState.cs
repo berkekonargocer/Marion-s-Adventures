@@ -35,14 +35,14 @@ namespace Nojumpo.AgentSystem
         protected void CalculateSpeed(Vector2 movementVector, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementVector.x) > 0)
             {
-                movementData.CurrentSpeed += _agent2DData.AccelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed += _agent2DData.m_AccelerationSpeed * Time.deltaTime;
             }
             else
             {
-                movementData.CurrentSpeed -= _agent2DData.DecelerationSpeed * Time.deltaTime;
+                movementData.CurrentSpeed -= _agent2DData.m_DecelerationSpeed * Time.deltaTime;
             }
 
-            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.MaxSpeed);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.m_MaxSpeed);
         }
 
         protected void CalculateHorizontalDirection(Agent2DMovementData movementData) {
@@ -61,9 +61,9 @@ namespace Nojumpo.AgentSystem
             CalculateHorizontalDirection(agent2DMovementData);
             agent2DMovementData.CurrentVelocity = Vector2.right * (agent2DMovementData.HorizontalMovementDirection * agent2DMovementData.CurrentSpeed);
 
-            if (_agent2D.m_Rigidbody2D.velocity.y <= -_agent2DData.MaxFallSpeed)
+            if (_agent2D.m_Rigidbody2D.velocity.y <= -_agent2DData.m_MaxFallSpeed)
             {
-                agent2DMovementData.CurrentVelocity.y = -_agent2DData.MaxFallSpeed;
+                agent2DMovementData.CurrentVelocity.y = -_agent2DData.m_MaxFallSpeed;
                 return;
             }
 

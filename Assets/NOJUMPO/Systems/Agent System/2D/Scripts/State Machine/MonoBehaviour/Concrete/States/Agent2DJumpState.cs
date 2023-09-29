@@ -56,14 +56,14 @@ namespace Nojumpo.AgentSystem
             if (!_jumpInputPressed)
             {
                 agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-                agent2DMovementData.CurrentVelocity.y += _agent2DData.LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
+                agent2DMovementData.CurrentVelocity.y += _agent2DData.m_LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
                 _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
             }
         }
 
         void ApplyJump() {
             agent2DMovementData.CurrentVelocity = _agent2D.m_Rigidbody2D.velocity;
-            agent2DMovementData.CurrentVelocity.y = _agent2DData.JumpForce;
+            agent2DMovementData.CurrentVelocity.y = _agent2DData.m_JumpForce;
             _agent2D.m_Rigidbody2D.velocity = agent2DMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }

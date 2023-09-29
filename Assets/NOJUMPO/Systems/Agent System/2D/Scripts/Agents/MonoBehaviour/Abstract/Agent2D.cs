@@ -33,7 +33,7 @@ namespace Nojumpo.AgentSystem
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             SetComponents();
-            m_StateFactory.InitializeStates(this, agent2DData);
+            InitializeAgent();
         }
 
         protected void Start() {
@@ -49,7 +49,6 @@ namespace Nojumpo.AgentSystem
             currentState.StateFixedUpdate();
         }
 
-
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -60,6 +59,10 @@ namespace Nojumpo.AgentSystem
             m_StateFactory = GetComponentInChildren<StateFactory>();
             m_AgentWeapon = GetComponentInChildren<WeaponManager>();
             _agentDamageable = GetComponent<Damageable>();
+        }
+        
+        protected void InitializeAgent() {
+            m_StateFactory.InitializeStates(this, agent2DData);
         }
 
         protected void DisplayState() {
