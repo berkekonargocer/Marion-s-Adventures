@@ -17,6 +17,10 @@ namespace Nojumpo.AgentSystem
             // Prevent Jumping
         }
 
+        protected override void GetHit() {
+            // Prevent Getting hit
+        }
+
         protected override void Agent2DState_OnAnimationEndEvent() {
             TransitionToIdle();
         }

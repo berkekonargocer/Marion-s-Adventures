@@ -13,7 +13,6 @@ namespace Nojumpo.AgentSystem
         public override void Enter() {
             base.Enter();
             _agent2D.m_Rigidbody2D.sharedMaterial = normalFrictionMaterial2D;
-            _agent2D.m_Rigidbody2D.velocity = Vector2.zero; // Find a better way to solve sliding problem
         }
 
         public override void StateUpdate() {

@@ -1,16 +1,12 @@
+using UnityEngine;
+
 namespace Nojumpo.AgentSystem
 {
     public class Agent2DDieState : Agent2DState
     {
-        // -------------------------------- FIELDS ---------------------------------
-
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void StateUpdate() {
-            // Prevent State Update
+            _agent2D.m_Rigidbody2D.velocity = new Vector2(0, _agent2D.m_Rigidbody2D.velocity.y);
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
@@ -22,8 +18,17 @@ namespace Nojumpo.AgentSystem
             // Prevent Jumping
         }
 
+        protected override void GetHit() {
+            // Prevent Getting hit
+        }
+
+        protected override void Die() {
+            // Prevent Dying while dying LOL
+        }
+
         protected override void Agent2DState_OnAnimationEndEvent() {
             animationEventAudio.Play();
+
             // Call You Died Screen
         }
     }
