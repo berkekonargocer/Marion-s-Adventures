@@ -1,10 +1,9 @@
-using Nojumpo.Interfaces;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class StateFactory : MonoBehaviour, IStateFactory
+    public class StateFactory : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public Agent2DMovementData m_AgentMovementData { get; private set; }

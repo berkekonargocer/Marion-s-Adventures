@@ -1,12 +1,11 @@
 using Nojumpo.AudioEventSystem;
-using Nojumpo.Interfaces;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
-    [RequireComponent(typeof(IStateFactory))]
+    [RequireComponent(typeof(StateFactory))]
     public abstract class Agent2DState : MonoBehaviour
     {
         // -------------------------------- FIELDS --------------------------------
