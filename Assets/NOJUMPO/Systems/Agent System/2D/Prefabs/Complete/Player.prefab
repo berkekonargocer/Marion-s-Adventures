@@ -528,10 +528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Health Bar Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4530677654247292932, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
-      propertyPath: <DamageableObject>k__BackingField
-      value: 
-      objectReference: {fileID: 8757604682999882583}
     - target: {fileID: 5273525830850890305, guid: 3ab18b3c3ec3559458a305d2ca864bf2, type: 3}
       propertyPath: healthChangeAnimationType
       value: 1
@@ -626,6 +622,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525523736454965813, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: TakeDamageAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
     - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: <m_Fall>k__BackingField
       value: 
@@ -726,6 +730,10 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5266669479791451350, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1673184532673914702, guid: e8bd2ee5c950d4a4892e3261080ce8e1, type: 2}
     - target: {fileID: 6805245412640157078, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: attackState
       value: 
@@ -792,13 +800,7 @@ PrefabInstance:
       addedObject: {fileID: 4755851029187129462}
     - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8757604682999882583}
-    - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1174064966684619717}
-    - targetCorrespondingSourceObject: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4360574921031220905}
     - targetCorrespondingSourceObject: {fileID: 3165638210400657501, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1210588664601546366}
@@ -973,27 +975,6 @@ MonoBehaviour:
   pointLayerMask:
     serializedVersion: 2
     m_Bits: 8192
---- !u!114 &8757604682999882583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875644875188916637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e53ffdf81e33947a76bc5ecb555407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
-  <Resistances>k__BackingField:
-    resistances:
-    - <DamageType>k__BackingField: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
-      <PercentageToTake>k__BackingField: 100
-    - <DamageType>k__BackingField: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
-      <PercentageToTake>k__BackingField: 125
-  TakeDamageAudioEvent: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
-  TakeDamageAudioSource: {fileID: 4360574921031220905}
 --- !u!114 &1174064966684619717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,102 +989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11400000, guid: 92ccb628f7fa033469335b8cb9d3c47e, type: 2}
---- !u!82 &4360574921031220905
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875644875188916637}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1673184532673914702, guid: e8bd2ee5c950d4a4892e3261080ce8e1, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &8730902198171399852 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 934660361274326232, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
