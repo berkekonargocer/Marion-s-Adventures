@@ -2,7 +2,6 @@ using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using Nojumpo.WeaponSystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Nojumpo.AgentSystem
 {

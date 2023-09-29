@@ -1,44 +1,30 @@
-using UnityEngine;
-
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
-    public class Agent2DDieState : MonoBehaviour
+    public class Agent2DDieState : Agent2DState
     {
         // -------------------------------- FIELDS ---------------------------------
-        
-        
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
 
+
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public override void StateUpdate() {
+            // Prevent State Update
         }
 
-        void OnEnable() {
-
+        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected override void HandleAttack() {
+            // Prevent Attacking
         }
 
-        void OnDisable() {
-
+        protected override void HandleJumpPressed() {
+            // Prevent Jumping
         }
 
-        void Start() {
-
+        protected override void Agent2DState_OnAnimationEndEvent() {
+            animationEventAudio.Play();
+            // Call You Died Screen
         }
-
-        void Update() {
-
-        }
-
-
-	// ------------------------- CUSTOM PUBLIC METHODS -------------------------
-	
-	
-	
-	// ------------------------ CUSTOM PROTECTED METHODS -----------------------
-	
-	
-	
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        
     }
 }

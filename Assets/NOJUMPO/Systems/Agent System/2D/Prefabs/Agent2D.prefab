@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 934660361274326232}
   - component: {fileID: 7529238439936234394}
   - component: {fileID: 7711961399011616406}
+  - component: {fileID: 8908634783264639100}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -181,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f941627b27d6f4d8660fa078fc2e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <m_AgentMovementData>k__BackingField: {fileID: 0}
   <m_Idle>k__BackingField: {fileID: 0}
   <m_Move>k__BackingField: {fileID: 0}
   <m_Jump>k__BackingField: {fileID: 0}
@@ -188,7 +190,7 @@ MonoBehaviour:
   <m_Climb>k__BackingField: {fileID: 0}
   <m_Attack>k__BackingField: {fileID: 0}
   <m_GetHit>k__BackingField: {fileID: 0}
-  <m_Die>k__BackingField: {fileID: 0}
+  <m_Die>k__BackingField: {fileID: 8908634783264639100}
 --- !u!114 &2979550965599401967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Idle
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -224,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Move
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -233,7 +233,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &5120798428259133960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703427368269b2549bb58a99b8588baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Jump
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -255,7 +253,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
 --- !u!114 &4922806902988123786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fbed31fbb699e47af1da016e5b6597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Fall
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -277,7 +273,6 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  agent2DMovementData: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
   landAudioEvent: {fileID: 0}
 --- !u!114 &934660361274326232
 MonoBehaviour:
@@ -291,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d33d8c3e23403741b03257398d74c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Climb
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -312,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc996cda32fc5419bc44a7fc96d5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: Attack
   animationEventAudio: {fileID: 0}
   OnEnter:
@@ -337,9 +330,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
   animatorStateParameter: GetHit
   animationEventAudio: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8908634783264639100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165638210400657501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ffa11f2e1c84343a859e4c9a7af267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorStateParameter: Die
+  animationEventAudio: {fileID: 11400000, guid: debb07a00ae30d540aa6f74f64ec8ddd, type: 2}
   OnEnter:
     m_PersistentCalls:
       m_Calls: []

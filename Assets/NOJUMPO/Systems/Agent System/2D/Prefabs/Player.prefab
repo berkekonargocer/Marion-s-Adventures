@@ -654,6 +654,10 @@ PrefabInstance:
       propertyPath: <m_GetHit>k__BackingField
       value: 
       objectReference: {fileID: 2221565338327624930}
+    - target: {fileID: 3710759756318538116, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: <m_AgentMovementData>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
     - target: {fileID: 4922806902988123786, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: attackState
       value: 
@@ -941,7 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e53ffdf81e33947a76bc5ecb555407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 150
   <Resistances>k__BackingField:
     resistances:
     - <DamageType>k__BackingField: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}

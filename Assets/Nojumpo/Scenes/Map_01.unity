@@ -38558,10 +38558,6 @@ PrefabInstance:
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5092926561878045680, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: <m_AgentMovementData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 07e937a9b6cd8224db8651ece1e368c5, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion

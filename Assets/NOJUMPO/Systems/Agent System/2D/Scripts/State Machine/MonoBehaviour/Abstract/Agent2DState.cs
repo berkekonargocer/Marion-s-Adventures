@@ -39,6 +39,7 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_Animator.onAnimationEvent += Agent2DState_OnAnimationEvent;
             _agent2D.m_Animator.onAnimationEndEvent += Agent2DState_OnAnimationEndEvent;
             _agent2D.m_AgentDamageable.onTakeDamage += GetHit;
+            _agent2D.m_AgentDamageable.onDie += Die;
             _agent2D.m_Animator.PlayAnimation(animatorStateParameter);
             OnEnter?.Invoke();
         }
@@ -63,6 +64,7 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_Animator.onAnimationEvent -= Agent2DState_OnAnimationEvent;
             _agent2D.m_Animator.onAnimationEndEvent -= Agent2DState_OnAnimationEndEvent;
             _agent2D.m_AgentDamageable.onTakeDamage -= GetHit;
+            _agent2D.m_AgentDamageable.onDie -= Die;
             OnExit?.Invoke();
         }
 
@@ -90,6 +92,10 @@ namespace Nojumpo.AgentSystem
 
         protected virtual void GetHit() {
             _agent2D.ChangeState(_agent2D.m_StateFactory.m_GetHit);
+        }
+
+        protected virtual void Die() {
+            _agent2D.ChangeState(_agent2D.m_StateFactory.m_Die);
         }
 
         protected bool CheckToChangeIntoFallState() {
