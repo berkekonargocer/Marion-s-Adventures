@@ -38521,8 +38521,8 @@ PrefabInstance:
       objectReference: {fileID: 1615123594}
     - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: maxHealth
-      value: 30
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 446884de9dda84b45a9a8669ecf86d1d, type: 2}
     - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: TakeDamageAudioEvent
       value: 
@@ -38547,6 +38547,14 @@ PrefabInstance:
       propertyPath: <Resistances>k__BackingField.resistances.Array.data[1].<PercentageToTake>k__BackingField
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3990157510554730539, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <m_AgentMovementData>k__BackingField
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656206327618296469, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: agent2DData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a0c52d665c2c5e4c9712106015e9a25, type: 2}
     - target: {fileID: 4871689617655396129, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannosaurus
@@ -38657,6 +38665,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4989949660468682817, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: maxHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: b8ffd4ac350a5b94fb18e9e7da57e445, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
