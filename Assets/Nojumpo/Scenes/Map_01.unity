@@ -8302,11 +8302,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
---- !u!70 &1039828200 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 325504690859670972, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-  m_PrefabInstance: {fileID: 5579152300149100716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1050120850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
@@ -38473,6 +38468,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 617490072917309076, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 617490072917309076, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 617490072917309076, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.458
       objectReference: {fileID: 0}
@@ -38512,13 +38515,93 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123815634420597514, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123815634420597514, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2870671875550568279, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1615123594}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: TakeDamageAudioEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[0].<DamageType>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[1].<DamageType>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: a24e718c3110259458946b68d048bb8f, type: 2}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[0].<PercentageToTake>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: <Resistances>k__BackingField.resistances.Array.data[1].<PercentageToTake>k__BackingField
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4871689617655396129, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannosaurus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871689617655396129, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -538.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420695132633721239, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420695132633721239, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476872110967068425, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476872110967068425, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160730895131814168, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160730895131814168, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808570174617627189, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
+      propertyPath: showGizmos
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38666,10 +38749,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8718656852224995022, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: agent2DCollider
-      value: 
-      objectReference: {fileID: 1039828200}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

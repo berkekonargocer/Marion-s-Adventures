@@ -8,7 +8,7 @@ namespace Nojumpo.WeaponSystem
     public class MeleeWeapon : WeaponSO
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public float m_AttackRange { get; private set; } = 1.0f;
+        [field: SerializeField] public float m_AttackRange { get; private set; } = 1.5f;
 
         RaycastHit2D[] weaponHitResult = new RaycastHit2D[5];
 
