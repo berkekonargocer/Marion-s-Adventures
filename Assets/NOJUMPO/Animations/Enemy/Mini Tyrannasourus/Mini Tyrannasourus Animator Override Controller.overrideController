@@ -7,5 +7,23 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mini Tyrannasourus Animator Override Controller
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 5ea95e98d145ada4d9f7f67bd3530f54, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 23c2b118467e9864da5475db34cf8349, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: da52ef274a0e04140b0efb33156479f8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1ac22ed646cc4684689152c238aa761e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e852e156184e56646a9a06e2a8b6f27b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b2ca54685d212be45b5c4c1d560a09fb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c46e07101320fb4899830859d8bce4b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0813eea17eee70d4d9e1d2ecf90a13df, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e852e156184e56646a9a06e2a8b6f27b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 97032e7085ce901469cb0a07fbdc8486, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e852e156184e56646a9a06e2a8b6f27b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 84857ead1c72ba641ad7da57a1d3f0f4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e852e156184e56646a9a06e2a8b6f27b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8bf335571c3198542ac5a09fc058b895, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e852e156184e56646a9a06e2a8b6f27b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 21a3c0dd12a144b4fbacac2dd544fe7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 99359b0ba574d0f41aefde73c55145c9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 780fb2a3d8f8fc0498717b96b94f2066, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bd3973b6065c1244281a01f5288803f6, type: 2}

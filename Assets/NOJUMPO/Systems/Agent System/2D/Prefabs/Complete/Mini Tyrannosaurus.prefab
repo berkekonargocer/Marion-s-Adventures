@@ -125,6 +125,10 @@ PrefabInstance:
       propertyPath: <m_InputReader>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 903e5d80ac44c2a4399396d81a378f5b, type: 2}
+    - target: {fileID: 6372577920553081555, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 0aee468671c8447449ac02abfb74f068, type: 2}
     - target: {fileID: 8166887757975910344, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Size.x
       value: 0.75
@@ -139,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8166887757975910344, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Offset.y
-      value: 0.075
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8620842858644754926, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Size.x

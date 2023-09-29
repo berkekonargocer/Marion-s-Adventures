@@ -566,6 +566,10 @@ PrefabInstance:
       propertyPath: animationEventAudioEvent
       value: 
       objectReference: {fileID: 11400000, guid: 637e9ae7609deff4eb9ca8678b85908f, type: 2}
+    - target: {fileID: 949157644473427130, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: agent2DCollider
+      value: 
+      objectReference: {fileID: 325504690859670972}
     - target: {fileID: 1772475031789034473, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: m_Name
       value: Agent2D
@@ -734,6 +738,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1673184532673914702, guid: e8bd2ee5c950d4a4892e3261080ce8e1, type: 2}
+    - target: {fileID: 6372577920553081555, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5ea95e98d145ada4d9f7f67bd3530f54, type: 2}
     - target: {fileID: 6805245412640157078, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
       propertyPath: attackState
       value: 
@@ -805,6 +813,11 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 1210588664601546366}
   m_SourcePrefab: {fileID: 100100000, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+--- !u!70 &325504690859670972 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8166887757975910344, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
+  m_PrefabInstance: {fileID: 8490114260537051764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1041217502658920968 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8908634783264639100, guid: 28ef6b956a859424596ab2c6878b24b6, type: 3}
