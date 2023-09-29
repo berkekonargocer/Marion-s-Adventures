@@ -1,4 +1,6 @@
 using Nojumpo.AudioEventSystem;
+using Nojumpo.ScriptableObjects;
+using Nojumpo.ScriptableObjects.References;
 using UnityEngine;
 
 namespace Nojumpo.DamageableSystem
@@ -16,7 +18,7 @@ namespace Nojumpo.DamageableSystem
         public OnDie onDie;
         public Health DamageableHealth { get; private set; }
 
-        [SerializeField] float maxHealth;
+        [SerializeField] FloatVariableSO maxHealth;
         [field: SerializeField] public DamageResistances Resistances { get; private set; }
 
         [SerializeField] AudioEventBaseSO TakeDamageAudioEvent;
@@ -25,7 +27,7 @@ namespace Nojumpo.DamageableSystem
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
-            DamageableHealth = new Health(maxHealth);
+            DamageableHealth = new Health(maxHealth.Value);
         }
 
 

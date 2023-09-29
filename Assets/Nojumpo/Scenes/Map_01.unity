@@ -38515,21 +38515,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1123815634420597514, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1123815634420597514, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2870671875550568279, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1615123594}
     - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3804849418856666010, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: TakeDamageAudioEvent
@@ -38562,46 +38554,6 @@ PrefabInstance:
     - target: {fileID: 4871689617655396129, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487273231014622622, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -538.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420695132633721239, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6420695132633721239, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476872110967068425, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476872110967068425, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7160730895131814168, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7160730895131814168, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808570174617627189, guid: 4c8b5c633344d224e963bea5c5e96b0d, type: 3}
-      propertyPath: showGizmos
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

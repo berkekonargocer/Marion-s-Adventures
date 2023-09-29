@@ -29,7 +29,8 @@ namespace Nojumpo.WeaponSystem
             for (int i = 0; i < hits; i++)
             {
                 Damageable damageable = weaponHitResult[i].collider.GetComponent<Damageable>();
-                damageable.TakeDamage(WeaponData.Damage, WeaponData.DamageType);
+                int damage = Random.Range(WeaponData.MinDamage, WeaponData.MaxDamage + 1);
+                damageable.TakeDamage(damage, WeaponData.DamageType);
             }
         }
 

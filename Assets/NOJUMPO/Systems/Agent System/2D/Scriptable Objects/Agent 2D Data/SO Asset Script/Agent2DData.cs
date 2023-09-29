@@ -13,13 +13,6 @@ namespace Nojumpo.ScriptableObjects
 #endif
 
         // -------------------------------- FIELDS ---------------------------------
-        [Header("HEALTH DATA")]
-        [Space]
-        [SerializeField] int maxHp = 100;
-
-        public int m_MaxHp { get { return maxHp; } }
-        
-        
         [Header("MOVEMENT DATA")]
         [Space]
         [SerializeField] float maxSpeed = 6.0f;
