@@ -6,9 +6,7 @@ namespace Nojumpo.ScriptableObjects
     [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Scriptable Objects/Game Input/New Input Reader")]
     public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IUIActions
     {
-
 #if UNITY_EDITOR
-
         [TextArea]
         [SerializeField] string _developerDescription = "CREATE ONE FOR EACH PLAYER";
 
@@ -39,10 +37,10 @@ namespace Nojumpo.ScriptableObjects
 
         public delegate void OnHealInputPressed();
         public event OnHealInputPressed onHealInputPressed;
-        
+
         public delegate void OnChangeWeaponInputPressed();
         public event OnChangeWeaponInputPressed onChangeWeaponInputPressed;
-        
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
@@ -93,14 +91,14 @@ namespace Nojumpo.ScriptableObjects
                 onAttackInputPressed?.Invoke();
             }
         }
-        
+
         public void OnHealButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
                 onHealInputPressed?.Invoke();
             }
         }
-        
+
         public void OnChangeWeaponButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
@@ -110,9 +108,11 @@ namespace Nojumpo.ScriptableObjects
 
 
         #region UI Input
+
         public void OnResumeGame(InputAction.CallbackContext context) {
             // throw new System.NotImplementedException();
         }
+
         #endregion
 
 
@@ -124,7 +124,6 @@ namespace Nojumpo.ScriptableObjects
         public void SetUIInput() {
             _gameInputScheme.Player.Disable();
             _gameInputScheme.UI.Enable();
-
         }
     }
 }

@@ -59,8 +59,8 @@ namespace Nojumpo.AgentSystem
 
             DisplayState();
         }
-        
-        
+
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
