@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Nojumpo.ScriptableObjects
+namespace Nojumpo.NJInputSystem
 {
-    [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Scriptable Objects/Game Input/New Input Reader")]
+    [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Systems/Input Reading/New Input Reader")]
     public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IUIActions
     {
 #if UNITY_EDITOR
         [TextArea]
-        [SerializeField] string _developerDescription = "CREATE ONE FOR EACH PLAYER";
+        [SerializeField] string developerDescription = "CREATE ONE FOR EACH PLAYER";
 
 #endif
 
@@ -34,9 +34,6 @@ namespace Nojumpo.ScriptableObjects
 
         public delegate void OnAttackInputPressed();
         public event OnAttackInputPressed onAttackInputPressed;
-
-        public delegate void OnHealInputPressed();
-        public event OnHealInputPressed onHealInputPressed;
 
         public delegate void OnChangeWeaponInputPressed();
         public event OnChangeWeaponInputPressed onChangeWeaponInputPressed;
@@ -89,13 +86,6 @@ namespace Nojumpo.ScriptableObjects
             if (context.phase == InputActionPhase.Started)
             {
                 onAttackInputPressed?.Invoke();
-            }
-        }
-
-        public void OnHealButton(InputAction.CallbackContext context) {
-            if (context.phase == InputActionPhase.Started)
-            {
-                onHealInputPressed?.Invoke();
             }
         }
 

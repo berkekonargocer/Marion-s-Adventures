@@ -1,6 +1,7 @@
 using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using Nojumpo.WeaponSystem;
+using Nojumpo.NJInputSystem;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem

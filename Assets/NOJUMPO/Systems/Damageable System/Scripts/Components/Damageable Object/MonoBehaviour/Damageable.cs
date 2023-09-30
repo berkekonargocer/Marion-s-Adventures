@@ -1,6 +1,5 @@
 using Nojumpo.AudioEventSystem;
 using Nojumpo.ScriptableObjects;
-using Nojumpo.ScriptableObjects.References;
 using UnityEngine;
 
 namespace Nojumpo.DamageableSystem
