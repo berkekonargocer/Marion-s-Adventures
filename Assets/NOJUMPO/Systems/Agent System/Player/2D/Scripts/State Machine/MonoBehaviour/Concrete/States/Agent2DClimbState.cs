@@ -18,7 +18,7 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_Rigidbody2D.velocity = Vector2.zero;
         }
 
-        public override void StateUpdate() {
+        public override void Tick() {
             if (_agent2D.m_InputReader.MovementVector.magnitude > 0)
             {
                 Climb();

@@ -15,8 +15,8 @@ namespace Nojumpo.AgentSystem
             _agent2D.m_Rigidbody2D.sharedMaterial = normalFrictionMaterial2D;
         }
 
-        public override void StateUpdate() {
-            base.StateUpdate();
+        public override void Tick() {
+            base.Tick();
             HandleMovement();
         }
 

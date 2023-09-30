@@ -3,7 +3,7 @@ namespace Nojumpo.AgentSystem
     public class Agent2DTakeDamageState : Agent2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void StateUpdate() {
+        public override void Tick() {
             // Prevent State Update
         }
 

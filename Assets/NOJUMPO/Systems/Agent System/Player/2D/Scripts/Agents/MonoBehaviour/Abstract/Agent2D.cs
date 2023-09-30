@@ -41,11 +41,11 @@ namespace Nojumpo.AgentSystem
 
         protected void Update() {
             m_GroundDetector.CheckIsGrounded();
-            currentState.StateUpdate();
+            currentState.Tick();
         }
 
         protected virtual void FixedUpdate() {
-            currentState.StateFixedUpdate();
+            currentState.FixedTick();
         }
         
         

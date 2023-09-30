@@ -38,11 +38,11 @@ namespace Nojumpo.AgentSystem
                 _agent2D.m_Rigidbody2D.velocity = Vector2.zero;
         }
 
-        public override void StateUpdate() {
+        public override void Tick() {
             // Prevent Update Method While Attacking
         }
 
-        public override void StateFixedUpdate() {
+        public override void FixedTick() {
             // Prevent Fixed Update Method While Attacking
         }
         

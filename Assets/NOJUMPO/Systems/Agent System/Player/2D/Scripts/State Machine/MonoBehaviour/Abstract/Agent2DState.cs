@@ -44,11 +44,11 @@ namespace Nojumpo.AgentSystem
             OnEnter?.Invoke();
         }
 
-        public virtual void StateUpdate() {
+        public virtual void Tick() {
             CheckToChangeIntoFallState();
         }
 
-        public virtual void StateFixedUpdate() {
+        public virtual void FixedTick() {
         }
 
         protected virtual void OnAnimationEvent() {

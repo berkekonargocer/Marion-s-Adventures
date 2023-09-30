@@ -14,7 +14,7 @@ namespace Nojumpo.AgentSystem
             ApplyJump();
         }
 
-        public override void StateUpdate() {
+        public override void Tick() {
             ControlJumpHeight();
             HandleMovement();
 

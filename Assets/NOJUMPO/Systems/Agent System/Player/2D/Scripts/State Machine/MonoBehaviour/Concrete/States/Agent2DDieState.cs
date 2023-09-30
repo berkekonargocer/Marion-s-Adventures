@@ -5,7 +5,7 @@ namespace Nojumpo.AgentSystem
     public class Agent2DDieState : Agent2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void StateUpdate() {
+        public override void Tick() {
             _agent2D.m_Rigidbody2D.velocity = new Vector2(0, _agent2D.m_Rigidbody2D.velocity.y);
         }
 

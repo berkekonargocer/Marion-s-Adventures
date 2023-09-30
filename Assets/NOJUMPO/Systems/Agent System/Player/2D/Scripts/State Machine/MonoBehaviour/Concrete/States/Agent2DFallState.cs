@@ -10,7 +10,7 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void StateUpdate() {
+        public override void Tick() {
             HandleMovement();
 
             if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
