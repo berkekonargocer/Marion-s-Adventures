@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DAttackState : Agent2DState
+    public class Player2DAttackState : Player2DState
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] bool showGizmos = true;
@@ -21,21 +21,21 @@ namespace Nojumpo.AgentSystem
                 return;
 
             Gizmos.color = Color.red;
-            Vector3 weaponPosition = _agent2D.m_AgentWeapon.transform.position;
-            _agent2D.m_AgentWeapon.GetCurrentWeapon().DrawWeaponGizmo(weaponPosition, _attackDirection);
+            Vector3 weaponPosition = _player2DStateMachine.m_AgentWeapon.transform.position;
+            _player2DStateMachine.m_AgentWeapon.GetCurrentWeapon().DrawWeaponGizmo(weaponPosition, _attackDirection);
         }
 
         
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void Enter() {
-            base.Enter();
-            _agent2D.m_AgentWeapon.ToggleWeaponVisibility(true);
+        public override void OnEnterState() {
+            base.OnEnterState();
+            _player2DStateMachine.m_AgentWeapon.ToggleWeaponVisibility(true);
 
-            Transform agent2DTransform = _agent2D.transform;
+            Transform agent2DTransform = _player2DStateMachine.transform;
             _attackDirection = agent2DTransform.right * (agent2DTransform.localScale.x > 0 ? 1 : -1);
 
-            if (_agent2D.m_GroundDetector.IsGrounded)
-                _agent2D.m_Rigidbody2D.velocity = Vector2.zero;
+            if (_player2DStateMachine.m_GroundDetector.IsGrounded)
+                _player2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
         }
 
         public override void Tick() {
@@ -46,11 +46,11 @@ namespace Nojumpo.AgentSystem
             // Prevent Fixed Update Method While Attacking
         }
         
-        public override void Exit() {
-            base.Exit();
-            _agent2D.m_AgentWeapon.ToggleWeaponVisibility(false);
-            _agent2D.m_Animator.onAnimationEvent -= InvokeAttack;
-            _agent2D.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+        public override void OnExitState() {
+            base.OnExitState();
+            _player2DStateMachine.m_AgentWeapon.ToggleWeaponVisibility(false);
+            _player2DStateMachine.m_Animator.onAnimationEvent -= InvokeAttack;
+            _player2DStateMachine.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
         }
 
 
@@ -74,15 +74,15 @@ namespace Nojumpo.AgentSystem
         
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void InvokeAttack() {
-            _agent2D.m_Animator.onAnimationEvent -= InvokeAttack;
-            _agent2D.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_agent2D,_attackDirection);
+            _player2DStateMachine.m_Animator.onAnimationEvent -= InvokeAttack;
+            _player2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_player2DStateMachine,_attackDirection);
             OnAttack?.Invoke();
         }
 
         void ChangeStateToIdle() {
-            _agent2D.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+            _player2DStateMachine.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
 
-            _agent2D.ChangeState(_agent2D.m_GroundDetector.IsGrounded ? _agent2D.m_StateFactory.m_Idle : _agent2D.m_StateFactory.m_Fall);
+            _player2DStateMachine.ChangeState(_player2DStateMachine.m_GroundDetector.IsGrounded ? _player2DStateMachine.m_StateFactory.m_Idle : _player2DStateMachine.m_StateFactory.m_Fall);
         }
     }
 }

@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DDieState : Agent2DState
+    public class Player2DDieState : Player2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Tick() {
-            _agent2D.m_Rigidbody2D.velocity = new Vector2(0, _agent2D.m_Rigidbody2D.velocity.y);
+            _player2DStateMachine.m_Rigidbody2D.velocity = new Vector2(0, _player2DStateMachine.m_Rigidbody2D.velocity.y);
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
@@ -27,7 +27,10 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEndEvent() {
-            animationEventAudio.Play();
+            if (animationEventAudio != null)
+            {
+                animationEventAudio.Play();
+            }
 
             // Call You Died Screen
         }

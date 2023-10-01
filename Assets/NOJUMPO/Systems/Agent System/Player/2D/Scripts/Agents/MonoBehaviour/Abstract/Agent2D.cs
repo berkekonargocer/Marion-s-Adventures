@@ -1,64 +1,40 @@
 using Nojumpo.DamageableSystem;
 using Nojumpo.ScriptableObjects;
 using Nojumpo.WeaponSystem;
-using Nojumpo.NJInputSystem;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2D : MonoBehaviour
+    public abstract class Agent2D : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
-        [field: SerializeField] public InputReader m_InputReader { get; protected set; }
 
         public Rigidbody2D m_Rigidbody2D { get; protected set; }
         public AgentAnimator m_Animator { get; protected set; }
         public Agent2DRenderer m_Renderer { get; protected set; }
         public Agent2DGroundDetector m_GroundDetector { get; protected set; }
         public Agent2DClimbableDetector m_ClimbableDetector { get; protected set; }
-        public StateFactory m_StateFactory { get; protected set; }
+        public Player2DStateFactory m_StateFactory { get; protected set; }
         public Damageable m_AgentDamageable { get; private set; }
         public WeaponManager m_AgentWeapon { get; private set; }
-
-
-        [Header("State Debug")]
-        public Agent2DState currentState;
-        public Agent2DState previousState;
-        [Space]
-        [SerializeField] string stateName = "";
-
+        
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void Awake() {
             SetComponents();
-            InitializeAgent();
         }
 
-        protected void Start() {
-            ChangeState(m_StateFactory.m_Idle);
+        protected virtual void Start() {
+
         }
 
-        protected void Update() {
+        protected virtual void Update() {
             m_GroundDetector.CheckIsGrounded();
-            currentState.Tick();
         }
 
         protected virtual void FixedUpdate() {
-            currentState.FixedTick();
-        }
-        
-        
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void ChangeState(Agent2DState newState) {
-            if (currentState != null)
-                currentState.Exit();
-
-            previousState = currentState;
-            currentState = newState;
-            currentState.Enter();
-
-            DisplayState();
+            
         }
 
 
@@ -69,17 +45,9 @@ namespace Nojumpo.AgentSystem
             m_Renderer = GetComponent<Agent2DRenderer>();
             m_GroundDetector = GetComponentInChildren<Agent2DGroundDetector>();
             m_ClimbableDetector = GetComponentInChildren<Agent2DClimbableDetector>();
-            m_StateFactory = GetComponentInChildren<StateFactory>();
+            m_StateFactory = GetComponentInChildren<Player2DStateFactory>();
             m_AgentWeapon = GetComponentInChildren<WeaponManager>();
             m_AgentDamageable = GetComponent<Damageable>();
-        }
-
-        protected void InitializeAgent() {
-            m_StateFactory.InitializeStates(this, agent2DData);
-        }
-
-        protected void DisplayState() {
-            stateName = currentState.GetType().ToString();
         }
     }
 }

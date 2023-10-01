@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DFallState : Agent2DMoveState
+    public class Player2DFallState : Player2DMoveState
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] AudioEventBaseSO landAudioEvent;
@@ -13,21 +13,21 @@ namespace Nojumpo.AgentSystem
         public override void Tick() {
             HandleMovement();
 
-            if (Mathf.Abs(_agent2D.m_InputReader.MovementVector.y) > 0 && _agent2D.m_ClimbableDetector.CanClimb)
+            if (Mathf.Abs(_player2DStateMachine.m_InputReader.MovementVector.y) > 0 && _player2DStateMachine.m_ClimbableDetector.CanClimb)
             {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Climb);
+                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Climb);
 
                 return;
             }
 
-            if (_agent2D.m_GroundDetector.IsGrounded)
+            if (_player2DStateMachine.m_GroundDetector.IsGrounded)
             {
-                _agent2D.ChangeState(_agent2D.m_StateFactory.m_Idle);
+                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Idle);
             }
         }
 
         public void CheckIfPlayLandSound() {
-            if (_agent2D.m_GroundDetector.IsGrounded)
+            if (_player2DStateMachine.m_GroundDetector.IsGrounded)
             {
                 landAudioEvent.Play();
             }
@@ -36,7 +36,7 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            _agent2D.m_Renderer.FaceDirection(_agent2D.m_InputReader.MovementVector);
+            _player2DStateMachine.m_Renderer.FaceDirection(_player2DStateMachine.m_InputReader.MovementVector);
             CalculateVelocity();
             SetVelocity();
         }

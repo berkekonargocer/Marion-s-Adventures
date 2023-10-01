@@ -1,6 +1,6 @@
 namespace Nojumpo.AgentSystem
 {
-    public class Agent2DTakeDamageState : Agent2DState
+    public class Player2DTakeDamageState : Player2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Tick() {
