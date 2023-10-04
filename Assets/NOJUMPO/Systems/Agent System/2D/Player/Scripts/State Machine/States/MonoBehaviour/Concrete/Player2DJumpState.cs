@@ -55,16 +55,16 @@ namespace Nojumpo.AgentSystem
         void ControlJumpHeight() {
             if (!_jumpInputPressed)
             {
-                _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity = _player2DStateMachine.m_Rigidbody2D.velocity;
-                _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity.y += _agent2DData.m_LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
-                _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity;
+                _player2DStateMachine.m_AgentMovementData.CurrentVelocity = _player2DStateMachine.m_Rigidbody2D.velocity;
+                _player2DStateMachine.m_AgentMovementData.CurrentVelocity.y += _agent2DData.m_LowJumpMultiplier * Physics2D.gravity.y * Time.deltaTime;
+                _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_AgentMovementData.CurrentVelocity;
             }
         }
 
         void ApplyJump() {
-            _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity = _player2DStateMachine.m_Rigidbody2D.velocity;
-            _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = _agent2DData.m_JumpForce;
-            _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity;
+            _player2DStateMachine.m_AgentMovementData.CurrentVelocity = _player2DStateMachine.m_Rigidbody2D.velocity;
+            _player2DStateMachine.m_AgentMovementData.CurrentVelocity.y = _agent2DData.m_JumpForce;
+            _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_AgentMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }
     }

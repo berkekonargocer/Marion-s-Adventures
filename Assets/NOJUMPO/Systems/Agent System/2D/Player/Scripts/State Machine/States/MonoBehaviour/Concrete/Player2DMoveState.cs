@@ -53,21 +53,21 @@ namespace Nojumpo.AgentSystem
         }
 
         protected void CalculateVelocity() {
-            CalculateSpeed(_player2DStateMachine.m_InputReader.MovementVector, _player2DStateMachine.m_StateFactory.m_AgentMovementData);
-            CalculateHorizontalDirection(_player2DStateMachine.m_StateFactory.m_AgentMovementData);
-            _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity = Vector2.right * (_player2DStateMachine.m_StateFactory.m_AgentMovementData.HorizontalMovementDirection * _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentSpeed);
+            CalculateSpeed(_player2DStateMachine.m_InputReader.MovementVector, _player2DStateMachine.m_AgentMovementData);
+            CalculateHorizontalDirection(_player2DStateMachine.m_AgentMovementData);
+            _player2DStateMachine.m_AgentMovementData.CurrentVelocity = Vector2.right * (_player2DStateMachine.m_AgentMovementData.HorizontalMovementDirection * _player2DStateMachine.m_AgentMovementData.CurrentSpeed);
 
             if (_player2DStateMachine.m_Rigidbody2D.velocity.y <= -_agent2DData.m_MaxFallSpeed)
             {
-                _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = -_agent2DData.m_MaxFallSpeed;
+                _player2DStateMachine.m_AgentMovementData.CurrentVelocity.y = -_agent2DData.m_MaxFallSpeed;
                 return;
             }
 
-            _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity.y = _player2DStateMachine.m_Rigidbody2D.velocity.y;
+            _player2DStateMachine.m_AgentMovementData.CurrentVelocity.y = _player2DStateMachine.m_Rigidbody2D.velocity.y;
         }
 
         protected void SetVelocity() {
-            _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_StateFactory.m_AgentMovementData.CurrentVelocity;
+            _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_AgentMovementData.CurrentVelocity;
         }
 
         protected override void HandleMovement() {

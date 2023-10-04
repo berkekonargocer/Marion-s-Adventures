@@ -6,8 +6,6 @@ namespace Nojumpo.AgentSystem
     public class Player2DStateFactory : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public Agent2DMovementData m_AgentMovementData { get; private set; }
-
         [field: SerializeField] public Player2DState m_Idle { get; private set; }
         [field: SerializeField] public Player2DState m_Move { get; private set; }
         [field: SerializeField] public Player2DState m_Jump { get; private set; }

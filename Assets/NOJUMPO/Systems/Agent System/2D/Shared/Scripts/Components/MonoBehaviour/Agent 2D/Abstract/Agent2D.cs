@@ -9,7 +9,8 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] protected Agent2DData agent2DData;
-
+        
+        public Agent2DMovementData m_AgentMovementData { get; private set; }
         public Rigidbody2D m_Rigidbody2D { get; protected set; }
         public AgentAnimator m_Animator { get; protected set; }
         public Agent2DRenderer m_Renderer { get; protected set; }
@@ -40,6 +41,7 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void SetComponents() {
+            m_AgentMovementData = new Agent2DMovementData();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             m_Animator = GetComponentInChildren<AgentAnimator>();
             m_Renderer = GetComponent<Agent2DRenderer>();

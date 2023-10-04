@@ -33,7 +33,6 @@ namespace Nojumpo.ScriptableObjects
 
         public float m_JumpForce { get { return jumpForce; } private set { jumpForce = value; } }
         public float m_LowJumpMultiplier { get { return lowJumpMultiplier; } private set { lowJumpMultiplier = value; } }
-
         public float m_MaxFallSpeed { get { return maxFallSpeed; } }
     }
 }

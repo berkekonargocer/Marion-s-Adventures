@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-    [CreateAssetMenu(fileName = "NewAgent2DMovementData", menuName = "Nojumpo/Scriptable Objects/Agent2D/Data/New Movement Data SO")]
-    public class Agent2DMovementData : ScriptableObject
+    public class Agent2DMovementData
     {
         // -------------------------------- FIELDS --------------------------------
         public int HorizontalMovementDirection;
