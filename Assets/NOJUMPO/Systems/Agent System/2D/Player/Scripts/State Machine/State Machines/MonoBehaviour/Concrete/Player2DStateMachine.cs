@@ -9,10 +9,11 @@ namespace Nojumpo.AgentSystem
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public InputReader m_InputReader { get; protected set; }
 
-        public Player2DState currentState;
-        public Player2DState previousState;
         [Space]
         [SerializeField] string stateName = "";
+        
+        Player2DState _currentState;
+        Player2DState _previousState;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -27,22 +28,22 @@ namespace Nojumpo.AgentSystem
 
         protected override void Update() {
             base.Update();
-            currentState.Tick();
+            _currentState.Tick();
         }
 
         protected override void FixedUpdate() {
-            currentState.FixedTick();
+            _currentState.FixedTick();
         }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void ChangeState(Player2DState newState) {
-            if (currentState != null)
-                currentState.OnExitState();
+            if (_currentState != null)
+                _currentState.OnExitState();
 
-            previousState = currentState;
-            currentState = newState;
-            currentState.OnEnterState();
+            _previousState = _currentState;
+            _currentState = newState;
+            _currentState.OnEnterState();
 
             DisplayState();
         }
@@ -54,7 +55,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected void DisplayState() {
-            stateName = currentState.GetType().ToString();
+            stateName = _currentState.GetType().ToString();
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
