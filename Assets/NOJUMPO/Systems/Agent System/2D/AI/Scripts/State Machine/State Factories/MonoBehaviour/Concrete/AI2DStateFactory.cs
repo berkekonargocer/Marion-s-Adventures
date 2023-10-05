@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class AI2DStateFactory : MonoBehaviour
     {

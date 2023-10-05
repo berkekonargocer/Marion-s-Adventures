@@ -1,8 +1,9 @@
+using Nojumpo.StateMachine;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
-    public abstract class AI2DState : MonoBehaviour
+    public abstract class AI2DState : State
     {
         // -------------------------------- FIELDS ---------------------------------
 
