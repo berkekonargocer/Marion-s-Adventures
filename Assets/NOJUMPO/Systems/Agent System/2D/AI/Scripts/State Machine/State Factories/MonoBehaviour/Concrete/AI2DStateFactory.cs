@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
-    public class AI2DStateFactory : MonoBehaviour
+    public class AI2DStateFactory : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
 
