@@ -11,7 +11,7 @@ namespace Nojumpo.AgentSystem
 
         [Space]
         [SerializeField] string stateName = "";
-        
+
         Player2DState _currentState;
         Player2DState _previousState;
 
@@ -23,7 +23,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void Start() {
-            ChangeState(m_StateFactory.m_Idle);
+            _currentState = m_StateFactory.m_Idle;
         }
 
         protected override void Update() {
@@ -38,8 +38,7 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void ChangeState(Player2DState newState) {
-            if (_currentState != null)
-                _currentState.OnExitState();
+            _currentState.OnExitState();
 
             _previousState = _currentState;
             _currentState = newState;

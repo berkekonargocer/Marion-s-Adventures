@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 1174064966684619717}
   - component: {fileID: 1876798533859557401}
   m_Layer: 0
-  m_Name: Agent 2D
+  m_Name: Player Agent 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

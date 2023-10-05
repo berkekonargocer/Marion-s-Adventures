@@ -1,19 +1,15 @@
 using Nojumpo.AudioEventSystem;
-using Nojumpo.Interfaces;
+using Nojumpo.StateMachine;
 using Nojumpo.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Nojumpo.AgentSystem
 {
     [RequireComponent(typeof(Player2DStateFactory))]
-    public abstract class Player2DState : MonoBehaviour, IState
+    public abstract class Player2DState : State
     {
         // -------------------------------- FIELDS --------------------------------
-        [SerializeField] protected string animatorStateParameter = "";
         [SerializeField] protected AudioEventBaseSO animationEventAudio;
-
-        public UnityEvent OnEnter, OnExit;
 
         protected Player2DStateMachine _player2DStateMachine;
         protected Agent2DData _agent2DData;
@@ -33,7 +29,7 @@ namespace Nojumpo.AgentSystem
             _agent2DData = agent2DData;
         }
 
-        public virtual void OnEnterState() {
+        public override void OnEnterState() {
             _player2DStateMachine.m_InputReader.onJumpInputPressed += HandleJumpPressed;
             _player2DStateMachine.m_InputReader.onJumpInputReleased += HandleJumpReleased;
             _player2DStateMachine.m_InputReader.onAttackInputPressed += HandleAttack;
@@ -45,20 +41,15 @@ namespace Nojumpo.AgentSystem
             OnEnter?.Invoke();
         }
 
-        public virtual void Tick() {
+        public override void Tick() {
             CheckToChangeIntoFallState();
         }
 
-        public virtual void FixedTick() {
+        public override void FixedTick() {
+            
         }
 
-        protected virtual void OnAnimationEvent() {
-        }
-
-        protected virtual void OnAnimationEndEvent() {
-        }
-
-        public virtual void OnExitState() {
+        public override void OnExitState() {
             _player2DStateMachine.m_InputReader.onJumpInputPressed -= HandleJumpPressed;
             _player2DStateMachine.m_InputReader.onJumpInputReleased -= HandleJumpReleased;
             _player2DStateMachine.m_InputReader.onAttackInputPressed -= HandleAttack;
@@ -69,8 +60,13 @@ namespace Nojumpo.AgentSystem
             OnExit?.Invoke();
         }
 
-
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected virtual void OnAnimationEvent() {
+        }
+
+        protected virtual void OnAnimationEndEvent() {
+        }
+
         protected virtual void HandleMovement() {
         }
 
