@@ -6,7 +6,7 @@ namespace Nojumpo.AgentSystem
     public abstract class AI2DState : State
     {
         // -------------------------------- FIELDS ---------------------------------
-
+        
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
@@ -16,7 +16,7 @@ namespace Nojumpo.AgentSystem
             throw new System.NotImplementedException();
         }
 
-        public override void Tick() {
+        public override void Tick(float deltaTime) {
             throw new System.NotImplementedException();
         }
 

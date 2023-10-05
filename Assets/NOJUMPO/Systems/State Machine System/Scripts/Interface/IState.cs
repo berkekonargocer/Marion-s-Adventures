@@ -4,7 +4,7 @@ namespace Nojumpo.StateMachine
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void OnEnterState();
-        public void Tick();
+        public void Tick(float deltaTime);
         public void FixedTick();
         public void OnExitState();
     }

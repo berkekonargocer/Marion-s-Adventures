@@ -5,7 +5,7 @@ namespace Nojumpo.AgentSystem
     public class Player2DDieState : Player2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void Tick() {
+        public override void Tick(float deltaTime) {
             _player2DStateMachine.m_Rigidbody2D.velocity = new Vector2(0, _player2DStateMachine.m_Rigidbody2D.velocity.y);
         }
 

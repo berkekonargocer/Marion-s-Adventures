@@ -28,7 +28,7 @@ namespace Nojumpo.AgentSystem
 
         protected override void Update() {
             base.Update();
-            _currentState.Tick();
+            _currentState.Tick(Time.deltaTime);
         }
 
         protected override void FixedUpdate() {
