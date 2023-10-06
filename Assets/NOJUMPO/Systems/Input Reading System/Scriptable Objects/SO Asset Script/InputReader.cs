@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Nojumpo.NJInputSystem
 {
-    [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Systems/Input Reading/New Input Reader")]
+    [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Scriptable Objects/Input Reading System/New Input Reader")]
     public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IUIActions
     {
 #if UNITY_EDITOR

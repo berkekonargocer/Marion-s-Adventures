@@ -1,16 +1,14 @@
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace Nojumpo
 {
-    public class AI2DIdleState : AI2DState
+    public class AI2DDieState : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] PhysicsMaterial2D normalFrictionMaterial2D;
-        [SerializeField] PhysicsMaterial2D noFrictionMaterial2D;
+
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
-            
         }
 
         void OnEnable() {

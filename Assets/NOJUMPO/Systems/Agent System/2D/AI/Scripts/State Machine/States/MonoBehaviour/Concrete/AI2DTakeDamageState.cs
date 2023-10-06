@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace Nojumpo
 {
-    public class AI2DWalkState : AI2DState
+    public class AI2DTakeDamageState : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
 

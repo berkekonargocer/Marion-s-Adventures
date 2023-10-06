@@ -6,6 +6,8 @@ namespace Nojumpo.AgentSystem
     public class AI2DStateMachine : Agent2D
     {
         // -------------------------------- FIELDS ---------------------------------
+        [SerializeField] AI2DState bootUpState;
+        
         public AI2DStateFactory m_StateFactory { get; protected set; }
 
         [Space]
@@ -21,7 +23,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void Start() {
-            _currentState = m_StateFactory.m_Idle;
+            _currentState = bootUpState;
         }
 
         protected override void Update() {

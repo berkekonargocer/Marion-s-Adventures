@@ -1,4 +1,3 @@
-using System;
 using Nojumpo.StateMachine;
 
 namespace Nojumpo.AgentSystem
@@ -21,16 +20,19 @@ namespace Nojumpo.AgentSystem
         public override void OnEnterState() {
             _ai2DStateMachine.m_Animator.onAnimationEvent += OnAnimationEvent;
             _ai2DStateMachine.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
-            _ai2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
-            _ai2DStateMachine.m_AgentDamageable.onDie -= OnDie;
+            _ai2DStateMachine.m_AgentDamageable.onTakeDamage += OnTakeDamage;
+            _ai2DStateMachine.m_AgentDamageable.onDie += OnDie;
+            _ai2DStateMachine.m_Animator.PlayAnimation(animatorStateParameter);
+            OnEnter?.Invoke();
+
         }
 
         public override void Tick(float deltaTime) {
-            throw new NotImplementedException();
+            
         }
 
         public override void FixedTick() {
-            throw new NotImplementedException();
+            
         }
 
         public override void OnExitState() {
@@ -38,6 +40,7 @@ namespace Nojumpo.AgentSystem
             _ai2DStateMachine.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
             _ai2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
             _ai2DStateMachine.m_AgentDamageable.onDie -= OnDie;
+            OnExit?.Invoke();
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
