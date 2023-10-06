@@ -1,36 +1,72 @@
+using System;
 using Nojumpo.StateMachine;
-using UnityEngine;
 
 namespace Nojumpo.AgentSystem
 {
     public abstract class AI2DState : State
     {
         // -------------------------------- FIELDS ---------------------------------
-        
+        AI2DStateMachine _ai2DStateMachine;
+        Agent2DData _agent2DData;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public virtual void Initialize(AI2DStateMachine ai2DStateMachine, Agent2DData agent2DData) {
+            _ai2DStateMachine = ai2DStateMachine;
+            _agent2DData = agent2DData;
+        }
+        
         public override void OnEnterState() {
-            throw new System.NotImplementedException();
+            _ai2DStateMachine.m_Animator.onAnimationEvent += OnAnimationEvent;
+            _ai2DStateMachine.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
+            _ai2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
+            _ai2DStateMachine.m_AgentDamageable.onDie -= OnDie;
         }
 
         public override void Tick(float deltaTime) {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override void FixedTick() {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override void OnExitState() {
-            throw new System.NotImplementedException();
+            _ai2DStateMachine.m_Animator.onAnimationEvent -= OnAnimationEvent;
+            _ai2DStateMachine.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
+            _ai2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
+            _ai2DStateMachine.m_AgentDamageable.onDie -= OnDie;
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected virtual void OnAnimationEvent() {
+        }
 
+        protected virtual void OnAnimationEndEvent() {
+        }
+        
+        protected virtual void HandleTakeDamage() {
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_TakeDamage);
+        }
+
+        protected virtual void HandleDie() {
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Die);
+        }
+        
+        protected void TransitionToIdle() {
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Idle);
+        }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        
+        void OnTakeDamage() {
+            HandleTakeDamage();
+        }
+
+        void OnDie() {
+            HandleDie();
+        }
     }
 }

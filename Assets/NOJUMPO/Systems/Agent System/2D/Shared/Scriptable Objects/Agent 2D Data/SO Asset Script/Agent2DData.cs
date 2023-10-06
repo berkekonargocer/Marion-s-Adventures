@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.ScriptableObjects
+namespace Nojumpo.AgentSystem
 {
     [CreateAssetMenu(fileName = "NewAgent2DData", menuName = "Nojumpo/Scriptable Objects/Agent2D/Data/New Agent Data")]
     public class Agent2DData : ScriptableObject

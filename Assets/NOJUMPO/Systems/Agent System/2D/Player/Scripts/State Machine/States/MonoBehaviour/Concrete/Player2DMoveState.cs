@@ -6,7 +6,7 @@ namespace Nojumpo.AgentSystem
     {
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public override void Tick(float deltaTime) {
-            if (CheckToChangeIntoFallState())
+            if (CheckIfChangeIntoFallState())
                 return;
 
             HandleMovement();

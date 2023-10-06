@@ -8,7 +8,8 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public InputReader m_InputReader { get; protected set; }
-
+        public Player2DStateFactory m_StateFactory { get; protected set; }
+        
         [Space]
         [SerializeField] string stateName = "";
 
@@ -55,6 +56,11 @@ namespace Nojumpo.AgentSystem
 
         protected void DisplayState() {
             stateName = _currentState.GetType().ToString();
+        }
+
+        protected override void SetComponents() {
+            base.SetComponents();
+            m_StateFactory = GetComponentInChildren<Player2DStateFactory>();
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------

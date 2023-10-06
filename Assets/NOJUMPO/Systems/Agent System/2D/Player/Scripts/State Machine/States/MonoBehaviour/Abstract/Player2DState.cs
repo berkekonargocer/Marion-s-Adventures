@@ -42,7 +42,7 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void Tick(float deltaTime) {
-            CheckToChangeIntoFallState();
+            CheckIfChangeIntoFallState();
         }
 
         public override void FixedTick() {
@@ -95,7 +95,7 @@ namespace Nojumpo.AgentSystem
             _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Die);
         }
 
-        protected bool CheckToChangeIntoFallState() {
+        protected bool CheckIfChangeIntoFallState() {
             if (_player2DStateMachine.m_GroundDetector.IsGrounded)
                 return false;
 
