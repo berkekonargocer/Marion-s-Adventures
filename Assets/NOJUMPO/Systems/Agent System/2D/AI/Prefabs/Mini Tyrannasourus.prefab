@@ -73,8 +73,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.066, y: -0.032}
-  m_Size: {x: 1.5, y: 1.85}
+  m_Offset: {x: -0.021509117, y: -0.0049138865}
+  m_Size: {x: 1.7125217, y: 1.4841855}
   m_Direction: 0
 --- !u!50 &2603703109174808066
 Rigidbody2D:
@@ -309,8 +309,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: -0.025}
-  m_Size: {x: 0.75, y: 1.77}
+  m_Offset: {x: -0.34004146, y: -0.25523227}
+  m_Size: {x: 0.7374982, y: 0.9519992}
   m_Direction: 0
 --- !u!114 &5806422301857421288
 MonoBehaviour:
@@ -328,10 +328,10 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 2112
-  boxCastYOffset: -0.63
+  boxCastYOffset: -0.31
   boxCastXOffset: 0
   boxCastWidth: 0.405
-  boxCastHeight: 0.12
+  boxCastHeight: 0.081
   groundedColor: {r: 0, g: 1, b: 0, a: 1}
   notGroundedGizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &470573075758413010
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfd0d9a2d8c7f642a3a96563f0ec07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: Idle
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9209d4a7741d24f98108416d50bb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: Move
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bade0bcc14a16640bc22324395c1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: Attack
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eec69d4bd532b4459fe0f2c9d944b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: TakeDamage
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5106f1735f3601c4db7149101c1b99c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: Die
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
