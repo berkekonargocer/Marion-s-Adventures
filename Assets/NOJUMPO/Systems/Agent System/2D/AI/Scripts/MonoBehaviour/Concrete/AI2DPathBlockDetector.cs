@@ -1,7 +1,5 @@
 using System.Collections;
-using Nojumpo.Utils;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Nojumpo
 {
@@ -9,18 +7,19 @@ namespace Nojumpo
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] Transform detectionPosition;
-        [SerializeField] LayerMask groundLayerMask;
-        [SerializeField] float edgeCheckLength = 0.1f;
+        [SerializeField] LayerMask blockLayerMask;
+        [SerializeField] float groundCheckLength = 0.1f;
         [SerializeField] float wallCheckLength = 0.5f;
-        [SerializeField] [Range(0, 1)] float edgeRaycastDelay = 0.1f;
 
         public bool IsPathBlocked { get; private set; }
 
         RaycastHit2D[] forwardCheckHits = new RaycastHit2D[1];
         RaycastHit2D[] downCheckHits = new RaycastHit2D[1];
 
-        [SerializeField] Color raycastColor = Color.blue;
+        [Space]
+        [Header("GIZMOS")]
         [SerializeField] bool showGizmos = true;
+        [SerializeField] Color raycastColor = Color.blue;
         
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -31,7 +30,7 @@ namespace Nojumpo
         void OnDrawGizmos() {
             Gizmos.color = raycastColor;
             Vector3 raycastPosition = detectionPosition.position;
-            Gizmos.DrawRay(raycastPosition, Vector2.down * edgeCheckLength);
+            Gizmos.DrawRay(raycastPosition, Vector2.down * groundCheckLength);
             Gizmos.DrawRay(raycastPosition, transform.right * wallCheckLength);
         }
 
@@ -41,8 +40,8 @@ namespace Nojumpo
             while (true)
             {
                 Vector3 raycastPosition = detectionPosition.position;
-                int downHits = Physics2D.RaycastNonAlloc(raycastPosition, Vector2.down, downCheckHits, edgeCheckLength, groundLayerMask);
-                int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right, forwardCheckHits, wallCheckLength, groundLayerMask);
+                int downHits = Physics2D.RaycastNonAlloc(raycastPosition, Vector2.down, downCheckHits, groundCheckLength, blockLayerMask);
+                int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right, forwardCheckHits, wallCheckLength, blockLayerMask);
 
                 if (downHits > 0 && forwardHits <= 0)
                 {

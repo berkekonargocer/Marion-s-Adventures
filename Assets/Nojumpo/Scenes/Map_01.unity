@@ -38540,6 +38540,22 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 962369328}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
@@ -38582,6 +38598,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38669,22 +38701,6 @@ PrefabInstance:
     - target: {fileID: 6261068289592319091, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannasourus
-      objectReference: {fileID: 0}
-    - target: {fileID: 8400773037088974460, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: m_Size.x
-      value: 0.7375
-      objectReference: {fileID: 0}
-    - target: {fileID: 8400773037088974460, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: m_Size.y
-      value: 0.897
-      objectReference: {fileID: 0}
-    - target: {fileID: 8400773037088974460, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 8400773037088974460, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.2278
       objectReference: {fileID: 0}
     - target: {fileID: 8870033338582377376, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: m_LocalPosition.x
