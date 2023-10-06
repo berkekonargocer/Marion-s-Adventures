@@ -52,6 +52,8 @@ namespace Nojumpo
                 {
                     IsPathBlocked = true;
                 }
+                
+                yield return null;
             }
         }
     }

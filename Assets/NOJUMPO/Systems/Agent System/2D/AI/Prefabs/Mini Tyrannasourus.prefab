@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3032166949134086488}
   - component: {fileID: 6527263806274879918}
   - component: {fileID: 4920244134705133378}
+  - component: {fileID: 6000067642817142272}
   m_Layer: 14
   m_Name: AI Agent 2D
   m_TagString: Enemy
@@ -38,6 +39,7 @@ Transform:
   - {fileID: 5702172902628147824}
   - {fileID: 5772855731870590892}
   - {fileID: 9164422762082581793}
+  - {fileID: 3336112739266233675}
   - {fileID: 6484879453210266872}
   m_Father: {fileID: 8870033338582377376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -243,6 +245,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6000067642817142272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358145223548801349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43afa62e63ec682499fd2e3fbe7e2abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionPosition: {fileID: 3336112739266233675}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 2112
+  edgeCheckLength: 0.1
+  wallCheckLength: 0.6
+  edgeRaycastDelay: 0.1
+  raycastColor: {r: 0, g: 0, b: 1, a: 1}
+  showGizmos: 1
 --- !u!1 &5106792130889197464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1049,37 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &7720277903028682512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3336112739266233675}
+  m_Layer: 14
+  m_Name: Path Block Detection Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3336112739266233675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720277903028682512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.356, y: -0.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4005303261282601321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8732735230476682606
 PrefabInstance:
   m_ObjectHideFlags: 0
