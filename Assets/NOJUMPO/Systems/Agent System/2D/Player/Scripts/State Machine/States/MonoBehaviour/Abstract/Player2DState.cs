@@ -40,7 +40,7 @@ namespace Nojumpo.AgentSystem
             OnEnter?.Invoke();
         }
 
-        public override void Tick(float deltaTime) {
+        public override void Tick() {
             CheckIfChangeIntoFallState();
         }
 

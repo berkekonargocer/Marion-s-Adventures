@@ -23,7 +23,7 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public override void Tick(float deltaTime) {
+        public override void Tick() {
             HandleMovement();
         }
         

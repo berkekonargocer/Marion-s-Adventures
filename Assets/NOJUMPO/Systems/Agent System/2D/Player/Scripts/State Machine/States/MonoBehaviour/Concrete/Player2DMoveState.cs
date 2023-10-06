@@ -5,7 +5,7 @@ namespace Nojumpo.AgentSystem
     public class Player2DMoveState : Player2DState
     {
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public override void Tick(float deltaTime) {
+        public override void Tick() {
             if (CheckIfChangeIntoFallState())
                 return;
 

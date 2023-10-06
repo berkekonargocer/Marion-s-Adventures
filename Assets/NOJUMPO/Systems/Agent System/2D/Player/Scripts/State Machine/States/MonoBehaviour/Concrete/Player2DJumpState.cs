@@ -14,7 +14,7 @@ namespace Nojumpo.AgentSystem
             ApplyJump();
         }
 
-        public override void Tick(float deltaTime) {
+        public override void Tick() {
             ControlJumpHeight();
             HandleMovement();
 
