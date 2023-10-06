@@ -38556,6 +38556,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Size.y
+      value: 1.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00456
+      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
@@ -38698,6 +38706,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6000067642817142272, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
+      propertyPath: blockLayerMask.m_Bits
+      value: 2112
+      objectReference: {fileID: 0}
     - target: {fileID: 6261068289592319091, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannasourus
