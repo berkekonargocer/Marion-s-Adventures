@@ -11,19 +11,10 @@ namespace Nojumpo.AgentSystem
 
             HandleMovement();
 
-            if (Mathf.Abs(_player2DStateMachine.m_InputReader.MovementVector.y) > 0 && _player2DStateMachine.m_ClimbableDetector.CanClimb)
-            {
-                if (_player2DStateMachine.m_InputReader.MovementVector.y < 0 && _player2DStateMachine.m_GroundDetector.IsGrounded)
-                    return;
-
-                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Climb);
+            if (TryClimb())
                 return;
-            }
 
-            if (Mathf.Abs(_player2DStateMachine.m_Rigidbody2D.velocity.x) < 0.01f)
-            {
-                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Idle);
-            }
+            CheckVelocityToChangeIntoIdle();
         }
 
 
@@ -80,6 +71,28 @@ namespace Nojumpo.AgentSystem
             if (animationEventAudio != null)
             {
                 animationEventAudio.Play();
+            }
+        }
+
+
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        bool TryClimb() {
+            if (Mathf.Abs(_player2DStateMachine.m_InputReader.MovementVector.y) > 0 && _player2DStateMachine.m_ClimbableDetector.CanClimb)
+            {
+                if (_player2DStateMachine.m_InputReader.MovementVector.y < 0 && _player2DStateMachine.m_GroundDetector.IsGrounded)
+                    return true;
+
+                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Climb);
+                return true;
+            }
+
+            return false;
+        }
+
+        void CheckVelocityToChangeIntoIdle() {
+            if (Mathf.Abs(_player2DStateMachine.m_Rigidbody2D.velocity.x) < 0.01f)
+            {
+                _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Idle);
             }
         }
     }

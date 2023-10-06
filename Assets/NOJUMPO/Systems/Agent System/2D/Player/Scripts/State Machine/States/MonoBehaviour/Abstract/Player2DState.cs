@@ -1,6 +1,5 @@
 using Nojumpo.AudioEventSystem;
 using Nojumpo.StateMachine;
-using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem

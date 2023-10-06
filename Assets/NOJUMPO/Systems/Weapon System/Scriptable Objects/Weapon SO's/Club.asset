@@ -24,4 +24,4 @@ MonoBehaviour:
   damageableLayerMask:
     serializedVersion: 2
     m_Bits: 16384
-  <m_AttackRange>k__BackingField: 1.5
+  <m_AttackRange>k__BackingField: 1.25

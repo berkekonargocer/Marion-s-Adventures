@@ -1,8 +1,8 @@
-using UnityEngine;
+using Nojumpo.AgentSystem;
 
 namespace Nojumpo
 {
-    public class AI2DDieState : MonoBehaviour
+    public class AI2DDieState : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
 

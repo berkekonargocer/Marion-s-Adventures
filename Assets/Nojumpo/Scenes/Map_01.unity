@@ -1052,6 +1052,17 @@ Transform:
   - {fileID: 181745255}
   m_Father: {fileID: 1195931291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344972182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1125459169167469491, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+  m_PrefabInstance: {fileID: 5579152300149100716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &381462897
 GameObject:
   m_ObjectHideFlags: 0
@@ -38600,6 +38611,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7556947969616824393, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: bootUpState
+      value: 
+      objectReference: {fileID: 344972182}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38698,14 +38713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3159939045019647889, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: <PointsToDisplay>k__BackingField
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358145223548801349, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
-      propertyPath: m_Name
-      value: AI Agent 2D
-      objectReference: {fileID: 0}
     - target: {fileID: 6261068289592319091, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: m_Name
       value: Mini Tyrannasourus

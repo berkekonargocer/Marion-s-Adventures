@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69500fc74352c348b9cd4b7f8799e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent2DData: {fileID: 11400000, guid: 9a0c52d665c2c5e4c9712106015e9a25, type: 2}
+  bootUpState: {fileID: 7236395355850256614}
+  stateName: 
 --- !u!114 &6527263806274879918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +564,7 @@ SpriteRenderer:
   m_SortingLayerID: -1637746605
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 384236101, guid: 45ee84cdd06a77b43a72c80a50cbe044, type: 3}
+  m_Sprite: {fileID: -1705103512, guid: c80cb91d88cfe5943bbf41fcbfaca03b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -582,7 +585,7 @@ Animator:
   m_GameObject: {fileID: 6450379776794880930}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ea95e98d145ada4d9f7f67bd3530f54, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0aee468671c8447449ac02abfb74f068, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -769,6 +772,8 @@ GameObject:
   - component: {fileID: 7236395355850256614}
   - component: {fileID: 7593334603359283312}
   - component: {fileID: 3404316451816222791}
+  - component: {fileID: 2186135214541034971}
+  - component: {fileID: 6501882511717321897}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -803,13 +808,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244f4441695cca40b07c7c2ed9de650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
+  <m_Idle>k__BackingField: {fileID: 4226522224364214530}
+  <m_Patrol>k__BackingField: {fileID: 7236395355850256614}
+  <m_Chase>k__BackingField: {fileID: 7593334603359283312}
+  <m_Attack>k__BackingField: {fileID: 3404316451816222791}
+  <m_TakeDamage>k__BackingField: {fileID: 2186135214541034971}
+  <m_Die>k__BackingField: {fileID: 6501882511717321897}
 --- !u!82 &3695102453672673766
 AudioSource:
   m_ObjectHideFlags: 0
@@ -925,6 +929,8 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+  normalFrictionMaterial2D: {fileID: 0}
+  noFrictionMaterial2D: {fileID: 0}
 --- !u!114 &7236395355850256614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3b5d95b28385e49a54e1e6513fd3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: 
+  animatorStateParameter: Move
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -973,6 +979,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bade0bcc14a16640bc22324395c1100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorStateParameter: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2186135214541034971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630108405833428136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eec69d4bd532b4459fe0f2c9d944b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorStateParameter: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6501882511717321897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630108405833428136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5106f1735f3601c4db7149101c1b99c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animatorStateParameter: 

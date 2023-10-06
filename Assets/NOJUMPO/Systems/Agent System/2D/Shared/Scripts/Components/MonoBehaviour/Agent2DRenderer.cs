@@ -28,6 +28,18 @@ namespace Nojumpo
             }
         }
         
+        public void FaceDirection(int movementDirection) {
+            if (movementDirection > 0)
+            {
+                _agent2DTransform.localScale = Vector3.one;
+            }
+
+            if (movementDirection < 0)
+            {
+                _agent2DTransform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+        
         
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
