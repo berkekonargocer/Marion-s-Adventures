@@ -31,11 +31,20 @@ namespace Nojumpo.AgentSystem
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
 
         protected override void HandleMovement() {
+            CheckIfPathBlocked();
+            
             _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
             CalculateVelocity();
             SetVelocity();
         }
+        
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void CheckIfPathBlocked() {
+            if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
+            {
+                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection *= -1;
+            }
+        }
     }
 }

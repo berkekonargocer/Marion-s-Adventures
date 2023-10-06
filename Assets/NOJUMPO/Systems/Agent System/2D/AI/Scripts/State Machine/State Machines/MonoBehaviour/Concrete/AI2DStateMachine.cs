@@ -7,9 +7,9 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] AI2DState bootUpState;
-        
-        public AI2DPathBlockDetector m_AI2DPathBlockDetector { get; protected set; }
+
         public AI2DStateFactory m_StateFactory { get; protected set; }
+        public AI2DPathBlockDetector m_AI2DPathBlockDetector { get; protected set; }
 
         [Space]
         [SerializeField] string stateName = "";

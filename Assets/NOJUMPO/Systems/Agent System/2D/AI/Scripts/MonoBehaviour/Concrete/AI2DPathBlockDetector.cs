@@ -1,6 +1,7 @@
 using System.Collections;
 using Nojumpo.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Nojumpo
 {
@@ -20,7 +21,7 @@ namespace Nojumpo
 
         [SerializeField] Color raycastColor = Color.blue;
         [SerializeField] bool showGizmos = true;
-
+        
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Start() {
@@ -31,7 +32,7 @@ namespace Nojumpo
             Gizmos.color = raycastColor;
             Vector3 raycastPosition = detectionPosition.position;
             Gizmos.DrawRay(raycastPosition, Vector2.down * edgeCheckLength);
-            Gizmos.DrawRay(raycastPosition, Vector2.right * wallCheckLength);
+            Gizmos.DrawRay(raycastPosition, transform.right * wallCheckLength);
         }
 
 
@@ -39,11 +40,9 @@ namespace Nojumpo
         IEnumerator CheckForGroundCoroutine() {
             while (true)
             {
-                yield return NJUtils.GetWait(edgeRaycastDelay);
-
                 Vector3 raycastPosition = detectionPosition.position;
                 int downHits = Physics2D.RaycastNonAlloc(raycastPosition, Vector2.down, downCheckHits, edgeCheckLength, groundLayerMask);
-                int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, Vector2.right, forwardCheckHits, wallCheckLength, groundLayerMask);
+                int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right, forwardCheckHits, wallCheckLength, groundLayerMask);
 
                 if (downHits > 0 && forwardHits <= 0)
                 {

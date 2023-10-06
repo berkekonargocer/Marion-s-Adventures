@@ -1,4 +1,3 @@
-using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo
@@ -19,24 +18,24 @@ namespace Nojumpo
         public void FaceDirection(Vector2 movementVector) {
             if (movementVector.x > 0)
             {
-                _agent2DTransform.localScale = Vector3.one;
+                _agent2DTransform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (movementVector.x < 0)
             {
-                _agent2DTransform.localScale = new Vector3(-1, 1, 1);
+                _agent2DTransform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
         
         public void FaceDirection(int movementDirection) {
             if (movementDirection > 0)
             {
-                _agent2DTransform.localScale = Vector3.one;
+                _agent2DTransform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (movementDirection < 0)
             {
-                _agent2DTransform.localScale = new Vector3(-1, 1, 1);
+                _agent2DTransform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
         
