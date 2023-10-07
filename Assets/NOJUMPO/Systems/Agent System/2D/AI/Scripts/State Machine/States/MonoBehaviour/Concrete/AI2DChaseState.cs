@@ -28,6 +28,7 @@ namespace Nojumpo.AgentSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void OnEnterState() {
             base.OnEnterState();
+            _movementSpeed = _agent2DData.m_RunningSpeed;
             playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
@@ -39,7 +40,7 @@ namespace Nojumpo.AgentSystem
         protected override void HandleMovement() {
             CheckIfPathBlocked();
 
-            if (!(DistanceToPlayer() > 1.5f))
+            if (!(DistanceToPlayer() > 2.0f))
             {
                 // Change Into Attack State
                 return;

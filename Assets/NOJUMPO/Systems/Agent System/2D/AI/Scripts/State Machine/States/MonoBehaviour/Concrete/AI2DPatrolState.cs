@@ -42,6 +42,12 @@ namespace Nojumpo.AgentSystem
         }
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+
+        public override void OnEnterState() {
+            base.OnEnterState();
+            _movementSpeed = _agent2DData.m_WalkingSpeed;
+        }
+        
         public override void Tick() {
             CheckForEnemy();
             HandleMovement();
@@ -49,7 +55,6 @@ namespace Nojumpo.AgentSystem
         
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-
         protected override void HandleMovement() {
             CheckIfPathBlocked();
             

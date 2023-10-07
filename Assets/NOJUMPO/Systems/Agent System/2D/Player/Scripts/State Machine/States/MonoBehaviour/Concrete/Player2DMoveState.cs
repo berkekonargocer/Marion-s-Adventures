@@ -29,7 +29,7 @@ namespace Nojumpo.AgentSystem
                 movementData.CurrentSpeed -= _agent2DData.m_DecelerationSpeed * Time.deltaTime;
             }
 
-            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.m_MaxSpeed);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.m_RunningSpeed);
         }
 
         protected void CalculateHorizontalDirection(Agent2DMovementData movementData) {

@@ -9,6 +9,8 @@ namespace Nojumpo.AgentSystem
         protected AI2DStateMachine _ai2DStateMachine;
         protected Agent2DData _agent2DData;
 
+        protected float _movementSpeed;
+        
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
 
@@ -54,7 +56,7 @@ namespace Nojumpo.AgentSystem
                 movementData.CurrentSpeed -= _agent2DData.m_DecelerationSpeed * Time.deltaTime;
             }
 
-            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _agent2DData.m_MaxSpeed);
+            movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _movementSpeed);
         }
         
 
