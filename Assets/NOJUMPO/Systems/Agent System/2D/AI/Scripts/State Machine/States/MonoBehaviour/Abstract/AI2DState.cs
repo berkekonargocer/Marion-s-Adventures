@@ -74,6 +74,13 @@ namespace Nojumpo.AgentSystem
         protected void SetVelocity() {
             _ai2DStateMachine.m_Rigidbody2D.velocity = _ai2DStateMachine.m_AgentMovementData.CurrentVelocity;
         }
+        
+        protected virtual void CheckIfPathBlocked() {
+            if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
+            {
+                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection *= -1;
+            }
+        }
 
         protected virtual void OnAnimationEvent() {
         }
