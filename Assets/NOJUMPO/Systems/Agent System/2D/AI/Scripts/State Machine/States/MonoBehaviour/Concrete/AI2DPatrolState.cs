@@ -68,8 +68,8 @@ namespace Nojumpo.AgentSystem
         void CheckForEnemy() {
             Transform objectTransform = transform;
             Vector3 raycastPosition = objectTransform.position;
-            int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, objectTransform.right * -1, forwardCheckHits, playerCheckRayLength, playerLayerMask);
-            int backwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right, backwardCheckHits, playerCheckRayLength, playerLayerMask);
+            int forwardHits = Physics2D.RaycastNonAlloc(raycastPosition, objectTransform.right, forwardCheckHits, playerCheckRayLength, playerLayerMask);
+            int backwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right * -1, backwardCheckHits, playerCheckRayLength, playerLayerMask);
 
             if (forwardHits > 0 || backwardHits > 0)
             {
