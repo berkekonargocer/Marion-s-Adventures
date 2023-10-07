@@ -38706,6 +38706,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3404316451816222791, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
+      propertyPath: damageType
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
+    - target: {fileID: 3404316451816222791, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
+      propertyPath: damageAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404316451816222791, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
+      propertyPath: playerLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6000067642817142272, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: blockLayerMask.m_Bits
       value: 2112
@@ -38721,6 +38733,10 @@ PrefabInstance:
     - target: {fileID: 7236395355850256614, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: playerLayerMask.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593334603359283312, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
+      propertyPath: attackDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8870033338582377376, guid: 0dbe650d24cb9a54d9faf2b0931ae503, type: 3}
       propertyPath: m_LocalPosition.x

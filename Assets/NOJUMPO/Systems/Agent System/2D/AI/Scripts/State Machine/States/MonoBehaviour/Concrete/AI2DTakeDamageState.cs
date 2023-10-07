@@ -1,4 +1,5 @@
 using Nojumpo.AgentSystem;
+using UnityEngine;
 
 namespace Nojumpo
 {
@@ -11,7 +12,10 @@ namespace Nojumpo
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
+        public override void OnEnterState() {
+            base.OnEnterState();
+            _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
+        }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void OnAnimationEndEvent() {
