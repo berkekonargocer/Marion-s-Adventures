@@ -9,8 +9,6 @@ namespace Nojumpo.AgentSystem
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] float attackDelay = 2.0f;
 
-        Transform _playerTransform;
-
         bool _canAttack = true;
 
 
@@ -35,7 +33,6 @@ namespace Nojumpo.AgentSystem
         public override void OnEnterState() {
             base.OnEnterState();
             _movementSpeed = _agent2DData.m_RunningSpeed;
-            _playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
         public override void Tick() {
@@ -48,6 +45,8 @@ namespace Nojumpo.AgentSystem
 
             if (!(DistanceToPlayer() > 1.00f))
             {
+                _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
+
                 if (!_canAttack)
                     return;
                 

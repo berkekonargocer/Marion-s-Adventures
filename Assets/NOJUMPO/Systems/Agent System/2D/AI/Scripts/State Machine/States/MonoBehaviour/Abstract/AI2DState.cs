@@ -9,6 +9,8 @@ namespace Nojumpo.AgentSystem
         protected AI2DStateMachine _ai2DStateMachine;
         protected Agent2DData _agent2DData;
 
+        protected Transform _playerTransform;
+        
         protected float _movementSpeed;
         
         
@@ -20,6 +22,7 @@ namespace Nojumpo.AgentSystem
             _ai2DStateMachine = ai2DStateMachine;
             _agent2DData = agent2DData;
             _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
+            _playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
         public override void OnEnterState() {

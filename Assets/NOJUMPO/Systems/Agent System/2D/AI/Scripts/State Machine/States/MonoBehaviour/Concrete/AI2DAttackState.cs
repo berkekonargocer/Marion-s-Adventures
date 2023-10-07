@@ -14,8 +14,6 @@ namespace Nojumpo.AgentSystem
 
         RaycastHit2D[] forwardCheckHits = new RaycastHit2D[1];
 
-        Transform _playerTransform;
-        
         [Space]
         [Header("GIZMOS")]
         [SerializeField] bool showGizmos = true;
@@ -39,9 +37,7 @@ namespace Nojumpo.AgentSystem
             base.OnEnterState();
             
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
-            
-            _playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            
+
             if (_playerTransform.position.x > transform.position.x)
             {
                 _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
