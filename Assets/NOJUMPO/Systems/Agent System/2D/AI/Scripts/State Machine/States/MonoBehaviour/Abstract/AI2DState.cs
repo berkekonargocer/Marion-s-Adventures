@@ -106,7 +106,7 @@ namespace Nojumpo.AgentSystem
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Idle);
         }
 
-        
+
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void OnTakeDamage() {
             HandleTakeDamage();

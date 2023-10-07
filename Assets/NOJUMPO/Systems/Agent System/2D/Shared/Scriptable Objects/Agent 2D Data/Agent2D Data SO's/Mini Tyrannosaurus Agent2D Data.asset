@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Mini Tyrannosaurus Agent2D Data
   m_EditorClassIdentifier: 
   _developerDescription: 
-  maxSpeed: 2
+  walkingSpeed: 2
+  runningSpeed: 4
   accelerationSpeed: 20
   decelerationSpeed: 40
   climbingSpeed: 2.5

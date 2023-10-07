@@ -8,27 +8,15 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-        }
-
-        void OnEnable() {
-        }
-
-        void OnDisable() {
-        }
-
-        void Start() {
-        }
-
-        void Update() {
-        }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
 
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-
+        protected override void OnAnimationEndEvent() {
+            _ai2DStateMachine.TransitionToPreviousState();
+        }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
     }

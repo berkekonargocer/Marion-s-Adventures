@@ -47,6 +47,10 @@ namespace Nojumpo.AgentSystem
             DisplayState();
         }
 
+        public void TransitionToPreviousState() {
+            ChangeState(_previousState);
+        }
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void InitializeAI2D() {
             m_StateFactory.InitializeStates(this, agent2DData);
