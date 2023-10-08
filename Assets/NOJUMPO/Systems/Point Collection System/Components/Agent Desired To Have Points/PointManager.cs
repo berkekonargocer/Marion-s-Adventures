@@ -1,37 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Nojumpo
+namespace Nojumpo.CollectableSystem
 {
     public class PointManager : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         public int CurrentPoint { get { return _currentPoint; } }
-
         int _currentPoint;
 
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-        }
-
-        void OnEnable() {
-        }
-
-        void OnDisable() {
-        }
-
-        void Start() {
-        }
-
-        void Update() {
-        }
-
+        public UnityEvent OnPointChange;
+        
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
-
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        public void AddPoint(int addAmount) {
+            _currentPoint += addAmount;
+            OnPointChange?.Invoke();
+        }
     }
 }

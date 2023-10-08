@@ -809,9 +809,9 @@ GameObject:
   - component: {fileID: 7556947969616824393}
   - component: {fileID: 1832999650743799613}
   - component: {fileID: 41192178073086916}
-  - component: {fileID: 4755851029187129462}
   - component: {fileID: 1174064966684619717}
   - component: {fileID: 2768003620883272150}
+  - component: {fileID: 3193095273921428963}
   m_Layer: 3
   m_Name: Player Agent 2D
   m_TagString: Player
@@ -965,21 +965,6 @@ MonoBehaviour:
     m_Bits: 65536
   initialRespawnPoint: {fileID: 0}
   respawnDamage: 25
---- !u!114 &4755851029187129462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875644875188916637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530707974a1ce124e97ad228dd470157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
 --- !u!114 &1174064966684619717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1075,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3193095273921428963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875644875188916637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef4b7c91d033cd4f8cde17f92813fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectableLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1 &8709427843377090377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,10 +1250,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6791840483235883067}
     m_Modifications:
-    - target: {fileID: 1507736751314454176, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
-      propertyPath: <PointsToDisplay>k__BackingField
-      value: 
-      objectReference: {fileID: 4755851029187129462}
     - target: {fileID: 1943538942132057958, guid: c578f8eceb474c5438d31b16356fb158, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

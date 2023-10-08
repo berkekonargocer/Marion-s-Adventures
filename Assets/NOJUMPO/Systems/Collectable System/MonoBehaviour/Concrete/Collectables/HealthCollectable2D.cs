@@ -3,23 +3,16 @@ using UnityEngine;
 
 namespace Nojumpo.CollectableSystem
 {
-    public class HealthCollectable2D : MonoBehaviour, ICollectable
+    public class HealthCollectable2D : Collectable2D
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] float healAmount;
+
         
-
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void Collect(GameObject collector) {
+        public override void Collect(GameObject collector) {
             collector.gameObject.GetComponent<Damageable>().Heal(healAmount);
         }
 
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
     }
 }

@@ -1,7 +1,6 @@
-using Nojumpo.CollectableSystem;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.CollectableSystem
 {
     public class Collector2D : MonoBehaviour
     {
@@ -18,14 +17,5 @@ namespace Nojumpo
                 other.GetComponent<ICollectable>().Collect(gameObject);
             }
         }
-
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
-
-        // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
     }
 }

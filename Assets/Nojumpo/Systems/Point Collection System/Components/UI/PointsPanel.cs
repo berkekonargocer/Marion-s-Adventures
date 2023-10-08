@@ -1,23 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-namespace Nojumpo.PointCollectionSystem
+namespace Nojumpo.CollectableSystem
 {
     public class PointsPanel : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        [field: SerializeField] public PointCollector PointsToDisplay { get; private set; }
+        [field: SerializeField] public PointManager PointsToDisplay { get; private set; }
         [SerializeField] TextMeshProUGUI pointsText;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             UpdatePointsPanel();
-            PointsToDisplay.onPointCollected += UpdatePointsPanel;
+            PointsToDisplay.OnPointChange.AddListener(UpdatePointsPanel);
         }
 
         void OnDisable() {
-            PointsToDisplay.onPointCollected -= UpdatePointsPanel;
+            PointsToDisplay.OnPointChange.RemoveListener(UpdatePointsPanel);
         }
 
 
