@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Nojumpo.DamageableSystem
 {
     public interface IDamageable
