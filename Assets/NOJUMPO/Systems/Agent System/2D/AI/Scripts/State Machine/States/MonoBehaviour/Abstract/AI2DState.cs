@@ -14,9 +14,6 @@ namespace Nojumpo.AgentSystem
         protected float _movementSpeed;
         
         
-        // ------------------------- UNITY BUILT-IN METHODS ------------------------
-
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(AI2DStateMachine ai2DStateMachine, Agent2DData agent2DData) {
             _ai2DStateMachine = ai2DStateMachine;

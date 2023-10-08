@@ -19,7 +19,7 @@ TagManager:
   - Weapon
   - Platform
   - Respawn Point
-  - Pickable
+  - Collectable
   - Enemy
   - Agent Collider
   - Respawn Trigger

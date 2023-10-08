@@ -1,6 +1,4 @@
-using Nojumpo.AgentSystem;
-
-namespace Nojumpo
+namespace Nojumpo.AgentSystem
 {
     public class AI2DDieState : AI2DState
     {
@@ -8,24 +6,13 @@ namespace Nojumpo
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-        }
-
-        void OnEnable() {
-        }
-
-        void OnDisable() {
-        }
-
-        void Start() {
-        }
-
-        void Update() {
-        }
 
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
+        public override void OnEnterState() {
+            base.OnEnterState();
+            Destroy(_ai2DStateMachine.transform.parent.gameObject, 5f);
+        }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
 

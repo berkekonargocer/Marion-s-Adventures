@@ -12,6 +12,7 @@ namespace Nojumpo.CollectableSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Collect(GameObject collector) {
             collector.gameObject.GetComponent<Damageable>().Heal(healAmount);
+            Destroy(gameObject);
         }
 
     }
