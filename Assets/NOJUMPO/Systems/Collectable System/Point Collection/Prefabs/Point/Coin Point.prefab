@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4782483959448434781}
   - component: {fileID: 9060714114600341083}
   - component: {fileID: 3753862930054585732}
+  - component: {fileID: 7639134582342995411}
   m_Layer: 13
   m_Name: Coin Point
   m_TagString: Untagged
@@ -143,5 +144,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f86013fab583ed4f8cc6fb1e1ecaf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
   amount: 10
+--- !u!114 &7639134582342995411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055559931555408346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0258743993bd21041b09da7a7060c8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDistance: 0.1
+  animationDuration: 1
+  animationEase: 2

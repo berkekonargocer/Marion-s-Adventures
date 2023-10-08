@@ -8441,6 +8441,25 @@ Transform:
   - {fileID: 250064855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1223048329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8320378424190198543, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+  m_PrefabInstance: {fileID: 5579152300149100716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1223048332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223048329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc1c6a04c1c7194c9d9c46cc4757b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 0.2
+  animationEase: 2
 --- !u!1 &1262610292
 GameObject:
   m_ObjectHideFlags: 0
@@ -37415,6 +37434,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8381348976630697602, guid: 55b9d074b8d8b7044981b446c5a29b29, type: 3}
   m_PrefabInstance: {fileID: 15639699}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1315393036 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+  m_PrefabInstance: {fileID: 5579152300149100716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1371580342
 GameObject:
   m_ObjectHideFlags: 0
@@ -38682,6 +38706,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 962369328}
     - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.49999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -38701,6 +38729,38 @@ PrefabInstance:
       propertyPath: <PointsToDisplay>k__BackingField
       value: 
       objectReference: {fileID: 604987862432564535}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1223048332}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ScaleAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Nojumpo.UIElementScaleAnim, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1315393036}
+    - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.RectTransform, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3417975533456743761, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -38828,6 +38888,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7875644875188916637, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       insertIndex: -1
       addedObject: {fileID: 604987862432564535}
+    - targetCorrespondingSourceObject: {fileID: 8320378424190198543, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223048332}
   m_SourcePrefab: {fileID: 100100000, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
 --- !u!1001 &6145462733527084119
 PrefabInstance:

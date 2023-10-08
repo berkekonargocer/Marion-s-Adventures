@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Nojumpo.CollectableSystem
 {
@@ -9,7 +10,9 @@ namespace Nojumpo.CollectableSystem
         [field: SerializeField] public PointManager PointsToDisplay { get; private set; }
         [SerializeField] TextMeshProUGUI pointsText;
 
+        public UnityEvent OnPanelUpdate;
 
+        
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             UpdatePointsPanel();
@@ -24,6 +27,7 @@ namespace Nojumpo.CollectableSystem
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void UpdatePointsPanel() {
             pointsText.text = $"{PointsToDisplay.CurrentPoint.ToString()}";
+            OnPanelUpdate?.Invoke();
         }
 
     }
