@@ -13,7 +13,7 @@ namespace Nojumpo.Utils
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void ScaleAnimation(RectTransform rectTransform) {
             float initialScale = rectTransform.localScale.x;
-            rectTransform.DOScale(1.1f, animationDuration).SetEase(animationEase).onComplete
+            rectTransform.DOScale(1.2f, animationDuration).SetEase(animationEase).onComplete
                 = () =>
                     rectTransform.DOScale(initialScale, animationDuration).SetEase(animationEase);
         }

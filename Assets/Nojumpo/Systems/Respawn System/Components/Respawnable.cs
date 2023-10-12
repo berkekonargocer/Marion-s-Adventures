@@ -38,7 +38,7 @@ namespace Nojumpo
         }
 
         void OnDisable() {
-            if (TryGetComponent(out Damageable damageable))
+            if (TryGetComponent(out IDamageable damageable))
             {
                 onRespawn -= damageable.TakeDamage;
             }
@@ -49,7 +49,7 @@ namespace Nojumpo
         void SetComponents() {
             _currentRespawnPoint = initialRespawnPoint.transform.position;
 
-            if (TryGetComponent(out Damageable damageable))
+            if (TryGetComponent(out IDamageable damageable))
             {
                 onRespawn += damageable.TakeDamage;
             }

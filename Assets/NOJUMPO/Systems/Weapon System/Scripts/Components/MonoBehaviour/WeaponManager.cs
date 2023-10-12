@@ -18,19 +18,11 @@ namespace Nojumpo.WeaponSystem
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
-            _weaponStorage = new WeaponStorage();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            SetComponents();
             ToggleWeaponVisibility(false);
         }
 
-
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
-        void SwapWeaponSprite(Sprite weaponSprite) {
-            _spriteRenderer.sprite = weaponSprite;
-            OnWeaponSwap?.Invoke(weaponSprite);
-        }
-
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public WeaponSO GetCurrentWeapon() {
             return _weaponStorage.GetCurrentWeapon();
@@ -39,13 +31,13 @@ namespace Nojumpo.WeaponSystem
         public List<string> GetPlayerWeaponNames() {
             return _weaponStorage.GetPlayerWeaponNames();
         }
-        
+
         public bool CanAttack(bool isGrounded) {
             return _weaponStorage.WeaponCount > 0 && GetCurrentWeapon().CanBeUsed(isGrounded);
         }
 
         public void AddWeapon(WeaponSO weaponSO) {
-            if (_weaponStorage.AddWeapon(weaponSO) == false)
+            if (!_weaponStorage.AddWeapon(weaponSO))
                 return;
 
             if (_weaponStorage.WeaponCount == 2)
@@ -60,14 +52,14 @@ namespace Nojumpo.WeaponSystem
             AddWeapon(weaponSO);
             OnWeaponPickUp?.Invoke();
         }
-        
+
         public void SwapWeapon() {
             if (_weaponStorage.WeaponCount <= 0)
                 return;
 
             SwapWeaponSprite(_weaponStorage.SwapWeapon().WeaponData.Sprite);
         }
-        
+
         public void ToggleWeaponVisibility(bool isVisible) {
             if (isVisible)
             {
@@ -75,6 +67,18 @@ namespace Nojumpo.WeaponSystem
             }
 
             _spriteRenderer.enabled = isVisible;
+        }
+
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void SetComponents() {
+            _weaponStorage = new WeaponStorage();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        
+        void SwapWeaponSprite(Sprite weaponSprite) {
+            _spriteRenderer.sprite = weaponSprite;
+            OnWeaponSwap?.Invoke(weaponSprite);
         }
     }
 }
