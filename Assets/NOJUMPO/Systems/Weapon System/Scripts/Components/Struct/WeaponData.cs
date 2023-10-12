@@ -13,6 +13,8 @@ namespace Nojumpo.WeaponSystem
         [field: SerializeField] public int MinDamage { get; private set; }
         [field: SerializeField] public int MaxDamage { get; private set; }
         [field: SerializeField] public DamageTypeSO DamageType { get; private set; }
+        [field: SerializeField] public bool DoesKnockback { get; private set; }
+        [field: SerializeField] public float KnockbackForce { get; private set; }
         [field: SerializeField] public SimpleAudioEventSO AttackAudioEvent { get; private set; }
         [field: SerializeField] public SimpleAudioEventSO AttackHitAudioEvent { get; private set; }
     }
