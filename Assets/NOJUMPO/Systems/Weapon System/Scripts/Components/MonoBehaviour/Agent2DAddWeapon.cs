@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Nojumpo.WeaponSystem
 {
-    public class Agent2DWeaponTest : MonoBehaviour
+    public class Agent2DAddWeapon : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
         public List<WeaponSO> Weapons = new List<WeaponSO>();
