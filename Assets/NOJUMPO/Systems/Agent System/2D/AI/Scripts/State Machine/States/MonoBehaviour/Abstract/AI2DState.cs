@@ -1,3 +1,4 @@
+using Nojumpo.DamageableSystem;
 using Nojumpo.StateMachine;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Nojumpo.AgentSystem
         protected Agent2DData _agent2DData;
 
         protected Transform _playerTransform;
+        protected Damageable _playerDamageable;
         
         protected float _movementSpeed;
         
@@ -20,6 +22,7 @@ namespace Nojumpo.AgentSystem
             _agent2DData = agent2DData;
             _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
             _playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            _playerDamageable = GameObject.FindWithTag("Player").GetComponent<Damageable>();
         }
 
         public override void OnEnterState() {
@@ -46,6 +49,10 @@ namespace Nojumpo.AgentSystem
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
+        protected bool IsPlayerDead() {
+            return _playerDamageable.DamageableHealth.CurrentHealth <= 0;
+        }
+        
         protected void CalculateSpeed(int movementDirection, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementDirection) > 0)
             {

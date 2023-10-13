@@ -1,5 +1,7 @@
+using System.Collections;
 using Nojumpo.AudioEventSystem;
 using Nojumpo.StateMachine;
+using Nojumpo.Utils;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -103,6 +105,12 @@ namespace Nojumpo.AgentSystem
         }
 
         protected void TransitionToIdle() {
+            _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Idle);
+        }
+
+        protected IEnumerator TransitionToIdleCoroutine(float transitionDelay) {
+            yield return NJUtils.GetWait(transitionDelay);
+            
             _player2DStateMachine.ChangeState(_player2DStateMachine.m_StateFactory.m_Idle);
         }
 

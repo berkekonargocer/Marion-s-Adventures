@@ -24,6 +24,12 @@ namespace Nojumpo.AgentSystem
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
+            if (IsPlayerDead())
+            {
+                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+                return;
+            }
+            
             CheckIfPathBlocked();
 
             if (!(DistanceToPlayer() > 1.00f))

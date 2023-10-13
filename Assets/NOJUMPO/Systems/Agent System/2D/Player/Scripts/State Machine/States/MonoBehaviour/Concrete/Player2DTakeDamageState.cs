@@ -3,6 +3,16 @@ namespace Nojumpo.AgentSystem
     public class Player2DTakeDamageState : Player2DState
     {
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        public override void OnEnterState() {
+            base.OnEnterState();
+
+            if (_player2DStateMachine.m_AgentDamageable.DamageableHealth.CurrentHealth > 0)
+            {
+                StartCoroutine(TransitionToIdleCoroutine(0.1f));
+            }
+        }
+
+
         public override void Tick() {
             // Prevent State Update
         }
@@ -19,10 +29,6 @@ namespace Nojumpo.AgentSystem
 
         protected override void HandleTakeDamage() {
             // Prevent Getting hit
-        }
-
-        protected override void OnAnimationEndEvent() {
-            TransitionToIdle();
         }
     }
 }

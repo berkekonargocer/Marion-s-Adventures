@@ -15,7 +15,7 @@ MonoBehaviour:
   developerDescription: 
   <WeaponData>k__BackingField:
     <Name>k__BackingField: Club
-    <Sprite>k__BackingField: {fileID: 21300000, guid: 8872bba0733b13142afab1776e14a738, type: 3}
+    <Sprite>k__BackingField: {fileID: 0}
     <MinDamage>k__BackingField: 10
     <MaxDamage>k__BackingField: 15
     <DamageType>k__BackingField: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
