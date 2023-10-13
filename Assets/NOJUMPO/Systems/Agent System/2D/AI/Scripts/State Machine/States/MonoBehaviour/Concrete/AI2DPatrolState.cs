@@ -1,3 +1,4 @@
+using Nojumpo.AudioEventSystem;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -8,6 +9,8 @@ namespace Nojumpo.AgentSystem
         [SerializeField] LayerMask playerLayerMask;
         [SerializeField] float playerCheckRayLength;
 
+        [SerializeField] SimpleAudioEventSO runAudioEvent;
+        
         RaycastHit2D[] forwardCheckHits = new RaycastHit2D[1];
         RaycastHit2D[] backwardCheckHits = new RaycastHit2D[1];
 
@@ -46,6 +49,10 @@ namespace Nojumpo.AgentSystem
             _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
             CalculateVelocity();
             SetVelocity();
+        }
+
+        protected override void OnAnimationEvent() {
+            runAudioEvent.Play();
         }
 
 

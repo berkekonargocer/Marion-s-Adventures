@@ -1,4 +1,5 @@
 using System.Collections;
+using Nojumpo.AudioEventSystem;
 using Nojumpo.Utils;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] float attackDelay = 2.0f;
+        [SerializeField] SimpleAudioEventSO runAudioEvent;
 
         bool _canAttack = true;
 
@@ -65,6 +67,10 @@ namespace Nojumpo.AgentSystem
                 // Stop Chasing
                 _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
             }
+        }
+
+        protected override void OnAnimationEvent() {
+            runAudioEvent.Play();
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
