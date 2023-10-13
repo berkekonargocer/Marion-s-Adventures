@@ -41269,6 +41269,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8823471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4828007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.05181122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495095798908430700, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.119039655
+      objectReference: {fileID: 0}
     - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: <PointsToDisplay>k__BackingField
       value: 
@@ -41304,6 +41320,14 @@ PrefabInstance:
     - target: {fileID: 2030078017125393347, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: OnPanelUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.RectTransform, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588659558424173391, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 217a34da322f09a4f915f2ca6befab73, type: 3}
+    - target: {fileID: 3417975533456743761, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: animatorStateParameter
+      value: Idle
       objectReference: {fileID: 0}
     - target: {fileID: 3417975533456743761, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
@@ -41365,9 +41389,37 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3636018129665191318, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0253735
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636018129665191318, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5392102
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636018129665191318, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.043528557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636018129665191318, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.12339491
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640227532365117860, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: boxCastYOffset
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_LocalPosition.x
