@@ -37471,6 +37471,10 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 962369328}
+    - target: {fileID: 600867332596307098, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: animatorStateParameter
+      value: Walk
+      objectReference: {fileID: 0}
     - target: {fileID: 1174064966684619717, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -37920,6 +37924,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2023286770662224347, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
+      propertyPath: animatorStateParameter
+      value: Walk
+      objectReference: {fileID: 0}
     - target: {fileID: 2325397515980284885, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.68
@@ -37960,9 +37968,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4443462709357666556, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.592
+      objectReference: {fileID: 0}
     - target: {fileID: 5270744421750133616, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
       propertyPath: m_Name
       value: Boar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740061125056953778, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
+      propertyPath: animatorStateParameter
+      value: Run
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
