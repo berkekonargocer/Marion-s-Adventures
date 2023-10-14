@@ -7,10 +7,16 @@ namespace Nojumpo.CollectableSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         public UnityEvent OnCollected;
-
+        [SerializeField] AudioClip collectSFX;
+        [SerializeField] AudioSource sfxAudioSource;
+        
+        
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public abstract void Collect(GameObject collector);
+        public virtual void Collect(GameObject collector) {
+            OnCollected?.Invoke();
+            sfxAudioSource.PlayOneShot(collectSFX);
+        }
 
     }
 }
