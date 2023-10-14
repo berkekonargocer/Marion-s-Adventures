@@ -12,7 +12,6 @@ namespace Nojumpo.CollectableSystem
         [SerializeField] AudioSource sfxAudioSource;
         
         
-
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         void OnEnable() {
             if (sfxAudioSource == null)
