@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - SFX Audio Source
   layers:
   - Default
   - TransparentFX

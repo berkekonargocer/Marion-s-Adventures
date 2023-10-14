@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,13 @@ namespace Nojumpo.CollectableSystem
         
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        void OnEnable() {
+            if (sfxAudioSource == null)
+            {
+                sfxAudioSource = GameObject.FindWithTag("SFX Audio Source").GetComponent<AudioSource>();
+            }
+        }
+
         public virtual void Collect(GameObject collector) {
             OnCollected?.Invoke();
 

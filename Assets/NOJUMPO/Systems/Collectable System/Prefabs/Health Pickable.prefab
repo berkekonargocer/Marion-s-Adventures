@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8007720433310733447}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1.94, y: -1.43, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
   OnCollected:
     m_PersistentCalls:
       m_Calls: []
+  collectSFX: {fileID: 8300000, guid: c0ef251b9ab721744aaa986420dde4f8, type: 3}
+  sfxAudioSource: {fileID: 0}
   healAmount: 10
 --- !u!114 &7311735797074069769
 MonoBehaviour:

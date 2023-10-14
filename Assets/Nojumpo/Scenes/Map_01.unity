@@ -37282,7 +37282,7 @@ GameObject:
   - component: {fileID: 2058070106}
   m_Layer: 0
   m_Name: SFX Audio Source
-  m_TagString: Untagged
+  m_TagString: SFX Audio Source
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38054,6 +38054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Pickable
       objectReference: {fileID: 0}
+    - target: {fileID: 8807439554737670527, guid: 7168da83c484e5e4587f58502137a3f8, type: 3}
+      propertyPath: sfxAudioSource
+      value: 
+      objectReference: {fileID: 2058070106}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
