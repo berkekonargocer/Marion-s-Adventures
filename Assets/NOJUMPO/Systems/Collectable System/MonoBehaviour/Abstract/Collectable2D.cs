@@ -15,7 +15,11 @@ namespace Nojumpo.CollectableSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public virtual void Collect(GameObject collector) {
             OnCollected?.Invoke();
-            sfxAudioSource.PlayOneShot(collectSFX);
+
+            if (sfxAudioSource != null && collectSFX != null)
+            {
+                sfxAudioSource.PlayOneShot(collectSFX);
+            }
         }
 
     }
