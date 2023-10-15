@@ -9,11 +9,17 @@ namespace Nojumpo.CollectableSystem
         public UnityEvent OnCollected;
         [SerializeField] AudioClip collectSFX;
         [SerializeField] AudioSource sfxAudioSource;
-        [SerializeField] GameObject collectVFXPrefab;
-        
-        
+        [SerializeField] protected GameObject collectVFXPrefab;
+        [SerializeField] protected string collectVFXPrefabPath = "";
+
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        void OnEnable() {
+        protected virtual void OnEnable() {
+            if (collectVFXPrefab == null)
+            {
+                collectVFXPrefab = Resources.Load<GameObject>(collectVFXPrefabPath);
+            }
+
             if (sfxAudioSource == null)
             {
                 sfxAudioSource = GameObject.FindWithTag("SFX Audio Source").GetComponent<AudioSource>();
@@ -28,12 +34,11 @@ namespace Nojumpo.CollectableSystem
                 GameObject vfx = Instantiate(collectVFXPrefab, transform.position, Quaternion.identity);
                 Destroy(vfx, 1.25f);
             }
-            
+
             if (sfxAudioSource != null && collectSFX != null)
             {
                 sfxAudioSource.PlayOneShot(collectSFX);
             }
         }
-
     }
 }
