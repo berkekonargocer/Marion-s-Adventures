@@ -7,18 +7,19 @@ namespace Nojumpo.CollectableSystem
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] int amount;
         
-        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void CollectAnimation() {
-            // Play animation and destroy it 
-            Destroy(gameObject);
-        }
-
-
+        
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void Collect(GameObject collector) {
             base.Collect(collector);
             collector.gameObject.GetComponent<PointManager>().AddPoint(amount);
             CollectAnimation();
+        }
+        
+        
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void CollectAnimation() {
+            // Play animation and destroy it 
+            Destroy(gameObject);
         }
     }
 }

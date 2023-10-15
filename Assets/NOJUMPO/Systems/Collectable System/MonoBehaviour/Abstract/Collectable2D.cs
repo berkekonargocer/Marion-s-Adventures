@@ -20,11 +20,13 @@ namespace Nojumpo.CollectableSystem
         [SerializeField] protected CollectVFXSpawnPosition vfxSpawnPosition;
         
 
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
+        // ------------------------- UNITY BUILT-IN METHODS ------------------------
         protected virtual void OnEnable() {
             SetComponents();
         }
 
+        
+        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public virtual void Collect(GameObject collector) {
             OnCollected?.Invoke();
             
