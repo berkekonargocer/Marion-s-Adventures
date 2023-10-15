@@ -1466,6 +1466,10 @@ PrefabInstance:
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
+    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: collectVFXPrefab
+      value: 
+      objectReference: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point (1)
@@ -4095,6 +4099,10 @@ PrefabInstance:
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
+    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: collectVFXPrefab
+      value: 
+      objectReference: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point (2)
@@ -4408,6 +4416,10 @@ PrefabInstance:
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
+    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: collectVFXPrefab
+      value: 
+      objectReference: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point
@@ -37569,6 +37581,22 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 962369328}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
@@ -37611,6 +37639,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791840483235883067, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

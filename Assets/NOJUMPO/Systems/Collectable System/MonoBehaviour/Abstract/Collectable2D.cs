@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +9,7 @@ namespace Nojumpo.CollectableSystem
         public UnityEvent OnCollected;
         [SerializeField] AudioClip collectSFX;
         [SerializeField] AudioSource sfxAudioSource;
+        [SerializeField] GameObject collectVFXPrefab;
         
         
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
@@ -23,6 +23,12 @@ namespace Nojumpo.CollectableSystem
         public virtual void Collect(GameObject collector) {
             OnCollected?.Invoke();
 
+            if (collectVFXPrefab != null)
+            {
+                GameObject vfx = Instantiate(collectVFXPrefab, transform.position, Quaternion.identity);
+                Destroy(vfx, 1.25f);
+            }
+            
             if (sfxAudioSource != null && collectSFX != null)
             {
                 sfxAudioSource.PlayOneShot(collectSFX);
