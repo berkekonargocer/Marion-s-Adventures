@@ -149,6 +149,8 @@ MonoBehaviour:
       m_Calls: []
   collectSFX: {fileID: 8300000, guid: a2dbeb5e294a46b47822272b76492c6d, type: 3}
   sfxAudioSource: {fileID: 0}
+  collectVFXPrefab: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
+  collectVFXPrefabPath: VFX/Particle System/Prefabs/Gold Collect VFX
   amount: 10
 --- !u!114 &7639134582342995411
 MonoBehaviour:

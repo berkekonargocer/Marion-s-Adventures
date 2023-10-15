@@ -149,6 +149,8 @@ MonoBehaviour:
       m_Calls: []
   collectSFX: {fileID: 8300000, guid: c0ef251b9ab721744aaa986420dde4f8, type: 3}
   sfxAudioSource: {fileID: 0}
+  collectVFXPrefab: {fileID: 8883244746993416800, guid: d947ad3e8371c8943b8be9b9a2891654, type: 3}
+  collectVFXPrefabPath: VFX/Particle System/Prefabs/Health Collect VFX
   healAmount: 10
 --- !u!114 &7311735797074069769
 MonoBehaviour:

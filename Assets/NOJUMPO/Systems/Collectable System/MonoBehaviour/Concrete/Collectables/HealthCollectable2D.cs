@@ -12,6 +12,7 @@ namespace Nojumpo.CollectableSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         protected override void OnEnable() {
             collectVFXPrefabPath = "VFX/Particle System/Prefabs/Health Collect VFX";
+            vfxSpawnPosition = CollectVFXSpawnPosition.COLLECTOR;
             base.OnEnable();
         }
 
