@@ -17,5 +17,6 @@ namespace Nojumpo.StateMachine
         public abstract void Tick();
         public abstract void FixedTick();
         public abstract void OnExitState();
+        
     }
 }

@@ -11,8 +11,7 @@ namespace Nojumpo.AgentSystem
                 StartCoroutine(TransitionToIdleCoroutine(0.1f));
             }
         }
-
-
+        
         public override void Tick() {
             // Prevent State Update
         }

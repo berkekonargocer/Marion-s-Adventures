@@ -14,12 +14,15 @@ namespace Nojumpo.AgentSystem
         public override void OnEnterState() {
             base.OnEnterState();
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
+            
+            if (_ai2DStateMachine.m_AgentDamageable.DamageableHealth.CurrentHealth > 0)
+            {
+                StartCoroutine(TransitionToPatrolCoroutine(0.1f));
+            }
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected override void OnAnimationEndEvent() {
-            _ai2DStateMachine.TransitionToPreviousState();
-        }
+        
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
     }

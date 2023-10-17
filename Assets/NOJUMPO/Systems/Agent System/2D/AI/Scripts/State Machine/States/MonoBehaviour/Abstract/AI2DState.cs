@@ -1,5 +1,7 @@
+using System.Collections;
 using Nojumpo.DamageableSystem;
 using Nojumpo.StateMachine;
+using Nojumpo.Utils;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -12,10 +14,10 @@ namespace Nojumpo.AgentSystem
 
         protected Transform _playerTransform;
         protected Damageable _playerDamageable;
-        
+
         protected float _movementSpeed;
-        
-        
+
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public virtual void Initialize(AI2DStateMachine ai2DStateMachine, Agent2DData agent2DData) {
             _ai2DStateMachine = ai2DStateMachine;
@@ -52,7 +54,7 @@ namespace Nojumpo.AgentSystem
         protected bool IsPlayerDead() {
             return _playerDamageable.DamageableHealth.CurrentHealth <= 0;
         }
-        
+
         protected void CalculateSpeed(int movementDirection, Agent2DMovementData movementData) {
             if (Mathf.Abs(movementDirection) > 0)
             {
@@ -65,7 +67,7 @@ namespace Nojumpo.AgentSystem
 
             movementData.CurrentSpeed = Mathf.Clamp(movementData.CurrentSpeed, 0, _movementSpeed);
         }
-        
+
 
         protected void CalculateVelocity() {
             CalculateSpeed(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection, _ai2DStateMachine.m_AgentMovementData);
@@ -83,7 +85,7 @@ namespace Nojumpo.AgentSystem
         protected void SetVelocity() {
             _ai2DStateMachine.m_Rigidbody2D.velocity = _ai2DStateMachine.m_AgentMovementData.CurrentVelocity;
         }
-        
+
         protected virtual void CheckIfPathBlocked() {
             if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
             {
@@ -98,9 +100,8 @@ namespace Nojumpo.AgentSystem
         }
 
         protected virtual void HandleMovement() {
-
         }
-        
+
         protected virtual void HandleTakeDamage() {
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_TakeDamage);
         }
@@ -111,6 +112,18 @@ namespace Nojumpo.AgentSystem
 
         protected void TransitionToIdle() {
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Idle);
+        }
+
+        protected IEnumerator TransitionToIdleCoroutine(float transitionDelay) {
+            yield return NJUtils.GetWait(transitionDelay);
+
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Idle);
+        }
+        
+        protected IEnumerator TransitionToPatrolCoroutine(float transitionDelay) {
+            yield return NJUtils.GetWait(transitionDelay);
+
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
         }
 
 
