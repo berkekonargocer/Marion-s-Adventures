@@ -12779,6 +12779,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 266228316947137268, guid: a60f3b52a43e48144b72ba5c7321f718, type: 3}
   m_PrefabInstance: {fileID: 6878826005106503973}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639244355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6506479397014194619, guid: 2169f244015fa3a43b18e9e73a342361, type: 3}
+  m_PrefabInstance: {fileID: 619530377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ba8e01d1b078a4e887cc80a02fba49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1696103116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
@@ -13256,7 +13267,7 @@ PrefabInstance:
     - target: {fileID: 41192178073086916, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: initialRespawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1639244355}
     - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

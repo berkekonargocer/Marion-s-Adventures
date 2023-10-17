@@ -47,8 +47,14 @@ namespace Nojumpo
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
+            if (initialRespawnPoint == null)
+            {
+                Debug.LogWarning("Initial Respawn Point Is Not Set You Need To Set An Initial Respawn Point", gameObject);
+                return;
+            }
+            
             _currentRespawnPoint = initialRespawnPoint.transform.position;
-
+            
             if (TryGetComponent(out IDamageable damageable))
             {
                 onRespawn += damageable.TakeDamage;
