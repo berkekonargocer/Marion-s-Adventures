@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9060714114600341083}
   - component: {fileID: 3753862930054585732}
   - component: {fileID: 7639134582342995411}
+  - component: {fileID: 4784799901159298547}
   m_Layer: 13
   m_Name: Coin Point
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1825673617
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7288084716962332074, guid: a485908c18d715e4ab52d8b3e68d1bfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56241fc2b63e1d649abe49dddf31607b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.88}
+    oldSize: {x: 0.84, y: 0.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 0}
   collectVFXPrefab: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
   collectVFXPrefabPath: VFX/Particle System/Prefabs/Gold Collect VFX
+  vfxSpawnPosition: 1
   amount: 10
 --- !u!114 &7639134582342995411
 MonoBehaviour:
@@ -167,3 +169,24 @@ MonoBehaviour:
   movementDistance: 0.1
   animationDuration: 1
   animationEase: 2
+--- !u!95 &4784799901159298547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055559931555408346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56520347624c8654bb529448f7ac95da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

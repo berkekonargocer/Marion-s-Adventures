@@ -258,19 +258,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Point
       objectReference: {fileID: 0}
+    - target: {fileID: 4782483959448434781, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56241fc2b63e1d649abe49dddf31607b, type: 3}
     m_RemovedComponents:
     - {fileID: 862212068634164469, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
     m_RemovedGameObjects: []
@@ -733,19 +737,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -757,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
@@ -775,6 +779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Point
       objectReference: {fileID: 0}
+    - target: {fileID: 4782483959448434781, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56241fc2b63e1d649abe49dddf31607b, type: 3}
     m_RemovedComponents:
     - {fileID: 862212068634164469, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
     m_RemovedGameObjects: []
@@ -1451,19 +1459,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1475,16 +1483,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
-    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
-      propertyPath: vfxSpawnPosition
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point
@@ -6342,19 +6346,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6366,7 +6370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
@@ -6384,6 +6388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Point
       objectReference: {fileID: 0}
+    - target: {fileID: 4782483959448434781, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56241fc2b63e1d649abe49dddf31607b, type: 3}
     m_RemovedComponents:
     - {fileID: 862212068634164469, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
     m_RemovedGameObjects: []
@@ -7217,19 +7225,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7241,7 +7249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
@@ -7259,6 +7267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Point
       objectReference: {fileID: 0}
+    - target: {fileID: 4782483959448434781, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56241fc2b63e1d649abe49dddf31607b, type: 3}
     m_RemovedComponents:
     - {fileID: 862212068634164469, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
     m_RemovedGameObjects: []
@@ -7508,19 +7520,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7532,16 +7544,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
-    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
-      propertyPath: vfxSpawnPosition
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point
