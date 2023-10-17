@@ -13,7 +13,7 @@ namespace Nojumpo.AgentSystem
 
         bool _canAttack = true;
 
-        
+
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void OnEnterState() {
             base.OnEnterState();
@@ -21,46 +21,26 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void Tick() {
+            TurnFaceToPlayer();
+            
+            if (CheckIfStopChasing())
+                return;
+            
+            if (CheckIfInAttackRange())
+                return;
+
             HandleMovement();
         }
 
+        
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
-            if (IsPlayerDead())
-            {
-                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
-                return;
-            }
-            
             CheckIfPathBlocked();
 
-            if (!(DistanceToPlayer() > 1.00f))
-            {
-                _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
-
-                if (!_canAttack)
-                    return;
-                
-                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Attack);
-                StartCoroutine(nameof(AttackDelay));
-                
-                return;
-            }
-
-            if (_playerTransform.position.x > transform.position.x)
-            {
-                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
-            }
-            else
-            {
-                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = -1;
-            }
-
-            _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
             CalculateVelocity();
             SetVelocity();
         }
-
+        
         protected override void CheckIfPathBlocked() {
             if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
             {
@@ -73,9 +53,46 @@ namespace Nojumpo.AgentSystem
             runAudioEvent.Play();
         }
 
+        
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        bool CheckIfStopChasing() {
+            if (!IsPlayerDead())
+                return false;
+            
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+            return true;
+        }
+        
         float DistanceToPlayer() {
             return Vector2.Distance(transform.position, _playerTransform.position);
+        }
+
+        void TurnFaceToPlayer() {
+            if (_playerTransform.position.x > transform.position.x)
+            {
+                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
+            }
+            else
+            {
+                _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = -1;
+            }
+            
+            _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
+        }
+        
+        bool CheckIfInAttackRange() {
+            if (DistanceToPlayer() > 1.00f)
+                return false;
+
+            _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
+
+            if (!_canAttack)
+                return true;
+            
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Attack);
+            StartCoroutine(nameof(AttackDelay));
+
+            return true;
         }
 
         IEnumerator AttackDelay() {
