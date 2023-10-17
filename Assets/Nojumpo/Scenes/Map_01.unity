@@ -38514,6 +38514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boar
       objectReference: {fileID: 0}
+    - target: {fileID: 5740061125056953778, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
+      propertyPath: attackDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589221133455319922, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
       propertyPath: m_Camera
       value: 
