@@ -31,15 +31,10 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void OnEnterState() {
+            EnterSetup(_player2DStateMachine);
             _player2DStateMachine.m_InputReader.onJumpInputPressed += HandleJumpPressed;
             _player2DStateMachine.m_InputReader.onJumpInputReleased += HandleJumpReleased;
             _player2DStateMachine.m_InputReader.onAttackInputPressed += HandleAttack;
-            _player2DStateMachine.m_Animator.onAnimationEvent += OnAnimationEvent;
-            _player2DStateMachine.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
-            _player2DStateMachine.m_AgentDamageable.onTakeDamage += OnTakeDamage;
-            _player2DStateMachine.m_AgentDamageable.onDie += OnDie;
-            _player2DStateMachine.m_Animator.PlayAnimation(animatorStateParameter);
-            OnEnter?.Invoke();
         }
 
         public override void Tick() {
@@ -51,21 +46,17 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void OnExitState() {
+            ExitSetup(_player2DStateMachine);
             _player2DStateMachine.m_InputReader.onJumpInputPressed -= HandleJumpPressed;
             _player2DStateMachine.m_InputReader.onJumpInputReleased -= HandleJumpReleased;
             _player2DStateMachine.m_InputReader.onAttackInputPressed -= HandleAttack;
-            _player2DStateMachine.m_Animator.onAnimationEvent -= OnAnimationEvent;
-            _player2DStateMachine.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
-            _player2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
-            _player2DStateMachine.m_AgentDamageable.onDie -= OnDie;
-            OnExit?.Invoke();
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
-        protected virtual void OnAnimationEvent() {
+        protected override void OnAnimationEvent() {
         }
 
-        protected virtual void OnAnimationEndEvent() {
+        protected override void OnAnimationEndEvent() {
         }
 
         protected virtual void HandleMovement() {
@@ -116,11 +107,11 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void OnTakeDamage() {
+        protected override void OnTakeDamage() {
             HandleTakeDamage();
         }
 
-        void OnDie() {
+        protected override void OnDie() {
             HandleDie();
         }
     }

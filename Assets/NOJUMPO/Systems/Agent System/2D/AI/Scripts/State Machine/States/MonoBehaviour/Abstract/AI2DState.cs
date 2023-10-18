@@ -28,12 +28,7 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void OnEnterState() {
-            _ai2DStateMachine.m_Animator.onAnimationEvent += OnAnimationEvent;
-            _ai2DStateMachine.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
-            _ai2DStateMachine.m_AgentDamageable.onTakeDamage += OnTakeDamage;
-            _ai2DStateMachine.m_AgentDamageable.onDie += OnDie;
-            _ai2DStateMachine.m_Animator.PlayAnimation(animatorStateParameter);
-            OnEnter?.Invoke();
+            EnterSetup(_ai2DStateMachine);
         }
 
         public override void Tick() {
@@ -43,11 +38,7 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void OnExitState() {
-            _ai2DStateMachine.m_Animator.onAnimationEvent -= OnAnimationEvent;
-            _ai2DStateMachine.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
-            _ai2DStateMachine.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
-            _ai2DStateMachine.m_AgentDamageable.onDie -= OnDie;
-            OnExit?.Invoke();
+            ExitSetup(_ai2DStateMachine);
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
@@ -93,10 +84,10 @@ namespace Nojumpo.AgentSystem
             }
         }
 
-        protected virtual void OnAnimationEvent() {
+        protected override void OnAnimationEvent() {
         }
 
-        protected virtual void OnAnimationEndEvent() {
+        protected override void OnAnimationEndEvent() {
         }
 
         protected virtual void HandleMovement() {
@@ -119,7 +110,7 @@ namespace Nojumpo.AgentSystem
 
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Idle);
         }
-        
+
         protected IEnumerator TransitionToPatrolCoroutine(float transitionDelay) {
             yield return NJUtils.GetWait(transitionDelay);
 
@@ -128,11 +119,11 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void OnTakeDamage() {
+        protected override void OnTakeDamage() {
             HandleTakeDamage();
         }
 
-        void OnDie() {
+        protected override void OnDie() {
             HandleDie();
         }
     }

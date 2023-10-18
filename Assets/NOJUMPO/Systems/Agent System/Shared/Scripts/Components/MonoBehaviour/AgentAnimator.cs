@@ -40,7 +40,7 @@ namespace Nojumpo
         public void InvokeAnimationEndEvent() {
             onAnimationEndEvent?.Invoke();
         }
-        
+
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
