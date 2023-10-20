@@ -1,5 +1,4 @@
 using Nojumpo.DamageableSystem;
-using Nojumpo.ScriptableObjects;
 using Nojumpo.WeaponSystem;
 using UnityEngine;
 
