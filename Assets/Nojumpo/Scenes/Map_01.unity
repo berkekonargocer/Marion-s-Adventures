@@ -13286,10 +13286,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 487161002675786895, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 86054664f05172f4c958e39f888c77b9, type: 2}
     - target: {fileID: 973877550561155964, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
       propertyPath: m_Camera
       value: 
@@ -13297,6 +13293,14 @@ PrefabInstance:
     - target: {fileID: 6704628820717212282, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
       propertyPath: m_Name
       value: Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382509514977407413, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -960.04266
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382509514977407413, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -538.9714
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13810,6 +13814,10 @@ PrefabInstance:
     - target: {fileID: 5270744421750133616, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
       propertyPath: m_Name
       value: Boar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270744421750133616, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5740061125056953778, guid: 98983636d0ae58e45a058edff8e7f386, type: 3}
       propertyPath: attackDelay
