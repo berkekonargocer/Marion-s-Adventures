@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4784799901159298547}
   m_Layer: 13
   m_Name: Coin Point
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   collectVFXPrefab: {fileID: 6527294586136322757, guid: 0890219228e41314fbbb11e7b915d356, type: 3}
   collectVFXPrefabPath: VFX/Particle System/Prefabs/Gold Collect VFX
   vfxSpawnPosition: 1
-  amount: 10
+  amount: 1
 --- !u!114 &7639134582342995411
 MonoBehaviour:
   m_ObjectHideFlags: 0

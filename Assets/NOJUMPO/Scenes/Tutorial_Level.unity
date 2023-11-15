@@ -7332,11 +7332,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.27
+      value: -61.68
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.11
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 2604463615532528572, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7371,12 +7371,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753862930054585732, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: sfxAudioSource
       value: 
       objectReference: {fileID: 2058070106}
     - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
       propertyPath: m_Name
       value: Coin Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055559931555408346, guid: d26333568252fc6448c178b3014f1d9a, type: 3}
+      propertyPath: m_TagString
+      value: Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17844,6 +17852,10 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 1639244355}
+    - target: {fileID: 447081433614040842, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Name
+      value: Point Image
+      objectReference: {fileID: 0}
     - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18028,6 +18040,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 3254868609421507054, guid: a485908c18d715e4ab52d8b3e68d1bfb, type: 3}
+    - target: {fileID: 7221060321999582624, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Name
+      value: Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292277229199043061, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: m_Name
+      value: Point Amount Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7611813065989082306, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Color.b
       value: 0.08770915
