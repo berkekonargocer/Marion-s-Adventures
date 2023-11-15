@@ -7398,7 +7398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069134072}
   m_Layer: 0
-  m_Name: Jump Tutorial (1)
+  m_Name: Attack Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
