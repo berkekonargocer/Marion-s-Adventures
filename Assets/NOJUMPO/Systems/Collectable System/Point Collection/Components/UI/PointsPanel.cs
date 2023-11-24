@@ -11,15 +11,17 @@ namespace Nojumpo.CollectableSystem
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public PointManager PointsToDisplay { get; private set; }
         [SerializeField] TextMeshProUGUI pointsText;
-
+        [SerializeField] string pointsTag = "Point";
+        
         public UnityEvent OnPanelUpdate;
 
         int _pointAmountInTheCurrentLevel;
                 
+        
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             PointsToDisplay.OnPointChange.AddListener(UpdatePointsPanel);
-            SceneManager.sceneLoaded += UpdatePointAmountInTheLevel;
+            SceneManager.sceneLoaded += GetPointAmountInTheLevel;
         }
 
         void Start() {
@@ -28,15 +30,14 @@ namespace Nojumpo.CollectableSystem
 
         void OnDisable() {
             PointsToDisplay.OnPointChange.RemoveListener(UpdatePointsPanel);
-            SceneManager.sceneLoaded -= UpdatePointAmountInTheLevel;
+            SceneManager.sceneLoaded -= GetPointAmountInTheLevel;
         }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void UpdatePointAmountInTheLevel(Scene scene,LoadSceneMode loadSceneMode) {
-            GameObject[] pointsAmount = GameObject.FindGameObjectsWithTag("Point");
+        void GetPointAmountInTheLevel(Scene scene,LoadSceneMode loadSceneMode) {
+            GameObject[] pointsAmount = GameObject.FindGameObjectsWithTag(pointsTag);
             _pointAmountInTheCurrentLevel = pointsAmount.Length;
-            Debug.Log($"{pointsAmount.Length.ToString()}");
         }
         
         void UpdatePointsPanel() {
