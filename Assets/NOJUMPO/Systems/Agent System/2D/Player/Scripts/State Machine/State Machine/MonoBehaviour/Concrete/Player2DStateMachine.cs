@@ -9,7 +9,7 @@ namespace Nojumpo.AgentSystem
         // -------------------------------- FIELDS ---------------------------------
         [field: SerializeField] public InputReader m_InputReader { get; protected set; }
         
-        [SerializeField] Player2DState bootUpState;
+        [SerializeField] Player2DState initialState;
         
         public Player2DStateFactory m_StateFactory { get; protected set; }
 
@@ -27,7 +27,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void Start() {
-            BootUpStateMachine();
+            InitializeStateMachine();
         }
 
         protected override void Update() {
@@ -67,8 +67,8 @@ namespace Nojumpo.AgentSystem
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void BootUpStateMachine() {
-            _currentState = bootUpState;
+        void InitializeStateMachine() {
+            _currentState = initialState;
             _currentState.OnEnterState();
         }
     }

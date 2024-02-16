@@ -1,4 +1,3 @@
-using Nojumpo.ScriptableObjects;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
