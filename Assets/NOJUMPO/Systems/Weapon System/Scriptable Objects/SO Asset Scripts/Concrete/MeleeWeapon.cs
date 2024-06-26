@@ -40,7 +40,7 @@ namespace Nojumpo.WeaponSystem
         }
 
         public override void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
-            Gizmos.DrawLine(origin, origin + direction * m_AttackRange);
+            Gizmos.DrawLine(origin, origin + (direction * m_AttackRange));
         }
     }
 }

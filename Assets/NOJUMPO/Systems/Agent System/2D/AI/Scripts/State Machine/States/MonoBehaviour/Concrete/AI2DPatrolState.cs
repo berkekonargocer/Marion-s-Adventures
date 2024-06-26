@@ -26,7 +26,7 @@ namespace Nojumpo.AgentSystem
             Gizmos.color = raycastColor;
             Transform objectTransform = transform;
             Vector3 raycastPosition = objectTransform.position;
-            Gizmos.DrawRay(raycastPosition, objectTransform.right * -1 * playerCheckRayLength);
+            Gizmos.DrawRay(raycastPosition, -1 * playerCheckRayLength * objectTransform.right);
             Gizmos.DrawRay(raycastPosition, transform.right * playerCheckRayLength);
         }
 
@@ -53,7 +53,10 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEvent() {
-            runAudioEvent?.Play(animationEventAudioSource);
+            if (runAudioEvent == null)
+                return;
+
+            runAudioEvent.Play(animationEventAudioSource);
         }
 
 

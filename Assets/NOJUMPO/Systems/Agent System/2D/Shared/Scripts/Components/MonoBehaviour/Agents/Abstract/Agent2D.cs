@@ -24,16 +24,8 @@ namespace Nojumpo.AgentSystem
             SetComponents();
         }
 
-        protected virtual void Start() {
-
-        }
-
         protected virtual void Update() {
             m_GroundDetector.CheckIsGrounded();
-        }
-
-        protected virtual void FixedUpdate() {
-            
         }
 
 
