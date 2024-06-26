@@ -16864,22 +16864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ba8e01d1b078a4e887cc80a02fba49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1644612127 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1125459169167469491, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-  m_PrefabInstance: {fileID: 5579152300149100716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!82 &1644612129 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3941077994955547991, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-  m_PrefabInstance: {fileID: 5579152300149100716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734052355
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,10 +18085,6 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 1639244355}
-    - target: {fileID: 353206645858771062, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: audioEvents.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 59cb8821bf97c914ca78ec77d7176ea7, type: 2}
     - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18121,30 +18101,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3417975533456743761, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: animationEventAudio
+    - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: animationEventAudio
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1644612129}
-    - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6292047243590532860, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: f549db369127b1c4bad75cb58cd1c691, type: 2}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
@@ -18189,18 +18149,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7487886993499056389, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: animationEventAudio
-      value: 
-      objectReference: {fileID: 11400000, guid: 59cb8821bf97c914ca78ec77d7176ea7, type: 2}
-    - target: {fileID: 7556947969616824393, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: initialState
-      value: 
-      objectReference: {fileID: 1644612127}
-    - target: {fileID: 8918592860877559351, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: endScaleValue
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18217,8 +18165,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 353206645858771062, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
