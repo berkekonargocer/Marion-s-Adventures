@@ -23,7 +23,7 @@ namespace Nojumpo.AgentSystem
             InitializeAI2D();
         }
 
-        protected override void Start() {
+        protected virtual void Start() {
             BootUpStateMachine();
         }
 
@@ -32,7 +32,7 @@ namespace Nojumpo.AgentSystem
             _currentState.Tick();
         }
 
-        protected override void FixedUpdate() {
+        protected virtual void FixedUpdate() {
             _currentState.FixedTick();
         }
 

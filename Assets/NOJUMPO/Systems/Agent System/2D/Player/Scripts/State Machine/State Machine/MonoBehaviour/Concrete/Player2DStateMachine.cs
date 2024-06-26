@@ -26,7 +26,7 @@ namespace Nojumpo.AgentSystem
             InitializePlayer2D();
         }
 
-        protected override void Start() {
+        protected virtual void Start() {
             InitializeStateMachine();
         }
 
@@ -35,7 +35,7 @@ namespace Nojumpo.AgentSystem
             _currentState.Tick();
         }
 
-        protected override void FixedUpdate() {
+        protected virtual void FixedUpdate() {
             _currentState.FixedTick();
         }
 
