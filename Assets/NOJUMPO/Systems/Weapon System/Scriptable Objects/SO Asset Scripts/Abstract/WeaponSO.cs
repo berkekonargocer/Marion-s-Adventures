@@ -28,12 +28,17 @@ namespace Nojumpo.WeaponSystem
             return false;
         }
 
+        public void PlayAttackSFX(AudioSource audioSource) {
+            WeaponData.AttackAudioEvent.Play(audioSource);
+        }
+
+        public void PlayAttackHitSFX(AudioSource audioSource) {
+            WeaponData.AttackHitAudioEvent.Play(audioSource);
+        }
+
         public abstract bool CanBeUsed(bool isGrounded);
-        public virtual void PerformAttack(Agent2D agent2D, Vector3 attackDirection) {
-            WeaponData.AttackAudioEvent.Play();
-        }
-        public abstract void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection);
-        public virtual void DrawWeaponGizmo(Vector3 origin, Vector3 direction) {
-        }
+        public abstract void PerformAttack(Agent2D agent2D, Vector3 attackDirection, AudioSource attackSFXSource);
+        public abstract void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection, AudioSource attackHitSFXSource);
+        public virtual void DrawWeaponGizmo(Vector3 origin, Vector3 direction) { }
     }
 }

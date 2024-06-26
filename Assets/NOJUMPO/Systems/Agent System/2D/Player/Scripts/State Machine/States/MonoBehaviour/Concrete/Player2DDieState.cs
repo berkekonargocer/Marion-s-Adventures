@@ -29,7 +29,7 @@ namespace Nojumpo.AgentSystem
         protected override void OnAnimationEndEvent() {
             if (animationEventAudio != null)
             {
-                animationEventAudio.Play();
+                animationEventAudio.Play(animationEventAudioSource);
             }
 
             // Call You Died Screen

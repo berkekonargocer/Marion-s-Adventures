@@ -68,10 +68,10 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEvent() {
-            if (animationEventAudio != null)
-            {
-                animationEventAudio.Play();
-            }
+            if (animationEventAudio == null)
+                return;
+
+            animationEventAudio.Play(animationEventAudioSource);
         }
 
 

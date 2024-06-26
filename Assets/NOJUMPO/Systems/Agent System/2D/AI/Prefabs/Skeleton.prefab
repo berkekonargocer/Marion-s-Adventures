@@ -303,6 +303,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerCheckRayLength: 6
+  animationEventAudioSource: {fileID: 914403322413861019}
   runAudioEvent: {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
   showGizmos: 1
   raycastColor: {r: 0, g: 1, b: 0, a: 1}
@@ -326,6 +327,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   attackDelay: 1
+  animationEventAudioSource: {fileID: 914403322413861019}
   runAudioEvent: {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
 --- !u!114 &3252353291559018662
 MonoBehaviour:
@@ -346,6 +348,7 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+  attackSFXSource: {fileID: 914403322413861019}
 --- !u!114 &8618781853791457235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +446,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7615447124701663251}
         m_TargetAssemblyTypeName: Nojumpo.InstantiateHelper, Assembly-CSharp
-        m_MethodName: InstantiateObject
+        m_MethodName: Instantiate
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8007720433310733447, guid: 7168da83c484e5e4587f58502137a3f8, type: 3}
@@ -465,10 +468,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2647645678397605625}
-  - component: {fileID: 4988491672003629054}
   - component: {fileID: 914403322413861019}
   m_Layer: 0
-  m_Name: AI Audio Event Manager
+  m_Name: Animation Event Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,21 +491,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4300923557364488125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4988491672003629054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082283891605633390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81bf36adb87ebb84a8c35350e5f9d748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEvents:
-  - {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
-  audioEventSource: {fileID: 914403322413861019}
 --- !u!82 &914403322413861019
 AudioSource:
   m_ObjectHideFlags: 0
@@ -516,7 +503,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -8139686848304170737, guid: e8bd2ee5c950d4a4892e3261080ce8e1, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.807
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -754,7 +741,7 @@ Transform:
   m_GameObject: {fileID: 5044687639437557718}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.14, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1304,11 +1291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2363831173169924502, guid: 7209f7307013c724cb79d8c2738e8843, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2363831173169924502, guid: 7209f7307013c724cb79d8c2738e8843, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 540
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2363831173169924502, guid: 7209f7307013c724cb79d8c2738e8843, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1332,11 +1319,11 @@ PrefabInstance:
       objectReference: {fileID: 3349096163675873370}
     - target: {fileID: 7730054429727276948, guid: 7209f7307013c724cb79d8c2738e8843, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -959.9805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7730054429727276948, guid: 7209f7307013c724cb79d8c2738e8843, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -539.14
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

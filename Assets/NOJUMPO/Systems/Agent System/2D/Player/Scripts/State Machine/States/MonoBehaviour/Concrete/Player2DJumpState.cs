@@ -67,5 +67,9 @@ namespace Nojumpo.AgentSystem
             _player2DStateMachine.m_Rigidbody2D.velocity = _player2DStateMachine.m_AgentMovementData.CurrentVelocity;
             _jumpInputPressed = true;
         }
+
+        void PlayJumpAudio() {
+            animationEventAudio.Play(animationEventAudioSource);
+        }
     }
 }

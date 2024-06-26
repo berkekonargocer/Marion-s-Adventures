@@ -75,7 +75,7 @@ namespace Nojumpo.AgentSystem
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void InvokeAttack() {
             _player2DStateMachine.m_Animator.onAnimationEvent -= InvokeAttack;
-            _player2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_player2DStateMachine,_attackDirection);
+            _player2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_player2DStateMachine,_attackDirection, animationEventAudioSource);
             OnAttack?.Invoke();
         }
 

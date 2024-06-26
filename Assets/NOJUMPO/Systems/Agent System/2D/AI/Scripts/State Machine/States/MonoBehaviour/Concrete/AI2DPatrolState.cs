@@ -9,8 +9,9 @@ namespace Nojumpo.AgentSystem
         [SerializeField] LayerMask playerLayerMask;
         [SerializeField] float playerCheckRayLength;
 
+        [SerializeField] AudioSource animationEventAudioSource;
         [SerializeField] SimpleAudioEventSO runAudioEvent;
-        
+
         RaycastHit2D[] forwardCheckHits = new RaycastHit2D[1];
         RaycastHit2D[] backwardCheckHits = new RaycastHit2D[1];
 
@@ -52,7 +53,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEvent() {
-            runAudioEvent.Play();
+            runAudioEvent?.Play(animationEventAudioSource);
         }
 
 

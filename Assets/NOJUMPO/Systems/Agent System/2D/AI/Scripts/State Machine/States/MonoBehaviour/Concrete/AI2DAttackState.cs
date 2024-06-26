@@ -5,8 +5,10 @@ namespace Nojumpo.AgentSystem
     public class AI2DAttackState : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
+        [SerializeField] AudioSource attackSFXSource;
+
         protected Vector2 _attackDirection;
-        
+
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         public override void OnEnterState() {
@@ -30,7 +32,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEvent() {
-            _ai2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_ai2DStateMachine, _attackDirection);
+            _ai2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_ai2DStateMachine, _attackDirection, attackSFXSource);
         }
 
         protected override void OnAnimationEndEvent() {

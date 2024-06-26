@@ -8,7 +8,7 @@ namespace Nojumpo
 
         
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-        public void InstantiateObject(GameObject objectToInstantiate) {
+        public void Instantiate(GameObject objectToInstantiate) {
             Instantiate(objectToInstantiate, transform.position, Quaternion.identity);
         }
     }

@@ -9,6 +9,8 @@ namespace Nojumpo.AgentSystem
     {
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] float attackDelay = 1.0f;
+
+        [SerializeField] AudioSource animationEventAudioSource;
         [SerializeField] SimpleAudioEventSO runAudioEvent;
 
         bool _canAttack = true;
@@ -50,7 +52,7 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEvent() {
-            runAudioEvent.Play();
+            runAudioEvent.Play(animationEventAudioSource);
         }
 
         

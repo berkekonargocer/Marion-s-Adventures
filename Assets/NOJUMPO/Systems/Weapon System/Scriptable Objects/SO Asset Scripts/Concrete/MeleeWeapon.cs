@@ -18,18 +18,18 @@ namespace Nojumpo.WeaponSystem
             return isGrounded;
         }
 
-        public override void PerformAttack(Agent2D agent2D, Vector3 attackDirection) {
-            base.PerformAttack(agent2D, attackDirection);
-            TryToDealDamage(agent2D, attackDirection);
+        public override void PerformAttack(Agent2D agent2D, Vector3 attackDirection, AudioSource attackSFXSource) {
+            PlayAttackSFX(attackSFXSource);
+            TryToDealDamage(agent2D, attackDirection, attackSFXSource);
         }
 
-        public override void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection) {
+        public override void TryToDealDamage(Agent2D agent2D, Vector3 attackDirection, AudioSource audioSource) {
             int hits = Physics2D.RaycastNonAlloc(agent2D.m_AgentWeapon.transform.position, attackDirection, weaponHitResult, m_AttackRange, damageableLayerMask);
 
             if (hits <= 0)
                 return;
-            
-            WeaponData.AttackHitAudioEvent.Play();
+
+            PlayAttackHitSFX(audioSource);
             
             for (int i = 0; i < hits; i++)
             {

@@ -29,7 +29,7 @@ namespace Nojumpo.AgentSystem
         public void CheckIfPlayLandSound() {
             if (_player2DStateMachine.m_GroundDetector.IsGrounded)
             {
-                landAudioEvent.Play();
+                landAudioEvent.Play(animationEventAudioSource);
             }
         }
 
