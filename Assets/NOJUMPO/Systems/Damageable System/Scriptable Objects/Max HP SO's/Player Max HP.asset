@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Max HP
   m_EditorClassIdentifier: 
   developerDescription: 
-  value: 35
+  value: 40

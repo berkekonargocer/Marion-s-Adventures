@@ -16,16 +16,20 @@ namespace Nojumpo.AgentSystem
 
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
 
+            int movementDirection;
+
             if (_playerTransform.position.x > transform.position.x)
             {
                 _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = 1;
+                movementDirection = 1;
             }
             else
             {
                 _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = -1;
+                movementDirection = -1;
             }
 
-            _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
+            _ai2DStateMachine.m_Renderer.FaceDirection(movementDirection);
             
             Transform agent2DTransform = _ai2DStateMachine.transform;
             _attackDirection = agent2DTransform.right * (agent2DTransform.localScale.x > 0 ? 1 : -1);

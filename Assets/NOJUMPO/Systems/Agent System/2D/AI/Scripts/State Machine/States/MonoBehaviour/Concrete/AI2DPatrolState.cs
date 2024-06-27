@@ -38,7 +38,12 @@ namespace Nojumpo.AgentSystem
         }
 
         public override void Tick() {
-            CheckForEnemy();
+            if (IsEnemyNearby())
+            {
+                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Chase);
+                return;
+            }
+
             HandleMovement();
         }
 
@@ -61,9 +66,9 @@ namespace Nojumpo.AgentSystem
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        void CheckForEnemy() {
+        bool IsEnemyNearby() {
             if (IsPlayerDead())
-                return;
+                return false;
 
             Transform objectTransform = transform;
             Vector3 raycastPosition = objectTransform.position;
@@ -71,10 +76,9 @@ namespace Nojumpo.AgentSystem
             int backwardHits = Physics2D.RaycastNonAlloc(raycastPosition, transform.right * -1, backwardCheckHits, playerCheckRayLength, playerLayerMask);
 
             if (forwardHits <= 0 && backwardHits <= 0)
-                return;
+                return false;
 
-            Debug.Log("PLAYER DETECTED");
-            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Chase);
+            return true;
         }
     }
 }

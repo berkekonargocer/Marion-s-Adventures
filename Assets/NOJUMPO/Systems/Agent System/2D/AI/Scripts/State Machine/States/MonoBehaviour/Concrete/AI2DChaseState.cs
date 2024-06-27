@@ -8,7 +8,7 @@ namespace Nojumpo.AgentSystem
     public class AI2DChaseState : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] float attackDelay = 1.0f;
+        [SerializeField] float attackDelay = 0.5f;
 
         [SerializeField] AudioSource animationEventAudioSource;
         [SerializeField] SimpleAudioEventSO runAudioEvent;
