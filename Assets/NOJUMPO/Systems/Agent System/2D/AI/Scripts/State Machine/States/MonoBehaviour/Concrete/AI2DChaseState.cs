@@ -8,7 +8,7 @@ namespace Nojumpo.AgentSystem
     public class AI2DChaseState : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
-        [SerializeField] float attackDelay = 0.5f;
+        [SerializeField] float attackDelay = 1.0f;
 
         [SerializeField] AudioSource animationEventAudioSource;
         [SerializeField] SimpleAudioEventSO runAudioEvent;
@@ -82,13 +82,17 @@ namespace Nojumpo.AgentSystem
         }
         
         bool CheckIfInAttackRange() {
-            if (DistanceToPlayer() > 1.00f)
+            if (DistanceToPlayer() > 1.00f) {
+                _ai2DStateMachine.m_Animator.PlayAnimation(AgentAnimationState.RUN);
                 return false;
+            }
 
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
 
-            if (!_canAttack)
+            if (!_canAttack) {
+                _ai2DStateMachine.m_Animator.PlayAnimation(AgentAnimationState.IDLE);
                 return true;
+            }
             
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Attack);
             StartCoroutine(nameof(AttackDelay));

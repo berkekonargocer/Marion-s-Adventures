@@ -32,9 +32,9 @@ namespace Nojumpo.AgentSystem
 
         public override void OnEnterState() {
             EnterSetup(_player2DStateMachine);
-            _player2DStateMachine.m_InputReader.onJumpInputPressed += HandleJumpPressed;
-            _player2DStateMachine.m_InputReader.onJumpInputReleased += HandleJumpReleased;
-            _player2DStateMachine.m_InputReader.onAttackInputPressed += HandleAttack;
+            _player2DStateMachine.m_InputReader.OnJumpInputPressed += HandleJumpPressed;
+            _player2DStateMachine.m_InputReader.OnJumpInputReleased += HandleJumpReleased;
+            _player2DStateMachine.m_InputReader.OnAttackInputPressed += HandleAttack;
         }
 
         public override void Tick() {
@@ -47,9 +47,9 @@ namespace Nojumpo.AgentSystem
 
         public override void OnExitState() {
             ExitSetup(_player2DStateMachine);
-            _player2DStateMachine.m_InputReader.onJumpInputPressed -= HandleJumpPressed;
-            _player2DStateMachine.m_InputReader.onJumpInputReleased -= HandleJumpReleased;
-            _player2DStateMachine.m_InputReader.onAttackInputPressed -= HandleAttack;
+            _player2DStateMachine.m_InputReader.OnJumpInputPressed -= HandleJumpPressed;
+            _player2DStateMachine.m_InputReader.OnJumpInputReleased -= HandleJumpReleased;
+            _player2DStateMachine.m_InputReader.OnAttackInputPressed -= HandleAttack;
         }
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------

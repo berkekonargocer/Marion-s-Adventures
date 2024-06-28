@@ -17942,7 +17942,7 @@ PrefabInstance:
       objectReference: {fileID: 1615123594}
     - target: {fileID: 6254447395741181793, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
       propertyPath: attackDelay
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6704628820717212282, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
       propertyPath: m_Name
@@ -18032,6 +18032,14 @@ PrefabInstance:
       propertyPath: initialRespawnPoint
       value: 
       objectReference: {fileID: 1639244355}
+    - target: {fileID: 600867332596307098, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125459169167469491, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1312819065359405573, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18048,10 +18056,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3417975533456743761, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4562478195850004500, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: f549db369127b1c4bad75cb58cd1c691, type: 2}
+      propertyPath: stateAnimation
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279454250334194017, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6783884986912310867, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_Name
       value: Marion
@@ -18096,6 +18112,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7487886993499056389, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7833150327412608595, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9087860062247412742, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18112,6 +18136,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9177549883560860342, guid: 47aed8f83345a94479ff2e714112d249, type: 3}
+      propertyPath: stateAnimation
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18127,7 +18155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1299150939085951388, guid: 1cae98c4217f934459cb7ae0b54574f8, type: 3}
       propertyPath: attackDelay
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1458843441448637437, guid: 1cae98c4217f934459cb7ae0b54574f8, type: 3}
       propertyPath: m_Name

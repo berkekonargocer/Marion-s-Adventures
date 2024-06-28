@@ -8,7 +8,7 @@ namespace Nojumpo.StateMachine
     {
         // -------------------------------- FIELDS ---------------------------------
         [Space]
-        [SerializeField] protected string animatorStateParameter = "";
+        [SerializeField] protected AgentAnimationState stateAnimation = AgentAnimationState.NONE;
         [Space]
         public UnityEvent OnEnter, OnExit;
 
@@ -18,8 +18,8 @@ namespace Nojumpo.StateMachine
         public abstract void Tick();
         public abstract void FixedTick();
         public abstract void OnExitState();
-        
-        
+
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void EnterSetup(Agent2D agent2D) {
             agent2D.m_Animator.onAnimationEvent += OnAnimationEvent;
@@ -27,11 +27,8 @@ namespace Nojumpo.StateMachine
             agent2D.m_AgentDamageable.onTakeDamage += OnTakeDamage;
             agent2D.m_AgentDamageable.onDie += OnDie;
 
-            if (!string.IsNullOrEmpty(animatorStateParameter))
-            {
-                agent2D.m_Animator.PlayAnimation(animatorStateParameter);
-            }
-            
+            agent2D.m_Animator.PlayAnimation(stateAnimation);
+
             OnEnter?.Invoke();
         }
 
@@ -40,16 +37,16 @@ namespace Nojumpo.StateMachine
             agent2D.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
             agent2D.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
             agent2D.m_AgentDamageable.onDie -= OnDie;
-            
+
             OnExit?.Invoke();
         }
-        
+
         protected virtual void OnAnimationEvent() {
         }
 
         protected virtual void OnAnimationEndEvent() {
         }
-        
+
         protected virtual void OnTakeDamage() {
         }
 

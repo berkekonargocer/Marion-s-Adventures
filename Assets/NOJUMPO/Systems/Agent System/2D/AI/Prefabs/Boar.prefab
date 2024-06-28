@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfd0d9a2d8c7f642a3a96563f0ec07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: Idle
+  stateAnimation: 1
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3b5d95b28385e49a54e1e6513fd3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: Walk
+  stateAnimation: 2
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -815,14 +815,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9209d4a7741d24f98108416d50bb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: Run
+  stateAnimation: 3
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  attackDelay: 1
+  attackDelay: 0.5
   animationEventAudioSource: {fileID: 7067619286674833522}
   runAudioEvent: {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
 --- !u!114 &5816796991153389480
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bade0bcc14a16640bc22324395c1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: Attack
+  stateAnimation: 8
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eec69d4bd532b4459fe0f2c9d944b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: TakeDamage
+  stateAnimation: 9
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5106f1735f3601c4db7149101c1b99c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorStateParameter: Die
+  stateAnimation: 10
   OnEnter:
     m_PersistentCalls:
       m_Calls:

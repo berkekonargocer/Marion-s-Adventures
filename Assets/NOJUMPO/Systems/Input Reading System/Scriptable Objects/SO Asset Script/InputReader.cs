@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,26 +18,13 @@ namespace Nojumpo.NJInputSystem
 
         public Vector2 MovementVector { get; private set; }
 
-        public delegate void OnMovementInputPressed(Vector2 movementVector);
-        public OnMovementInputPressed onMovementInputPressed;
-
-        public delegate void OnInteractionInputPressed();
-        public event OnInteractionInputPressed onInteractionInputPressed;
-
-        public delegate void OnInteractionInputReleased();
-        public event OnInteractionInputReleased onInteractionInputReleased;
-
-        public delegate void OnJumpInputPressed();
-        public event OnJumpInputPressed onJumpInputPressed;
-
-        public delegate void OnJumpInputReleased();
-        public event OnJumpInputReleased onJumpInputReleased;
-
-        public delegate void OnAttackInputPressed();
-        public event OnAttackInputPressed onAttackInputPressed;
-
-        public delegate void OnChangeWeaponInputPressed();
-        public event OnChangeWeaponInputPressed onChangeWeaponInputPressed;
+        public event Action<Vector2> OnMovementInputPressed;
+        public event Action OnInteractionInputPressed;
+        public event Action OnInteractionInputReleased;
+        public event Action OnJumpInputPressed;
+        public event Action OnJumpInputReleased;
+        public event Action OnAttackInputPressed;
+        public event Action OnChangeWeaponInputPressed;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -56,43 +44,43 @@ namespace Nojumpo.NJInputSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public void OnMove(InputAction.CallbackContext context) {
             MovementVector = context.ReadValue<Vector2>();
-            onMovementInputPressed?.Invoke(MovementVector);
+            OnMovementInputPressed?.Invoke(MovementVector);
         }
 
         public void OnInteractButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Performed)
             {
-                onInteractionInputPressed?.Invoke();
+                OnInteractionInputPressed?.Invoke();
             }
             else if (context.phase == InputActionPhase.Canceled)
             {
-                onInteractionInputReleased?.Invoke();
+                OnInteractionInputReleased?.Invoke();
             }
         }
 
         public void OnJumpButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                onJumpInputPressed?.Invoke();
+                OnJumpInputPressed?.Invoke();
             }
 
             if (context.phase == InputActionPhase.Canceled)
             {
-                onJumpInputReleased?.Invoke();
+                OnJumpInputReleased?.Invoke();
             }
         }
 
         public void OnAttackButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                onAttackInputPressed?.Invoke();
+                OnAttackInputPressed?.Invoke();
             }
         }
 
         public void OnChangeWeaponButton(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started)
             {
-                onChangeWeaponInputPressed?.Invoke();
+                OnChangeWeaponInputPressed?.Invoke();
             }
         }
 
