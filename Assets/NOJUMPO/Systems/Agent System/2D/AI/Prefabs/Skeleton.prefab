@@ -326,7 +326,8 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
-  attackDelay: 1.1
+  stopChaseDelay: 1.5
+  attackDelay: 1
   animationEventAudioSource: {fileID: 914403322413861019}
   runAudioEvent: {fileID: 11400000, guid: a761808d4a4462e4687759053eb47afc, type: 2}
 --- !u!114 &3252353291559018662

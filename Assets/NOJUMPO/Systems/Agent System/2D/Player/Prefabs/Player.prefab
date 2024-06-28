@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd01e71e09fe6d24186eecb15a1e1d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 1
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d405f392122d7ea4bb4102733758d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 2
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703427368269b2549bb58a99b8588baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 4
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fbed31fbb699e47af1da016e5b6597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 5
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d33d8c3e23403741b03257398d74c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 7
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdc996cda32fc5419bc44a7fc96d5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 8
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaa68d5931e4c7499ae0494ff8a2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 9
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ffa11f2e1c84343a859e4c9a7af267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateAnimation: 0
+  stateAnimation: 10
   OnEnter:
     m_PersistentCalls:
       m_Calls:
