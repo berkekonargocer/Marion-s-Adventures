@@ -17944,6 +17944,10 @@ PrefabInstance:
       propertyPath: attackDelay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6254447395741181793, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
+      propertyPath: stopChaseDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6704628820717212282, guid: 7649549f9879ef842afc42271db59d0b, type: 3}
       propertyPath: m_Name
       value: Skeleton

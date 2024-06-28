@@ -1,6 +1,9 @@
+using Cysharp.Threading.Tasks;
 using Nojumpo.AudioEventSystem;
 using Nojumpo.Utils;
+using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -8,26 +11,40 @@ namespace Nojumpo.AgentSystem
     public class AI2DChaseState : AI2DState
     {
         // -------------------------------- FIELDS ---------------------------------
+        [SerializeField] float stopChaseDelay = 1.5f;
         [SerializeField] float attackDelay = 1.0f;
 
         [SerializeField] AudioSource animationEventAudioSource;
         [SerializeField] SimpleAudioEventSO runAudioEvent;
 
         bool _canAttack = true;
+        bool _stopChasingTaskBusy = false;
 
+        CancellationTokenSource _chaseCancellationTokenSource;
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void OnEnterState() {
             base.OnEnterState();
-            _playerDamageable.onDie += StopChasing;
+            
+            _stopChasingTaskBusy = false;
             _movementSpeed = _agent2DData.m_RunningSpeed;
+            _playerDamageable.onDie += StopChasing;
         }
 
         public override void Tick() {
             TurnFaceToPlayer();
 
-            if (CheckIfStopChasing())
+            if (!CanReachToPlayer() && !_stopChasingTaskBusy)
+            {
+                _chaseCancellationTokenSource = new CancellationTokenSource();
+                StopChasingTask(_chaseCancellationTokenSource.Token).Forget();
                 return;
+            }
+
+            if (CanReachToPlayer() && _stopChasingTaskBusy)
+            {
+                CancelStopChasingTask();
+            }
 
             if (CheckIfInAttackRange())
                 return;
@@ -37,6 +54,7 @@ namespace Nojumpo.AgentSystem
 
         public override void OnExitState() {
             base.OnExitState();
+
             _playerDamageable.onDie -= StopChasing;
         }
 
@@ -52,7 +70,7 @@ namespace Nojumpo.AgentSystem
         protected override void CheckIfPathBlocked() {
             if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
             {
-                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+                StopChasing();
             }
         }
 
@@ -71,20 +89,16 @@ namespace Nojumpo.AgentSystem
         }
 
         bool CanReachToPlayer() {
+            if (DistanceToPlayer() > 6)
+                return false;
+
             if (VerticalDistanceToPlayer() < -1.5f || VerticalDistanceToPlayer() > 1.5)
                 return false;
 
             return true;
         }
-
-        bool CheckIfStopChasing() {
-            if (!CanReachToPlayer())
-                return true;
-
-            return false;
-        }
-
         void StopChasing() {
+            _stopChasingTaskBusy = false;
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
         }
 
@@ -128,6 +142,28 @@ namespace Nojumpo.AgentSystem
             yield return NJUtils.GetWait(attackDelay);
 
             _canAttack = true;
+        }
+
+        async UniTask StopChasingTask(CancellationToken cancellationToken) {
+            _stopChasingTaskBusy = true;
+
+            try
+            {
+                await UniTask.WaitForSeconds(stopChaseDelay, cancellationToken: cancellationToken);
+
+                if (!CanReachToPlayer())
+                    StopChasing();
+            }
+            catch (OperationCanceledException)
+            {
+                _stopChasingTaskBusy = false;
+            }
+        }
+
+        void CancelStopChasingTask() {
+            _chaseCancellationTokenSource?.Cancel();
+            _chaseCancellationTokenSource?.Dispose();
+            _chaseCancellationTokenSource = null;
         }
     }
 }
