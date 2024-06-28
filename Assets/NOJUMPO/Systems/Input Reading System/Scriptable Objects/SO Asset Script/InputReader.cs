@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Nojumpo.NJInputSystem
+namespace NOJUMPO.NJInputSystem
 {
     [CreateAssetMenu(fileName = "NewInputReader", menuName = "Nojumpo/Scriptable Objects/Input Reading System/New Input Reader")]
     public class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IUIActions

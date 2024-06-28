@@ -1,8 +1,8 @@
-using Nojumpo.AgentSystem;
-using Nojumpo.DamageableSystem;
+using NOJUMPO.AgentSystem;
+using NOJUMPO.DamageableSystem;
 using UnityEngine;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     [CreateAssetMenu(fileName = "NewMeleeWeapon", menuName = "Nojumpo/Scriptable Objects/Weapon System/Melee/New Melee Weapon")]
     public class MeleeWeapon : WeaponSO

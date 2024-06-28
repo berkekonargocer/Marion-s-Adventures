@@ -1,10 +1,10 @@
 using System.Collections;
-using Nojumpo.DamageableSystem;
-using Nojumpo.StateMachine;
-using Nojumpo.Utils;
+using NOJUMPO.DamageableSystem;
+using NOJUMPO.StateMachine;
+using NOJUMPO.Utils;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public abstract class AI2DState : State
     {

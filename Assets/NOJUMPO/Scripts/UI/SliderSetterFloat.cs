@@ -1,8 +1,8 @@
-using Nojumpo.ScriptableObjects;
+using NOJUMPO.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Nojumpo.UI
+namespace NOJUMPO.UI
 {
     public class SliderSetterFloat : MonoBehaviour
     {

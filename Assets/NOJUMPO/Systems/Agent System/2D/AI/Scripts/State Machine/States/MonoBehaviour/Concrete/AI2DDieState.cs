@@ -1,4 +1,4 @@
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public class AI2DDieState : AI2DState
     {

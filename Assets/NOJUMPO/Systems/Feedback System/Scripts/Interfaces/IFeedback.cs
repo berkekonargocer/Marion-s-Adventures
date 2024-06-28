@@ -1,4 +1,4 @@
-namespace Nojumpo.FeedbackSystem
+namespace NOJUMPO.FeedbackSystem
 {
     public interface IFeedback
     {

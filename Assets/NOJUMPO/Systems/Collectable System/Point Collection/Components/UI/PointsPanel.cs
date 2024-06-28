@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace Nojumpo.CollectableSystem
+namespace NOJUMPO.CollectableSystem
 {
     public class PointsPanel : MonoBehaviour
     {

@@ -1,8 +1,8 @@
 using System.Collections;
-using Nojumpo.Utils;
+using NOJUMPO.Utils;
 using UnityEngine;
 
-namespace Nojumpo.FeedbackSystem
+namespace NOJUMPO.FeedbackSystem
 {
     public class FlashWhiteFeedback : MonoBehaviour, IFeedback
     {

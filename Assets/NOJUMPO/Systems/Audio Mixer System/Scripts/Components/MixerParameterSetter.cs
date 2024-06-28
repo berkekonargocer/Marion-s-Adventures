@@ -1,9 +1,9 @@
-using Nojumpo.ScriptableObjects;
-using Nojumpo.ScriptableObjects.References;
+using NOJUMPO.ScriptableObjects;
+using NOJUMPO.ScriptableObjects.References;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Nojumpo.AudioMixerSystem
+namespace NOJUMPO.AudioMixerSystem
 {
     public class MixerParameterSetter : MonoBehaviour
     {

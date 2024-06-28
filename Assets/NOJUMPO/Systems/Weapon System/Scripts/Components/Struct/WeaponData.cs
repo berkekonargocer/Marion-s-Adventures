@@ -1,9 +1,9 @@
 using System;
-using Nojumpo.AudioEventSystem;
-using Nojumpo.DamageableSystem;
+using NOJUMPO.AudioEventSystem;
+using NOJUMPO.DamageableSystem;
 using UnityEngine;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     [Serializable]
     public struct WeaponData

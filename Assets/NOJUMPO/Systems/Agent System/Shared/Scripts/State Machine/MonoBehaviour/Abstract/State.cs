@@ -1,8 +1,8 @@
-using Nojumpo.AgentSystem;
+using NOJUMPO.AgentSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Nojumpo.StateMachine
+namespace NOJUMPO.StateMachine
 {
     public abstract class State : MonoBehaviour, IState
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Nojumpo.ScriptableObjects.References
+namespace NOJUMPO.ScriptableObjects.References
 {
     [Serializable]
     public class FloatReference

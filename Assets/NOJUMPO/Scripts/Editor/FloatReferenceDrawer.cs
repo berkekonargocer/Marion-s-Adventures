@@ -1,8 +1,8 @@
-using Nojumpo.ScriptableObjects.References;
+using NOJUMPO.ScriptableObjects.References;
 using UnityEditor;
 using UnityEngine;
 
-namespace Nojumpo.Editor
+namespace NOJUMPO.Editor
 {
     [CustomPropertyDrawer(typeof(FloatReference))]
     public class FloatReferenceDrawer : PropertyDrawer

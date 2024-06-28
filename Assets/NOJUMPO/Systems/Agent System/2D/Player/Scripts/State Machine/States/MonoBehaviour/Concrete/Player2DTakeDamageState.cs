@@ -1,4 +1,4 @@
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public class Player2DTakeDamageState : Player2DState
     {

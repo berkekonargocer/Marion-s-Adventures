@@ -1,8 +1,8 @@
-using Nojumpo.ScriptableObjects;
+using NOJUMPO.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Nojumpo.AudioMixerSystem
+namespace NOJUMPO.AudioMixerSystem
 {
     [CreateAssetMenu(fileName = "NewMixerData", menuName = "Nojumpo/Scriptable Objects/Audio/New Mixer Data")]
     public class MixerData : ScriptableObject

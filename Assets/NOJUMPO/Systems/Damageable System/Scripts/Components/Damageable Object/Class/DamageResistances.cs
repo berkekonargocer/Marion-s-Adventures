@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     [Serializable]
     public class DamageResistances

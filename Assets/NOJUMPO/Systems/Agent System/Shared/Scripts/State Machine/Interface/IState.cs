@@ -1,4 +1,4 @@
-namespace Nojumpo.StateMachine
+namespace NOJUMPO.StateMachine
 {
     public interface IState
     {

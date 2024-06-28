@@ -1,7 +1,7 @@
-using Nojumpo.AudioEventSystem;
+using NOJUMPO.AudioEventSystem;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public class AI2DPatrolState : AI2DState
     {

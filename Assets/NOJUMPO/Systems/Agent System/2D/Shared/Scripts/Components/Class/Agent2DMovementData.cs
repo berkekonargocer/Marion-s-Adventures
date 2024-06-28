@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     public class Agent2DMovementData
     {

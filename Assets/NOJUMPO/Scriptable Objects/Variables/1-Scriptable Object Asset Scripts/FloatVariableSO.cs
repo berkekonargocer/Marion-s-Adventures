@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.ScriptableObjects
+namespace NOJUMPO.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "NewFloatVariable", menuName = "Nojumpo/Scriptable Objects/Data/Variables/New Float Variable")]
     public class FloatVariableSO : ScriptableObject

@@ -1,4 +1,4 @@
-namespace Nojumpo.Interfaces
+namespace NOJUMPO.Interfaces
 {
     public interface IWeapon
     {

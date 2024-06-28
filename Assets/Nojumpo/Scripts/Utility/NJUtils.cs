@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Nojumpo.Utils
+namespace NOJUMPO.Utils
 {
     public static class NJUtils
     {

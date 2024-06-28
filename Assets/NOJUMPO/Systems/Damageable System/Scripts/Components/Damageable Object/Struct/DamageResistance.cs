@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     [Serializable]
     public struct DamageResistance

@@ -2,7 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     public class FPSCounter : MonoBehaviour
     {

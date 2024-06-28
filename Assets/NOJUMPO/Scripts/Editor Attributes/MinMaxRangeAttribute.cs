@@ -1,6 +1,6 @@
 using System;
 
-namespace Nojumpo.EditorAttributes
+namespace NOJUMPO.EditorAttributes
 {
     public class MinMaxRangeAttribute : Attribute
     {

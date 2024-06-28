@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     [RequireComponent(typeof(HealthBarAnimator))]
     public class HealthBar : MonoBehaviour

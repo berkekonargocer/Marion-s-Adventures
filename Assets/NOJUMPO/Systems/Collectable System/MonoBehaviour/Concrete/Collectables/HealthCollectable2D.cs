@@ -1,7 +1,7 @@
-using Nojumpo.DamageableSystem;
+using NOJUMPO.DamageableSystem;
 using UnityEngine;
 
-namespace Nojumpo.CollectableSystem
+namespace NOJUMPO.CollectableSystem
 {
     public class HealthCollectable2D : Collectable2D
     {

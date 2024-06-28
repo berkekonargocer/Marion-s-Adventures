@@ -1,10 +1,10 @@
 using System;
-using Nojumpo.EditorAttributes;
-using Nojumpo.Variables;
+using NOJUMPO.EditorAttributes;
+using NOJUMPO.Variables;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Nojumpo.AudioEventSystem
+namespace NOJUMPO.AudioEventSystem
 {
     [CreateAssetMenu(fileName = "NewSimpleAudioEvent", menuName = "Nojumpo/Scriptable Objects/Audio Event/New Simple Audio Event")]
     public class SimpleAudioEventSO : AudioEventBaseSO

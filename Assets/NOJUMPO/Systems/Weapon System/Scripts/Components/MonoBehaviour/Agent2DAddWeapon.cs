@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Nojumpo.AgentSystem;
+using NOJUMPO.AgentSystem;
 using UnityEngine;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     public class Agent2DAddWeapon : MonoBehaviour
     {

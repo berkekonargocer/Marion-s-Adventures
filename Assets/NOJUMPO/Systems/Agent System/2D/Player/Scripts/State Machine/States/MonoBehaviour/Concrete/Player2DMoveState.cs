@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public class Player2DMoveState : Player2DState
     {

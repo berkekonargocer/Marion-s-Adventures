@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
 
     public enum AgentAnimationState

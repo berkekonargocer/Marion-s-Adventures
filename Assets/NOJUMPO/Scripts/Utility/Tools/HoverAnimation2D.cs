@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace Nojumpo.Utils
+namespace NOJUMPO.Utils
 {
     public class HoverAnimation2D : MonoBehaviour
     {

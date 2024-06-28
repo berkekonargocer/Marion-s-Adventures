@@ -1,10 +1,10 @@
 using System.Collections;
-using Nojumpo.AudioEventSystem;
-using Nojumpo.StateMachine;
-using Nojumpo.Utils;
+using NOJUMPO.AudioEventSystem;
+using NOJUMPO.StateMachine;
+using NOJUMPO.Utils;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     [RequireComponent(typeof(Player2DStateFactory))]
     public abstract class Player2DState : State

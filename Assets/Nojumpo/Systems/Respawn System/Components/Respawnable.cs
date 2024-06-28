@@ -1,7 +1,7 @@
-using Nojumpo.DamageableSystem;
+using NOJUMPO.DamageableSystem;
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     public class Respawnable : MonoBehaviour
     {

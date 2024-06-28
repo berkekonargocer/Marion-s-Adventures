@@ -1,9 +1,9 @@
-using Nojumpo.Variables;
-using Nojumpo.EditorAttributes;
+using NOJUMPO.Variables;
+using NOJUMPO.EditorAttributes;
 using UnityEditor;
 using UnityEngine;
 
-namespace Nojumpo.Editor
+namespace NOJUMPO.Editor
 {
     [CustomPropertyDrawer(typeof(RangedFloat), true)]
 

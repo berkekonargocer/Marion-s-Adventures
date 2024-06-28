@@ -1,8 +1,8 @@
-using Nojumpo.DamageableSystem;
-using Nojumpo.WeaponSystem;
+using NOJUMPO.DamageableSystem;
+using NOJUMPO.WeaponSystem;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public abstract class Agent2D : MonoBehaviour
     {

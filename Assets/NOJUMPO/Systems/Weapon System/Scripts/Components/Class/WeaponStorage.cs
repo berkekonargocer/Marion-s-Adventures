@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     public class WeaponStorage
     {

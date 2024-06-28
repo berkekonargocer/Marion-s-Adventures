@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     public class WeaponManager : MonoBehaviour
     {

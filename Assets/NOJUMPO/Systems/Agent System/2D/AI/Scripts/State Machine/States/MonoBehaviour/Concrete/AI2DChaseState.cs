@@ -1,12 +1,12 @@
 using Cysharp.Threading.Tasks;
-using Nojumpo.AudioEventSystem;
-using Nojumpo.Utils;
+using NOJUMPO.AudioEventSystem;
+using NOJUMPO.Utils;
 using System;
 using System.Collections;
 using System.Threading;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     public class AI2DChaseState : AI2DState
     {

@@ -1,9 +1,9 @@
-using Nojumpo.AudioEventSystem;
-using Nojumpo.ScriptableObjects;
+using NOJUMPO.AudioEventSystem;
+using NOJUMPO.ScriptableObjects;
 using System;
 using UnityEngine;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     public class Damageable : MonoBehaviour, IDamageable
     {

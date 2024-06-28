@@ -1,8 +1,8 @@
 using System;
-using Nojumpo.AgentSystem;
+using NOJUMPO.AgentSystem;
 using UnityEngine;
 
-namespace Nojumpo.WeaponSystem
+namespace NOJUMPO.WeaponSystem
 {
     public abstract class WeaponSO : ScriptableObject, IEquatable<WeaponSO>
     {

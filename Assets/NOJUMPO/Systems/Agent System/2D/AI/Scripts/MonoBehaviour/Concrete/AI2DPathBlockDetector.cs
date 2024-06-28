@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     public class AI2DPathBlockDetector : MonoBehaviour
     {

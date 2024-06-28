@@ -1,7 +1,7 @@
-using Nojumpo.Utils;
+using NOJUMPO.Utils;
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     public class ParallaxEffect : MonoBehaviour
     {

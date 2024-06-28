@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     [RequireComponent(typeof(Collider2D))]
     public class DestroyObjectsOnTrigger2D : MonoBehaviour

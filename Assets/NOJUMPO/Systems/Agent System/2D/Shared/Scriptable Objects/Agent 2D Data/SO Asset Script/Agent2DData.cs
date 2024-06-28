@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     [CreateAssetMenu(fileName = "NewAgent2DData", menuName = "Nojumpo/Scriptable Objects/Agent2D/Data/New Agent Data")]
     public class Agent2DData : ScriptableObject

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     [Serializable]
     public class HealthChangeAnimation_ChipAway : IHealthChangeAnimation

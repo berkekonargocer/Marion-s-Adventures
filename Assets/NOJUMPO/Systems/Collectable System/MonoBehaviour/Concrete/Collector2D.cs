@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.CollectableSystem
+namespace NOJUMPO.CollectableSystem
 {
     public class Collector2D : MonoBehaviour
     {

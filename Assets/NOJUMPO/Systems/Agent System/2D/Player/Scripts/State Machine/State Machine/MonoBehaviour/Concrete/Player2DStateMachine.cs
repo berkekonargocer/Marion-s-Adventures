@@ -1,7 +1,7 @@
-using Nojumpo.NJInputSystem;
+using NOJUMPO.NJInputSystem;
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     [DisallowMultipleComponent]
     public class Player2DStateMachine : Agent2D

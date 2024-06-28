@@ -1,6 +1,6 @@
 using System;
 
-namespace Nojumpo.Variables
+namespace NOJUMPO.Variables
 {
     [Serializable]
     public struct RangedFloat

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.AgentSystem
+namespace NOJUMPO.AgentSystem
 {
     [DisallowMultipleComponent]
     public class AI2DStateMachine : Agent2D

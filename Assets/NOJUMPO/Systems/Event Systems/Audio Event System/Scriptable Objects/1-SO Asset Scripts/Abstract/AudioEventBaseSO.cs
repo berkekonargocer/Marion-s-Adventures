@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.AudioEventSystem
+namespace NOJUMPO.AudioEventSystem
 {
     public abstract class AudioEventBaseSO : ScriptableObject
     {

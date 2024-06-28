@@ -1,7 +1,7 @@
 using System;
 using DG.Tweening;
 
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     [Serializable]
     public class HealthChangeAnimation_Default : IHealthChangeAnimation

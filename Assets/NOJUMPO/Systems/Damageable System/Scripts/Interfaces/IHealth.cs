@@ -1,4 +1,4 @@
-namespace Nojumpo.DamageableSystem
+namespace NOJUMPO.DamageableSystem
 {
     public interface IHealth
     {

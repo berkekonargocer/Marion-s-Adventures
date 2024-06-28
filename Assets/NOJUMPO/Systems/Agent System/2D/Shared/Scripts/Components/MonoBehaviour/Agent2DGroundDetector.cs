@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Nojumpo
+namespace NOJUMPO
 {
     [RequireComponent(typeof(Collider2D))]
     public class Agent2DGroundDetector : MonoBehaviour
