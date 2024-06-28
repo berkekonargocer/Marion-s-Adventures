@@ -19,6 +19,7 @@ namespace Nojumpo.AgentSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void OnEnterState() {
             base.OnEnterState();
+            _playerDamageable.onDie += StopChasing;
             _movementSpeed = _agent2DData.m_RunningSpeed;
         }
 
@@ -32,6 +33,11 @@ namespace Nojumpo.AgentSystem
                 return;
 
             HandleMovement();
+        }
+
+        public override void OnExitState() {
+            base.OnExitState();
+            _playerDamageable.onDie -= StopChasing;
         }
 
 
@@ -72,13 +78,14 @@ namespace Nojumpo.AgentSystem
         }
 
         bool CheckIfStopChasing() {
-            if (IsPlayerDead() || !CanReachToPlayer())
-            {
-                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+            if (!CanReachToPlayer())
                 return true;
-            }
 
             return false;
+        }
+
+        void StopChasing() {
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
         }
 
         void TurnFaceToPlayer() {
