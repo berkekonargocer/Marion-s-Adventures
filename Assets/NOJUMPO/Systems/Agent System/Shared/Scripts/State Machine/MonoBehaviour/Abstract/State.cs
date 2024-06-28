@@ -22,10 +22,10 @@ namespace Nojumpo.StateMachine
 
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected virtual void EnterSetup(Agent2D agent2D) {
-            agent2D.m_Animator.onAnimationEvent += OnAnimationEvent;
-            agent2D.m_Animator.onAnimationEndEvent += OnAnimationEndEvent;
-            agent2D.m_AgentDamageable.onTakeDamage += OnTakeDamage;
-            agent2D.m_AgentDamageable.onDie += OnDie;
+            agent2D.m_Animator.OnAnimationEvent += OnAnimationEvent;
+            agent2D.m_Animator.OnAnimationEndEvent += OnAnimationEndEvent;
+            agent2D.m_AgentDamageable.OnTakeDamage += OnTakeDamage;
+            agent2D.m_AgentDamageable.OnDie += OnDie;
 
             agent2D.m_Animator.PlayAnimation(stateAnimation);
 
@@ -33,10 +33,10 @@ namespace Nojumpo.StateMachine
         }
 
         protected virtual void ExitSetup(Agent2D agent2D) {
-            agent2D.m_Animator.onAnimationEvent -= OnAnimationEvent;
-            agent2D.m_Animator.onAnimationEndEvent -= OnAnimationEndEvent;
-            agent2D.m_AgentDamageable.onTakeDamage -= OnTakeDamage;
-            agent2D.m_AgentDamageable.onDie -= OnDie;
+            agent2D.m_Animator.OnAnimationEvent -= OnAnimationEvent;
+            agent2D.m_Animator.OnAnimationEndEvent -= OnAnimationEndEvent;
+            agent2D.m_AgentDamageable.OnTakeDamage -= OnTakeDamage;
+            agent2D.m_AgentDamageable.OnDie -= OnDie;
 
             OnExit?.Invoke();
         }

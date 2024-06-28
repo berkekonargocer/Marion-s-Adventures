@@ -14,7 +14,7 @@ namespace Nojumpo.AgentSystem
         public override void OnEnterState() {
             base.OnEnterState();
 
-            _playerDamageable.onDie += StopAttacking;
+            _playerDamageable.OnDie += StopAttacking;
 
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
 
@@ -54,7 +54,7 @@ namespace Nojumpo.AgentSystem
         public override void OnExitState() {
             base.OnExitState();
 
-            _playerDamageable.onDie -= StopAttacking;
+            _playerDamageable.OnDie -= StopAttacking;
         }
 
 

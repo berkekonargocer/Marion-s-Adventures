@@ -21,13 +21,13 @@ namespace Nojumpo.DamageableSystem
         }
 
         void OnEnable() {
-            DamageableObject.onTakeDamage += OnTakeDamage;
-            DamageableObject.onHeal += OnHeal;
+            DamageableObject.OnTakeDamage += OnTakeDamage;
+            DamageableObject.OnHeal += OnHeal;
         }
 
         void OnDisable() {
-            DamageableObject.onTakeDamage -= OnTakeDamage;
-            DamageableObject.onHeal -= OnHeal;
+            DamageableObject.OnTakeDamage -= OnTakeDamage;
+            DamageableObject.OnHeal -= OnHeal;
         }
 
 

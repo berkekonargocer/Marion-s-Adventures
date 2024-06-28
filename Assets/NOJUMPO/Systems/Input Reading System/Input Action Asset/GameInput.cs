@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Nojumpo.NJInputSystem
+namespace NOJUMPO.NJInputSystem
 {
     public partial class @GameInput: IInputActionCollection2, IDisposable
     {

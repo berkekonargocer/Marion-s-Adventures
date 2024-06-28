@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Nojumpo
@@ -24,11 +25,8 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         Animator _agentAnimator;
 
-        public delegate void OnAnimationEvent();
-        public OnAnimationEvent onAnimationEvent;
-
-        public delegate void OnAnimationEndEvent();
-        public OnAnimationEndEvent onAnimationEndEvent;
+        public event Action OnAnimationEvent;
+        public event Action OnAnimationEndEvent;
 
         AgentAnimationState _currentAnimationState;
 
@@ -47,22 +45,7 @@ namespace Nojumpo
             if (state == AgentAnimationState.NONE)
                 return;
 
-            string stateName = state switch
-            {
-                AgentAnimationState.IDLE => "Idle",
-                AgentAnimationState.WALK => "Walk",
-                AgentAnimationState.RUN => "Run",
-                AgentAnimationState.JUMP => "Jump",
-                AgentAnimationState.FALL => "Fall",
-                AgentAnimationState.LAND => "Land",
-                AgentAnimationState.CLIMB => "Climb",
-                AgentAnimationState.ATTACK => "Attack",
-                AgentAnimationState.TAKE_DAMAGE => "TakeDamage",
-                AgentAnimationState.DIE => "Die",
-                _ => "Idle"
-            };
-
-            _agentAnimator.Play(stateName, -1, 0);
+            _agentAnimator.Play(state.ToString(), -1, 0);
             _currentAnimationState = state;
         }
 
@@ -77,11 +60,11 @@ namespace Nojumpo
         }
 
         public void InvokeAnimationEvent() {
-            onAnimationEvent?.Invoke();
+            OnAnimationEvent?.Invoke();
         }
 
         public void InvokeAnimationEndEvent() {
-            onAnimationEndEvent?.Invoke();
+            OnAnimationEndEvent?.Invoke();
         }
 
 

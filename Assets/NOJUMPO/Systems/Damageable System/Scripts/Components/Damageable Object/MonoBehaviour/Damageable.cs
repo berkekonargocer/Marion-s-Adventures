@@ -1,5 +1,6 @@
 using Nojumpo.AudioEventSystem;
 using Nojumpo.ScriptableObjects;
+using System;
 using UnityEngine;
 
 namespace Nojumpo.DamageableSystem
@@ -17,16 +18,11 @@ namespace Nojumpo.DamageableSystem
         public bool IsDead { get { return DamageableHealth.CurrentHealth < 0; } }
 
         Rigidbody2D _damageableObjectRigidbody;
-        
-        public delegate void OnTakeDamage();
-        public OnTakeDamage onTakeDamage;
 
-        public delegate void OnHeal();
-        public OnHeal onHeal;
+        public event Action OnTakeDamage;
+        public event Action OnHeal;
+        public event Action OnDie;
 
-        public delegate void OnDie();
-        public OnDie onDie;
-        
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
@@ -38,7 +34,7 @@ namespace Nojumpo.DamageableSystem
         public void TakeDamage(float damageAmount, DamageTypeSO damageType, GameObject damageDealer, bool knockbackOnGetHit, float knockbackForce) {
             DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
             TakeDamageAudioEvent.Play(TakeDamageAudioSource);
-            onTakeDamage?.Invoke();
+            OnTakeDamage?.Invoke();
 
             if (knockbackOnGetHit && DamageableHealth.CurrentHealth > 0)
             {
@@ -49,24 +45,24 @@ namespace Nojumpo.DamageableSystem
                 return;
 
             DamageableHealth.SetHealth(0);
-            onDie?.Invoke();
+            OnDie?.Invoke();
         }
 
         public void TakeDamage(float damageAmount, DamageTypeSO damageType) {
             DamageableHealth.DecreaseHealth(Resistances.CalculateDamageWithResistances(damageAmount, damageType));
             TakeDamageAudioEvent.Play(TakeDamageAudioSource);
-            onTakeDamage?.Invoke();
+            OnTakeDamage?.Invoke();
 
             if (!(DamageableHealth.CurrentHealth <= 0))
                 return;
 
             DamageableHealth.SetHealth(0);
-            onDie?.Invoke();
+            OnDie?.Invoke();
         }
 
         public void Heal(float healAmount) {
             DamageableHealth.IncreaseHealth(healAmount);
-            onHeal?.Invoke();
+            OnHeal?.Invoke();
         }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
@@ -74,7 +70,7 @@ namespace Nojumpo.DamageableSystem
             DamageableHealth = new Health(maxHealth.Value);
             _damageableObjectRigidbody = GetComponent<Rigidbody2D>();
         }
-        
+
         void GetKnockedback(GameObject damageDealer, float knockbackForce) {
             Vector2 direction = transform.position - damageDealer.transform.position;
             _damageableObjectRigidbody.AddForce(new Vector2(direction.normalized.x, 0) * knockbackForce, ForceMode2D.Impulse);

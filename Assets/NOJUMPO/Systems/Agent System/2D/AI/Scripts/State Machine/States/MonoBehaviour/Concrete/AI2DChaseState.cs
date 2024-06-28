@@ -28,7 +28,7 @@ namespace Nojumpo.AgentSystem
             
             _stopChasingTaskBusy = false;
             _movementSpeed = _agent2DData.m_RunningSpeed;
-            _playerDamageable.onDie += StopChasing;
+            _playerDamageable.OnDie += StopChasing;
         }
 
         public override void Tick() {
@@ -55,7 +55,7 @@ namespace Nojumpo.AgentSystem
         public override void OnExitState() {
             base.OnExitState();
 
-            _playerDamageable.onDie -= StopChasing;
+            _playerDamageable.OnDie -= StopChasing;
         }
 
 

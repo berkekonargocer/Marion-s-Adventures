@@ -49,8 +49,8 @@ namespace Nojumpo.AgentSystem
         public override void OnExitState() {
             base.OnExitState();
             _player2DStateMachine.m_AgentWeapon.ToggleWeaponVisibility(false);
-            _player2DStateMachine.m_Animator.onAnimationEvent -= InvokeAttack;
-            _player2DStateMachine.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+            _player2DStateMachine.m_Animator.OnAnimationEvent -= InvokeAttack;
+            _player2DStateMachine.m_Animator.OnAnimationEndEvent -= ChangeStateToIdle;
         }
 
 
@@ -74,13 +74,13 @@ namespace Nojumpo.AgentSystem
         
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void InvokeAttack() {
-            _player2DStateMachine.m_Animator.onAnimationEvent -= InvokeAttack;
+            _player2DStateMachine.m_Animator.OnAnimationEvent -= InvokeAttack;
             _player2DStateMachine.m_AgentWeapon.GetCurrentWeapon().PerformAttack(_player2DStateMachine,_attackDirection, animationEventAudioSource);
             OnAttack?.Invoke();
         }
 
         void ChangeStateToIdle() {
-            _player2DStateMachine.m_Animator.onAnimationEndEvent -= ChangeStateToIdle;
+            _player2DStateMachine.m_Animator.OnAnimationEndEvent -= ChangeStateToIdle;
 
             _player2DStateMachine.ChangeState(_player2DStateMachine.m_GroundDetector.IsGrounded ? _player2DStateMachine.m_StateFactory.m_Idle : _player2DStateMachine.m_StateFactory.m_Fall);
         }
