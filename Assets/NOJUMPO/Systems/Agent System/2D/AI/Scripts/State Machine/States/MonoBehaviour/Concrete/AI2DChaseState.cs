@@ -1,6 +1,6 @@
-using System.Collections;
 using Nojumpo.AudioEventSystem;
 using Nojumpo.Utils;
+using System.Collections;
 using UnityEngine;
 
 namespace Nojumpo.AgentSystem
@@ -24,17 +24,17 @@ namespace Nojumpo.AgentSystem
 
         public override void Tick() {
             TurnFaceToPlayer();
-            
+
             if (CheckIfStopChasing())
                 return;
-            
+
             if (CheckIfInAttackRange())
                 return;
 
             HandleMovement();
         }
 
-        
+
         // ------------------------ CUSTOM PROTECTED METHODS -----------------------
         protected override void HandleMovement() {
             CheckIfPathBlocked();
@@ -42,7 +42,7 @@ namespace Nojumpo.AgentSystem
             CalculateVelocity();
             SetVelocity();
         }
-        
+
         protected override void CheckIfPathBlocked() {
             if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
             {
@@ -54,18 +54,31 @@ namespace Nojumpo.AgentSystem
             runAudioEvent.Play(animationEventAudioSource);
         }
 
-        
+
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-        bool CheckIfStopChasing() {
-            if (!IsPlayerDead())
-                return false;
-            
-            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
-            return true;
-        }
-        
         float DistanceToPlayer() {
             return Vector2.Distance(transform.position, _playerTransform.position);
+        }
+
+        float VerticalDistanceToPlayer() {
+            return transform.position.y - _playerTransform.position.y;
+        }
+
+        bool CanReachToPlayer() {
+            if (VerticalDistanceToPlayer() < -1.5f || VerticalDistanceToPlayer() > 1.5)
+                return false;
+
+            return true;
+        }
+
+        bool CheckIfStopChasing() {
+            if (IsPlayerDead() || !CanReachToPlayer())
+            {
+                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+                return true;
+            }
+
+            return false;
         }
 
         void TurnFaceToPlayer() {
@@ -77,23 +90,25 @@ namespace Nojumpo.AgentSystem
             {
                 _ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection = -1;
             }
-            
+
             _ai2DStateMachine.m_Renderer.FaceDirection(_ai2DStateMachine.m_AgentMovementData.HorizontalMovementDirection);
         }
-        
+
         bool CheckIfInAttackRange() {
-            if (DistanceToPlayer() > 1.00f) {
+            if (DistanceToPlayer() > 1.00f)
+            {
                 _ai2DStateMachine.m_Animator.PlayAnimation(AgentAnimationState.RUN);
                 return false;
             }
 
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
 
-            if (!_canAttack) {
+            if (!_canAttack)
+            {
                 _ai2DStateMachine.m_Animator.PlayAnimation(AgentAnimationState.IDLE);
                 return true;
             }
-            
+
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Attack);
             StartCoroutine(nameof(AttackDelay));
 

@@ -20,7 +20,7 @@ MonoBehaviour:
     <MaxDamage>k__BackingField: 15
     <DamageType>k__BackingField: {fileID: 11400000, guid: 7cc78148edbc05e449bf7cad1c34eb55, type: 2}
     <DoesKnockback>k__BackingField: 1
-    <KnockbackForce>k__BackingField: 3
+    <KnockbackForce>k__BackingField: 3.5
     <AttackAudioEvent>k__BackingField: {fileID: 11400000, guid: 59cb8821bf97c914ca78ec77d7176ea7, type: 2}
     <AttackHitAudioEvent>k__BackingField: {fileID: 11400000, guid: 0cd98f8bf4b5b2f4db0cd64f07e91762, type: 2}
   damageableLayerMask:

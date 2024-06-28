@@ -18161,6 +18161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boar
       objectReference: {fileID: 0}
+    - target: {fileID: 1754704581165248270, guid: 1cae98c4217f934459cb7ae0b54574f8, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8878388148701414614, guid: 1cae98c4217f934459cb7ae0b54574f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.64
