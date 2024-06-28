@@ -46,7 +46,6 @@ namespace Nojumpo.AgentSystem
         protected override void CheckIfPathBlocked() {
             if (_ai2DStateMachine.m_AI2DPathBlockDetector.IsPathBlocked)
             {
-                // Stop Chasing
                 _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
             }
         }
