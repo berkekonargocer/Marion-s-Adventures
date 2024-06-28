@@ -14,6 +14,8 @@ namespace Nojumpo.AgentSystem
         public override void OnEnterState() {
             base.OnEnterState();
 
+            _playerDamageable.onDie += StopAttacking;
+
             _ai2DStateMachine.m_Rigidbody2D.velocity = Vector2.zero;
 
             int movementDirection;
@@ -30,7 +32,7 @@ namespace Nojumpo.AgentSystem
             }
 
             _ai2DStateMachine.m_Renderer.FaceDirection(movementDirection);
-            
+
             Transform agent2DTransform = _ai2DStateMachine.transform;
             _attackDirection = agent2DTransform.right * (agent2DTransform.localScale.x > 0 ? 1 : -1);
         }
@@ -40,7 +42,25 @@ namespace Nojumpo.AgentSystem
         }
 
         protected override void OnAnimationEndEvent() {
+            if (_playerDamageable.IsDead)
+            {
+                _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
+                return;
+            }
+
             _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Chase);
+        }
+
+        public override void OnExitState() {
+            base.OnExitState();
+
+            _playerDamageable.onDie -= StopAttacking;
+        }
+
+
+        // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void StopAttacking() {
+            _ai2DStateMachine.ChangeState(_ai2DStateMachine.m_StateFactory.m_Patrol);
         }
     }
 }

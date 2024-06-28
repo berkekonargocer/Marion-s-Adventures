@@ -14,6 +14,8 @@ namespace Nojumpo.DamageableSystem
         [SerializeField] AudioSource TakeDamageAudioSource;
 
         public Health DamageableHealth { get; private set; }
+        public bool IsDead { get { return DamageableHealth.CurrentHealth < 0; } }
+
         Rigidbody2D _damageableObjectRigidbody;
         
         public delegate void OnTakeDamage();
