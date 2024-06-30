@@ -12,6 +12,7 @@ namespace NOJUMPO.AgentSystem
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------
         public override void OnEnterState() {
             base.OnEnterState();
+            _player2DStateMachine.m_Rigidbody2D.velocity = Vector3.zero;
             _player2DStateMachine.m_Rigidbody2D.sharedMaterial = normalFrictionMaterial2D;
         }
 
